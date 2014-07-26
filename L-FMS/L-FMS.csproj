@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2E8624AE-9AE7-4719-9E2E-4E78559E21A1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>L_FMS</RootNamespace>
+    <AssemblyName>L-FMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="bootstrap\css\bootstrap-rtl.css" />
+    <Content Include="bootstrap\css\bootstrap-rtl.min.css" />
+    <Content Include="bootstrap\css\bootstrap-theme.css" />
+    <Content Include="bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="bootstrap\css\bootstrap.css" />
+    <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\datetimepicker\css\bootstrap-datetimepicker.css" />
+    <Content Include="bootstrap\datetimepicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="bootstrap\datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="bootstrap\datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.bg.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.ca.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.cs.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.da.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.de.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.el.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.es.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.fi.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.fr.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.he.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.hr.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.hu.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.id.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.is.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.it.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.ja.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.kr.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.lt.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.lv.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.ms.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.nb.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.nl.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.no.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.pl.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.pt-BR.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.pt.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.ro.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.rs-latin.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.rs.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.ru.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.sk.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.sl.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.sv.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.sw.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.th.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.tr.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.ua.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.uk.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="bootstrap\datetimepicker\js\locales\bootstrap-datetimepicker.zh-TW.js" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="bootstrap\js\bootstrap.js" />
+    <Content Include="bootstrap\js\bootstrap.min.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="fonts\flat-ui-icons-regular.svg" />
+    <Content Include="fonts\lato\lato-black.svg" />
+    <Content Include="fonts\lato\lato-bold.svg" />
+    <Content Include="fonts\lato\lato-bolditalic.svg" />
+    <Content Include="fonts\lato\lato-italic.svg" />
+    <Content Include="fonts\lato\lato-light.svg" />
+    <Content Include="fonts\lato\lato-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\demo\browser-2x.png" />
+    <Content Include="images\demo\browser-author.jpg" />
+    <Content Include="images\demo\browser-pic-1.jpg" />
+    <Content Include="images\demo\browser-pic-2.jpg" />
+    <Content Include="images\demo\browser-pic-3.jpg" />
+    <Content Include="images\demo\browser-pic-4.jpg" />
+    <Content Include="images\demo\browser-pic-5.jpg" />
+    <Content Include="images\demo\browser-pic-6.jpg" />
+    <Content Include="images\demo\browser.png" />
+    <Content Include="images\demo\html-icon.png" />
+    <Content Include="images\demo\logo-mask-2x.png" />
+    <Content Include="images\demo\logo-mask.png" />
+    <Content Include="images\demo\video.jpg" />
+    <Content Include="images\exaple-image.jpg" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\footer\logo.png" />
+    <Content Include="images\icons\png\Book.png" />
+    <Content Include="images\icons\png\Calendar.png" />
+    <Content Include="images\icons\png\Chat.png" />
+    <Content Include="images\icons\png\Clipboard.png" />
+    <Content Include="images\icons\png\Compas.png" />
+    <Content Include="images\icons\png\Gift-Box.png" />
+    <Content Include="images\icons\png\Infinity-Loop.png" />
+    <Content Include="images\icons\png\Mail.png" />
+    <Content Include="images\icons\png\Map.png" />
+    <Content Include="images\icons\png\Pensils.png" />
+    <Content Include="images\icons\png\Pocket.png" />
+    <Content Include="images\icons\png\Retina-Ready.png" />
+    <Content Include="images\icons\png\Toilet-Paper.png" />
+    <Content Include="images\icons\png\Watches.png" />
+    <Content Include="images\icons\svg\book.svg" />
+    <Content Include="images\icons\svg\calendar.svg" />
+    <Content Include="images\icons\svg\chat.svg" />
+    <Content Include="images\icons\svg\clipboard.svg" />
+    <Content Include="images\icons\svg\clocks.svg" />
+    <Content Include="images\icons\svg\compas.svg" />
+    <Content Include="images\icons\svg\gift-box.svg" />
+    <Content Include="images\icons\svg\loop.svg" />
+    <Content Include="images\icons\svg\mail.svg" />
+    <Content Include="images\icons\svg\map.svg" />
+    <Content Include="images\icons\svg\paper-bag.svg" />
+    <Content Include="images\icons\svg\pencils.svg" />
+    <Content Include="images\icons\svg\retina.svg" />
+    <Content Include="images\icons\svg\toilet-paper.svg" />
+    <Content Include="images\login\icon.png" />
+    <Content Include="images\login\imac-2x.png" />
+    <Content Include="images\login\imac.png" />
+    <Content Include="images\switch\mask-square.png" />
+    <Content Include="images\switch\mask.png" />
+    <Content Include="images\tile\ribbon-2x.png" />
+    <Content Include="images\tile\ribbon.png" />
+    <Content Include="images\todo\done-2x.png" />
+    <Content Include="images\todo\done.png" />
+    <Content Include="images\todo\search-2x.png" />
+    <Content Include="images\todo\search.png" />
+    <Content Include="images\todo\todo-2x.png" />
+    <Content Include="images\todo\todo.png" />
+    <Content Include="images\video\fullscreen-2x.png" />
+    <Content Include="images\video\fullscreen.png" />
+    <Content Include="images\video\pause-2x.png" />
+    <Content Include="images\video\pause.png" />
+    <Content Include="images\video\play-2x.png" />
+    <Content Include="images\video\play.png" />
+    <Content Include="images\video\poster.jpg" />
+    <Content Include="images\video\volume-full-2x.png" />
+    <Content Include="images\video\volume-full.png" />
+    <Content Include="images\video\volume-off-2x.png" />
+    <Content Include="images\video\volume-off.png" />
+    <Content Include="scripts\application.js" />
+    <Content Include="scripts\bootstrap-filestyle.min.js" />
+    <Content Include="scripts\bootstrap-select.js" />
+    <Content Include="scripts\bootstrap-switch.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\flatui-checkbox.js" />
+    <Content Include="scripts\flatui-radio.js" />
+    <Content Include="scripts\html5shiv.js" />
+    <Content Include="scripts\icon-font-ie7.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\jquery-1.8.3.min.js" />
+    <Content Include="scripts\jquery-2.0.3.min.js" />
+    <Content Include="scripts\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="scripts\jquery.placeholder.js" />
+    <Content Include="scripts\jquery.tagsinput.js" />
+    <Content Include="scripts\jquery.ui.touch-punch.min.js" />
+    <Content Include="scripts\respond.min.js" />
+    <Content Include="scripts\typeahead.js" />
+    <Content Include="stylesheets\demo.css" />
+    <Content Include="stylesheets\detail.css" />
+    <Content Include="stylesheets\docs.css" />
+    <Content Include="stylesheets\example.css" />
+    <Content Include="stylesheets\flat-ui.css" />
+    <Content Include="stylesheets\login.css" />
+    <Content Include="stylesheets\post.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\BundleConfig.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.master.cs">
+      <DependentUpon>MainPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.master.cs">
+      <DependentUpon>Site.master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bundle.config" />
+    <Content Include="MainPage.master" />
+    <Content Include="packages.config" />
+    <Content Include="Site.master" />
+    <Content Include="bin\Antlr3.Runtime.dll.refresh" />
+    <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll.refresh" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll.refresh" />
+    <Content Include="bin\Newtonsoft.Json.dll.refresh" />
+    <Content Include="bin\System.Web.Optimization.dll.refresh" />
+    <Content Include="bin\WebGrease.dll.refresh" />
+    <Content Include="bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="bootstrap\css\bootstrap.css.map" />
+    <Content Include="bootstrap\datetimepicker\LICENSE" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\flat-ui-icons-regular.eot" />
+    <Content Include="fonts\flat-ui-icons-regular.ttf" />
+    <Content Include="fonts\flat-ui-icons-regular.woff" />
+    <Content Include="fonts\lato\lato-black.eot" />
+    <Content Include="fonts\lato\lato-black.ttf" />
+    <Content Include="fonts\lato\lato-black.woff" />
+    <Content Include="fonts\lato\lato-bold.eot" />
+    <Content Include="fonts\lato\lato-bold.ttf" />
+    <Content Include="fonts\lato\lato-bold.woff" />
+    <Content Include="fonts\lato\lato-bolditalic.eot" />
+    <Content Include="fonts\lato\lato-bolditalic.ttf" />
+    <Content Include="fonts\lato\lato-bolditalic.woff" />
+    <Content Include="fonts\lato\lato-italic.eot" />
+    <Content Include="fonts\lato\lato-italic.ttf" />
+    <Content Include="fonts\lato\lato-italic.woff" />
+    <Content Include="fonts\lato\lato-light.eot" />
+    <Content Include="fonts\lato\lato-light.ttf" />
+    <Content Include="fonts\lato\lato-light.woff" />
+    <Content Include="fonts\lato\lato-regular.eot" />
+    <Content Include="fonts\lato\lato-regular.ttf" />
+    <Content Include="fonts\lato\lato-regular.woff" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19057</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:19057/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

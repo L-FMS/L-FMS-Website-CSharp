@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="Site" %>
+
+<!DOCTYPE html>
+
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>失物招领管理系统</title>
+
+    <!-- Stylesheet -->
+    <webopt:bundlereference runat="server" path="~/stylesheets/Base" />
+
+    <%-- Custom Stylesheet --%>
+    <asp:ContentPlaceHolder ID="CustomStylesheetContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <%-- Body Content --%>
+    <asp:ContentPlaceHolder ID="BodyContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- JavaScript -->
+    <asp:PlaceHolder runat="server">
+      <%: Scripts.Render("~/scripts/Base") %>
+    </asp:PlaceHolder>
+
+    <%-- Custom Javascript --%>
+    <asp:ContentPlaceHolder ID="CustomScriptContent" runat="server">
+    </asp:ContentPlaceHolder>
+  </body>
+</html>

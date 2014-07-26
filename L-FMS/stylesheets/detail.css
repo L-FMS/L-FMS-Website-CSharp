@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Tom Hu (h1994st@gmail.com)
+ * @date    2014-05-21 15:34:00
+ * @version 1.0
+ */
+
+main {
+  padding-top: 120px;
+  padding-bottom: 150px;
+}
+
+.person-tile p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.item-detail-tile {
+  text-align: left;
+  padding: 14px 40px 30px;
+}
+.item-detail-tile::before {
+  content: '';
+  border-style: solid;
+  border-width: 18px 18px 18px 0;
+  border-color: transparent #edeff1 transparent transparent;
+  height: 0;
+  position: absolute;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  left: -18px;
+  top: 50px;
+}
+.item-detail-tile ul {
+  list-style: none;
+  padding: 0;
+}
+.item-detail-tile ul > li {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.item-detail-tile ul > li span {
+  margin-right: 20px;
+}
+.item-detail-tile .item-description p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 38px;
+}

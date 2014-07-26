@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="MainPage.master.cs" Inherits="MainPage" %>
+
+<asp:Content ContentPlaceHolderID="CustomStylesheetContent" runat="server">
+  <asp:ContentPlaceHolder ID="CustomStylesheetContent" runat="server">
+  </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="BodyContent" ContentPlaceHolderID="BodyContent" runat="server">
+  <!-- Navbar -->
+  <nav class="navbar navbar-inverse navbar-fixed-top navbar-lg" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+        <a runat="server" class="navbar-brand" href="~/">L&FMS</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse-01">
+        <ul class="nav navbar-nav">           
+          <li class="active"><a runat="server" href="~/">Index</a></li>
+          <li><a runat="server" href="#fakelink">Messages</a></li>
+          <li><a runat="server" href="#fakelink">About us</a></li>
+        </ul>
+
+        <form class="navbar-form navbar-left" action="#" role="search">
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+              <span class="input-group-btn">
+                <button type="submit" class="btn">
+                  <span class="fui-search"></span>
+                </button>
+              </span>
+            </div>
+          </div>
+        </form><!-- /search -->
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a runat="server" href="#" class="navbar-link">Log in</a></li>
+          <li><a runat="server" href="#" class="navbar-link">Sign up</a></li>
+        </ul>
+          
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+  </nav><!-- /navbar -->
+
+  <!-- Main -->
+  <main class="container">
+    <%-- Main Content --%>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-7">
+          <h3 class="footer-title">L&FMS</h3>
+          <p>All content copyright <a href="/">L&FMS</a> &copy; <%: DateTime.Now.Year %> • All rights reserved.</p>
+        </div><!-- /.col-xs-7 -->
+
+        <div class="col-xs-5">
+          <div class="footer-banner">
+            <h3 class="footer-title">Feedback</h3>
+            <ul>
+              <li>Contact with us, if you have any problems!</li>
+            </ul>
+            Email to: <a href="mailto:webmaster@lfms.com">webmaster@lfms.com</a>
+          </div>
+        </div><!-- /.col-xs-5 -->
+      </div>
+    </div>
+  </footer>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="CustomScriptContent" runat="server">
+  <asp:ContentPlaceHolder ID="CustomScriptContent" runat="server">
+  </asp:ContentPlaceHolder>
+</asp:Content>

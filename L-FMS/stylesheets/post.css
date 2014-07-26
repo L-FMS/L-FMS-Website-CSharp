@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Tom Hu (h1994st@gmail.com)
+ * @date    2014-05-21 11:40:05
+ * @version 1.0
+ */
+
+main {
+  color: #ffffff;
+  position: relative;
+}
+
+.login-screen {
+  padding: 30px 350px 150px;
+}
+.post-screen {
+  background-color: #e74c3c;
+  padding: 30px 350px 150px;
+}
+.login-icon {
+  position: relative;
+  left: auto;
+  top: auto;
+  margin: 0 auto;
+  width: 120px;
+}
+.login-form {
+  margin-top: 25px;
+}
+.login-form:before {
+  border-width: 0 12px 12px;
+  border-color: transparent transparent #edeff1 transparent;
+  left: 50%;
+  top: -12px;
+  margin-left: -12px;
+}
+.login-form .login-field-icon {
+  top: 39px;
+}
+.post-screen .login-form .login-field:focus {
+  border-color: #e74c3c;
+}
+.post-screen .login-form .login-field:focus + .login-field-icon {
+  color: #e74c3c;
+}
+
+.btn-group.select.select-block.mbl {
+  height: 42px;
+}
+.btn-group.select.select-block.mbl > button {
+  height: 42px;
+  font-size: 17px;
+  background-color: #ffffff;
+}
+.btn-group.select.select-block.mbl > button > span {
+  color: #34495e;
+  border-bottom-color: #34495e;
+  border-top-color: #34495e;
+}
+
+.post-screen .btn-group.select.select-block.mbl > ul > li.selected > a {
+  background: #e74c3c;
+}
+
+.bootstrap-filestyle > input {
+  border-color: transparent;
+  font-size: 17px;
+  text-indent: 3px;
+}
+
+.bootstrap-filestyle > input[disabled] {
+  color: #34495e;
+  opacity: 1;
+}
+
+.login-screen .bootstrap-filestyle > input:focus {
+  border-color: #1abc9c;
+}
+
+.post-screen .bootstrap-filestyle > input:focus {
+  border-color: #e74c3c;
+}

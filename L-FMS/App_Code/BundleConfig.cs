@@ -17,6 +17,11 @@ namespace DB
 
             bundles.Add(new ScriptBundle("~/scripts/Detail").Include(
                 "~/scripts/detail.js"));
+
+            bundles.Add(new ScriptBundle("~/scripts/Post").Include(
+               "~/scripts/bootstrap-select.js",
+               "~/scripts/bootstrap-filestyle.min.js",
+               "~/scripts/jquery.tagsinput.js"));
         }
         public BundleConfig()
         {

@@ -120,6 +120,7 @@
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="Default.aspx" />
+    <Content Include="Detail.aspx" />
     <Content Include="fonts\flat-ui-icons-regular.svg" />
     <Content Include="fonts\lato\lato-black.svg" />
     <Content Include="fonts\lato\lato-bold.svg" />
@@ -196,6 +197,11 @@
     <Content Include="images\video\volume-full.png" />
     <Content Include="images\video\volume-off-2x.png" />
     <Content Include="images\video\volume-off.png" />
+    <Content Include="Login.aspx" />
+    <Content Include="PersonalPage.aspx" />
+    <Content Include="PostFoundInfo.aspx" />
+    <Content Include="PostLostInfo.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="scripts\application.js" />
     <Content Include="scripts\bootstrap-filestyle.min.js" />
     <Content Include="scripts\bootstrap-select.js" />
@@ -214,6 +220,7 @@
     <Content Include="scripts\jquery.ui.touch-punch.min.js" />
     <Content Include="scripts\respond.min.js" />
     <Content Include="scripts\typeahead.js" />
+    <Content Include="Search.aspx" />
     <Content Include="stylesheets\demo.css" />
     <Content Include="stylesheets\detail.css" />
     <Content Include="stylesheets\docs.css" />
@@ -227,16 +234,68 @@
     <Content Include="App_Code\BundleConfig.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="MainPage.master.cs">
       <DependentUpon>MainPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="PersonalPage.aspx.cs">
+      <DependentUpon>PersonalPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PersonalPage.aspx.designer.cs">
+      <DependentUpon>PersonalPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostFoundInfo.aspx.cs">
+      <DependentUpon>PostFoundInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostFoundInfo.aspx.designer.cs">
+      <DependentUpon>PostFoundInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PostLostInfo.aspx.cs">
+      <DependentUpon>PostLostInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostLostInfo.aspx.designer.cs">
+      <DependentUpon>PostLostInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.master.cs">
       <DependentUpon>Site.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

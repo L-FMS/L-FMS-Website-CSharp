@@ -1,10 +1,5 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/MainPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
-<asp:Content ContentPlaceHolderID="CustomStylesheetContent" runat="server">
-  <!-- Custom Stylesheets -->
-  <webopt:bundlereference runat="server" path="~/stylesheets/Index" />
-</asp:Content>
-
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
   <div class="jumbotron">
     <h2>Lost & Found Management System</h2>

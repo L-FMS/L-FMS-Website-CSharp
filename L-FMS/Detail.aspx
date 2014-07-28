@@ -91,5 +91,5 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="CustomScriptContent" runat="server">
-  <%: Scripts.Render("~/scripts/Base") %>
+  <%: Scripts.Render("~/scripts/Detail") %>
 </asp:Content>

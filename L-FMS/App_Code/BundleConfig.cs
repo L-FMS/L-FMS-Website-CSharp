@@ -14,6 +14,9 @@ namespace DB
             bundles.Add(new ScriptBundle("~/scripts/Base").Include(
                 "~/scripts/jquery-2.0.3.min.js",
                 "~/bootstrap/js/bootstrap.min.js"));
+
+            bundles.Add(new ScriptBundle("~/scripts/Detail").Include(
+                "~/scripts/detail.js"));
         }
         public BundleConfig()
         {

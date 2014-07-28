@@ -197,6 +197,7 @@
     <Content Include="images\video\volume-full.png" />
     <Content Include="images\video\volume-off-2x.png" />
     <Content Include="images\video\volume-off.png" />
+    <Content Include="images\zr.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="PersonalPage.aspx" />
     <Content Include="PostFoundInfo.aspx" />
@@ -207,6 +208,7 @@
     <Content Include="scripts\bootstrap-select.js" />
     <Content Include="scripts\bootstrap-switch.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\detail.js" />
     <Content Include="scripts\flatui-checkbox.js" />
     <Content Include="scripts\flatui-radio.js" />
     <Content Include="scripts\html5shiv.js" />

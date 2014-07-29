@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.Entity.Infrastructure;
 
 using L_FMS;
 
@@ -17,14 +18,25 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        LFMSContext db = new LFMSContext();
-        ACCOUNT account = new ACCOUNT {
-            EMAIL = "webmaster@h1994st.com",
-            PASSWORD = "dddddddddddddddddddddddddddddddd",
-            PRIVILEGE = 1,
-            VERIFIED = 1
-        };
-        db.ACCOUNT.Add(account);
-        db.SaveChanges();
+        using(LFMSContext db = new LFMSContext())
+        {
+            try
+            {
+                ACCOUNT account = new ACCOUNT
+                {
+                    EMAIL = "webmaster@h1994st.com",
+                    PASSWORD = "dddddddddddddddddddddddddddddddd",
+                    PRIVILEGE = 1,
+                    VERIFIED = 1
+                };
+                db.ACCOUNT.Add(account);
+                db.SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("heheheheh!!!!!!!!!!!!!!!!!!!&&&&&&&&&&&&&&&&&");
+            }
+        }        
     }
 }

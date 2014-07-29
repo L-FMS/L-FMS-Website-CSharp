@@ -6,11 +6,6 @@
  * @version 1.0
  */
 
-main {
-  padding-top: 120px;
-  padding-bottom: 150px;
-}
-
 .person-tile p {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -47,4 +42,46 @@ main {
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: 38px;
+}
+
+/**
+ * Comment
+ */
+.item-comment-box textarea {
+  resize: none;
+  height: 42px;
+
+  -webkit-transition: height .25s ease;
+     -moz-transition: height .25s ease;
+      -ms-transition: height .25s ease;
+       -o-transition: height .25s ease;
+          transition: height .25s ease;
+}
+.item-comment-box textarea:focus {
+  height: 86px;
+}
+
+.item-comment-box .comment-btn {
+  display: none;
+}
+
+.item-comment-list {
+  margin-top: 15px;
+}
+.item-comment-list .item-comment {
+  border-top: 1px solid #f7f7f7;
+  padding: 15px 65px 15px 15px;
+}
+.item-comment-list .item-comment:hover {
+  background-color: #f7f7f7;
+}
+.item-comment-list .item-comment .avatar {
+  float: left;
+}
+.item-comment-list .item-comment .item-comment-content {
+  margin-left: 65px;
+}
+.item-comment-list .item-comment .item-comment-content p {
+  margin: 0;
+  padding: 0;
 }

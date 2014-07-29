@@ -1,10 +1,5 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/MainPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
-<asp:Content ContentPlaceHolderID="CustomStylesheetContent" runat="server">
-  <!-- Custom Stylesheets -->
-  <webopt:bundlereference runat="server" path="~/stylesheets/Index" />
-</asp:Content>
-
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
   <div class="jumbotron">
     <h2>Lost & Found Management System</h2>
@@ -83,11 +78,13 @@
           </tbody>
         </table>
       </div>
-      <ul class="pager">
-        <li class="previous"><a href="#">&larr; Older</a></li>
-        <li class="next"><a href="#">Newer &rarr;</a></li>
-      </ul>
-      <em style="float:right;">Page 1 of 32</em>
+      <div class="clearfix">
+        <ul class="pager" style="float: right;">
+          <li class="previous"><a href="#">&larr; Older</a></li>
+          <li class="next"><a href="#">Newer &rarr;</a></li>
+        </ul>
+        <em class="text-muted" style="float: left;">Page 1 of 32</em>
+      </div>
     </div>
     <div class="col-sm-6">
       <h3>Found things <button class="btn btn-primary">I've found something!</button></h3>
@@ -147,11 +144,13 @@
           </tbody>
         </table>
       </div>
-      <ul class="pager">
-        <li class="previous"><a href="#">&larr; Older</a></li>
-        <li class="next"><a href="#">Newer &rarr;</a></li>
-      </ul>
-      <em style="float:right;">Page 1 of 32</em>
+      <div class="clearfix">
+        <ul class="pager" style="float: right;">
+          <li class="previous"><a href="#">&larr; Older</a></li>
+          <li class="next"><a href="#">Newer &rarr;</a></li>
+        </ul>
+        <em class="text-muted" style="float: left;">Page 1 of 32</em>
+      </div>
     </div>
   </div>
 </asp:Content>

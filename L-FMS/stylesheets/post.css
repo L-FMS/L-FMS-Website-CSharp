@@ -68,7 +68,6 @@ main {
   font-size: 17px;
   text-indent: 3px;
 }
-
 .bootstrap-filestyle > input[disabled] {
   color: #34495e;
   opacity: 1;
@@ -80,4 +79,12 @@ main {
 
 .post-screen .bootstrap-filestyle > input:focus {
   border-color: #e74c3c;
+}
+.post-screen .tagsinput-add:hover,
+.post-screen .tagsinput .tag {
+  background-color: #e74c3c;
+}
+
+textarea {
+  resize: none;
 }

@@ -1,6 +1,9 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="MainPage.master.cs" Inherits="MainPage" %>
 
 <asp:Content ContentPlaceHolderID="CustomStylesheetContent" runat="server">
+  <!-- Custom Stylesheets -->
+  <webopt:bundlereference runat="server" path="~/stylesheets/Index" />
+
   <asp:ContentPlaceHolder ID="CustomStylesheetContent" runat="server">
   </asp:ContentPlaceHolder>
 </asp:Content>

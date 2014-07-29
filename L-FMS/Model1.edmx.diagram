@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="82fcfb3b4e70434db2d59148ba6d4b91" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.ACCOUNT" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN__oSXYPjIRae7JsdHZM6Gfg___0" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_2gWi6y0hRgqCCljH9bNgcg___0" Width="1.5" PointX="5.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_3XLgZX1HT7GwQOROPCtTsg___0" Width="1.5" PointX="7.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_gk9HRXiZTfSg9MJAgQ_RPA___0" Width="1.5" PointX="7.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_hWsQqvkbRXisEv_ei01Oug___0" Width="1.5" PointX="8.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_jt3GW_4VQJO_Yd7kT_3oPQ___0" Width="1.5" PointX="9.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_KZ9Bu1aLQ2G25d5Ao6QoaA___0" Width="1.5" PointX="9.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_pE3dwcRjQTGoqKLda3ok7A___0" Width="1.5" PointX="8.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_RazsQK9sQmyZ1z6g9QjXOw___0" Width="1.5" PointX="10.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_rVSaJnSQTM69NulG53LS5g___0" Width="1.5" PointX="10.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_RynuPJj7T8_Rc1KsGZi_wQ___0" Width="1.5" PointX="11.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_sBhNt8z4Tt6lGurZa5Xhrg___0" Width="1.5" PointX="11.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_vbTPm9zLQriiKf3H4UWsdg___0" Width="1.5" PointX="12.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_xqzNPCh0SZ2B_m5N2VmIVQ___0" Width="1.5" PointX="8.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COMMENTS" Width="1.5" PointX="0.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DIALOG" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ITEM" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MESSAGE" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.QUESTION" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TAG" Width="1.5" PointX="6" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN__7MAdHv7TimSm15EhbbwWQ___0" Width="1.5" PointX="12.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_2yz8ZhlYSiGZ_9Qpzbkjsw___0" Width="1.5" PointX="10.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_4RbnMKYTTJyytLkhCLbEmA___0" Width="1.5" PointX="12.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_BrG5SzvDTjqR5_7Q0GY9cQ___0" Width="1.5" PointX="2.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_D6umIElOTKqEtHE0JAfROA___0" Width="1.5" PointX="13.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_DNN7Xt2gSjGXF4pVEWQ2kg___0" Width="1.5" PointX="4.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_fT9zzFPoQZmrxcpT1HvnTw___0" Width="1.5" PointX="13.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_H3SpbV9JTSqjo5ey03pwgw___0" Width="1.5" PointX="14.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_kqKvNg3YQFGQUsPZz_MEeQ___0" Width="1.5" PointX="14.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_t190R_f3Q_e0yuy44iFSUg___0" Width="1.5" PointX="14.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_WsJrS2mfTmOXAp_JdzAJBQ___0" Width="1.5" PointX="15.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_wW2ep4vGRiak7EIzyyBgOA___0" Width="1.5" PointX="6.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_YhoaRZuvRiKnLfV63aVjRQ___0" Width="1.5" PointX="8.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COMMENT_ITEM_USER" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PUBLISHMENT" Width="1.5" PointX="6" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USER_INFO" Width="1.5" PointX="3" PointY="16.625" IsExpanded="true" />
+        <AssociationConnector Association="Model.SYS_C005552" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005556" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005557" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005562" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005575" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005590" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005589" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005574" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C005588" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.DIALOG_MESSAGE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.ITEM_TAG" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.USER_QUESTION" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

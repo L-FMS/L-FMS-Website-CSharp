@@ -237,6 +237,7 @@
     <Content Include="stylesheets\docs.css" />
     <Content Include="stylesheets\example.css" />
     <Content Include="stylesheets\flat-ui.css" />
+    <Content Include="stylesheets\register.css" />
     <Content Include="stylesheets\login.css" />
     <Content Include="stylesheets\post.css" />
     <Content Include="Web.config">
@@ -247,34 +248,92 @@
     <Compile Include="ACCOUNT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\MD5.cs" />
+    <Compile Include="BIN_1GYcU5LmSXaTLgbJTvWaXg___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="BIN_2gWi6y0hRgqCCljH9bNgcg___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BIN_2yz8ZhlYSiGZ_9Qpzbkjsw___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BIN_3LkFiLLLRk2_N1VV_ZulQw___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="BIN_3XLgZX1HT7GwQOROPCtTsg___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_4qngejeaRoC_6YN7ODVgNQ___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BIN_4RbnMKYTTJyytLkhCLbEmA___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BIN_6zOSJQSJRfOyTAAhplrjCw___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_7SSOED8PQUWtrB0fj2YkEA___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_80Zz_0AMQnWEbHQLkXPjSQ___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_9AHObWhlTcuiU7NRMQne2A___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_ayUilLN3QnaUrTGigo_Ukg___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_A_4ZVx5URyyzWFqdyirkqA___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_bBoZwa_TTUmtoKuzB8NhOw___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_BNVsv3G7S2muiJox_SUkcQ___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="BIN_BrG5SzvDTjqR5_7Q0GY9cQ___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_by_PKehCQLS7B8lSqQd2tA___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_cwQBVjbARl2XPx069aa8PQ___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BIN_D6umIElOTKqEtHE0JAfROA___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BIN_diLIuTV_SW24gcvJK_LOgQ___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="BIN_DNN7Xt2gSjGXF4pVEWQ2kg___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BIN_E3_Bmw9oTcWxVMTNT7Hd4A___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_ErZ2Uk58RL6nd3M_m0sZjA___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_Eu88QouwRqeNHf4taFOGyw___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="BIN_fT9zzFPoQZmrxcpT1HvnTw___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_GHu6buV9Tg_mIZQwlzTiTw___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BIN_gk9HRXiZTfSg9MJAgQ_RPA___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BIN_H3SpbV9JTSqjo5ey03pwgw___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_hLg0w5nzSoGFnXsj5pniLg___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BIN_hWsQqvkbRXisEv_ei01Oug___0.cs">
@@ -289,7 +348,25 @@
     <Compile Include="BIN_KZ9Bu1aLQ2G25d5Ao6QoaA___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BIN_kzKEqsuxQKmGb1UziV9gfg___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_N6YOj3e8RlKk48pcQoBHHg___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_NFVpiXvUSr6pQIwEYn3weA___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_ogeySXeDT8eY6Vwo9gUkgg___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="BIN_pE3dwcRjQTGoqKLda3ok7A___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_PiD1ZzYSQt_3DioJGEYD5g___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_P_HWsE9pSzSXrXKx_qL5Eg___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BIN_RazsQK9sQmyZ1z6g9QjXOw___0.cs">
@@ -307,6 +384,9 @@
     <Compile Include="BIN_t190R_f3Q_e0yuy44iFSUg___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BIN_tgkLxY9STLKLb375K1qCrQ___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="BIN_vbTPm9zLQriiKf3H4UWsdg___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -316,16 +396,37 @@
     <Compile Include="BIN_wW2ep4vGRiak7EIzyyBgOA___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BIN_ww7NyT50Tfermhk8ewCiKg___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_xlW2gfT5S6OtEVO651ItVw___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_XqRl5vUQTgyqY8644kGLwg___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="BIN_xqzNPCh0SZ2B_m5N2VmIVQ___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BIN_YhoaRZuvRiKnLfV63aVjRQ___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BIN_YlkkJHBWTjmHN8nJdHlptw___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_ZalIcyrpQfaQn0FVeyGp_Q___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN_zn82Buo4Rqe1sOx2_6QSLw___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="BIN__7MAdHv7TimSm15EhbbwWQ___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="BIN__oSXYPjIRae7JsdHZM6Gfg___0.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BIN__S65GmV2S_K0BYBurAlNnA___0.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="COMMENTS.cs">

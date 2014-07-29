@@ -62,5 +62,38 @@ namespace L_FMS
         public DbSet<COMMENT_ITEM_USER> COMMENT_ITEM_USER { get; set; }
         public DbSet<PUBLISHMENT> PUBLISHMENT { get; set; }
         public DbSet<USER_INFO> USER_INFO { get; set; }
+        public DbSet<BIN_6zOSJQSJRfOyTAAhplrjCw___0> BIN_6zOSJQSJRfOyTAAhplrjCw___0 { get; set; }
+        public DbSet<BIN_80Zz_0AMQnWEbHQLkXPjSQ___0> BIN_80Zz_0AMQnWEbHQLkXPjSQ___0 { get; set; }
+        public DbSet<BIN_ayUilLN3QnaUrTGigo_Ukg___0> BIN_ayUilLN3QnaUrTGigo_Ukg___0 { get; set; }
+        public DbSet<BIN_BNVsv3G7S2muiJox_SUkcQ___0> BIN_BNVsv3G7S2muiJox_SUkcQ___0 { get; set; }
+        public DbSet<BIN_by_PKehCQLS7B8lSqQd2tA___0> BIN_by_PKehCQLS7B8lSqQd2tA___0 { get; set; }
+        public DbSet<BIN_cwQBVjbARl2XPx069aa8PQ___0> BIN_cwQBVjbARl2XPx069aa8PQ___0 { get; set; }
+        public DbSet<BIN_diLIuTV_SW24gcvJK_LOgQ___0> BIN_diLIuTV_SW24gcvJK_LOgQ___0 { get; set; }
+        public DbSet<BIN_E3_Bmw9oTcWxVMTNT7Hd4A___0> BIN_E3_Bmw9oTcWxVMTNT7Hd4A___0 { get; set; }
+        public DbSet<BIN_hLg0w5nzSoGFnXsj5pniLg___0> BIN_hLg0w5nzSoGFnXsj5pniLg___0 { get; set; }
+        public DbSet<BIN_P_HWsE9pSzSXrXKx_qL5Eg___0> BIN_P_HWsE9pSzSXrXKx_qL5Eg___0 { get; set; }
+        public DbSet<BIN_1GYcU5LmSXaTLgbJTvWaXg___0> BIN_1GYcU5LmSXaTLgbJTvWaXg___0 { get; set; }
+        public DbSet<BIN_7SSOED8PQUWtrB0fj2YkEA___0> BIN_7SSOED8PQUWtrB0fj2YkEA___0 { get; set; }
+        public DbSet<BIN_9AHObWhlTcuiU7NRMQne2A___0> BIN_9AHObWhlTcuiU7NRMQne2A___0 { get; set; }
+        public DbSet<BIN_Eu88QouwRqeNHf4taFOGyw___0> BIN_Eu88QouwRqeNHf4taFOGyw___0 { get; set; }
+        public DbSet<BIN_GHu6buV9Tg_mIZQwlzTiTw___0> BIN_GHu6buV9Tg_mIZQwlzTiTw___0 { get; set; }
+        public DbSet<BIN_kzKEqsuxQKmGb1UziV9gfg___0> BIN_kzKEqsuxQKmGb1UziV9gfg___0 { get; set; }
+        public DbSet<BIN_tgkLxY9STLKLb375K1qCrQ___0> BIN_tgkLxY9STLKLb375K1qCrQ___0 { get; set; }
+        public DbSet<BIN_ww7NyT50Tfermhk8ewCiKg___0> BIN_ww7NyT50Tfermhk8ewCiKg___0 { get; set; }
+        public DbSet<BIN_ZalIcyrpQfaQn0FVeyGp_Q___0> BIN_ZalIcyrpQfaQn0FVeyGp_Q___0 { get; set; }
+        public DbSet<BIN_zn82Buo4Rqe1sOx2_6QSLw___0> BIN_zn82Buo4Rqe1sOx2_6QSLw___0 { get; set; }
+        public DbSet<BIN__S65GmV2S_K0BYBurAlNnA___0> BIN__S65GmV2S_K0BYBurAlNnA___0 { get; set; }
+        public DbSet<BIN_4qngejeaRoC_6YN7ODVgNQ___0> BIN_4qngejeaRoC_6YN7ODVgNQ___0 { get; set; }
+        public DbSet<BIN_A_4ZVx5URyyzWFqdyirkqA___0> BIN_A_4ZVx5URyyzWFqdyirkqA___0 { get; set; }
+        public DbSet<BIN_ErZ2Uk58RL6nd3M_m0sZjA___0> BIN_ErZ2Uk58RL6nd3M_m0sZjA___0 { get; set; }
+        public DbSet<BIN_N6YOj3e8RlKk48pcQoBHHg___0> BIN_N6YOj3e8RlKk48pcQoBHHg___0 { get; set; }
+        public DbSet<BIN_ogeySXeDT8eY6Vwo9gUkgg___0> BIN_ogeySXeDT8eY6Vwo9gUkgg___0 { get; set; }
+        public DbSet<BIN_XqRl5vUQTgyqY8644kGLwg___0> BIN_XqRl5vUQTgyqY8644kGLwg___0 { get; set; }
+        public DbSet<BIN_3LkFiLLLRk2_N1VV_ZulQw___0> BIN_3LkFiLLLRk2_N1VV_ZulQw___0 { get; set; }
+        public DbSet<BIN_bBoZwa_TTUmtoKuzB8NhOw___0> BIN_bBoZwa_TTUmtoKuzB8NhOw___0 { get; set; }
+        public DbSet<BIN_NFVpiXvUSr6pQIwEYn3weA___0> BIN_NFVpiXvUSr6pQIwEYn3weA___0 { get; set; }
+        public DbSet<BIN_PiD1ZzYSQt_3DioJGEYD5g___0> BIN_PiD1ZzYSQt_3DioJGEYD5g___0 { get; set; }
+        public DbSet<BIN_xlW2gfT5S6OtEVO651ItVw___0> BIN_xlW2gfT5S6OtEVO651ItVw___0 { get; set; }
+        public DbSet<BIN_YlkkJHBWTjmHN8nJdHlptw___0> BIN_YlkkJHBWTjmHN8nJdHlptw___0 { get; set; }
     }
 }

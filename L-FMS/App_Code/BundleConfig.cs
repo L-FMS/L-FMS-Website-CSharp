@@ -22,6 +22,9 @@ namespace DB
                "~/scripts/bootstrap-select.js",
                "~/scripts/bootstrap-filestyle.min.js",
                "~/scripts/jquery.tagsinput.js"));
+
+            bundles.Add(new ScriptBundle("~/scripts/Register").Include(
+               "~/scripts/bootstrap-select.js"));
         }
         public BundleConfig()
         {

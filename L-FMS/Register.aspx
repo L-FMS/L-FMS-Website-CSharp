@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="L_FMS.Register" %>
+﻿<%@ Page Title="注册 | 失物招领管理系统" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="L_FMS.Register" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CustomStylesheetContent" runat="server">
-     <!-- Custom Stylesheets -->
-  <webopt:bundlereference runat="server" path="~/stylesheets/Login" />
+  <!-- Custom Stylesheets -->
+  <webopt:bundlereference runat="server" path="~/stylesheets/Register" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
@@ -10,35 +10,92 @@
       <img src="images/login/icon.png" alt="Welcome th L&FMS">
       <h4>Please finish your personal infomation</h4>
     </div>
-    <form class="login-form" name="signupForm" action="" method="POST">
-      <div class="form-group">
-        <input type="text" class="form-control login-field" placeholder="Enter your Name" id="login-name" name="name" required autofocus>
-        <label for="login-name" class="login-field-icon fui-user"></label>
-      </div>
 
-      <div class="form-group">
-        <input type="tel" class="form-control login-field" placeholder="Enter your phone" id="login-phone" name="phone">
-        <label for="login-phone" class="login-field-icon fui-user"></label>
-      </div>
+    <form class="login-form" name="signupForm" action="Register.aspx" method="POST" runat="server">
+      <%-- 账号信息 --%>
+      <fieldset>
+        <legend>账号信息</legend>
 
-      <div class="form-group">
-        <input type="number" class="form-control login-field" placeholder="Enter your student ID" id="login-stuID" required>
-        <label for="login-stuID" class="login-field-icon fui-user"></label>
-      </div>
+        <%-- 邮箱 --%>
+        <div class="form-group">
+          <label for="register-email" style="color: #bfc9ca;">邮箱</label>
+          <input type="email" class="form-control login-field" placeholder="输入您的邮箱" id="register-email" name="email" required autofocus>
+          <label for="register-email" class="login-field-icon fui-user"></label>
+        </div>
 
-      <div class="form-group">
-        <input type="text" class="form-control login-field" placeholder="Enter your username" id="login-username" required>
-        <label for="login-username" class="login-field-icon fui-user"></label>
-      </div>
+        <%-- 密码 --%>
+        <div class="form-group">
+          <label for="register-pass" style="color: #bfc9ca;">密码</label>
+          <input type="password" class="form-control login-field" placeholder="请输入您的密码" id="register-pass1" name="pwd" required>
+          <label for="register-pass" class="login-field-icon fui-lock"></label>
+        </div>
 
-      <div class="form-group">
-        <input type="password" class="form-control login-field" placeholder="Password" id="login-pass" required>
-        <label for="login-pass" class="login-field-icon fui-lock"></label>
-      </div>
+        <%-- 重复输入密码 --%>
+        <div class="form-group">
+          <label for="register-pass2" style="color: #bfc9ca;">重复输入密码</label>
+          <input type="password" class="form-control login-field" placeholder="请再次输入您的密码" id="register-pass2" name="pwd-validate" required>
+          <label for="register-pass2" class="login-field-icon fui-lock"></label>
+        </div>
+      </fieldset>
+      
+      <%-- 个人信息 --%>
+      <fieldset>
+        <legend>个人信息</legend>
 
-      <button type="submit" class="btn btn-primary btn-lg btn-block">Sign up</button>
-        
+        <%-- 姓名 --%>
+        <div class="form-group">
+          <label for="register-name" style="color: #bfc9ca;">姓名</label>
+          <input type="text" class="form-control login-field" placeholder="请输入您的真实姓名" id="register-name" name="user-name" required>
+          <label for="register-name" class="login-field-icon fui-lock"></label>
+        </div>
+
+        <%-- 性别 --%>
+        <div class="form-group">
+          <label for="register-sex" style="color: #bfc9ca;">性别</label>
+          <select name="sex" id="register-sex" class="select-block mbl" required>
+            <option>请选择您的性别</option>
+            <option value="0">男</option>
+            <option value="1">女</option>
+          </select>
+        </div>
+
+        <%-- 出生年月 --%>
+        <div class="form-group">
+          <label for="register-birth" style="color: #bfc9ca;">生日</label>
+          <input type="date" class="form-control login-field" placeholder="请输入您的生日" id="register-birth" name="birth" required>
+          <label for="register-birth" class="login-field-icon fui-lock"></label>
+        </div>
+
+        <%-- 手机号码 --%>
+        <div class="form-group">
+          <label for="register-phone" style="color: #bfc9ca;">手机号码</label>
+          <input type="tel" class="form-control login-field" placeholder="请输入您的手机号码" id="register-phone" name="phone" required>
+          <label for="register-phone" class="login-field-icon fui-lock"></label>
+        </div>
+
+        <%-- 专业 --%>
+        <div class="form-group">
+          <label for="register-major" style="color: #bfc9ca;">专业</label>
+          <input type="text" class="form-control login-field" placeholder="请输入您的专业" id="register-major" name="major" required>
+          <label for="register-major" class="login-field-icon fui-lock"></label>
+        </div>
+
+        <%-- 地址 --%>
+        <div class="form-group">
+          <label for="register-addr" style="color: #bfc9ca;">住址</label>
+          <input type="text" class="form-control login-field" placeholder="请输入您的住址" id="register-addr" name="address" required>
+          <label for="register-addr" class="login-field-icon fui-lock"></label>
+        </div>
+      </fieldset>
+
+      <asp:Button runat="server" OnClick="Create_User" Text="注册" CssClass="btn btn-primary btn-lg btn-block" />
     </form>
   </main>
 </asp:Content>
 
+<asp:Content ContentPlaceHolderID="CustomScriptContent" runat="server">
+  <%: Scripts.Render("~/scripts/Register") %>
+  <script type="text/javascript">
+    $("select").selectpicker({ style: 'btn-hg btn-primary', menuStyle: 'dropdown-inverse' });
+  </script>
+</asp:Content>

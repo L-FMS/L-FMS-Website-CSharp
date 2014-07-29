@@ -1,0 +1,47 @@
+﻿@charset "UTF-8";
+/**
+ * 
+ * @authors Tom Hu (h1994st@gmail.com)
+ * @date    2014-05-20 23:33:50
+ * @version 1.0
+ */
+
+main {
+  color: #ffffff;
+  position: relative;
+}
+
+.login-screen {
+  padding: 30px 350px 150px;
+}
+.login-icon {
+  position: relative;
+  left: auto;
+  top: auto;
+  margin: 0;
+  float: left;
+  width: 120px;
+}
+.login-form {
+  margin-left: 154px;
+}
+.login-form legend {
+  color: #bfc9ca;
+}
+.login-form .login-field-icon {
+  top: 39px;
+}
+
+.btn-group.select.select-block.mbl {
+  height: 42px;
+}
+.btn-group.select.select-block.mbl > button {
+  height: 42px;
+  font-size: 17px;
+  background-color: #ffffff;
+}
+.btn-group.select.select-block.mbl > button > span {
+  color: #34495e;
+  border-bottom-color: #34495e;
+  border-top-color: #34495e;
+}

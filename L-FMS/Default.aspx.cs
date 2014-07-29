@@ -18,25 +18,6 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        using(LFMSContext db = new LFMSContext())
-        {
-            try
-            {
-                ACCOUNT account = new ACCOUNT
-                {
-                    EMAIL = "webmaster@h1994st.com",
-                    PASSWORD = "dddddddddddddddddddddddddddddddd",
-                    PRIVILEGE = 1,
-                    VERIFIED = 1
-                };
-                db.ACCOUNT.Add(account);
-                db.SaveChanges();
-            }
-            catch (DbUpdateException ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine("heheheheh!!!!!!!!!!!!!!!!!!!&&&&&&&&&&&&&&&&&");
-            }
-        }        
+        
     }
 }

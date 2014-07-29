@@ -16,7 +16,6 @@ namespace L_FMS
     {
         public ACCOUNT()
         {
-            this.USER_INFO = new HashSet<USER_INFO>();
             this.DIALOG = new HashSet<DIALOG>();
             this.DIALOG1 = new HashSet<DIALOG>();
             this.MESSAGE = new HashSet<MESSAGE>();
@@ -31,7 +30,6 @@ namespace L_FMS
         public decimal PRIVILEGE { get; set; }
         public decimal VERIFIED { get; set; }
     
-        public virtual ICollection<USER_INFO> USER_INFO { get; set; }
         public virtual ICollection<DIALOG> DIALOG { get; set; }
         public virtual ICollection<DIALOG> DIALOG1 { get; set; }
         public virtual ICollection<MESSAGE> MESSAGE { get; set; }

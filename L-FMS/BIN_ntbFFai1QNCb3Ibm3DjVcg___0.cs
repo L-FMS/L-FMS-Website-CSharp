@@ -12,7 +12,7 @@ namespace L_FMS
     using System;
     using System.Collections.Generic;
     
-    public partial class USER_INFO
+    public partial class BIN_ntbFFai1QNCb3Ibm3DjVcg___0
     {
         public string EMAIL { get; set; }
         public string USER_NAME { get; set; }

@@ -51,6 +51,7 @@ namespace L_FMS
 
                     USER_INFO userInfo = new USER_INFO
                     {
+                        EMAIL = email,
                         USER_NAME = name,
                         PHONE = phone,
                         ADDRESS = address,
@@ -60,16 +61,8 @@ namespace L_FMS
                     };
 
                     db.ACCOUNT.Add(account);
-                    db.SaveChanges();
 
-                    ACCOUNT newAccount = db.ACCOUNT.Where(p => p.EMAIL == account.EMAIL).FirstOrDefault();
-
-                    account.USER_ID = newAccount.USER_ID;
-                    userInfo.ACCOUNT = account;
-
-                    userInfo.USER_ID = newAccount.USER_ID;
-
-                    System.Diagnostics.Debug.WriteLine(userInfo.USER_ID);
+                    System.Diagnostics.Debug.WriteLine(userInfo.EMAIL);
                     System.Diagnostics.Debug.WriteLine(userInfo.USER_NAME);
                     System.Diagnostics.Debug.WriteLine(userInfo.ADDRESS);
                     System.Diagnostics.Debug.WriteLine(userInfo.MARJOR);

@@ -12,14 +12,12 @@ namespace L_FMS
     using System;
     using System.Collections.Generic;
     
-    public partial class USER_INFO
+    public partial class BIN_IgTcN3GVQNaMJ23ARcpWTQ___0
     {
+        public decimal USER_ID { get; set; }
         public string EMAIL { get; set; }
-        public string USER_NAME { get; set; }
-        public string PHONE { get; set; }
-        public string ADDRESS { get; set; }
-        public string MARJOR { get; set; }
-        public string SEX { get; set; }
-        public Nullable<System.DateTime> BIRTH { get; set; }
+        public string PASSWORD { get; set; }
+        public decimal PRIVILEGE { get; set; }
+        public decimal VERIFIED { get; set; }
     }
 }

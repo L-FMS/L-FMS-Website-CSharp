@@ -1,0 +1,1733 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="60" Nullable="false" />
+          <Property Name="PASSWORD" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="PRIVILEGE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="VERIFIED" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.BIN$+Pi9y47aSG2mtY7QlBbTsQ==$0”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="BIN$+Pi9y47aSG2mtY7QlBbTsQ==$0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="COMMENT_ID" />
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="COMMENT_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN$+wgguIj2TRe65DYjmKQxBQ==$0">
+          <Key>
+            <PropertyRef Name="TAG_ID" />
+          </Key>
+          <Property Name="TAG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TAG_TEXT" Type="varchar2" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN$18b4Ab25Thek4/jpb2K7aw==$0">
+          <Key>
+            <PropertyRef Name="MESSAGE_ID" />
+          </Key>
+          <Property Name="MESSAGE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SENDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="varchar2" MaxLength="423" Nullable="false" />
+          <Property Name="SENDTIME" Type="timestamp" Precision="6" />
+          <Property Name="IS_READ" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.BIN$A2KczbINR2iLELtfj1oM7Q==$0”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="BIN$A2KczbINR2iLELtfj1oM7Q==$0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="TAG_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TAG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.BIN$CSzfDaJzTiO50j1oswq5gA==$0”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="BIN$CSzfDaJzTiO50j1oswq5gA==$0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="COMMENT_ID" />
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="COMMENT_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.BIN$dXHv22TuTQqUadd/Hnf+KA==$0”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="BIN$dXHv22TuTQqUadd/Hnf+KA==$0">
+          <Key>
+            <PropertyRef Name="DIALOG_ID" />
+            <PropertyRef Name="MESSAGE_ID" />
+          </Key>
+          <Property Name="DIALOG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MESSAGE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN$FIgeY/AxRPCsTVceq3DXdg==$0">
+          <Key>
+            <PropertyRef Name="COMMENT_ID" />
+          </Key>
+          <Property Name="COMMENT_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="varchar2" MaxLength="423" Nullable="false" />
+          <Property Name="TIME" Type="timestamp" Precision="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN$IgTcN3GVQNaMJ23ARcpWTQ==$0">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="60" Nullable="false" />
+          <Property Name="PASSWORD" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="PRIVILEGE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="VERIFIED" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN$lsbfHaLCT/WVCJKh3se8bA==$0">
+          <Key>
+            <PropertyRef Name="QUESTION_ID" />
+          </Key>
+          <Property Name="QUESTION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="QUESTION_FORMAT" Type="varchar2" MaxLength="30" />
+          <Property Name="FORMAT_TIP" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="BIN$lY20SNslRj6z000EApIGVA==$0">
+          <Key>
+            <PropertyRef Name="DIALOG_ID" />
+          </Key>
+          <Property Name="DIALOG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER1" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER2" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.BIN$ntbFFai1QNCb3Ibm3DjVcg==$0”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="BIN$ntbFFai1QNCb3Ibm3DjVcg==$0">
+          <Key>
+            <PropertyRef Name="EMAIL" />
+            <PropertyRef Name="USER_NAME" />
+          </Key>
+          <Property Name="EMAIL" Type="varchar2" MaxLength="60" Nullable="false" />
+          <Property Name="USER_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="PHONE" Type="varchar2" MaxLength="12" />
+          <Property Name="ADDRESS" Type="varchar2" MaxLength="50" />
+          <Property Name="MARJOR" Type="varchar2" MaxLength="30" />
+          <Property Name="SEX" Type="varchar2" MaxLength="10" />
+          <Property Name="BIRTH" Type="date" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.BIN$OEy1Sfw4QM6iJVTS7yc9/A==$0”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="BIN$OEy1Sfw4QM6iJVTS7yc9/A==$0">
+          <Key>
+            <PropertyRef Name="DIALOG_ID" />
+            <PropertyRef Name="MESSAGE_ID" />
+          </Key>
+          <Property Name="DIALOG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MESSAGE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN$OivbSlE0S/6tPK0LyXVhVg==$0">
+          <Key>
+            <PropertyRef Name="COMMENT_ID" />
+          </Key>
+          <Property Name="COMMENT_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="varchar2" MaxLength="423" Nullable="false" />
+          <Property Name="TIME" Type="timestamp" Precision="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN$Om0g3q92QreGP79JqJv3Dw==$0">
+          <Key>
+            <PropertyRef Name="QUESTION_ID" />
+          </Key>
+          <Property Name="QUESTION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="QUESTION_FORMAT" Type="varchar2" MaxLength="30" />
+          <Property Name="FORMAT_TIP" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.BIN$PDRzAj9hSy6uzDY68Pe2xw==$0”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="BIN$PDRzAj9hSy6uzDY68Pe2xw==$0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="PUBLISHER_ID" />
+            <PropertyRef Name="PUBLISH_DATE" />
+            <PropertyRef Name="TYPE" />
+            <PropertyRef Name="IS_END" />
+          </Key>
+          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PUBLISHER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PUBLISH_DATE" Type="timestamp" Precision="6" Nullable="false" />
+          <Property Name="TYPE" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="IS_END" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="END_TIME" Type="timestamp" Precision="6" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.BIN$Q9xlsPxVRDWQS5BehDuepw==$0”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="BIN$Q9xlsPxVRDWQS5BehDuepw==$0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="TAG_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TAG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN$qEa/+YpBSkGOXv6CIGLNfw==$0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ITEM_NAME" Type="varchar2" MaxLength="32" Nullable="false" />
+          <Property Name="ITEM_DESCRIPTION" Type="varchar2" MaxLength="423" />
+          <Property Name="IMAGE" Type="blob" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.BIN$QT+90KmGQ3mjajf5AVdmCA==$0”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="BIN$QT+90KmGQ3mjajf5AVdmCA==$0">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+            <PropertyRef Name="QUESTION_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="QUESTION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.BIN$S1SbY+HURbWuE+KiDkBjPA==$0”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="BIN$S1SbY+HURbWuE+KiDkBjPA==$0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="PUBLISHER_ID" />
+            <PropertyRef Name="PUBLISH_DATE" />
+            <PropertyRef Name="TYPE" />
+            <PropertyRef Name="IS_END" />
+          </Key>
+          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PUBLISHER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PUBLISH_DATE" Type="timestamp" Precision="6" Nullable="false" />
+          <Property Name="TYPE" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="IS_END" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="END_TIME" Type="timestamp" Precision="6" />
+        </EntityType>
+        <EntityType Name="BIN$t0/yFBTzRxKHMtcZDz2y4A==$0">
+          <Key>
+            <PropertyRef Name="DIALOG_ID" />
+          </Key>
+          <Property Name="DIALOG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER1" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER2" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN$TUA0jZntQmSciz0N0b+oug==$0">
+          <Key>
+            <PropertyRef Name="TAG_ID" />
+          </Key>
+          <Property Name="TAG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TAG_TEXT" Type="varchar2" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.BIN$VNFqbGBSRNK0xpOGRkKTrQ==$0”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="BIN$VNFqbGBSRNK0xpOGRkKTrQ==$0">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+            <PropertyRef Name="QUESTION_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="QUESTION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN$x3lFD8scRfuJ344Fh5RmLw==$0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ITEM_NAME" Type="varchar2" MaxLength="32" Nullable="false" />
+          <Property Name="ITEM_DESCRIPTION" Type="varchar2" MaxLength="423" />
+          <Property Name="IMAGE" Type="blob" />
+        </EntityType>
+        <EntityType Name="BIN$xPSz9jBzSvGFuzr1e10E+g==$0">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="60" Nullable="false" />
+          <Property Name="PASSWORD" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="PRIVILEGE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="VERIFIED" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.BIN$Y+RUNdYfQLKwdhXEf0rDEw==$0”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="BIN$Y+RUNdYfQLKwdhXEf0rDEw==$0">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+            <PropertyRef Name="QUESTION_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="QUESTION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN$zcz8r0VsStKzEIx4TwtFrg==$0">
+          <Key>
+            <PropertyRef Name="MESSAGE_ID" />
+          </Key>
+          <Property Name="MESSAGE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SENDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="varchar2" MaxLength="423" Nullable="false" />
+          <Property Name="SENDTIME" Type="timestamp" Precision="6" />
+          <Property Name="IS_READ" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.COMMENT_ITEM_USER”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="COMMENT_ITEM_USER">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="COMMENT_ID" />
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="COMMENT_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COMMENTS">
+          <Key>
+            <PropertyRef Name="COMMENT_ID" />
+          </Key>
+          <Property Name="COMMENT_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="varchar2" MaxLength="423" Nullable="false" />
+          <Property Name="TIME" Type="timestamp" Precision="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DIALOG">
+          <Key>
+            <PropertyRef Name="DIALOG_ID" />
+          </Key>
+          <Property Name="DIALOG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER1" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER2" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.DIALOG_MESSAGE”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="DIALOG_MESSAGE">
+          <Key>
+            <PropertyRef Name="DIALOG_ID" />
+            <PropertyRef Name="MESSAGE_ID" />
+          </Key>
+          <Property Name="DIALOG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MESSAGE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ITEM">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ITEM_NAME" Type="varchar2" MaxLength="32" Nullable="false" />
+          <Property Name="ITEM_DESCRIPTION" Type="varchar2" MaxLength="423" />
+          <Property Name="IMAGE" Type="blob" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.ITEM_TAG”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="ITEM_TAG">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="TAG_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TAG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MESSAGE">
+          <Key>
+            <PropertyRef Name="MESSAGE_ID" />
+          </Key>
+          <Property Name="MESSAGE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SENDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="varchar2" MaxLength="423" Nullable="false" />
+          <Property Name="SENDTIME" Type="timestamp" Precision="6" />
+          <Property Name="IS_READ" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.PUBLISHMENT”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="PUBLISHMENT">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="PUBLISHER_ID" />
+            <PropertyRef Name="PUBLISH_DATE" />
+            <PropertyRef Name="TYPE" />
+            <PropertyRef Name="IS_END" />
+          </Key>
+          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PUBLISHER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PUBLISH_DATE" Type="timestamp" Precision="6" Nullable="false" />
+          <Property Name="TYPE" Type="varchar2" MaxLength="10" Nullable="false" />
+          <Property Name="IS_END" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="END_TIME" Type="timestamp" Precision="6" />
+        </EntityType>
+        <EntityType Name="QUESTION">
+          <Key>
+            <PropertyRef Name="QUESTION_ID" />
+          </Key>
+          <Property Name="QUESTION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="QUESTION_FORMAT" Type="varchar2" MaxLength="30" />
+          <Property Name="FORMAT_TIP" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TAG">
+          <Key>
+            <PropertyRef Name="TAG_ID" />
+          </Key>
+          <Property Name="TAG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TAG_TEXT" Type="varchar2" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USER_INFO">
+          <Key>
+            <PropertyRef Name="EMAIL" />
+          </Key>
+          <Property Name="EMAIL" Type="varchar2" MaxLength="60" Nullable="false" />
+          <Property Name="USER_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="PHONE" Type="varchar2" MaxLength="12" />
+          <Property Name="ADDRESS" Type="varchar2" MaxLength="50" />
+          <Property Name="MARJOR" Type="varchar2" MaxLength="30" />
+          <Property Name="SEX" Type="varchar2" MaxLength="10" />
+          <Property Name="BIRTH" Type="date" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“H1994ST.USER_QUESTION”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="USER_QUESTION">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+            <PropertyRef Name="QUESTION_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="QUESTION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <Association Name="SYS_C005936">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="USER_QUESTION" Type="Self.USER_QUESTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="USER_QUESTION">
+              <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005937">
+          <End Role="QUESTION" Type="Self.QUESTION" Multiplicity="1" />
+          <End Role="USER_QUESTION" Type="Self.USER_QUESTION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUESTION">
+              <PropertyRef Name="QUESTION_ID" />
+            </Principal>
+            <Dependent Role="USER_QUESTION">
+              <PropertyRef Name="QUESTION_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005945">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="DIALOG" Type="Self.DIALOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="DIALOG">
+              <PropertyRef Name="USER1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005946">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="DIALOG" Type="Self.DIALOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="DIALOG">
+              <PropertyRef Name="USER2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005951">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="MESSAGE" Type="Self.MESSAGE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="MESSAGE">
+              <PropertyRef Name="SENDER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005954">
+          <End Role="DIALOG" Type="Self.DIALOG" Multiplicity="1" />
+          <End Role="DIALOG_MESSAGE" Type="Self.DIALOG_MESSAGE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIALOG">
+              <PropertyRef Name="DIALOG_ID" />
+            </Principal>
+            <Dependent Role="DIALOG_MESSAGE">
+              <PropertyRef Name="DIALOG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005955">
+          <End Role="MESSAGE" Type="Self.MESSAGE" Multiplicity="1" />
+          <End Role="DIALOG_MESSAGE" Type="Self.DIALOG_MESSAGE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MESSAGE">
+              <PropertyRef Name="MESSAGE_ID" />
+            </Principal>
+            <Dependent Role="DIALOG_MESSAGE">
+              <PropertyRef Name="MESSAGE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005963">
+          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
+          <End Role="PUBLISHMENT" Type="Self.PUBLISHMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM">
+              <PropertyRef Name="ITEM_ID" />
+            </Principal>
+            <Dependent Role="PUBLISHMENT">
+              <PropertyRef Name="ITEM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005964">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="PUBLISHMENT" Type="Self.PUBLISHMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="PUBLISHMENT">
+              <PropertyRef Name="PUBLISHER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005969">
+          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
+          <End Role="ITEM_TAG" Type="Self.ITEM_TAG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM">
+              <PropertyRef Name="ITEM_ID" />
+            </Principal>
+            <Dependent Role="ITEM_TAG">
+              <PropertyRef Name="ITEM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005970">
+          <End Role="TAG" Type="Self.TAG" Multiplicity="1" />
+          <End Role="ITEM_TAG" Type="Self.ITEM_TAG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TAG">
+              <PropertyRef Name="TAG_ID" />
+            </Principal>
+            <Dependent Role="ITEM_TAG">
+              <PropertyRef Name="TAG_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005977">
+          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
+          <End Role="COMMENT_ITEM_USER" Type="Self.COMMENT_ITEM_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM">
+              <PropertyRef Name="ITEM_ID" />
+            </Principal>
+            <Dependent Role="COMMENT_ITEM_USER">
+              <PropertyRef Name="ITEM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005978">
+          <End Role="COMMENTS" Type="Self.COMMENTS" Multiplicity="1" />
+          <End Role="COMMENT_ITEM_USER" Type="Self.COMMENT_ITEM_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMMENTS">
+              <PropertyRef Name="COMMENT_ID" />
+            </Principal>
+            <Dependent Role="COMMENT_ITEM_USER">
+              <PropertyRef Name="COMMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005979">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="COMMENT_ITEM_USER" Type="Self.COMMENT_ITEM_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="COMMENT_ITEM_USER">
+              <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$+wgguIj2TRe65DYjmKQxBQ==$0" EntityType="Self.BIN$+wgguIj2TRe65DYjmKQxBQ==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$18b4Ab25Thek4/jpb2K7aw==$0" EntityType="Self.BIN$18b4Ab25Thek4/jpb2K7aw==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$FIgeY/AxRPCsTVceq3DXdg==$0" EntityType="Self.BIN$FIgeY/AxRPCsTVceq3DXdg==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$IgTcN3GVQNaMJ23ARcpWTQ==$0" EntityType="Self.BIN$IgTcN3GVQNaMJ23ARcpWTQ==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$lsbfHaLCT/WVCJKh3se8bA==$0" EntityType="Self.BIN$lsbfHaLCT/WVCJKh3se8bA==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$lY20SNslRj6z000EApIGVA==$0" EntityType="Self.BIN$lY20SNslRj6z000EApIGVA==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$OivbSlE0S/6tPK0LyXVhVg==$0" EntityType="Self.BIN$OivbSlE0S/6tPK0LyXVhVg==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$Om0g3q92QreGP79JqJv3Dw==$0" EntityType="Self.BIN$Om0g3q92QreGP79JqJv3Dw==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$qEa/+YpBSkGOXv6CIGLNfw==$0" EntityType="Self.BIN$qEa/+YpBSkGOXv6CIGLNfw==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$t0/yFBTzRxKHMtcZDz2y4A==$0" EntityType="Self.BIN$t0/yFBTzRxKHMtcZDz2y4A==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$TUA0jZntQmSciz0N0b+oug==$0" EntityType="Self.BIN$TUA0jZntQmSciz0N0b+oug==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$x3lFD8scRfuJ344Fh5RmLw==$0" EntityType="Self.BIN$x3lFD8scRfuJ344Fh5RmLw==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$xPSz9jBzSvGFuzr1e10E+g==$0" EntityType="Self.BIN$xPSz9jBzSvGFuzr1e10E+g==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$zcz8r0VsStKzEIx4TwtFrg==$0" EntityType="Self.BIN$zcz8r0VsStKzEIx4TwtFrg==$0" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="COMMENTS" EntityType="Self.COMMENTS" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="DIALOG" EntityType="Self.DIALOG" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="ITEM" EntityType="Self.ITEM" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="MESSAGE" EntityType="Self.MESSAGE" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="QUESTION" EntityType="Self.QUESTION" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="TAG" EntityType="Self.TAG" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="USER_INFO" EntityType="Self.USER_INFO" Schema="H1994ST" store:Type="Tables" />
+          <EntitySet Name="BIN$+Pi9y47aSG2mtY7QlBbTsQ==$0" EntityType="Self.BIN$+Pi9y47aSG2mtY7QlBbTsQ==$0" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"BIN$+Pi9y47aSG2mtY7QlBbTsQ==$0"."ITEM_ID" AS "ITEM_ID", 
+"BIN$+Pi9y47aSG2mtY7QlBbTsQ==$0"."COMMENT_ID" AS "COMMENT_ID", 
+"BIN$+Pi9y47aSG2mtY7QlBbTsQ==$0"."USER_ID" AS "USER_ID"
+FROM "H1994ST"."BIN$+Pi9y47aSG2mtY7QlBbTsQ==$0" "BIN$+Pi9y47aSG2mtY7QlBbTsQ==$0"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BIN$A2KczbINR2iLELtfj1oM7Q==$0" EntityType="Self.BIN$A2KczbINR2iLELtfj1oM7Q==$0" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"BIN$A2KczbINR2iLELtfj1oM7Q==$0"."ITEM_ID" AS "ITEM_ID", 
+"BIN$A2KczbINR2iLELtfj1oM7Q==$0"."TAG_ID" AS "TAG_ID"
+FROM "H1994ST"."BIN$A2KczbINR2iLELtfj1oM7Q==$0" "BIN$A2KczbINR2iLELtfj1oM7Q==$0"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BIN$CSzfDaJzTiO50j1oswq5gA==$0" EntityType="Self.BIN$CSzfDaJzTiO50j1oswq5gA==$0" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"BIN$CSzfDaJzTiO50j1oswq5gA==$0"."ITEM_ID" AS "ITEM_ID", 
+"BIN$CSzfDaJzTiO50j1oswq5gA==$0"."COMMENT_ID" AS "COMMENT_ID", 
+"BIN$CSzfDaJzTiO50j1oswq5gA==$0"."USER_ID" AS "USER_ID"
+FROM "H1994ST"."BIN$CSzfDaJzTiO50j1oswq5gA==$0" "BIN$CSzfDaJzTiO50j1oswq5gA==$0"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BIN$dXHv22TuTQqUadd/Hnf+KA==$0" EntityType="Self.BIN$dXHv22TuTQqUadd/Hnf+KA==$0" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"BIN$dXHv22TuTQqUadd/Hnf+KA==$0"."DIALOG_ID" AS "DIALOG_ID", 
+"BIN$dXHv22TuTQqUadd/Hnf+KA==$0"."MESSAGE_ID" AS "MESSAGE_ID"
+FROM "H1994ST"."BIN$dXHv22TuTQqUadd/Hnf+KA==$0" "BIN$dXHv22TuTQqUadd/Hnf+KA==$0"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BIN$ntbFFai1QNCb3Ibm3DjVcg==$0" EntityType="Self.BIN$ntbFFai1QNCb3Ibm3DjVcg==$0" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"BIN$ntbFFai1QNCb3Ibm3DjVcg==$0"."EMAIL" AS "EMAIL", 
+"BIN$ntbFFai1QNCb3Ibm3DjVcg==$0"."USER_NAME" AS "USER_NAME", 
+"BIN$ntbFFai1QNCb3Ibm3DjVcg==$0"."PHONE" AS "PHONE", 
+"BIN$ntbFFai1QNCb3Ibm3DjVcg==$0"."ADDRESS" AS "ADDRESS", 
+"BIN$ntbFFai1QNCb3Ibm3DjVcg==$0"."MARJOR" AS "MARJOR", 
+"BIN$ntbFFai1QNCb3Ibm3DjVcg==$0"."SEX" AS "SEX", 
+"BIN$ntbFFai1QNCb3Ibm3DjVcg==$0"."BIRTH" AS "BIRTH"
+FROM "H1994ST"."BIN$ntbFFai1QNCb3Ibm3DjVcg==$0" "BIN$ntbFFai1QNCb3Ibm3DjVcg==$0"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BIN$OEy1Sfw4QM6iJVTS7yc9/A==$0" EntityType="Self.BIN$OEy1Sfw4QM6iJVTS7yc9/A==$0" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"BIN$OEy1Sfw4QM6iJVTS7yc9/A==$0"."DIALOG_ID" AS "DIALOG_ID", 
+"BIN$OEy1Sfw4QM6iJVTS7yc9/A==$0"."MESSAGE_ID" AS "MESSAGE_ID"
+FROM "H1994ST"."BIN$OEy1Sfw4QM6iJVTS7yc9/A==$0" "BIN$OEy1Sfw4QM6iJVTS7yc9/A==$0"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BIN$PDRzAj9hSy6uzDY68Pe2xw==$0" EntityType="Self.BIN$PDRzAj9hSy6uzDY68Pe2xw==$0" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"BIN$PDRzAj9hSy6uzDY68Pe2xw==$0"."ITEM_ID" AS "ITEM_ID", 
+"BIN$PDRzAj9hSy6uzDY68Pe2xw==$0"."PUBLISHER_ID" AS "PUBLISHER_ID", 
+"BIN$PDRzAj9hSy6uzDY68Pe2xw==$0"."PUBLISH_DATE" AS "PUBLISH_DATE", 
+"BIN$PDRzAj9hSy6uzDY68Pe2xw==$0"."TYPE" AS "TYPE", 
+"BIN$PDRzAj9hSy6uzDY68Pe2xw==$0"."IS_END" AS "IS_END", 
+"BIN$PDRzAj9hSy6uzDY68Pe2xw==$0"."END_TIME" AS "END_TIME"
+FROM "H1994ST"."BIN$PDRzAj9hSy6uzDY68Pe2xw==$0" "BIN$PDRzAj9hSy6uzDY68Pe2xw==$0"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BIN$Q9xlsPxVRDWQS5BehDuepw==$0" EntityType="Self.BIN$Q9xlsPxVRDWQS5BehDuepw==$0" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"BIN$Q9xlsPxVRDWQS5BehDuepw==$0"."ITEM_ID" AS "ITEM_ID", 
+"BIN$Q9xlsPxVRDWQS5BehDuepw==$0"."TAG_ID" AS "TAG_ID"
+FROM "H1994ST"."BIN$Q9xlsPxVRDWQS5BehDuepw==$0" "BIN$Q9xlsPxVRDWQS5BehDuepw==$0"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BIN$QT+90KmGQ3mjajf5AVdmCA==$0" EntityType="Self.BIN$QT+90KmGQ3mjajf5AVdmCA==$0" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"BIN$QT+90KmGQ3mjajf5AVdmCA==$0"."USER_ID" AS "USER_ID", 
+"BIN$QT+90KmGQ3mjajf5AVdmCA==$0"."QUESTION_ID" AS "QUESTION_ID"
+FROM "H1994ST"."BIN$QT+90KmGQ3mjajf5AVdmCA==$0" "BIN$QT+90KmGQ3mjajf5AVdmCA==$0"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BIN$S1SbY+HURbWuE+KiDkBjPA==$0" EntityType="Self.BIN$S1SbY+HURbWuE+KiDkBjPA==$0" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"BIN$S1SbY+HURbWuE+KiDkBjPA==$0"."ITEM_ID" AS "ITEM_ID", 
+"BIN$S1SbY+HURbWuE+KiDkBjPA==$0"."PUBLISHER_ID" AS "PUBLISHER_ID", 
+"BIN$S1SbY+HURbWuE+KiDkBjPA==$0"."PUBLISH_DATE" AS "PUBLISH_DATE", 
+"BIN$S1SbY+HURbWuE+KiDkBjPA==$0"."TYPE" AS "TYPE", 
+"BIN$S1SbY+HURbWuE+KiDkBjPA==$0"."IS_END" AS "IS_END", 
+"BIN$S1SbY+HURbWuE+KiDkBjPA==$0"."END_TIME" AS "END_TIME"
+FROM "H1994ST"."BIN$S1SbY+HURbWuE+KiDkBjPA==$0" "BIN$S1SbY+HURbWuE+KiDkBjPA==$0"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BIN$VNFqbGBSRNK0xpOGRkKTrQ==$0" EntityType="Self.BIN$VNFqbGBSRNK0xpOGRkKTrQ==$0" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"BIN$VNFqbGBSRNK0xpOGRkKTrQ==$0"."USER_ID" AS "USER_ID", 
+"BIN$VNFqbGBSRNK0xpOGRkKTrQ==$0"."QUESTION_ID" AS "QUESTION_ID"
+FROM "H1994ST"."BIN$VNFqbGBSRNK0xpOGRkKTrQ==$0" "BIN$VNFqbGBSRNK0xpOGRkKTrQ==$0"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BIN$Y+RUNdYfQLKwdhXEf0rDEw==$0" EntityType="Self.BIN$Y+RUNdYfQLKwdhXEf0rDEw==$0" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"BIN$Y+RUNdYfQLKwdhXEf0rDEw==$0"."USER_ID" AS "USER_ID", 
+"BIN$Y+RUNdYfQLKwdhXEf0rDEw==$0"."QUESTION_ID" AS "QUESTION_ID"
+FROM "H1994ST"."BIN$Y+RUNdYfQLKwdhXEf0rDEw==$0" "BIN$Y+RUNdYfQLKwdhXEf0rDEw==$0"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="COMMENT_ITEM_USER" EntityType="Self.COMMENT_ITEM_USER" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"COMMENT_ITEM_USER"."ITEM_ID" AS "ITEM_ID", 
+"COMMENT_ITEM_USER"."COMMENT_ID" AS "COMMENT_ID", 
+"COMMENT_ITEM_USER"."USER_ID" AS "USER_ID"
+FROM "H1994ST"."COMMENT_ITEM_USER" "COMMENT_ITEM_USER"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DIALOG_MESSAGE" EntityType="Self.DIALOG_MESSAGE" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"DIALOG_MESSAGE"."DIALOG_ID" AS "DIALOG_ID", 
+"DIALOG_MESSAGE"."MESSAGE_ID" AS "MESSAGE_ID"
+FROM "H1994ST"."DIALOG_MESSAGE" "DIALOG_MESSAGE"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ITEM_TAG" EntityType="Self.ITEM_TAG" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"ITEM_TAG"."ITEM_ID" AS "ITEM_ID", 
+"ITEM_TAG"."TAG_ID" AS "TAG_ID"
+FROM "H1994ST"."ITEM_TAG" "ITEM_TAG"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PUBLISHMENT" EntityType="Self.PUBLISHMENT" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"PUBLISHMENT"."ITEM_ID" AS "ITEM_ID", 
+"PUBLISHMENT"."PUBLISHER_ID" AS "PUBLISHER_ID", 
+"PUBLISHMENT"."PUBLISH_DATE" AS "PUBLISH_DATE", 
+"PUBLISHMENT"."TYPE" AS "TYPE", 
+"PUBLISHMENT"."IS_END" AS "IS_END", 
+"PUBLISHMENT"."END_TIME" AS "END_TIME"
+FROM "H1994ST"."PUBLISHMENT" "PUBLISHMENT"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="USER_QUESTION" EntityType="Self.USER_QUESTION" store:Type="Tables" store:Schema="H1994ST">
+            <DefiningQuery>SELECT 
+"USER_QUESTION"."USER_ID" AS "USER_ID", 
+"USER_QUESTION"."QUESTION_ID" AS "QUESTION_ID"
+FROM "H1994ST"."USER_QUESTION" "USER_QUESTION"</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="SYS_C005936" Association="Self.SYS_C005936">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="USER_QUESTION" EntitySet="USER_QUESTION" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005937" Association="Self.SYS_C005937">
+            <End Role="QUESTION" EntitySet="QUESTION" />
+            <End Role="USER_QUESTION" EntitySet="USER_QUESTION" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005945" Association="Self.SYS_C005945">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="DIALOG" EntitySet="DIALOG" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005946" Association="Self.SYS_C005946">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="DIALOG" EntitySet="DIALOG" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005951" Association="Self.SYS_C005951">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="MESSAGE" EntitySet="MESSAGE" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005954" Association="Self.SYS_C005954">
+            <End Role="DIALOG" EntitySet="DIALOG" />
+            <End Role="DIALOG_MESSAGE" EntitySet="DIALOG_MESSAGE" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005955" Association="Self.SYS_C005955">
+            <End Role="MESSAGE" EntitySet="MESSAGE" />
+            <End Role="DIALOG_MESSAGE" EntitySet="DIALOG_MESSAGE" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005963" Association="Self.SYS_C005963">
+            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="PUBLISHMENT" EntitySet="PUBLISHMENT" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005964" Association="Self.SYS_C005964">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="PUBLISHMENT" EntitySet="PUBLISHMENT" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005969" Association="Self.SYS_C005969">
+            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="ITEM_TAG" EntitySet="ITEM_TAG" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005970" Association="Self.SYS_C005970">
+            <End Role="TAG" EntitySet="TAG" />
+            <End Role="ITEM_TAG" EntitySet="ITEM_TAG" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005977" Association="Self.SYS_C005977">
+            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="COMMENT_ITEM_USER" EntitySet="COMMENT_ITEM_USER" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005978" Association="Self.SYS_C005978">
+            <End Role="COMMENTS" EntitySet="COMMENTS" />
+            <End Role="COMMENT_ITEM_USER" EntitySet="COMMENT_ITEM_USER" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005979" Association="Self.SYS_C005979">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="COMMENT_ITEM_USER" EntitySet="COMMENT_ITEM_USER" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PRIVILEGE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="VERIFIED" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="DIALOG" Relationship="Self.SYS_C005945" FromRole="ACCOUNT" ToRole="DIALOG" />
+          <NavigationProperty Name="DIALOG1" Relationship="Self.SYS_C005946" FromRole="ACCOUNT" ToRole="DIALOG" />
+          <NavigationProperty Name="MESSAGE" Relationship="Self.SYS_C005951" FromRole="ACCOUNT" ToRole="MESSAGE" />
+          <NavigationProperty Name="PUBLISHMENT" Relationship="Self.SYS_C005964" FromRole="ACCOUNT" ToRole="PUBLISHMENT" />
+          <NavigationProperty Name="COMMENT_ITEM_USER" Relationship="Self.SYS_C005979" FromRole="ACCOUNT" ToRole="COMMENT_ITEM_USER" />
+          <NavigationProperty Name="QUESTION" Relationship="Self.USER_QUESTION" FromRole="ACCOUNT" ToRole="QUESTION" />
+        </EntityType>
+        <EntityType Name="BIN__wgguIj2TRe65DYjmKQxBQ___0">
+          <Key>
+            <PropertyRef Name="TAG_ID" />
+          </Key>
+          <Property Name="TAG_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TAG_TEXT" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_18b4Ab25Thek4_jpb2K7aw___0">
+          <Key>
+            <PropertyRef Name="MESSAGE_ID" />
+          </Key>
+          <Property Name="MESSAGE_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SENDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="String" MaxLength="423" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SENDTIME" Type="DateTime" Precision="6" />
+          <Property Name="IS_READ" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_FIgeY_AxRPCsTVceq3DXdg___0">
+          <Key>
+            <PropertyRef Name="COMMENT_ID" />
+          </Key>
+          <Property Name="COMMENT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="String" MaxLength="423" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIME" Type="DateTime" Precision="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_IgTcN3GVQNaMJ23ARcpWTQ___0">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PRIVILEGE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="VERIFIED" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_lsbfHaLCT_WVCJKh3se8bA___0">
+          <Key>
+            <PropertyRef Name="QUESTION_ID" />
+          </Key>
+          <Property Name="QUESTION_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QUESTION_FORMAT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FORMAT_TIP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BIN_lY20SNslRj6z000EApIGVA___0">
+          <Key>
+            <PropertyRef Name="DIALOG_ID" />
+          </Key>
+          <Property Name="DIALOG_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER1" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER2" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_OivbSlE0S_6tPK0LyXVhVg___0">
+          <Key>
+            <PropertyRef Name="COMMENT_ID" />
+          </Key>
+          <Property Name="COMMENT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="String" MaxLength="423" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIME" Type="DateTime" Precision="6" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_Om0g3q92QreGP79JqJv3Dw___0">
+          <Key>
+            <PropertyRef Name="QUESTION_ID" />
+          </Key>
+          <Property Name="QUESTION_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QUESTION_FORMAT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FORMAT_TIP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BIN_qEa__YpBSkGOXv6CIGLNfw___0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ITEM_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ITEM_DESCRIPTION" Type="String" MaxLength="423" FixedLength="false" Unicode="false" />
+          <Property Name="IMAGE" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="BIN_t0_yFBTzRxKHMtcZDz2y4A___0">
+          <Key>
+            <PropertyRef Name="DIALOG_ID" />
+          </Key>
+          <Property Name="DIALOG_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER1" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER2" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_TUA0jZntQmSciz0N0b_oug___0">
+          <Key>
+            <PropertyRef Name="TAG_ID" />
+          </Key>
+          <Property Name="TAG_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TAG_TEXT" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_x3lFD8scRfuJ344Fh5RmLw___0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ITEM_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ITEM_DESCRIPTION" Type="String" MaxLength="423" FixedLength="false" Unicode="false" />
+          <Property Name="IMAGE" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="BIN_xPSz9jBzSvGFuzr1e10E_g___0">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="32" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="PRIVILEGE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="VERIFIED" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_zcz8r0VsStKzEIx4TwtFrg___0">
+          <Key>
+            <PropertyRef Name="MESSAGE_ID" />
+          </Key>
+          <Property Name="MESSAGE_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SENDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="String" MaxLength="423" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SENDTIME" Type="DateTime" Precision="6" />
+          <Property Name="IS_READ" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COMMENTS">
+          <Key>
+            <PropertyRef Name="COMMENT_ID" />
+          </Key>
+          <Property Name="COMMENT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="String" MaxLength="423" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIME" Type="DateTime" Precision="6" Nullable="false" />
+          <NavigationProperty Name="COMMENT_ITEM_USER" Relationship="Self.SYS_C005978" FromRole="COMMENTS" ToRole="COMMENT_ITEM_USER" />
+        </EntityType>
+        <EntityType Name="DIALOG">
+          <Key>
+            <PropertyRef Name="DIALOG_ID" />
+          </Key>
+          <Property Name="DIALOG_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER1" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER2" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="ACCOUNT" Relationship="Self.SYS_C005945" FromRole="DIALOG" ToRole="ACCOUNT" />
+          <NavigationProperty Name="ACCOUNT1" Relationship="Self.SYS_C005946" FromRole="DIALOG" ToRole="ACCOUNT" />
+          <NavigationProperty Name="MESSAGE" Relationship="Self.DIALOG_MESSAGE" FromRole="DIALOG" ToRole="MESSAGE" />
+        </EntityType>
+        <EntityType Name="ITEM">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ITEM_NAME" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ITEM_DESCRIPTION" Type="String" MaxLength="423" FixedLength="false" Unicode="false" />
+          <Property Name="IMAGE" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="PUBLISHMENT" Relationship="Self.SYS_C005963" FromRole="ITEM" ToRole="PUBLISHMENT" />
+          <NavigationProperty Name="COMMENT_ITEM_USER" Relationship="Self.SYS_C005977" FromRole="ITEM" ToRole="COMMENT_ITEM_USER" />
+          <NavigationProperty Name="TAG" Relationship="Self.ITEM_TAG" FromRole="ITEM" ToRole="TAG" />
+        </EntityType>
+        <EntityType Name="MESSAGE">
+          <Key>
+            <PropertyRef Name="MESSAGE_ID" />
+          </Key>
+          <Property Name="MESSAGE_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SENDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="String" MaxLength="423" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SENDTIME" Type="DateTime" Precision="6" />
+          <Property Name="IS_READ" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="ACCOUNT" Relationship="Self.SYS_C005951" FromRole="MESSAGE" ToRole="ACCOUNT" />
+          <NavigationProperty Name="DIALOG" Relationship="Self.DIALOG_MESSAGE" FromRole="MESSAGE" ToRole="DIALOG" />
+        </EntityType>
+        <EntityType Name="QUESTION">
+          <Key>
+            <PropertyRef Name="QUESTION_ID" />
+          </Key>
+          <Property Name="QUESTION_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTENT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="QUESTION_FORMAT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FORMAT_TIP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ACCOUNT" Relationship="Self.USER_QUESTION" FromRole="QUESTION" ToRole="ACCOUNT" />
+        </EntityType>
+        <EntityType Name="TAG">
+          <Key>
+            <PropertyRef Name="TAG_ID" />
+          </Key>
+          <Property Name="TAG_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TAG_TEXT" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ITEM" Relationship="Self.ITEM_TAG" FromRole="TAG" ToRole="ITEM" />
+        </EntityType>
+        <EntityType Name="USER_INFO">
+          <Key>
+            <PropertyRef Name="EMAIL" />
+          </Key>
+          <Property Name="EMAIL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USER_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PHONE" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MARJOR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SEX" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BIRTH" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="BIN__Pi9y47aSG2mtY7QlBbTsQ___0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="COMMENT_ID" />
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="COMMENT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_A2KczbINR2iLELtfj1oM7Q___0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="TAG_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TAG_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_CSzfDaJzTiO50j1oswq5gA___0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="COMMENT_ID" />
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="COMMENT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_dXHv22TuTQqUadd_Hnf_KA___0">
+          <Key>
+            <PropertyRef Name="DIALOG_ID" />
+            <PropertyRef Name="MESSAGE_ID" />
+          </Key>
+          <Property Name="DIALOG_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MESSAGE_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_ntbFFai1QNCb3Ibm3DjVcg___0">
+          <Key>
+            <PropertyRef Name="EMAIL" />
+            <PropertyRef Name="USER_NAME" />
+          </Key>
+          <Property Name="EMAIL" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USER_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PHONE" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MARJOR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SEX" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BIRTH" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="BIN_OEy1Sfw4QM6iJVTS7yc9_A___0">
+          <Key>
+            <PropertyRef Name="DIALOG_ID" />
+            <PropertyRef Name="MESSAGE_ID" />
+          </Key>
+          <Property Name="DIALOG_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MESSAGE_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_PDRzAj9hSy6uzDY68Pe2xw___0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="PUBLISHER_ID" />
+            <PropertyRef Name="PUBLISH_DATE" />
+            <PropertyRef Name="TYPE" />
+            <PropertyRef Name="IS_END" />
+          </Key>
+          <Property Name="ITEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PUBLISHER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PUBLISH_DATE" Type="DateTime" Precision="6" Nullable="false" />
+          <Property Name="TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IS_END" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="END_TIME" Type="DateTime" Precision="6" />
+        </EntityType>
+        <EntityType Name="BIN_Q9xlsPxVRDWQS5BehDuepw___0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="TAG_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TAG_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_QT_90KmGQ3mjajf5AVdmCA___0">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+            <PropertyRef Name="QUESTION_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="QUESTION_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_S1SbY_HURbWuE_KiDkBjPA___0">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="PUBLISHER_ID" />
+            <PropertyRef Name="PUBLISH_DATE" />
+            <PropertyRef Name="TYPE" />
+            <PropertyRef Name="IS_END" />
+          </Key>
+          <Property Name="ITEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PUBLISHER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PUBLISH_DATE" Type="DateTime" Precision="6" Nullable="false" />
+          <Property Name="TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IS_END" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="END_TIME" Type="DateTime" Precision="6" />
+        </EntityType>
+        <EntityType Name="BIN_VNFqbGBSRNK0xpOGRkKTrQ___0">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+            <PropertyRef Name="QUESTION_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="QUESTION_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BIN_Y_RUNdYfQLKwdhXEf0rDEw___0">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+            <PropertyRef Name="QUESTION_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="QUESTION_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COMMENT_ITEM_USER">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="COMMENT_ID" />
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="ITEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="COMMENT_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="USER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="ACCOUNT" Relationship="Self.SYS_C005979" FromRole="COMMENT_ITEM_USER" ToRole="ACCOUNT" />
+          <NavigationProperty Name="COMMENTS" Relationship="Self.SYS_C005978" FromRole="COMMENT_ITEM_USER" ToRole="COMMENTS" />
+          <NavigationProperty Name="ITEM" Relationship="Self.SYS_C005977" FromRole="COMMENT_ITEM_USER" ToRole="ITEM" />
+        </EntityType>
+        <EntityType Name="PUBLISHMENT">
+          <Key>
+            <PropertyRef Name="ITEM_ID" />
+            <PropertyRef Name="PUBLISHER_ID" />
+            <PropertyRef Name="PUBLISH_DATE" />
+            <PropertyRef Name="TYPE" />
+            <PropertyRef Name="IS_END" />
+          </Key>
+          <Property Name="ITEM_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PUBLISHER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PUBLISH_DATE" Type="DateTime" Precision="6" Nullable="false" />
+          <Property Name="TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IS_END" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="END_TIME" Type="DateTime" Precision="6" />
+          <NavigationProperty Name="ACCOUNT" Relationship="Self.SYS_C005964" FromRole="PUBLISHMENT" ToRole="ACCOUNT" />
+          <NavigationProperty Name="ITEM" Relationship="Self.SYS_C005963" FromRole="PUBLISHMENT" ToRole="ITEM" />
+        </EntityType>
+        <Association Name="SYS_C005945">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="DIALOG" Type="Self.DIALOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="DIALOG">
+              <PropertyRef Name="USER1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005946">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="DIALOG" Type="Self.DIALOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="DIALOG">
+              <PropertyRef Name="USER2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005951">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="MESSAGE" Type="Self.MESSAGE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="MESSAGE">
+              <PropertyRef Name="SENDER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005964">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="PUBLISHMENT" Type="Self.PUBLISHMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="PUBLISHMENT">
+              <PropertyRef Name="PUBLISHER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005979">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="COMMENT_ITEM_USER" Type="Self.COMMENT_ITEM_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="USER_ID" />
+            </Principal>
+            <Dependent Role="COMMENT_ITEM_USER">
+              <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005978">
+          <End Role="COMMENTS" Type="Self.COMMENTS" Multiplicity="1" />
+          <End Role="COMMENT_ITEM_USER" Type="Self.COMMENT_ITEM_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMMENTS">
+              <PropertyRef Name="COMMENT_ID" />
+            </Principal>
+            <Dependent Role="COMMENT_ITEM_USER">
+              <PropertyRef Name="COMMENT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005963">
+          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
+          <End Role="PUBLISHMENT" Type="Self.PUBLISHMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM">
+              <PropertyRef Name="ITEM_ID" />
+            </Principal>
+            <Dependent Role="PUBLISHMENT">
+              <PropertyRef Name="ITEM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C005977">
+          <End Role="ITEM" Type="Self.ITEM" Multiplicity="1" />
+          <End Role="COMMENT_ITEM_USER" Type="Self.COMMENT_ITEM_USER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ITEM">
+              <PropertyRef Name="ITEM_ID" />
+            </Principal>
+            <Dependent Role="COMMENT_ITEM_USER">
+              <PropertyRef Name="ITEM_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DIALOG_MESSAGE">
+          <End Role="DIALOG" Type="Self.DIALOG" Multiplicity="*" />
+          <End Role="MESSAGE" Type="Self.MESSAGE" Multiplicity="*" />
+        </Association>
+        <Association Name="ITEM_TAG">
+          <End Role="ITEM" Type="Self.ITEM" Multiplicity="*" />
+          <End Role="TAG" Type="Self.TAG" Multiplicity="*" />
+        </Association>
+        <Association Name="USER_QUESTION">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
+          <End Role="QUESTION" Type="Self.QUESTION" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="LFMSContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" />
+          <EntitySet Name="BIN__wgguIj2TRe65DYjmKQxBQ___0" EntityType="Self.BIN__wgguIj2TRe65DYjmKQxBQ___0" />
+          <EntitySet Name="BIN_18b4Ab25Thek4_jpb2K7aw___0" EntityType="Self.BIN_18b4Ab25Thek4_jpb2K7aw___0" />
+          <EntitySet Name="BIN_FIgeY_AxRPCsTVceq3DXdg___0" EntityType="Self.BIN_FIgeY_AxRPCsTVceq3DXdg___0" />
+          <EntitySet Name="BIN_IgTcN3GVQNaMJ23ARcpWTQ___0" EntityType="Self.BIN_IgTcN3GVQNaMJ23ARcpWTQ___0" />
+          <EntitySet Name="BIN_lsbfHaLCT_WVCJKh3se8bA___0" EntityType="Self.BIN_lsbfHaLCT_WVCJKh3se8bA___0" />
+          <EntitySet Name="BIN_lY20SNslRj6z000EApIGVA___0" EntityType="Self.BIN_lY20SNslRj6z000EApIGVA___0" />
+          <EntitySet Name="BIN_OivbSlE0S_6tPK0LyXVhVg___0" EntityType="Self.BIN_OivbSlE0S_6tPK0LyXVhVg___0" />
+          <EntitySet Name="BIN_Om0g3q92QreGP79JqJv3Dw___0" EntityType="Self.BIN_Om0g3q92QreGP79JqJv3Dw___0" />
+          <EntitySet Name="BIN_qEa__YpBSkGOXv6CIGLNfw___0" EntityType="Self.BIN_qEa__YpBSkGOXv6CIGLNfw___0" />
+          <EntitySet Name="BIN_t0_yFBTzRxKHMtcZDz2y4A___0" EntityType="Self.BIN_t0_yFBTzRxKHMtcZDz2y4A___0" />
+          <EntitySet Name="BIN_TUA0jZntQmSciz0N0b_oug___0" EntityType="Self.BIN_TUA0jZntQmSciz0N0b_oug___0" />
+          <EntitySet Name="BIN_x3lFD8scRfuJ344Fh5RmLw___0" EntityType="Self.BIN_x3lFD8scRfuJ344Fh5RmLw___0" />
+          <EntitySet Name="BIN_xPSz9jBzSvGFuzr1e10E_g___0" EntityType="Self.BIN_xPSz9jBzSvGFuzr1e10E_g___0" />
+          <EntitySet Name="BIN_zcz8r0VsStKzEIx4TwtFrg___0" EntityType="Self.BIN_zcz8r0VsStKzEIx4TwtFrg___0" />
+          <EntitySet Name="COMMENTS" EntityType="Self.COMMENTS" />
+          <EntitySet Name="DIALOG" EntityType="Self.DIALOG" />
+          <EntitySet Name="ITEM" EntityType="Self.ITEM" />
+          <EntitySet Name="MESSAGE" EntityType="Self.MESSAGE" />
+          <EntitySet Name="QUESTION" EntityType="Self.QUESTION" />
+          <EntitySet Name="TAG" EntityType="Self.TAG" />
+          <EntitySet Name="USER_INFO" EntityType="Self.USER_INFO" />
+          <EntitySet Name="BIN__Pi9y47aSG2mtY7QlBbTsQ___0" EntityType="Self.BIN__Pi9y47aSG2mtY7QlBbTsQ___0" />
+          <EntitySet Name="BIN_A2KczbINR2iLELtfj1oM7Q___0" EntityType="Self.BIN_A2KczbINR2iLELtfj1oM7Q___0" />
+          <EntitySet Name="BIN_CSzfDaJzTiO50j1oswq5gA___0" EntityType="Self.BIN_CSzfDaJzTiO50j1oswq5gA___0" />
+          <EntitySet Name="BIN_dXHv22TuTQqUadd_Hnf_KA___0" EntityType="Self.BIN_dXHv22TuTQqUadd_Hnf_KA___0" />
+          <EntitySet Name="BIN_ntbFFai1QNCb3Ibm3DjVcg___0" EntityType="Self.BIN_ntbFFai1QNCb3Ibm3DjVcg___0" />
+          <EntitySet Name="BIN_OEy1Sfw4QM6iJVTS7yc9_A___0" EntityType="Self.BIN_OEy1Sfw4QM6iJVTS7yc9_A___0" />
+          <EntitySet Name="BIN_PDRzAj9hSy6uzDY68Pe2xw___0" EntityType="Self.BIN_PDRzAj9hSy6uzDY68Pe2xw___0" />
+          <EntitySet Name="BIN_Q9xlsPxVRDWQS5BehDuepw___0" EntityType="Self.BIN_Q9xlsPxVRDWQS5BehDuepw___0" />
+          <EntitySet Name="BIN_QT_90KmGQ3mjajf5AVdmCA___0" EntityType="Self.BIN_QT_90KmGQ3mjajf5AVdmCA___0" />
+          <EntitySet Name="BIN_S1SbY_HURbWuE_KiDkBjPA___0" EntityType="Self.BIN_S1SbY_HURbWuE_KiDkBjPA___0" />
+          <EntitySet Name="BIN_VNFqbGBSRNK0xpOGRkKTrQ___0" EntityType="Self.BIN_VNFqbGBSRNK0xpOGRkKTrQ___0" />
+          <EntitySet Name="BIN_Y_RUNdYfQLKwdhXEf0rDEw___0" EntityType="Self.BIN_Y_RUNdYfQLKwdhXEf0rDEw___0" />
+          <EntitySet Name="COMMENT_ITEM_USER" EntityType="Self.COMMENT_ITEM_USER" />
+          <EntitySet Name="PUBLISHMENT" EntityType="Self.PUBLISHMENT" />
+          <AssociationSet Name="SYS_C005945" Association="Self.SYS_C005945">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="DIALOG" EntitySet="DIALOG" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005946" Association="Self.SYS_C005946">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="DIALOG" EntitySet="DIALOG" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005951" Association="Self.SYS_C005951">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="MESSAGE" EntitySet="MESSAGE" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005964" Association="Self.SYS_C005964">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="PUBLISHMENT" EntitySet="PUBLISHMENT" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005979" Association="Self.SYS_C005979">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="COMMENT_ITEM_USER" EntitySet="COMMENT_ITEM_USER" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005978" Association="Self.SYS_C005978">
+            <End Role="COMMENTS" EntitySet="COMMENTS" />
+            <End Role="COMMENT_ITEM_USER" EntitySet="COMMENT_ITEM_USER" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005963" Association="Self.SYS_C005963">
+            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="PUBLISHMENT" EntitySet="PUBLISHMENT" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C005977" Association="Self.SYS_C005977">
+            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="COMMENT_ITEM_USER" EntitySet="COMMENT_ITEM_USER" />
+          </AssociationSet>
+          <AssociationSet Name="DIALOG_MESSAGE" Association="Self.DIALOG_MESSAGE">
+            <End Role="DIALOG" EntitySet="DIALOG" />
+            <End Role="MESSAGE" EntitySet="MESSAGE" />
+          </AssociationSet>
+          <AssociationSet Name="ITEM_TAG" Association="Self.ITEM_TAG">
+            <End Role="ITEM" EntitySet="ITEM" />
+            <End Role="TAG" EntitySet="TAG" />
+          </AssociationSet>
+          <AssociationSet Name="USER_QUESTION" Association="Self.USER_QUESTION">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="QUESTION" EntitySet="QUESTION" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="LFMSContext">
+          <EntitySetMapping Name="ACCOUNT">
+            <EntityTypeMapping TypeName="Model.ACCOUNT">
+              <MappingFragment StoreEntitySet="ACCOUNT">
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="PRIVILEGE" ColumnName="PRIVILEGE" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN__wgguIj2TRe65DYjmKQxBQ___0">
+            <EntityTypeMapping TypeName="Model.BIN__wgguIj2TRe65DYjmKQxBQ___0">
+              <MappingFragment StoreEntitySet="BIN$+wgguIj2TRe65DYjmKQxBQ==$0">
+                <ScalarProperty Name="TAG_ID" ColumnName="TAG_ID" />
+                <ScalarProperty Name="TAG_TEXT" ColumnName="TAG_TEXT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_18b4Ab25Thek4_jpb2K7aw___0">
+            <EntityTypeMapping TypeName="Model.BIN_18b4Ab25Thek4_jpb2K7aw___0">
+              <MappingFragment StoreEntitySet="BIN$18b4Ab25Thek4/jpb2K7aw==$0">
+                <ScalarProperty Name="MESSAGE_ID" ColumnName="MESSAGE_ID" />
+                <ScalarProperty Name="SENDER_ID" ColumnName="SENDER_ID" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="SENDTIME" ColumnName="SENDTIME" />
+                <ScalarProperty Name="IS_READ" ColumnName="IS_READ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_FIgeY_AxRPCsTVceq3DXdg___0">
+            <EntityTypeMapping TypeName="Model.BIN_FIgeY_AxRPCsTVceq3DXdg___0">
+              <MappingFragment StoreEntitySet="BIN$FIgeY/AxRPCsTVceq3DXdg==$0">
+                <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="TIME" ColumnName="TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_IgTcN3GVQNaMJ23ARcpWTQ___0">
+            <EntityTypeMapping TypeName="Model.BIN_IgTcN3GVQNaMJ23ARcpWTQ___0">
+              <MappingFragment StoreEntitySet="BIN$IgTcN3GVQNaMJ23ARcpWTQ==$0">
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="PRIVILEGE" ColumnName="PRIVILEGE" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_lsbfHaLCT_WVCJKh3se8bA___0">
+            <EntityTypeMapping TypeName="Model.BIN_lsbfHaLCT_WVCJKh3se8bA___0">
+              <MappingFragment StoreEntitySet="BIN$lsbfHaLCT/WVCJKh3se8bA==$0">
+                <ScalarProperty Name="QUESTION_ID" ColumnName="QUESTION_ID" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="QUESTION_FORMAT" ColumnName="QUESTION_FORMAT" />
+                <ScalarProperty Name="FORMAT_TIP" ColumnName="FORMAT_TIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_lY20SNslRj6z000EApIGVA___0">
+            <EntityTypeMapping TypeName="Model.BIN_lY20SNslRj6z000EApIGVA___0">
+              <MappingFragment StoreEntitySet="BIN$lY20SNslRj6z000EApIGVA==$0">
+                <ScalarProperty Name="DIALOG_ID" ColumnName="DIALOG_ID" />
+                <ScalarProperty Name="USER1" ColumnName="USER1" />
+                <ScalarProperty Name="USER2" ColumnName="USER2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_OivbSlE0S_6tPK0LyXVhVg___0">
+            <EntityTypeMapping TypeName="Model.BIN_OivbSlE0S_6tPK0LyXVhVg___0">
+              <MappingFragment StoreEntitySet="BIN$OivbSlE0S/6tPK0LyXVhVg==$0">
+                <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="TIME" ColumnName="TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_Om0g3q92QreGP79JqJv3Dw___0">
+            <EntityTypeMapping TypeName="Model.BIN_Om0g3q92QreGP79JqJv3Dw___0">
+              <MappingFragment StoreEntitySet="BIN$Om0g3q92QreGP79JqJv3Dw==$0">
+                <ScalarProperty Name="QUESTION_ID" ColumnName="QUESTION_ID" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="QUESTION_FORMAT" ColumnName="QUESTION_FORMAT" />
+                <ScalarProperty Name="FORMAT_TIP" ColumnName="FORMAT_TIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_qEa__YpBSkGOXv6CIGLNfw___0">
+            <EntityTypeMapping TypeName="Model.BIN_qEa__YpBSkGOXv6CIGLNfw___0">
+              <MappingFragment StoreEntitySet="BIN$qEa/+YpBSkGOXv6CIGLNfw==$0">
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+                <ScalarProperty Name="ITEM_DESCRIPTION" ColumnName="ITEM_DESCRIPTION" />
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_t0_yFBTzRxKHMtcZDz2y4A___0">
+            <EntityTypeMapping TypeName="Model.BIN_t0_yFBTzRxKHMtcZDz2y4A___0">
+              <MappingFragment StoreEntitySet="BIN$t0/yFBTzRxKHMtcZDz2y4A==$0">
+                <ScalarProperty Name="DIALOG_ID" ColumnName="DIALOG_ID" />
+                <ScalarProperty Name="USER1" ColumnName="USER1" />
+                <ScalarProperty Name="USER2" ColumnName="USER2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_TUA0jZntQmSciz0N0b_oug___0">
+            <EntityTypeMapping TypeName="Model.BIN_TUA0jZntQmSciz0N0b_oug___0">
+              <MappingFragment StoreEntitySet="BIN$TUA0jZntQmSciz0N0b+oug==$0">
+                <ScalarProperty Name="TAG_ID" ColumnName="TAG_ID" />
+                <ScalarProperty Name="TAG_TEXT" ColumnName="TAG_TEXT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_x3lFD8scRfuJ344Fh5RmLw___0">
+            <EntityTypeMapping TypeName="Model.BIN_x3lFD8scRfuJ344Fh5RmLw___0">
+              <MappingFragment StoreEntitySet="BIN$x3lFD8scRfuJ344Fh5RmLw==$0">
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+                <ScalarProperty Name="ITEM_DESCRIPTION" ColumnName="ITEM_DESCRIPTION" />
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_xPSz9jBzSvGFuzr1e10E_g___0">
+            <EntityTypeMapping TypeName="Model.BIN_xPSz9jBzSvGFuzr1e10E_g___0">
+              <MappingFragment StoreEntitySet="BIN$xPSz9jBzSvGFuzr1e10E+g==$0">
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="PRIVILEGE" ColumnName="PRIVILEGE" />
+                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_zcz8r0VsStKzEIx4TwtFrg___0">
+            <EntityTypeMapping TypeName="Model.BIN_zcz8r0VsStKzEIx4TwtFrg___0">
+              <MappingFragment StoreEntitySet="BIN$zcz8r0VsStKzEIx4TwtFrg==$0">
+                <ScalarProperty Name="MESSAGE_ID" ColumnName="MESSAGE_ID" />
+                <ScalarProperty Name="SENDER_ID" ColumnName="SENDER_ID" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="SENDTIME" ColumnName="SENDTIME" />
+                <ScalarProperty Name="IS_READ" ColumnName="IS_READ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMMENTS">
+            <EntityTypeMapping TypeName="Model.COMMENTS">
+              <MappingFragment StoreEntitySet="COMMENTS">
+                <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="TIME" ColumnName="TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DIALOG">
+            <EntityTypeMapping TypeName="Model.DIALOG">
+              <MappingFragment StoreEntitySet="DIALOG">
+                <ScalarProperty Name="DIALOG_ID" ColumnName="DIALOG_ID" />
+                <ScalarProperty Name="USER1" ColumnName="USER1" />
+                <ScalarProperty Name="USER2" ColumnName="USER2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ITEM">
+            <EntityTypeMapping TypeName="Model.ITEM">
+              <MappingFragment StoreEntitySet="ITEM">
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
+                <ScalarProperty Name="ITEM_DESCRIPTION" ColumnName="ITEM_DESCRIPTION" />
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MESSAGE">
+            <EntityTypeMapping TypeName="Model.MESSAGE">
+              <MappingFragment StoreEntitySet="MESSAGE">
+                <ScalarProperty Name="MESSAGE_ID" ColumnName="MESSAGE_ID" />
+                <ScalarProperty Name="SENDER_ID" ColumnName="SENDER_ID" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="SENDTIME" ColumnName="SENDTIME" />
+                <ScalarProperty Name="IS_READ" ColumnName="IS_READ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QUESTION">
+            <EntityTypeMapping TypeName="Model.QUESTION">
+              <MappingFragment StoreEntitySet="QUESTION">
+                <ScalarProperty Name="QUESTION_ID" ColumnName="QUESTION_ID" />
+                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+                <ScalarProperty Name="QUESTION_FORMAT" ColumnName="QUESTION_FORMAT" />
+                <ScalarProperty Name="FORMAT_TIP" ColumnName="FORMAT_TIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAG">
+            <EntityTypeMapping TypeName="Model.TAG">
+              <MappingFragment StoreEntitySet="TAG">
+                <ScalarProperty Name="TAG_ID" ColumnName="TAG_ID" />
+                <ScalarProperty Name="TAG_TEXT" ColumnName="TAG_TEXT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER_INFO">
+            <EntityTypeMapping TypeName="Model.USER_INFO">
+              <MappingFragment StoreEntitySet="USER_INFO">
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="MARJOR" ColumnName="MARJOR" />
+                <ScalarProperty Name="SEX" ColumnName="SEX" />
+                <ScalarProperty Name="BIRTH" ColumnName="BIRTH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN__Pi9y47aSG2mtY7QlBbTsQ___0">
+            <EntityTypeMapping TypeName="Model.BIN__Pi9y47aSG2mtY7QlBbTsQ___0">
+              <MappingFragment StoreEntitySet="BIN$+Pi9y47aSG2mtY7QlBbTsQ==$0">
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_A2KczbINR2iLELtfj1oM7Q___0">
+            <EntityTypeMapping TypeName="Model.BIN_A2KczbINR2iLELtfj1oM7Q___0">
+              <MappingFragment StoreEntitySet="BIN$A2KczbINR2iLELtfj1oM7Q==$0">
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="TAG_ID" ColumnName="TAG_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_CSzfDaJzTiO50j1oswq5gA___0">
+            <EntityTypeMapping TypeName="Model.BIN_CSzfDaJzTiO50j1oswq5gA___0">
+              <MappingFragment StoreEntitySet="BIN$CSzfDaJzTiO50j1oswq5gA==$0">
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_dXHv22TuTQqUadd_Hnf_KA___0">
+            <EntityTypeMapping TypeName="Model.BIN_dXHv22TuTQqUadd_Hnf_KA___0">
+              <MappingFragment StoreEntitySet="BIN$dXHv22TuTQqUadd/Hnf+KA==$0">
+                <ScalarProperty Name="DIALOG_ID" ColumnName="DIALOG_ID" />
+                <ScalarProperty Name="MESSAGE_ID" ColumnName="MESSAGE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_ntbFFai1QNCb3Ibm3DjVcg___0">
+            <EntityTypeMapping TypeName="Model.BIN_ntbFFai1QNCb3Ibm3DjVcg___0">
+              <MappingFragment StoreEntitySet="BIN$ntbFFai1QNCb3Ibm3DjVcg==$0">
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="MARJOR" ColumnName="MARJOR" />
+                <ScalarProperty Name="SEX" ColumnName="SEX" />
+                <ScalarProperty Name="BIRTH" ColumnName="BIRTH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_OEy1Sfw4QM6iJVTS7yc9_A___0">
+            <EntityTypeMapping TypeName="Model.BIN_OEy1Sfw4QM6iJVTS7yc9_A___0">
+              <MappingFragment StoreEntitySet="BIN$OEy1Sfw4QM6iJVTS7yc9/A==$0">
+                <ScalarProperty Name="DIALOG_ID" ColumnName="DIALOG_ID" />
+                <ScalarProperty Name="MESSAGE_ID" ColumnName="MESSAGE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_PDRzAj9hSy6uzDY68Pe2xw___0">
+            <EntityTypeMapping TypeName="Model.BIN_PDRzAj9hSy6uzDY68Pe2xw___0">
+              <MappingFragment StoreEntitySet="BIN$PDRzAj9hSy6uzDY68Pe2xw==$0">
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="PUBLISHER_ID" ColumnName="PUBLISHER_ID" />
+                <ScalarProperty Name="PUBLISH_DATE" ColumnName="PUBLISH_DATE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="IS_END" ColumnName="IS_END" />
+                <ScalarProperty Name="END_TIME" ColumnName="END_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_Q9xlsPxVRDWQS5BehDuepw___0">
+            <EntityTypeMapping TypeName="Model.BIN_Q9xlsPxVRDWQS5BehDuepw___0">
+              <MappingFragment StoreEntitySet="BIN$Q9xlsPxVRDWQS5BehDuepw==$0">
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="TAG_ID" ColumnName="TAG_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_QT_90KmGQ3mjajf5AVdmCA___0">
+            <EntityTypeMapping TypeName="Model.BIN_QT_90KmGQ3mjajf5AVdmCA___0">
+              <MappingFragment StoreEntitySet="BIN$QT+90KmGQ3mjajf5AVdmCA==$0">
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="QUESTION_ID" ColumnName="QUESTION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_S1SbY_HURbWuE_KiDkBjPA___0">
+            <EntityTypeMapping TypeName="Model.BIN_S1SbY_HURbWuE_KiDkBjPA___0">
+              <MappingFragment StoreEntitySet="BIN$S1SbY+HURbWuE+KiDkBjPA==$0">
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="PUBLISHER_ID" ColumnName="PUBLISHER_ID" />
+                <ScalarProperty Name="PUBLISH_DATE" ColumnName="PUBLISH_DATE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="IS_END" ColumnName="IS_END" />
+                <ScalarProperty Name="END_TIME" ColumnName="END_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_VNFqbGBSRNK0xpOGRkKTrQ___0">
+            <EntityTypeMapping TypeName="Model.BIN_VNFqbGBSRNK0xpOGRkKTrQ___0">
+              <MappingFragment StoreEntitySet="BIN$VNFqbGBSRNK0xpOGRkKTrQ==$0">
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="QUESTION_ID" ColumnName="QUESTION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BIN_Y_RUNdYfQLKwdhXEf0rDEw___0">
+            <EntityTypeMapping TypeName="Model.BIN_Y_RUNdYfQLKwdhXEf0rDEw___0">
+              <MappingFragment StoreEntitySet="BIN$Y+RUNdYfQLKwdhXEf0rDEw==$0">
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="QUESTION_ID" ColumnName="QUESTION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMMENT_ITEM_USER">
+            <EntityTypeMapping TypeName="Model.COMMENT_ITEM_USER">
+              <MappingFragment StoreEntitySet="COMMENT_ITEM_USER">
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PUBLISHMENT">
+            <EntityTypeMapping TypeName="Model.PUBLISHMENT">
+              <MappingFragment StoreEntitySet="PUBLISHMENT">
+                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+                <ScalarProperty Name="PUBLISHER_ID" ColumnName="PUBLISHER_ID" />
+                <ScalarProperty Name="PUBLISH_DATE" ColumnName="PUBLISH_DATE" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="IS_END" ColumnName="IS_END" />
+                <ScalarProperty Name="END_TIME" ColumnName="END_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="DIALOG_MESSAGE" TypeName="Model.DIALOG_MESSAGE" StoreEntitySet="DIALOG_MESSAGE">
+            <EndProperty Name="DIALOG">
+              <ScalarProperty Name="DIALOG_ID" ColumnName="DIALOG_ID" />
+            </EndProperty>
+            <EndProperty Name="MESSAGE">
+              <ScalarProperty Name="MESSAGE_ID" ColumnName="MESSAGE_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ITEM_TAG" TypeName="Model.ITEM_TAG" StoreEntitySet="ITEM_TAG">
+            <EndProperty Name="ITEM">
+              <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+            </EndProperty>
+            <EndProperty Name="TAG">
+              <ScalarProperty Name="TAG_ID" ColumnName="TAG_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="USER_QUESTION" TypeName="Model.USER_QUESTION" StoreEntitySet="USER_QUESTION">
+            <EndProperty Name="ACCOUNT">
+              <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+            </EndProperty>
+            <EndProperty Name="QUESTION">
+              <ScalarProperty Name="QUESTION_ID" ColumnName="QUESTION_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

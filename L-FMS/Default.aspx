@@ -14,7 +14,6 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>Type</th>
               <th>Name</th>
               <th>Date</th>
               <th>Place</th>
@@ -22,61 +21,14 @@
           </thead>
           <tbody>
             <tr>
-              <td>Card</td>
-              <td>ID Card</td>
-              <td>2014/5/1</td>
-              <td>Playground</td>
-            </tr>
-            <tr>
-              <td>Phone</td>
-              <td>iPhone 5</td>
-              <td>2014/3/29</td>
-              <td>Classroom</td>
-            </tr>
-            <tr>
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr>
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr>
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr>
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr>
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr>
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr>
-              <td>Personal</td>
               <td>Glasses</td>
               <td>2014/4/20</td>
               <td>Public Baths</td>
             </tr>
           </tbody>
         </table>
+
+         
       </div>
       <div class="clearfix">
         <ul class="pager" style="float: right;">
@@ -92,7 +44,6 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>Type</th>
               <th>Name</th>
               <th>Date</th>
               <th>Place</th>
@@ -100,43 +51,6 @@
           </thead>
           <tbody>
             <tr>
-              <td>Card</td>
-              <td>ID Card</td>
-              <td>2014/5/1</td>
-              <td>Playground</td>
-            </tr>
-            <tr>
-              <td>Card</td>
-              <td>ID Card</td>
-              <td>2014/5/1</td>
-              <td>Playground</td>
-            </tr>
-            <tr>
-              <td>Card</td>
-              <td>ID Card</td>
-              <td>2014/5/1</td>
-              <td>Playground</td>
-            </tr>
-            <tr>
-              <td>Card</td>
-              <td>ID Card</td>
-              <td>2014/5/1</td>
-              <td>Playground</td>
-            </tr>
-            <tr>
-              <td>Card</td>
-              <td>ID Card</td>
-              <td>2014/5/1</td>
-              <td>Playground</td>
-            </tr>
-            <tr>
-              <td>Phone</td>
-              <td>iPhone 5</td>
-              <td>2014/4/29</td>
-              <td>Classroom</td>
-            </tr>
-            <tr>
-              <td>Personal</td>
               <td>Glasses</td>
               <td>2014/4/20</td>
               <td>Public Baths</td>
@@ -153,4 +67,5 @@
       </div>
     </div>
   </div>
+   <label><%=email %></label>
 </asp:Content>

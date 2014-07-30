@@ -9,9 +9,16 @@ namespace L_FMS
 {
     public partial class error : System.Web.UI.Page
     {
+        protected string errorMessage;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            errorMessage = Session["errorMessage"].ToString();
+        }
 
+        protected void goBack(object sender, EventArgs e)
+        {
+            Response.Redirect(Session["returnURL"].ToString());
         }
     }
 }

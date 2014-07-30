@@ -5,13 +5,17 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
-  <main class="post-screen">
+  <main class="post-screen" >
     <div class="login-icon">
       <img src="images/icons/svg/paper-bag.svg" alt="Welcome th L&FMS">
       <h4 class="text-center">错误</h4>
     </div>
-    <div class="login-form">
-      <p class="text-center">错误错误</p>
-    </div>
+
+
+      <form class="login-form" runat="server">
+      <p class="text-center"><%=errorMessage %></p>
+      <asp:Button runat="server" CssClass="btn btn-danger btn-lg btn-block" Text="返回"  OnClick="goBack"/>
+      </form>
+
   </main>
 </asp:Content>

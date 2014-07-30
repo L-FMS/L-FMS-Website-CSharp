@@ -21,7 +21,6 @@
             </div>
             <asp:Button CssClass="btn btn-primary btn-lg btn-block" runat="server" OnClick="buttonSubmit"  Text="Log in"  />
             <a href="#" class="login-link">Lost your password?</a>
-            <asp:Label ID="aaa" Text="222" runat="server" />
         </form>
     </main>
 </asp:Content>

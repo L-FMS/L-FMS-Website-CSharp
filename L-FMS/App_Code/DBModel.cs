@@ -9,21 +9,6 @@ namespace L_FMS
     {
         // 单例
         private static DBModel dbModel;
-        private LFMSContext db 
-        {
-            get 
-            { 
-                if(db == null) 
-                {
-                    db = new LFMSContext();
-                } 
-                return db;
-            }
-            set
-            {
-                db = value;
-            }
-        }
 
         // 私有构造函数
         private DBModel()
@@ -44,12 +29,20 @@ namespace L_FMS
         // 获取序列下一个值
         public decimal GetSeqNextVal(string table)
         {
-            string seq = table + "_increment_seq";
-            
-            var l = db.Database.SqlQuery("select {0} from dual", seq + ".nextval").ToList();
+            decimal result = 0;
+            using(LFMSContext db = new LFMSContext())
+            {
+                string seq = table + "_increment_seq.nextval";
 
+                var l = db.Database.SqlQuery<decimal>("select " + seq + " from dual").ToList();
 
-            return nextVal;
+                foreach (var n in l)
+                {
+                    result = n;
+                    break;
+                }
+            }
+            return result;
         }
 
     }

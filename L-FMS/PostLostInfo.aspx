@@ -29,7 +29,6 @@
       <div class="form-group">
         <label for="post-time" style="color: #bfc9ca;">Time</label>
         <input type="date" class="form-control login-field" placeholder="Time" id="post-time" name="dateTimeString" required>
-        <label for="post-time" class="login-field-icon fui-time"></label>
       </div>
       <div class="form-group">
         <label for="post-place" style="color: #bfc9ca;">Place</label>

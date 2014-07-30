@@ -10,10 +10,10 @@
               <img class="media-object img-thumbnail" src="images/zr.jpg" alt="Zhangrui" style="width: 200px;">
             </div>
             <div class="media-body">
-              <h3 class="media-heading">张睿</h3>
-              <p>doubizhang@sse.net</p>
-              <p>1994年2月30日</p>
-              <p>男</p>
+              <h3 class="media-heading"><%=message.USER_NAME %></h3>
+              <p><%=message.EMAIL %></p>
+              <p><%=message.BIRTH.ToString("yyyy年MM月dd日") %></p>
+              <p><%=message.SEX %></p>
             </div>
           </div>
         </div>
@@ -26,11 +26,20 @@
 
           <div class="tab-content">
             <div class="tab-pane active" id="found">
-              ddd
+              <% foreach (var i in found)
+                 {%> 
+                     <% =i %>
+                <br />
+              <% } %>
             </div><!-- /.tab-pane#found -->
 
             <div class="tab-pane" id="lost">
-              deee
+              <% foreach (var i in lost)
+                 {%> 
+                     <% =i %>
+                <br />
+
+              <% } %>
             </div><!-- /.tab-pane#lost -->
           </div><!-- /.tab-content -->
         </div>

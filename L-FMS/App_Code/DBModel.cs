@@ -13,7 +13,14 @@ namespace L_FMS
         public DateTime PUBLISH_DATE { get; set; }
         public string PLACE { get; set; }
     }
-
+    public class PersonMessage
+    {
+        public string USER_NAME { get; set; }
+        public string EMAIL { get; set; }
+        public DateTime BIRTH { get; set; }
+        public string SEX { get; set; }
+    
+    }
     public class DBModel
     {
         // 单例
@@ -381,8 +388,82 @@ namespace L_FMS
             }
             return null;
         }
+        //根据用户id获得用户信息
+        public PersonMessage GetUserMessage(decimal UserId)
+        {
+            PersonMessage result;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    result = db.Database.SqlQuery<PersonMessage>("select user_name,email,birth,sex from account, user_userinfo, userinfo where account.user_id=" + UserId + " and account.user_id=user_userinfo.account and user_userinfo.userinfo=userinfo.userinfo_id").FirstOrDefault();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+        //根据user_id获得用户遗失物品名称
+
+        public string[] GetLostItemByID(decimal user_id)
+        {
+            List<string> result = new List<string>(); 
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    foreach (var i in db.PUBLISHMENT)
+                    {
+                        // 判断是否为丢失物品
+                        if (!i.TYPE.Equals("lost")||!i.PUBLISHER_ID.Equals(user_id))
+                        {
+                            continue;
+                        }
+                        result.Add(i.ITEM.ITEM_NAME);
+                    }
+                    return result.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+        //根据user_id获得用户的找到的物品
+    public string[] GetFoundItemByID(decimal user_id)
+        {
+            List<string> result = new List<string>(); 
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    foreach (var i in db.PUBLISHMENT)
+                    {
+                        // 判断是否为丢失物品
+                        if (!i.TYPE.Equals("found")||!i.PUBLISHER_ID.Equals(user_id))
+                        {
+                            continue;
+                        }
+                        result.Add(i.ITEM.ITEM_NAME);
+                    }
+                    return result.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+    }
     }
 
+
+    
     public class PageCuter <ArrayType>
     {
 
@@ -414,7 +495,6 @@ namespace L_FMS
                 return result;
         }
 
-    }
-
+    
 
 }

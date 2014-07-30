@@ -18,7 +18,7 @@ namespace DB
             bundles.Add(new ScriptBundle("~/scripts/Admin").Include(
                 "~/Admin/assets//javascripts/jquery-ui.min.js",
                 "~/Admin/assets/javascripts/modernizr.min.js",
-                 "~/Admin/assets/javascripts/application-985b892b.js"));
+                "~/Admin/assets/javascripts/application-985b892b.js"));
 
             bundles.Add(new ScriptBundle("~/scripts/Detail").Include(
                 "~/scripts/detail.js"));
@@ -28,7 +28,7 @@ namespace DB
                "~/scripts/bootstrap-filestyle.min.js",
                "~/scripts/jquery.tagsinput.js"));
 
-            bundles.Add(new ScriptBundle("~/scripts/Register").Include(
+            bundles.Add(new ScriptBundle("~/scripts/BootstrapSelect").Include(
                "~/scripts/bootstrap-select.js"));
         }
         public BundleConfig()

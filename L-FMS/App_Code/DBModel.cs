@@ -320,6 +320,41 @@ namespace L_FMS
             }
             return null;
         }
+        //根据获得字符查找物品
+        public ItemEx[] GetItemBySearchString(string SearchString)
+        {
+            List<ItemEx> result = new List<ItemEx>();
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    foreach (var i in db.PUBLISHMENT)
+                    {
+                        // 判定是否包含要求的字段
+                        if (i.ITEM.ITEM_NAME.Contains(SearchString)
+                            || i.PUBLISH_DATE.ToString() == (SearchString)
+                            || i.PLACE.Contains(SearchString))
+                        {
+                            ItemEx itemEx = new ItemEx
+                            {
+                                PUBLISHMENT_ID = i.ID,
+                                ITEM_ID = i.ITEM_ID,
+                                ITEM_NAME = i.ITEM.ITEM_NAME,
+                                PUBLISH_DATE = i.PUBLISH_DATE,
+                                PLACE = i.PLACE
+                            };
+                            result.Add(itemEx);
+                        }
+                    }
+                    return result.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
 
         // 获取account 
         public ACCOUNT[] GetAccountWithSearchString(string USER_EMAIL)
@@ -346,7 +381,33 @@ namespace L_FMS
             }
             return null;
         }
+
+        //获取comments
+    public COMMENTS[] GetComments( decimal itemId )
+    {
+        List<COMMENTS> result = new List<COMMENTS>();
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    var a=db.COMMENT_ITEM_USER.Where(p => p.ITEM_ID == itemId);
+                    foreach( var q in a)
+                    {
+                        result.Add(q.COMMENTS);
+                    }
+                    return result.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message) ;
+                }
+            }
+            return null;
+      }
     }
+
+    
+
 
     public class PageCuter <ArrayType>
     {
@@ -380,4 +441,6 @@ namespace L_FMS
         }
 
     }
+
+
 }

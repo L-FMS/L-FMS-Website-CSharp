@@ -46,7 +46,7 @@
             <textarea name="comment" class="form-control" id="comment-content" placeholder="评论..." maxlength="140" onkeypress="if(event.keyCode==13) return false;"></textarea>
           </div>
           <div class="comment-btn">
-            <button class="btn btn-inverse disabled" type="submit">评论</button>
+            <asp:Button CssClass="btn btn-inverse" runat="server" OnClick="Comment_Submit" Text="评论"/>
             <button class="btn btn-link" id="comment-cancel">取消</button>
           </div>
         </form>

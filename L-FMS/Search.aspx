@@ -5,84 +5,16 @@
     <div class="col-sm-12">
       <h3>Search Results <small> for "xxxxx"</small> </h3>
       <div class="table-responsive">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>Name</th>
-              <th>Date</th>
-              <th>Place</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="success">
-              <td>Card</td>
-              <td>ID Card</td>
-              <td>2014/5/1</td>
-              <td>Playground</td>
-            </tr>
-            <tr class="success">
-              <td>Phone</td>
-              <td>iPhone 5</td>
-              <td>2014/3/29</td>
-              <td>Classroom</td>
-            </tr>
-            <tr class="danger">
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr class="danger">
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr class="success">
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr class="danger">
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr class="success">
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr class="danger">
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr class="danger">
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr class="danger">
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-            <tr class="danger">
-              <td>Personal</td>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
-          </tbody>
-        </table>
+
+        <form runat="server">
+            <asp:GridView   ID="searchItem" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false"   BorderWidth="0px" GridLines="None" >
+                <columns>
+                    <asp:BoundField DataField="name" HeaderText="Name" />
+                    <asp:BoundField DataField="date" HeaderText="Date" />
+                    <asp:BoundField DataField="place" HeaderText="Place" />
+                </columns>
+            </asp:GridView>
+          </form>
       </div>
       <div class="pagination col-sm-12 text-center">
         <ul>

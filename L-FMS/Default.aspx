@@ -9,6 +9,7 @@
   </div>
 
   <div class="row">
+     <form runat="server">
     <div class="col-sm-6">
       <h3>Lost things <button class="btn btn-danger">I've lost something!</button></h3>
       <div class="table-responsive">
@@ -28,8 +29,8 @@
             </tr>
           </tbody>
         </table>
-          <form runat="server">
-            <asp:Label ID="aaa" runat="server" Text="222" />
+
+
             <asp:GridView   ID="lost" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false"   BorderWidth="0px" GridLines="None" >
                 <columns>
                     <asp:BoundField DataField="name" HeaderText="Name" />
@@ -37,14 +38,7 @@
                     <asp:BoundField DataField="place" HeaderText="Place" />
                 </columns>
             </asp:GridView>
-            <asp:Table ID="tableLost"  runat="server" CssClass="table table-hover">
-                <asp:TableHeaderRow>
-                    <asp:TableHeaderCell>Name</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Date</asp:TableHeaderCell>
-                    <asp:TableHeaderCell>Place</asp:TableHeaderCell>
-                </asp:TableHeaderRow>
-            </asp:Table>
-          </form>
+
       </div>
       <div class="clearfix">
         <ul class="pager" style="float: right;">
@@ -55,24 +49,31 @@
       </div>
     </div>
     <div class="col-sm-6">
-      <h3>Found things <button class="btn btn-primary">I've found something!</button></h3>
-      <div class="table-responsive">
+        <h3>Found things <button class="btn btn-primary">I've found something!</button></h3>
+        <div class="table-responsive">
         <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Date</th>
-              <th>Place</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Glasses</td>
-              <td>2014/4/20</td>
-              <td>Public Baths</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Place</th>
+                 </tr>
+           </thead>
+           <tbody>
+                <tr>
+                  <td>Glasses</td>
+                  <td>2014/4/20</td>
+                 <td>Public Baths</td>
+                 </tr>
           </tbody>
         </table>
+            <asp:GridView   ID="found" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false"   BorderWidth="0px" GridLines="None" >
+                <columns>
+                    <asp:BoundField DataField="name" HeaderText="Name" />
+                    <asp:BoundField DataField="date" HeaderText="Date" />
+                    <asp:BoundField DataField="place" HeaderText="Place" />
+                </columns>
+            </asp:GridView>
       </div>
       <div class="clearfix">
         <ul class="pager" style="float: right;">
@@ -82,5 +83,6 @@
         <em class="text-muted" style="float: left;">Page 1 of 32</em>
       </div>
     </div>
+    </form>
   </div>
 </asp:Content>

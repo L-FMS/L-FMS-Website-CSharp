@@ -48,7 +48,7 @@
             <span class="dropdown-arrow"></span>
             <ul class="dropdown-menu">
               <li><a runat="server" href="~/PersonalPage.aspx">个人页面</a></li>
-              <li><a runat="server" href="~/Settings.aspx">设置</a></li>
+              <li><a runat="server" href="~/SettingsInfo.aspx">设置</a></li>
               <li class="divider"></li>
               <li><a href="#">注销</a></li>
             </ul>
@@ -63,7 +63,6 @@
           <li><a runat="server" href="~/Register.aspx" class="navbar-link">Sign up</a></li>
           <%
             }
-              
           %>
         </ul>
           
@@ -72,7 +71,7 @@
   </nav><!-- /navbar -->
 
   <!-- Main -->
-  <main class="container">
+  <main class="container" runat="server">
     <%-- Main Content --%>
     <asp:ContentPlaceHolder ID="MainContent" runat="server">
     </asp:ContentPlaceHolder>

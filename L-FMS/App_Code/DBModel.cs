@@ -381,7 +381,33 @@ namespace L_FMS
             }
             return null;
         }
+
+        //获取comments
+    public COMMENTS[] GetComments( decimal itemId )
+    {
+        List<COMMENTS> result = new List<COMMENTS>();
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    var a=db.COMMENT_ITEM_USER.Where(p => p.ITEM_ID == itemId);
+                    foreach( var q in a)
+                    {
+                        result.Add(q.COMMENTS);
+                    }
+                    return result.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message) ;
+                }
+            }
+            return null;
+      }
     }
+
+    
+
 
     public class PageCuter <ArrayType>
     {

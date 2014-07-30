@@ -151,6 +151,7 @@
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="Default.aspx" />
     <Content Include="Detail.aspx" />
+    <Content Include="error.aspx" />
     <Content Include="fonts\flat-ui-icons-regular.svg" />
     <Content Include="fonts\lato\lato-black.svg" />
     <Content Include="fonts\lato\lato-bold.svg" />
@@ -259,6 +260,7 @@
     <Content Include="stylesheets\demo.css" />
     <Content Include="stylesheets\detail.css" />
     <Content Include="stylesheets\docs.css" />
+    <Content Include="stylesheets\error.css" />
     <Content Include="stylesheets\example.css" />
     <Content Include="stylesheets\flat-ui.css" />
     <Content Include="stylesheets\register.css" />
@@ -353,6 +355,13 @@
     </Compile>
     <Compile Include="DIALOG_MESSAGE.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
     </Compile>
     <Compile Include="ITEM.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>

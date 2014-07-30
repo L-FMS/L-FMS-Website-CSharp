@@ -38,7 +38,7 @@ namespace L_FMS
         // 私有构造函数
         private DBModel()
         {
-
+            
         }
 
         public static DBModel GetInstance()
@@ -225,7 +225,7 @@ namespace L_FMS
             {
                 try
                 {
-                    pwd = db.ACCOUNT.Where(p => p.EMAIL == Email).FirstOrDefault().PASSWORD;
+                    pwd = MD5.EncryptMD5WithRule(db.ACCOUNT.Where(p => p.EMAIL == Email).FirstOrDefault().PASSWORD);
                 }
                 catch (Exception ex)
                 {
@@ -439,7 +439,7 @@ namespace L_FMS
 
         public string[] GetLostItemByID(decimal user_id)
         {
-            List<string> result = new List<string>();
+            List<string> result = new List<string>(); 
             using (LFMSContext db = new LFMSContext())
             {
                 try
@@ -465,7 +465,7 @@ namespace L_FMS
         //根据user_id获得用户的找到的物品
         public string[] GetFoundItemByID(decimal user_id)
         {
-            List<string> result = new List<string>();
+            List<string> result = new List<string>(); 
             using (LFMSContext db = new LFMSContext())
             {
                 try
@@ -480,7 +480,7 @@ namespace L_FMS
                         result.Add(i.ITEM.ITEM_NAME);
                     }
                     return result.ToArray();
-                }
+            }
                 catch (Exception ex)
                 {
                     System.Diagnostics.Debug.WriteLine(ex.Message);
@@ -491,8 +491,8 @@ namespace L_FMS
 
         //获取comments
         public COMMENTS[] GetComments(decimal itemId)
-        {
-            List<COMMENTS> result = new List<COMMENTS>();
+    {
+        List<COMMENTS> result = new List<COMMENTS>();
             using (LFMSContext db = new LFMSContext())
             {
                 try
@@ -501,7 +501,7 @@ namespace L_FMS
                     foreach (var q in a)
                     {
                         result.Add(q.COMMENTS);
-                    }
+    }
                     return result.ToArray();
                 }
                 catch (Exception ex)
@@ -510,7 +510,7 @@ namespace L_FMS
                 }
             }
             return null;
-        }
+      }
         //通过item_id 获得的信息：  用于detail信息界面
 
         //通过item_id获得发现者(遗失者)的姓名  电话  
@@ -533,7 +533,7 @@ namespace L_FMS
             }
             return null;
         }
-        
+
         //通过item_id 获得item信息
         public ITEM GetItemByItemID(decimal itemId)
         {
@@ -589,14 +589,36 @@ namespace L_FMS
             }
             return null;
         }
+        // 更改对应用户的密码
+        public void ResetUserPassword(decimal userID, string newPwd)
+        {
+            // 加密
+            string newPwdMD5 = MD5.Encrypt(newPwd);
 
+            using(LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    // 获取用户
+                    ACCOUNT account = db.ACCOUNT.Where(p => p.USER_ID == userID).FirstOrDefault();
+
+                    account.PASSWORD = newPwdMD5;
+
+                    db.SaveChanges();
+                }
+                catch(Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+        }
     }
 
     public class PageCuter<ArrayType>
     {
-
         public PageCuter()
-        {
+        { 
+
         }
 
         //获取inputset指定页;参数 页码:PageNo ; 每页元素个数:NumPerPage ; 数组:inputSet
@@ -606,7 +628,7 @@ namespace L_FMS
             ArrayType[] result = null;
             int inputCount = inputSet.Count();
             int inputPageNum = inputCount / NumPerPage;
-
+            
             if (PageNo > inputPageNum) return null;
 
             int StartP = (PageNo - 1) * NumPerPage;
@@ -619,9 +641,7 @@ namespace L_FMS
                 //浅拷贝
                 result[j] = inputSet[i];
             }
-            return result;
+                return result;
         }
-
     }
-
 }

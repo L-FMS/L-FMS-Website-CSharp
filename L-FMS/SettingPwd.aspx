@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainPage.master" AutoEventWireup="true" CodeBehind="SettingPwd.aspx.cs" Inherits="L_FMS.SettingPwd" %>
+﻿<%@ Page Title="登录 | 失物招领管理系统" Language="C#" MasterPageFile="~/MainPage.master" AutoEventWireup="true" CodeBehind="SettingPwd.aspx.cs" Inherits="L_FMS.SettingPwd" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CustomStylesheetContent" runat="server">
   <!-- Custom Stylesheets -->
@@ -17,28 +17,28 @@
   <div class="tab-content">
     <!-- 更改密码 -->
     <div class="tab-pane active fade in" id="changePassword">
-      <form class="form-horizontal" role="form" id="pwd-form" method="POST" action="">
+      <form class="form-horizontal" role="form" method="POST" runat="server">
         <div class="form-group">
           <label for="old-pwd" class="col-sm-1 control-label">旧密码</label>
           <div class="col-sm-6">
-            <input type="password" class="form-control" id="old-pwd" placeholder="旧密码">
+            <input type="password" class="form-control" name="old-pwd" id="old-pwd" placeholder="旧密码">
           </div>
         </div>
         <div class="form-group">
           <label for="new-pwd" class="col-sm-1 control-label">新密码</label>
           <div class="col-sm-6">
-            <input type="password" class="form-control" id="new-pwd" placeholder="新密码">
+            <input type="password" class="form-control" name="new-pwd" id="new-pwd" placeholder="新密码">
           </div>
         </div>
         <div class="form-group">
           <label for="confirm-pwd" class="col-sm-1 control-label">确认密码</label>
           <div class="col-sm-6">
-            <input type="password" class="form-control" id="confirm-pwd" placeholder="确认密码">
+            <input type="password" class="form-control" name="confirm-pwd" id="confirm-pwd" placeholder="确认密码">
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-10">
-            <button type="submit" class="btn btn-primary">确认更改</button>
+            <asp:Button CssClass="btn btn-primary" OnClick="ResetPwd" runat="server" Text="确认更改" />
           </div>
         </div>
       </form>

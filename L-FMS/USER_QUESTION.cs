@@ -17,6 +17,7 @@ namespace L_FMS
         public decimal ID { get; set; }
         public decimal USER_ID { get; set; }
         public decimal QUESTION_ID { get; set; }
+        public string ANSWER { get; set; }
     
         public virtual ACCOUNT ACCOUNT { get; set; }
         public virtual QUESTION QUESTION { get; set; }

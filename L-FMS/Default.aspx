@@ -28,7 +28,7 @@
           </tbody>
         </table>
 
-         <asp:GridView CssClass="" runat="server" AutoGenerateColumns="false"  ID="table_lost" />
+        
       </div>
       <div class="clearfix">
         <ul class="pager" style="float: right;">

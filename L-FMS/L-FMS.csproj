@@ -151,7 +151,7 @@
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="Default.aspx" />
     <Content Include="Detail.aspx" />
-    <Content Include="error.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="fonts\flat-ui-icons-regular.svg" />
     <Content Include="fonts\lato\lato-black.svg" />
     <Content Include="fonts\lato\lato-bold.svg" />
@@ -356,12 +356,12 @@
     <Compile Include="DIALOG_MESSAGE.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="error.aspx.cs">
-      <DependentUpon>error.aspx</DependentUpon>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="error.aspx.designer.cs">
-      <DependentUpon>error.aspx</DependentUpon>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="ITEM.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>

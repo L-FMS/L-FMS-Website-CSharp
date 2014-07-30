@@ -211,6 +211,32 @@ namespace L_FMS
 
             return pwd;
         }
+
+        public PUBLISHMENT[] GetPublishment(string keyword)
+        {
+            PUBLISHMENT[] result;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    if (keyword == null)
+                    {
+                        result = db.PUBLISHMENT.ToArray();
+                    }
+                    else
+                    {
+                        string sql = "(select * from PUBLISHMENT where PLACE like \'%"+keyword+"%\') ";
+                        result = db.Database.SqlQuery<PUBLISHMENT>(sql).ToArray();
+                    }
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
         // 获取account 
        public ACCOUNT[] GetAccountWithSearchString(string USER_EMAIL)
        {
@@ -236,7 +262,5 @@ namespace L_FMS
            }
            return null;
        }
-
-
     }
 }

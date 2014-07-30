@@ -33,7 +33,6 @@ namespace L_FMS
                 if (pwd_md5.Equals(pass))
                 {
                     //login successfully
-                    this.aaa.Text = "login successfuly";
                     Session["userID"] = DBModel.GetInstance().GetUserID(email);
                     Session["isLogin"] = "true";
                     Session["userName"] = DBModel.GetInstance().GetUserName(email);

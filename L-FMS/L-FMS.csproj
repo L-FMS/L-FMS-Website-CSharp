@@ -233,7 +233,6 @@
     <Content Include="PostFoundInfo.aspx" />
     <Content Include="PostLostInfo.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="scripts\application-985b892b.js" />
     <Content Include="scripts\application.js" />
     <Content Include="scripts\bootstrap-filestyle.min.js" />
     <Content Include="scripts\bootstrap-select.js" />
@@ -248,14 +247,13 @@
     <Content Include="scripts\jquery-1.8.3.min.js" />
     <Content Include="scripts\jquery-2.0.3.min.js" />
     <Content Include="scripts\jquery-ui-1.10.3.custom.min.js" />
-    <Content Include="scripts\jquery-ui.min.js" />
     <Content Include="scripts\jquery.placeholder.js" />
     <Content Include="scripts\jquery.tagsinput.js" />
     <Content Include="scripts\jquery.ui.touch-punch.min.js" />
-    <Content Include="scripts\modernizr.min.js" />
     <Content Include="scripts\respond.min.js" />
     <Content Include="scripts\typeahead.js" />
     <Content Include="Search.aspx" />
+    <Content Include="Settings.aspx" />
     <Content Include="stylesheets\demo.css" />
     <Content Include="stylesheets\detail.css" />
     <Content Include="stylesheets\docs.css" />
@@ -265,6 +263,7 @@
     <Content Include="stylesheets\register.css" />
     <Content Include="stylesheets\login.css" />
     <Content Include="stylesheets\post.css" />
+    <Content Include="stylesheets\settings.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -382,6 +381,13 @@
     </Compile>
     <Compile Include="QUESTION.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
     </Compile>
     <Compile Include="TAG.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>

@@ -94,7 +94,7 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="CustomScriptContent" runat="server">
-  <%: Scripts.Render("~/scripts/Register") %>
+  <%: Scripts.Render("~/scripts/BootstrapSelect") %>
   <script type="text/javascript">
     $("select").selectpicker({ style: 'btn-hg btn-primary', menuStyle: 'dropdown-inverse' });
   </script>

@@ -15,6 +15,7 @@ namespace L_FMS
         protected DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
+            DBModel.GetInstance().GetLostItem();
             dt.Columns.Add("name");
             dt.Columns.Add("date");
             dt.Columns.Add("place");
@@ -25,6 +26,7 @@ namespace L_FMS
             dt.Rows.Add(dr);
             this.lost.DataSource = dt;
             this.lost.DataBind();
+
 
             
         }

@@ -11,44 +11,30 @@
       <img src="images/icons/svg/paper-bag.svg" alt="Welcome th L&FMS">
       <h4>Complete the <small>information</small></h4>
     </div>
-    <form class="login-form" name="loginForm" action="" method="POST">
+    <form class="login-form" name="loginForm" action="" method="POST" runat="server" enctype="multipart/form-data">
       <div class="form-group">
         <label for="post-name" style="color: #bfc9ca;">Name</label>
-        <input type="text" class="form-control login-field" placeholder="Name" id="post-name" required autofocus>
+        <input type="text" class="form-control login-field" placeholder="Name" id="post-name" name="item-name" required autofocus>
         <label for="post-name" class="login-field-icon fui-search"></label>
       </div>
-      <div class="form-group">
-        <label for="post-type" style="color: #bfc9ca;">Type</label>
-        <select name="categoryId" class="select-block mbl" id="post-type" required>
-          <option>-----</option>
-          <option value="0">My Profile</option>
-          <option value="1">My Friends</option>
-        </select>
-        <input type="hidden" name="type" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="post-time" style="color: #bfc9ca;">Time</label>
-        <input type="date" class="form-control login-field" placeholder="Time" id="post-time" name="dateTimeString" required>
-        <label for="post-time" class="login-field-icon fui-time"></label>
-      </div>
-      <div class="form-group">
-        <label for="post-place" style="color: #bfc9ca;">Place</label>
-        <input type="text" class="form-control login-field" placeholder="Place" id="post-place" required>
-        <label for="post-place" class="login-field-icon fui-location"></label>
-      </div>
+        <div class="form-group">
+            <label for="post-place" style="color: #bfc9ca;">Place</label>
+            <input type="text" class="form-control login-field" placeholder="Place" name="item-place" id="post-place" required>
+            <label for="post-place" class="login-field-icon fui-location"></label>
+        </div>
       <div class="form-group">
         <label for="post-image" style="color: #bfc9ca;">Image</label>
-        <input type="file" class="form-control login-field filestyle" placeholder="Image" id="post-image" accept="image/*" required>
+        <input type="file" class="form-control login-field filestyle" id="post-image" name="item-image" accept="image/*" required>
       </div>
       <div class="form-group">
         <label for="post-tags" style="color: #bfc9ca;">Tag</label>
-        <input class="form-control login-field tagsinput" placeholder="Tag" id="post-tags" required>
+        <input class="form-control login-field tagsinput" placeholder="Tag" name="item-tags" id="post-tags" required>
       </div>
       <div class="form-group">
         <label for="post-description" style="color: #bfc9ca;">Description</label>
-        <textarea class="form-control login-field" name="description" id="post-description" cols="30" rows="5" placeholder="Description"></textarea>
+        <textarea class="form-control login-field" name="item-description" id="post-description" cols="30" rows="5" placeholder="Description"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary btn-lg btn-block">Post</button>
+      <asp:Button  CssClass="btn btn-primary btn-lg btn-block" runat="server" OnClick="postButton" Text="提交"/>
     </form>
   </main>
 </asp:Content>

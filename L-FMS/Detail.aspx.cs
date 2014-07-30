@@ -20,7 +20,7 @@ namespace L_FMS
             string comment = Request.Form["comment"];
             COMMENTS comments = new COMMENTS
             {
-                COMMENT_ID = DBModel.GetInstance().GetSeqNextVal("comments"),
+                COMMENT_ID = DBModel.GetInstance().GetSeqNextVal("comment"),
                 CONTENT = comment,
                 TIME = DateTime.Now
             };
@@ -31,7 +31,7 @@ namespace L_FMS
                     COMMENTS commentTemp = db.COMMENTS.Add(comments);
                     COMMENT_ITEM_USER comment_item_user = new COMMENT_ITEM_USER
                     {
-                        ID = DBModel.GetInstance().GetSeqNextVal("comment_item_user"),
+                        ID = DBModel.GetInstance().GetSeqNextVal("com_item_user"),
                         COMMENT_ID = commentTemp.COMMENT_ID,
                         ITEM_ID = 0, //这里需要获取物品的ID
                         USER_ID = 0 //同上

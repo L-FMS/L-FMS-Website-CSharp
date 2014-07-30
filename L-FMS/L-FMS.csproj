@@ -149,7 +149,6 @@
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
-    <Content Include="Default.aspx" />
     <Content Include="Detail.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="fonts\flat-ui-icons-regular.svg" />
@@ -269,6 +268,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ACCOUNT.cs">
@@ -395,11 +395,14 @@
     <Compile Include="USER_USERINFO.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Content Include="App_Code\BundleConfig.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Content Include="App_Code\BundleConfig.cs" />
     <Compile Include="Detail.aspx.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

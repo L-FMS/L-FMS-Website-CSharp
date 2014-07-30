@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/MainPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="Home Page"  Language="C#" MasterPageFile="~/MainPage.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="L_FMS.WebForm1" %>
+
 
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
   <div class="jumbotron">
@@ -27,8 +28,23 @@
             </tr>
           </tbody>
         </table>
-
-        
+          <form runat="server">
+            <asp:Label ID="aaa" runat="server" Text="222" />
+            <asp:GridView   ID="lost" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false"   BorderWidth="0px" GridLines="None" >
+                <columns>
+                    <asp:BoundField DataField="name" HeaderText="Name" />
+                    <asp:BoundField DataField="date" HeaderText="Date" />
+                    <asp:BoundField DataField="place" HeaderText="Place" />
+                </columns>
+            </asp:GridView>
+            <asp:Table ID="tableLost"  runat="server" CssClass="table table-hover">
+                <asp:TableHeaderRow>
+                    <asp:TableHeaderCell>Name</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Date</asp:TableHeaderCell>
+                    <asp:TableHeaderCell>Place</asp:TableHeaderCell>
+                </asp:TableHeaderRow>
+            </asp:Table>
+          </form>
       </div>
       <div class="clearfix">
         <ul class="pager" style="float: right;">

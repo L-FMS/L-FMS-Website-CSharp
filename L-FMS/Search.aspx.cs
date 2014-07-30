@@ -17,9 +17,11 @@ namespace L_FMS
             dt.Columns.Add("name");
             dt.Columns.Add("date");
             dt.Columns.Add("place");
-            String SearchMessage = "张睿";
+            
+            //根据SearchMessage 在publishment表中获取信息
+            String SearchMessage = "热";
             ItemEx[] itemMessage = DBModel.GetInstance().GetItemBySearchString(SearchMessage);
-            foreach (var i in itemMessage)
+            foreach (ItemEx i in itemMessage)
             {
                 object[] dr = new object[3];
                 dr[0] = i.ITEM_NAME;

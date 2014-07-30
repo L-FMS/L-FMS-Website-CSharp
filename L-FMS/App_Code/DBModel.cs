@@ -13,7 +13,14 @@ namespace L_FMS
         public DateTime PUBLISH_DATE { get; set; }
         public string PLACE { get; set; }
     }
+    public class PersonMessage
+    {
+        public string USER_NAME { get; set; }
+        public string EMAIL { get; set; }
+        public DateTime BIRTH { get; set; }
+        public string SEX { get; set; }
 
+    }
     public class DBModel
     {
         // 单例
@@ -332,7 +339,7 @@ namespace L_FMS
                     {
                         // 判定是否包含要求的字段
                         if (i.ITEM.ITEM_NAME.Contains(SearchString)
-                            || i.PUBLISH_DATE.ToString() == (SearchString)
+                            || i.PUBLISH_DATE.ToString().Contains(SearchString)
                             || i.PLACE.Contains(SearchString))
                         {
                             ItemEx itemEx = new ItemEx
@@ -344,6 +351,26 @@ namespace L_FMS
                                 PLACE = i.PLACE
                             };
                             result.Add(itemEx);
+                        }
+                        else
+                        {
+                            //判定tag中是否有相关信息
+                            foreach (var j in i.ITEM.ITEM_TAG)
+                            {
+                                if (j.TAG.TAG_TEXT.Contains(SearchString))
+                                {
+                            ItemEx itemEx = new ItemEx
+                            {
+                                PUBLISHMENT_ID = i.ID,
+                                ITEM_ID = i.ITEM_ID,
+                                ITEM_NAME = i.ITEM.ITEM_NAME,
+                                PUBLISH_DATE = i.PUBLISH_DATE,
+                                PLACE = i.PLACE
+                            };
+                            result.Add(itemEx);
+                                    break;
+                                }
+                            }
                         }
                     }
                     return result.ToArray();
@@ -377,6 +404,77 @@ namespace L_FMS
                 catch (Exception ex)
                 {
                     System.Diagnostics.Debug.WriteLine(ex.Message) ;
+                }
+            }
+            return null;
+        }
+        //根据用户id获得用户信息
+        public PersonMessage GetUserMessage(decimal UserId)
+        {
+            PersonMessage result;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    result = db.Database.SqlQuery<PersonMessage>("select user_name,email,birth,sex from account, user_userinfo, userinfo where account.user_id=" + UserId + " and account.user_id=user_userinfo.account and user_userinfo.userinfo=userinfo.userinfo_id").FirstOrDefault();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+        //根据user_id获得用户遗失物品名称
+
+        public string[] GetLostItemByID(decimal user_id)
+        {
+            List<string> result = new List<string>(); 
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    foreach (var i in db.PUBLISHMENT)
+                    {
+                        // 判断是否为丢失物品
+                        if (!i.TYPE.Equals("lost")||!i.PUBLISHER_ID.Equals(user_id))
+                        {
+                            continue;
+                        }
+                        result.Add(i.ITEM.ITEM_NAME);
+                    }
+                    return result.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+        //根据user_id获得用户的找到的物品
+        public string[] GetFoundItemByID(decimal user_id)
+        {
+            List<string> result = new List<string>(); 
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    foreach (var i in db.PUBLISHMENT)
+                    {
+                        // 判断是否为丢失物品
+                        if (!i.TYPE.Equals("found")||!i.PUBLISHER_ID.Equals(user_id))
+                        {
+                            continue;
+                        }
+                        result.Add(i.ITEM.ITEM_NAME);
+                    }
+                    return result.ToArray();
+            }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
                 }
             }
             return null;
@@ -433,7 +531,9 @@ namespace L_FMS
     
 
 
-    public class PageCuter <ArrayType>
+
+
+    public class PageCuter<ArrayType>
     {
 
         public PageCuter()
@@ -442,21 +542,21 @@ namespace L_FMS
 
         //获取inputset指定页;参数 页码:PageNo ; 每页元素个数:NumPerPage ; 数组:inputSet
         //获取第PageNo的内容
-        public static ArrayType[] getPage(int PageNo , int NumPerPage , ArrayType[] inputSet)
+        public static ArrayType[] getPage(int PageNo, int NumPerPage, ArrayType[] inputSet)
         {
 
             ArrayType[] result = null;
             int inputCount = inputSet.Count();
-            int inputPageNum = inputCount / NumPerPage ;
+            int inputPageNum = inputCount / NumPerPage;
             
-            if ( PageNo > inputPageNum ) return null;
+            if (PageNo > inputPageNum) return null;
 
-            int StartP = (PageNo - 1) * NumPerPage ;
+            int StartP = (PageNo - 1) * NumPerPage;
             int EndP = ((StartP + NumPerPage < inputCount) ? StartP + NumPerPage : inputCount);
-            result = new ArrayType[ EndP - StartP + 1] ;
+            result = new ArrayType[EndP - StartP + 1];
 
             int j = 0;
-            for(int i = StartP ; i < EndP ; i++ , j++ )
+            for (int i = StartP; i < EndP; i++, j++)
             {
                 //浅拷贝
                 result[j] = inputSet[i];
@@ -465,6 +565,5 @@ namespace L_FMS
         }
 
     }
-
 
 }

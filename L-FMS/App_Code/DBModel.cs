@@ -66,7 +66,7 @@ namespace L_FMS
 
             ACCOUNT account = new ACCOUNT
             {
-                USER_ID = DBModel.GetInstance().GetSeqNextVal("user"),
+                USER_ID = this.GetSeqNextVal("user"),
                 EMAIL = email,
                 PASSWORD = pwd,
                 PRIVILEGE = 1,
@@ -75,7 +75,7 @@ namespace L_FMS
 
             USERINFO userinfo = new USERINFO
             {
-                USERINFO_ID = DBModel.GetInstance().GetSeqNextVal("userinfo"),
+                USERINFO_ID = this.GetSeqNextVal("userinfo"),
                 USER_NAME = name,
                 PHONE = phone,
                 ADDRESS = address,
@@ -86,7 +86,7 @@ namespace L_FMS
 
             USER_USERINFO user_userinfo = new USER_USERINFO
             {
-                ID = DBModel.GetInstance().GetSeqNextVal("user_userinfo"),
+                ID = this.GetSeqNextVal("user_userinfo"),
                 ACCOUNT = account.USER_ID,
                 USERINFO = userinfo.USERINFO_ID
             };
@@ -106,6 +106,110 @@ namespace L_FMS
                     System.Diagnostics.Debug.WriteLine(ex.Message);
                 }
             }
+        }
+
+        // 根据Email获取用户User ID
+        public decimal GetUserID(string Email)
+        {
+            decimal userID = -1;
+
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    userID = db.ACCOUNT.Where(p => p.EMAIL == Email).FirstOrDefault().USER_ID;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+            return userID;
+        }
+
+        // 获取用户名字
+        // 根据User ID获取用户名字
+        public string GetUserName(decimal UserId)
+        {
+            string name = "";
+
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    var result = db.Database.SqlQuery<string>("select user_name from account, user_userinfo, userinfo where account.user_id=" + UserId + " and account.user_id=user_userinfo.account and user_userinfo.userinfo=userinfo.userinfo_id").FirstOrDefault();
+                    name = result;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+            return name;
+        }
+
+        // 根据Email获取用户名字
+        public string GetUserName(string Email)
+        {
+            string name = "";
+
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    var result = db.Database.SqlQuery<string>("select user_name from account, user_userinfo, userinfo where account.email=\'" + Email + "\' and account.user_id=user_userinfo.account and user_userinfo.userinfo=userinfo.userinfo_id").FirstOrDefault();
+                    name = result;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+            return name;
+        }
+
+        // 获取用户密码，返回当前时间下加密的MD5值
+        // 根据User ID获取密码
+        public string GetUserPassword(decimal UserId)
+        {
+            string pwd = "";
+
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    pwd = MD5.EncryptMD5WithRule(db.ACCOUNT.Where(p => p.USER_ID == UserId).FirstOrDefault().PASSWORD);
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+            return pwd;
+        }
+
+        // 根据Email获取密码
+        public string GetUserPassword(string Email)
+        {
+            string pwd = "";
+
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    pwd = db.ACCOUNT.Where(p => p.EMAIL == Email).FirstOrDefault().PASSWORD;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+            return pwd;
         }
     }
 }

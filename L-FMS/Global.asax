@@ -6,7 +6,7 @@
     void Application_Start(object sender, EventArgs e) 
     {
         // 在应用程序启动时运行的代码
-      BundleConfig.RegisterBundles(BundleTable.Bundles);
+        BundleConfig.RegisterBundles(BundleTable.Bundles);
     }
     
     void Application_End(object sender, EventArgs e) 
@@ -24,7 +24,9 @@
     void Session_Start(object sender, EventArgs e) 
     {
         // 在新会话启动时运行的代码
-
+        Session["userID"] = "-1";
+        Session["isLogin"] = "false";
+        Session["userName"] = "null";
     }
 
     void Session_End(object sender, EventArgs e) 

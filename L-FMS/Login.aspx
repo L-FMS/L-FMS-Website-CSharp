@@ -12,11 +12,11 @@
         </div>
         <form class="login-form" name="loginForm" action="" method="POST" runat="server">
             <div class="form-group">
-                <input type="text" class="form-control login-field" name="name" placeholder="Enter your username" id="login-username" required autofocus>
-                <label for="login-username" class="login-field-icon fui-user"></label>
+                <input type="email" class="form-control login-field" name="email" placeholder="登录邮箱" id="login-email" required autofocus>
+                <label for="login-email" class="login-field-icon fui-user"></label>
             </div>
             <div class="form-group">
-                <input type="password" class="form-control login-field" name="pwd" placeholder="Password" id="login-pass" required>
+                <input type="password" class="form-control login-field" name="pwd" placeholder="密码" id="login-pass" required>
                 <label for="login-pass" class="login-field-icon fui-lock"></label>
             </div>
             <asp:Button CssClass="btn btn-primary btn-lg btn-block" runat="server" OnClick="buttonSubmit"  Text="Log in"  />

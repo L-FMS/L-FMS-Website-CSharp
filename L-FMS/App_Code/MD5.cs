@@ -247,6 +247,7 @@ namespace L_FMS
 
         private static string ToHex(long dec)
         {
+            if (dec == 0) return "00";
             string strhex = "";
             while(dec > 0)
             {
@@ -412,7 +413,7 @@ namespace L_FMS
                 for (int i = 0; i < 4; i++) {
                 hour += 7;
                 hour = hour % 4 ;
-                MD5 = MD5 + WordToHex(pp[i]);
+                MD5 = MD5 + WordToHex(pp[hour]);
                 }
 
                 MD5 = MD5.ToLower();            

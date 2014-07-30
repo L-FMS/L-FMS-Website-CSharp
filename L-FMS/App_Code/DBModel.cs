@@ -271,41 +271,6 @@ namespace L_FMS
            return null;
        }
 
-    }
-
-    public class PageCuter <ArrayType>
-    {
-
-        public PageCuter()
-        { 
-        }
-
-        //获取inputset指定页;参数 页码:PageNo ; 每页元素个数:NumPerPage ; 数组:inputSet
-        //获取第PageNo的内容
-        public static ArrayType[] getPage(int PageNo , int NumPerPage , ArrayType[] inputSet)
-        {
-
-            ArrayType[] result = null;
-            int inputCount = inputSet.Count();
-            int inputPageNum = inputCount / NumPerPage ;
-            
-            if ( PageNo > inputPageNum ) return null;
-
-            int StartP = (PageNo - 1) * NumPerPage ;
-            int EndP = ((StartP + NumPerPage < inputCount) ? StartP + NumPerPage : inputCount);
-            result = new ArrayType[ EndP - StartP + 1] ;
-
-            int j = 0;
-            for(int i = StartP ; i < EndP ; i++ , j++ )
-            {
-                //浅拷贝
-                result[j] = inputSet[i];
-            }
-                return result;
-        }
-
-
-
         // 获取Item
         // 获取Lost Item
         public ItemEx[] GetLostItem()
@@ -380,5 +345,40 @@ namespace L_FMS
             }
             return null;
         }
+
+    }
+
+    public class PageCuter <ArrayType>
+    {
+
+        public PageCuter()
+        { 
+        }
+
+        //获取inputset指定页;参数 页码:PageNo ; 每页元素个数:NumPerPage ; 数组:inputSet
+        //获取第PageNo的内容
+        public static ArrayType[] getPage(int PageNo , int NumPerPage , ArrayType[] inputSet)
+        {
+
+            ArrayType[] result = null;
+            int inputCount = inputSet.Count();
+            int inputPageNum = inputCount / NumPerPage ;
+            
+            if ( PageNo > inputPageNum ) return null;
+
+            int StartP = (PageNo - 1) * NumPerPage ;
+            int EndP = ((StartP + NumPerPage < inputCount) ? StartP + NumPerPage : inputCount);
+            result = new ArrayType[ EndP - StartP + 1] ;
+
+            int j = 0;
+            for(int i = StartP ; i < EndP ; i++ , j++ )
+            {
+                //浅拷贝
+                result[j] = inputSet[i];
+            }
+                return result;
+        }
+
+
     }
 }

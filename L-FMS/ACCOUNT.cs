@@ -16,12 +16,13 @@ namespace L_FMS
     {
         public ACCOUNT()
         {
+            this.USER_QUESTION = new HashSet<USER_QUESTION>();
+            this.USER_USERINFO = new HashSet<USER_USERINFO>();
             this.DIALOG = new HashSet<DIALOG>();
             this.DIALOG1 = new HashSet<DIALOG>();
             this.MESSAGE = new HashSet<MESSAGE>();
             this.PUBLISHMENT = new HashSet<PUBLISHMENT>();
             this.COMMENT_ITEM_USER = new HashSet<COMMENT_ITEM_USER>();
-            this.QUESTION = new HashSet<QUESTION>();
         }
     
         public decimal USER_ID { get; set; }
@@ -30,11 +31,12 @@ namespace L_FMS
         public decimal PRIVILEGE { get; set; }
         public decimal VERIFIED { get; set; }
     
+        public virtual ICollection<USER_QUESTION> USER_QUESTION { get; set; }
+        public virtual ICollection<USER_USERINFO> USER_USERINFO { get; set; }
         public virtual ICollection<DIALOG> DIALOG { get; set; }
         public virtual ICollection<DIALOG> DIALOG1 { get; set; }
         public virtual ICollection<MESSAGE> MESSAGE { get; set; }
         public virtual ICollection<PUBLISHMENT> PUBLISHMENT { get; set; }
         public virtual ICollection<COMMENT_ITEM_USER> COMMENT_ITEM_USER { get; set; }
-        public virtual ICollection<QUESTION> QUESTION { get; set; }
     }
 }

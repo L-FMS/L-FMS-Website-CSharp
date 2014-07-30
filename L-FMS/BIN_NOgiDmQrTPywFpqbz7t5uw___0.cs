@@ -12,12 +12,11 @@ namespace L_FMS
     using System;
     using System.Collections.Generic;
     
-    public partial class BIN_zcz8r0VsStKzEIx4TwtFrg___0
+    public partial class BIN_NOgiDmQrTPywFpqbz7t5uw___0
     {
-        public decimal MESSAGE_ID { get; set; }
-        public decimal SENDER_ID { get; set; }
-        public string CONTENT { get; set; }
-        public Nullable<System.DateTime> SENDTIME { get; set; }
-        public decimal IS_READ { get; set; }
+        public decimal ID { get; set; }
+        public decimal ITEM_ID { get; set; }
+        public decimal COMMENT_ID { get; set; }
+        public decimal USER_ID { get; set; }
     }
 }

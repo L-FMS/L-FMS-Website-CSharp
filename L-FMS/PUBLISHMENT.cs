@@ -14,6 +14,7 @@ namespace L_FMS
     
     public partial class PUBLISHMENT
     {
+        public decimal ID { get; set; }
         public decimal ITEM_ID { get; set; }
         public decimal PUBLISHER_ID { get; set; }
         public System.DateTime PUBLISH_DATE { get; set; }

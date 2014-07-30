@@ -26,40 +26,36 @@ namespace L_FMS
         }
     
         public DbSet<ACCOUNT> ACCOUNT { get; set; }
-        public DbSet<BIN__wgguIj2TRe65DYjmKQxBQ___0> BIN__wgguIj2TRe65DYjmKQxBQ___0 { get; set; }
-        public DbSet<BIN_18b4Ab25Thek4_jpb2K7aw___0> BIN_18b4Ab25Thek4_jpb2K7aw___0 { get; set; }
-        public DbSet<BIN_FIgeY_AxRPCsTVceq3DXdg___0> BIN_FIgeY_AxRPCsTVceq3DXdg___0 { get; set; }
-        public DbSet<BIN_IgTcN3GVQNaMJ23ARcpWTQ___0> BIN_IgTcN3GVQNaMJ23ARcpWTQ___0 { get; set; }
-        public DbSet<BIN_lsbfHaLCT_WVCJKh3se8bA___0> BIN_lsbfHaLCT_WVCJKh3se8bA___0 { get; set; }
-        public DbSet<BIN_lY20SNslRj6z000EApIGVA___0> BIN_lY20SNslRj6z000EApIGVA___0 { get; set; }
-        public DbSet<BIN_OivbSlE0S_6tPK0LyXVhVg___0> BIN_OivbSlE0S_6tPK0LyXVhVg___0 { get; set; }
-        public DbSet<BIN_Om0g3q92QreGP79JqJv3Dw___0> BIN_Om0g3q92QreGP79JqJv3Dw___0 { get; set; }
-        public DbSet<BIN_qEa__YpBSkGOXv6CIGLNfw___0> BIN_qEa__YpBSkGOXv6CIGLNfw___0 { get; set; }
-        public DbSet<BIN_t0_yFBTzRxKHMtcZDz2y4A___0> BIN_t0_yFBTzRxKHMtcZDz2y4A___0 { get; set; }
-        public DbSet<BIN_TUA0jZntQmSciz0N0b_oug___0> BIN_TUA0jZntQmSciz0N0b_oug___0 { get; set; }
-        public DbSet<BIN_x3lFD8scRfuJ344Fh5RmLw___0> BIN_x3lFD8scRfuJ344Fh5RmLw___0 { get; set; }
-        public DbSet<BIN_xPSz9jBzSvGFuzr1e10E_g___0> BIN_xPSz9jBzSvGFuzr1e10E_g___0 { get; set; }
-        public DbSet<BIN_zcz8r0VsStKzEIx4TwtFrg___0> BIN_zcz8r0VsStKzEIx4TwtFrg___0 { get; set; }
+        public DbSet<BIN_2daG8ahiRE6HI2LwybmsLg___0> BIN_2daG8ahiRE6HI2LwybmsLg___0 { get; set; }
+        public DbSet<BIN_2Ro_f9KsTcSNlrDkLFfPjQ___0> BIN_2Ro_f9KsTcSNlrDkLFfPjQ___0 { get; set; }
+        public DbSet<BIN_8AgYr159QlqN76oDTmW3OQ___0> BIN_8AgYr159QlqN76oDTmW3OQ___0 { get; set; }
+        public DbSet<BIN_b2EGU4C5S4qi_06aImPydg___0> BIN_b2EGU4C5S4qi_06aImPydg___0 { get; set; }
+        public DbSet<BIN_Bqjr2iM3QJalMkKF58uYFw___0> BIN_Bqjr2iM3QJalMkKF58uYFw___0 { get; set; }
+        public DbSet<BIN_domyluTDQvyRN_u_cF2FEA___0> BIN_domyluTDQvyRN_u_cF2FEA___0 { get; set; }
+        public DbSet<BIN_E96SlRNOSiqLBNydP36rGg___0> BIN_E96SlRNOSiqLBNydP36rGg___0 { get; set; }
+        public DbSet<BIN_eWnk9URbTxuSeRK_M_DUKA___0> BIN_eWnk9URbTxuSeRK_M_DUKA___0 { get; set; }
+        public DbSet<BIN_ExtyvS1iSGWzED5mCD_zhg___0> BIN_ExtyvS1iSGWzED5mCD_zhg___0 { get; set; }
+        public DbSet<BIN_GN_R2_KLSWGMscdEQxWWhQ___0> BIN_GN_R2_KLSWGMscdEQxWWhQ___0 { get; set; }
+        public DbSet<BIN_H7W2K2W6RbSQNkCXbjFgow___0> BIN_H7W2K2W6RbSQNkCXbjFgow___0 { get; set; }
+        public DbSet<BIN_iiNOmphlSV_hXzuN2N7Vcw___0> BIN_iiNOmphlSV_hXzuN2N7Vcw___0 { get; set; }
+        public DbSet<BIN_J22CgvzRR7WP2YANu_ukyA___0> BIN_J22CgvzRR7WP2YANu_ukyA___0 { get; set; }
+        public DbSet<BIN_k1kv7nP4QnWRPuq4qJTfQw___0> BIN_k1kv7nP4QnWRPuq4qJTfQw___0 { get; set; }
+        public DbSet<BIN_NOgiDmQrTPywFpqbz7t5uw___0> BIN_NOgiDmQrTPywFpqbz7t5uw___0 { get; set; }
+        public DbSet<BIN_pXhHgZgwQ7ayUZt26N1E9A___0> BIN_pXhHgZgwQ7ayUZt26N1E9A___0 { get; set; }
+        public DbSet<BIN_qPni_AKBR_6KAsrKNRsyZQ___0> BIN_qPni_AKBR_6KAsrKNRsyZQ___0 { get; set; }
+        public DbSet<BIN_wI4_3NVySkSZWCl12mZ7Fg___0> BIN_wI4_3NVySkSZWCl12mZ7Fg___0 { get; set; }
+        public DbSet<COMMENT_ITEM_USER> COMMENT_ITEM_USER { get; set; }
         public DbSet<COMMENTS> COMMENTS { get; set; }
         public DbSet<DIALOG> DIALOG { get; set; }
+        public DbSet<DIALOG_MESSAGE> DIALOG_MESSAGE { get; set; }
         public DbSet<ITEM> ITEM { get; set; }
+        public DbSet<ITEM_TAG> ITEM_TAG { get; set; }
         public DbSet<MESSAGE> MESSAGE { get; set; }
+        public DbSet<PUBLISHMENT> PUBLISHMENT { get; set; }
         public DbSet<QUESTION> QUESTION { get; set; }
         public DbSet<TAG> TAG { get; set; }
-        public DbSet<USER_INFO> USER_INFO { get; set; }
-        public DbSet<BIN__Pi9y47aSG2mtY7QlBbTsQ___0> BIN__Pi9y47aSG2mtY7QlBbTsQ___0 { get; set; }
-        public DbSet<BIN_A2KczbINR2iLELtfj1oM7Q___0> BIN_A2KczbINR2iLELtfj1oM7Q___0 { get; set; }
-        public DbSet<BIN_CSzfDaJzTiO50j1oswq5gA___0> BIN_CSzfDaJzTiO50j1oswq5gA___0 { get; set; }
-        public DbSet<BIN_dXHv22TuTQqUadd_Hnf_KA___0> BIN_dXHv22TuTQqUadd_Hnf_KA___0 { get; set; }
-        public DbSet<BIN_ntbFFai1QNCb3Ibm3DjVcg___0> BIN_ntbFFai1QNCb3Ibm3DjVcg___0 { get; set; }
-        public DbSet<BIN_OEy1Sfw4QM6iJVTS7yc9_A___0> BIN_OEy1Sfw4QM6iJVTS7yc9_A___0 { get; set; }
-        public DbSet<BIN_PDRzAj9hSy6uzDY68Pe2xw___0> BIN_PDRzAj9hSy6uzDY68Pe2xw___0 { get; set; }
-        public DbSet<BIN_Q9xlsPxVRDWQS5BehDuepw___0> BIN_Q9xlsPxVRDWQS5BehDuepw___0 { get; set; }
-        public DbSet<BIN_QT_90KmGQ3mjajf5AVdmCA___0> BIN_QT_90KmGQ3mjajf5AVdmCA___0 { get; set; }
-        public DbSet<BIN_S1SbY_HURbWuE_KiDkBjPA___0> BIN_S1SbY_HURbWuE_KiDkBjPA___0 { get; set; }
-        public DbSet<BIN_VNFqbGBSRNK0xpOGRkKTrQ___0> BIN_VNFqbGBSRNK0xpOGRkKTrQ___0 { get; set; }
-        public DbSet<BIN_Y_RUNdYfQLKwdhXEf0rDEw___0> BIN_Y_RUNdYfQLKwdhXEf0rDEw___0 { get; set; }
-        public DbSet<COMMENT_ITEM_USER> COMMENT_ITEM_USER { get; set; }
-        public DbSet<PUBLISHMENT> PUBLISHMENT { get; set; }
+        public DbSet<USER_QUESTION> USER_QUESTION { get; set; }
+        public DbSet<USER_USERINFO> USER_USERINFO { get; set; }
+        public DbSet<USERINFO> USERINFO { get; set; }
     }
 }

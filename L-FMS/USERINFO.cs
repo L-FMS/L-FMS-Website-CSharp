@@ -12,20 +12,21 @@ namespace L_FMS
     using System;
     using System.Collections.Generic;
     
-    public partial class MESSAGE
+    public partial class USERINFO
     {
-        public MESSAGE()
+        public USERINFO()
         {
-            this.DIALOG_MESSAGE = new HashSet<DIALOG_MESSAGE>();
+            this.USER_USERINFO = new HashSet<USER_USERINFO>();
         }
     
-        public decimal MESSAGE_ID { get; set; }
-        public decimal SENDER_ID { get; set; }
-        public string CONTENT { get; set; }
-        public Nullable<System.DateTime> SENDTIME { get; set; }
-        public decimal IS_READ { get; set; }
+        public decimal USERINFO_ID { get; set; }
+        public string USER_NAME { get; set; }
+        public string PHONE { get; set; }
+        public string ADDRESS { get; set; }
+        public string MARJOR { get; set; }
+        public string SEX { get; set; }
+        public Nullable<System.DateTime> BIRTH { get; set; }
     
-        public virtual ACCOUNT ACCOUNT { get; set; }
-        public virtual ICollection<DIALOG_MESSAGE> DIALOG_MESSAGE { get; set; }
+        public virtual ICollection<USER_USERINFO> USER_USERINFO { get; set; }
     }
 }

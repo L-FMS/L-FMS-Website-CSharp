@@ -12,9 +12,10 @@ namespace L_FMS
     using System;
     using System.Collections.Generic;
     
-    public partial class BIN__wgguIj2TRe65DYjmKQxBQ___0
+    public partial class BIN_8AgYr159QlqN76oDTmW3OQ___0
     {
-        public decimal TAG_ID { get; set; }
-        public string TAG_TEXT { get; set; }
+        public decimal ID { get; set; }
+        public decimal ACCOUNT { get; set; }
+        public decimal USERINFO { get; set; }
     }
 }

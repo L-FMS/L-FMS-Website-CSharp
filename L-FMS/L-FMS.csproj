@@ -248,83 +248,60 @@
     <Compile Include="ACCOUNT.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\DBModel.cs" />
     <Compile Include="App_Code\MD5.cs" />
-    <Compile Include="BIN_18b4Ab25Thek4_jpb2K7aw___0.cs">
+    <Compile Include="BIN_2daG8ahiRE6HI2LwybmsLg___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_A2KczbINR2iLELtfj1oM7Q___0.cs">
+    <Compile Include="BIN_2Ro_f9KsTcSNlrDkLFfPjQ___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_CSzfDaJzTiO50j1oswq5gA___0.cs">
+    <Compile Include="BIN_8AgYr159QlqN76oDTmW3OQ___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_dXHv22TuTQqUadd_Hnf_KA___0.cs">
+    <Compile Include="BIN_b2EGU4C5S4qi_06aImPydg___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_FIgeY_AxRPCsTVceq3DXdg___0.cs">
+    <Compile Include="BIN_Bqjr2iM3QJalMkKF58uYFw___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_IgTcN3GVQNaMJ23ARcpWTQ___0.cs">
+    <Compile Include="BIN_domyluTDQvyRN_u_cF2FEA___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_lsbfHaLCT_WVCJKh3se8bA___0.cs">
+    <Compile Include="BIN_E96SlRNOSiqLBNydP36rGg___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_lY20SNslRj6z000EApIGVA___0.cs">
+    <Compile Include="BIN_eWnk9URbTxuSeRK_M_DUKA___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_ntbFFai1QNCb3Ibm3DjVcg___0.cs">
+    <Compile Include="BIN_ExtyvS1iSGWzED5mCD_zhg___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_OEy1Sfw4QM6iJVTS7yc9_A___0.cs">
+    <Compile Include="BIN_GN_R2_KLSWGMscdEQxWWhQ___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_OivbSlE0S_6tPK0LyXVhVg___0.cs">
+    <Compile Include="BIN_H7W2K2W6RbSQNkCXbjFgow___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_Om0g3q92QreGP79JqJv3Dw___0.cs">
+    <Compile Include="BIN_iiNOmphlSV_hXzuN2N7Vcw___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_PDRzAj9hSy6uzDY68Pe2xw___0.cs">
+    <Compile Include="BIN_J22CgvzRR7WP2YANu_ukyA___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_Q9xlsPxVRDWQS5BehDuepw___0.cs">
+    <Compile Include="BIN_k1kv7nP4QnWRPuq4qJTfQw___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_qEa__YpBSkGOXv6CIGLNfw___0.cs">
+    <Compile Include="BIN_NOgiDmQrTPywFpqbz7t5uw___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_QT_90KmGQ3mjajf5AVdmCA___0.cs">
+    <Compile Include="BIN_pXhHgZgwQ7ayUZt26N1E9A___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_S1SbY_HURbWuE_KiDkBjPA___0.cs">
+    <Compile Include="BIN_qPni_AKBR_6KAsrKNRsyZQ___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="BIN_t0_yFBTzRxKHMtcZDz2y4A___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_TUA0jZntQmSciz0N0b_oug___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_VNFqbGBSRNK0xpOGRkKTrQ___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_x3lFD8scRfuJ344Fh5RmLw___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_xPSz9jBzSvGFuzr1e10E_g___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_Y_RUNdYfQLKwdhXEf0rDEw___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_zcz8r0VsStKzEIx4TwtFrg___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN__Pi9y47aSG2mtY7QlBbTsQ___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN__wgguIj2TRe65DYjmKQxBQ___0.cs">
+    <Compile Include="BIN_wI4_3NVySkSZWCl12mZ7Fg___0.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
     <Compile Include="COMMENTS.cs">
@@ -336,7 +313,13 @@
     <Compile Include="DIALOG.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="DIALOG_MESSAGE.cs">
+      <DependentUpon>LFMSContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="ITEM.cs">
+      <DependentUpon>LFMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ITEM_TAG.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
     <Compile Include="LFMSContext.cs">
@@ -356,7 +339,13 @@
     <Compile Include="TAG.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="USER_INFO.cs">
+    <Compile Include="USERINFO.cs">
+      <DependentUpon>LFMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_QUESTION.cs">
+      <DependentUpon>LFMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USER_USERINFO.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
     <Content Include="App_Code\BundleConfig.cs" />
@@ -500,6 +489,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Admin\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>

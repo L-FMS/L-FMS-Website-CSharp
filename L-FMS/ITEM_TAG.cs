@@ -12,12 +12,13 @@ namespace L_FMS
     using System;
     using System.Collections.Generic;
     
-    public partial class BIN_18b4Ab25Thek4_jpb2K7aw___0
+    public partial class ITEM_TAG
     {
-        public decimal MESSAGE_ID { get; set; }
-        public decimal SENDER_ID { get; set; }
-        public string CONTENT { get; set; }
-        public Nullable<System.DateTime> SENDTIME { get; set; }
-        public decimal IS_READ { get; set; }
+        public decimal ID { get; set; }
+        public decimal ITEM_ID { get; set; }
+        public decimal TAG_ID { get; set; }
+    
+        public virtual ITEM ITEM { get; set; }
+        public virtual TAG TAG { get; set; }
     }
 }

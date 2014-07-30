@@ -16,7 +16,7 @@ namespace L_FMS
     {
         public DIALOG()
         {
-            this.MESSAGE = new HashSet<MESSAGE>();
+            this.DIALOG_MESSAGE = new HashSet<DIALOG_MESSAGE>();
         }
     
         public decimal DIALOG_ID { get; set; }
@@ -25,6 +25,6 @@ namespace L_FMS
     
         public virtual ACCOUNT ACCOUNT { get; set; }
         public virtual ACCOUNT ACCOUNT1 { get; set; }
-        public virtual ICollection<MESSAGE> MESSAGE { get; set; }
+        public virtual ICollection<DIALOG_MESSAGE> DIALOG_MESSAGE { get; set; }
     }
 }

@@ -16,9 +16,9 @@ namespace L_FMS
     {
         public ITEM()
         {
-            this.PUBLISHMENT = new HashSet<PUBLISHMENT>();
             this.COMMENT_ITEM_USER = new HashSet<COMMENT_ITEM_USER>();
-            this.TAG = new HashSet<TAG>();
+            this.PUBLISHMENT = new HashSet<PUBLISHMENT>();
+            this.ITEM_TAG = new HashSet<ITEM_TAG>();
         }
     
         public decimal ITEM_ID { get; set; }
@@ -26,8 +26,8 @@ namespace L_FMS
         public string ITEM_DESCRIPTION { get; set; }
         public byte[] IMAGE { get; set; }
     
-        public virtual ICollection<PUBLISHMENT> PUBLISHMENT { get; set; }
         public virtual ICollection<COMMENT_ITEM_USER> COMMENT_ITEM_USER { get; set; }
-        public virtual ICollection<TAG> TAG { get; set; }
+        public virtual ICollection<PUBLISHMENT> PUBLISHMENT { get; set; }
+        public virtual ICollection<ITEM_TAG> ITEM_TAG { get; set; }
     }
 }

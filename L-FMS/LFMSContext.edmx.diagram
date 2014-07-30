@@ -4,54 +4,55 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="210e9f80c66445da87e1f786c5a12e5e" Name="Diagram1">
-        <EntityTypeShape EntityType="Model.ACCOUNT" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN__wgguIj2TRe65DYjmKQxBQ___0" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_18b4Ab25Thek4_jpb2K7aw___0" Width="1.5" PointX="7.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_FIgeY_AxRPCsTVceq3DXdg___0" Width="1.5" PointX="8.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_IgTcN3GVQNaMJ23ARcpWTQ___0" Width="1.5" PointX="8.75" PointY="10.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_lsbfHaLCT_WVCJKh3se8bA___0" Width="1.5" PointX="9.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_lY20SNslRj6z000EApIGVA___0" Width="1.5" PointX="10.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_OivbSlE0S_6tPK0LyXVhVg___0" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_Om0g3q92QreGP79JqJv3Dw___0" Width="1.5" PointX="10.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_qEa__YpBSkGOXv6CIGLNfw___0" Width="1.5" PointX="10.75" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_t0_yFBTzRxKHMtcZDz2y4A___0" Width="1.5" PointX="11.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_TUA0jZntQmSciz0N0b_oug___0" Width="1.5" PointX="12.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_x3lFD8scRfuJ344Fh5RmLw___0" Width="1.5" PointX="5.75" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_xPSz9jBzSvGFuzr1e10E_g___0" Width="1.5" PointX="12.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_zcz8r0VsStKzEIx4TwtFrg___0" Width="1.5" PointX="7.75" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.COMMENTS" Width="1.5" PointX="3.75" PointY="12.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.DIALOG" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ITEM" Width="1.5" PointX="3.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.MESSAGE" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.QUESTION" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.TAG" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.USER_INFO" Width="1.5" PointX="12.75" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN__Pi9y47aSG2mtY7QlBbTsQ___0" Width="1.5" PointX="9.75" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_A2KczbINR2iLELtfj1oM7Q___0" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_CSzfDaJzTiO50j1oswq5gA___0" Width="1.5" PointX="2.75" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_dXHv22TuTQqUadd_Hnf_KA___0" Width="1.5" PointX="13.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_ntbFFai1QNCb3Ibm3DjVcg___0" Width="1.5" PointX="11.75" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_OEy1Sfw4QM6iJVTS7yc9_A___0" Width="1.5" PointX="13.75" PointY="15.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_PDRzAj9hSy6uzDY68Pe2xw___0" Width="1.5" PointX="14.75" PointY="2.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_Q9xlsPxVRDWQS5BehDuepw___0" Width="1.5" PointX="14.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_QT_90KmGQ3mjajf5AVdmCA___0" Width="1.5" PointX="14.75" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_S1SbY_HURbWuE_KiDkBjPA___0" Width="1.5" PointX="15.75" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_VNFqbGBSRNK0xpOGRkKTrQ___0" Width="1.5" PointX="4.75" PointY="17.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_Y_RUNdYfQLKwdhXEf0rDEw___0" Width="1.5" PointX="6.75" PointY="17.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.COMMENT_ITEM_USER" Width="1.5" PointX="6" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PUBLISHMENT" Width="1.5" PointX="6" PointY="3.25" IsExpanded="true" />
-        <AssociationConnector Association="Model.SYS_C005945" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.SYS_C005946" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.SYS_C005951" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.SYS_C005964" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.SYS_C005979" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.SYS_C005978" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.SYS_C005963" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.SYS_C005977" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.DIALOG_MESSAGE" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.ITEM_TAG" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.USER_QUESTION" ManuallyRouted="false" />
+      <Diagram DiagramId="4f45bed8d8864b08b125d201332cbb2f" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.ACCOUNT" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_2daG8ahiRE6HI2LwybmsLg___0" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_2Ro_f9KsTcSNlrDkLFfPjQ___0" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_8AgYr159QlqN76oDTmW3OQ___0" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_b2EGU4C5S4qi_06aImPydg___0" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_Bqjr2iM3QJalMkKF58uYFw___0" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_domyluTDQvyRN_u_cF2FEA___0" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_E96SlRNOSiqLBNydP36rGg___0" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_eWnk9URbTxuSeRK_M_DUKA___0" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_ExtyvS1iSGWzED5mCD_zhg___0" Width="1.5" PointX="8.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_GN_R2_KLSWGMscdEQxWWhQ___0" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_H7W2K2W6RbSQNkCXbjFgow___0" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_iiNOmphlSV_hXzuN2N7Vcw___0" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_J22CgvzRR7WP2YANu_ukyA___0" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_k1kv7nP4QnWRPuq4qJTfQw___0" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_NOgiDmQrTPywFpqbz7t5uw___0" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_pXhHgZgwQ7ayUZt26N1E9A___0" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_qPni_AKBR_6KAsrKNRsyZQ___0" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.BIN_wI4_3NVySkSZWCl12mZ7Fg___0" Width="1.5" PointX="8.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COMMENT_ITEM_USER" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COMMENTS" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DIALOG" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DIALOG_MESSAGE" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ITEM" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ITEM_TAG" Width="1.5" PointX="6" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MESSAGE" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PUBLISHMENT" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.QUESTION" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TAG" Width="1.5" PointX="3.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USER_QUESTION" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USER_USERINFO" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USERINFO" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="Model.SYS_C006186" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006194" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006199" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006200" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006205" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006220" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006237" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006235" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006236" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006209" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006210" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006219" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006226" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006227" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006187" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C006195" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

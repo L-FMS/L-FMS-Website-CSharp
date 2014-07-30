@@ -16,7 +16,7 @@ namespace L_FMS
     {
         public QUESTION()
         {
-            this.ACCOUNT = new HashSet<ACCOUNT>();
+            this.USER_QUESTION = new HashSet<USER_QUESTION>();
         }
     
         public decimal QUESTION_ID { get; set; }
@@ -24,6 +24,6 @@ namespace L_FMS
         public string QUESTION_FORMAT { get; set; }
         public string FORMAT_TIP { get; set; }
     
-        public virtual ICollection<ACCOUNT> ACCOUNT { get; set; }
+        public virtual ICollection<USER_QUESTION> USER_QUESTION { get; set; }
     }
 }

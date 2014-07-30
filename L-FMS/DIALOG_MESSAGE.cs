@@ -12,13 +12,13 @@ namespace L_FMS
     using System;
     using System.Collections.Generic;
     
-    public partial class BIN_S1SbY_HURbWuE_KiDkBjPA___0
+    public partial class DIALOG_MESSAGE
     {
-        public decimal ITEM_ID { get; set; }
-        public decimal PUBLISHER_ID { get; set; }
-        public System.DateTime PUBLISH_DATE { get; set; }
-        public string TYPE { get; set; }
-        public decimal IS_END { get; set; }
-        public Nullable<System.DateTime> END_TIME { get; set; }
+        public decimal ID { get; set; }
+        public decimal DIALOG_ID { get; set; }
+        public decimal MESSAGE_ID { get; set; }
+    
+        public virtual DIALOG DIALOG { get; set; }
+        public virtual MESSAGE MESSAGE { get; set; }
     }
 }

@@ -14,12 +14,13 @@ namespace L_FMS
     
     public partial class COMMENT_ITEM_USER
     {
+        public decimal ID { get; set; }
         public decimal ITEM_ID { get; set; }
         public decimal COMMENT_ID { get; set; }
         public decimal USER_ID { get; set; }
     
         public virtual ACCOUNT ACCOUNT { get; set; }
-        public virtual COMMENTS COMMENTS { get; set; }
         public virtual ITEM ITEM { get; set; }
+        public virtual COMMENTS COMMENTS { get; set; }
     }
 }

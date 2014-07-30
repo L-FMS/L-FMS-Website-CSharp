@@ -12,9 +12,10 @@ namespace L_FMS
     using System;
     using System.Collections.Generic;
     
-    public partial class BIN_OEy1Sfw4QM6iJVTS7yc9_A___0
+    public partial class BIN_GN_R2_KLSWGMscdEQxWWhQ___0
     {
-        public decimal DIALOG_ID { get; set; }
-        public decimal MESSAGE_ID { get; set; }
+        public decimal ID { get; set; }
+        public decimal ACCOUNT { get; set; }
+        public decimal USERINFO { get; set; }
     }
 }

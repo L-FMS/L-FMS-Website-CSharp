@@ -12,13 +12,13 @@ namespace L_FMS
     using System;
     using System.Collections.Generic;
     
-    public partial class BIN_PDRzAj9hSy6uzDY68Pe2xw___0
+    public partial class USER_QUESTION
     {
-        public decimal ITEM_ID { get; set; }
-        public decimal PUBLISHER_ID { get; set; }
-        public System.DateTime PUBLISH_DATE { get; set; }
-        public string TYPE { get; set; }
-        public decimal IS_END { get; set; }
-        public Nullable<System.DateTime> END_TIME { get; set; }
+        public decimal ID { get; set; }
+        public decimal USER_ID { get; set; }
+        public decimal QUESTION_ID { get; set; }
+    
+        public virtual ACCOUNT ACCOUNT { get; set; }
+        public virtual QUESTION QUESTION { get; set; }
     }
 }

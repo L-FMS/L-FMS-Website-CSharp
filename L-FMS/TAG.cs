@@ -16,12 +16,12 @@ namespace L_FMS
     {
         public TAG()
         {
-            this.ITEM = new HashSet<ITEM>();
+            this.ITEM_TAG = new HashSet<ITEM_TAG>();
         }
     
         public decimal TAG_ID { get; set; }
         public string TAG_TEXT { get; set; }
     
-        public virtual ICollection<ITEM> ITEM { get; set; }
+        public virtual ICollection<ITEM_TAG> ITEM_TAG { get; set; }
     }
 }

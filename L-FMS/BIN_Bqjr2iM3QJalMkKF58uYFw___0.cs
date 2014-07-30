@@ -12,10 +12,14 @@ namespace L_FMS
     using System;
     using System.Collections.Generic;
     
-    public partial class BIN_t0_yFBTzRxKHMtcZDz2y4A___0
+    public partial class BIN_Bqjr2iM3QJalMkKF58uYFw___0
     {
-        public decimal DIALOG_ID { get; set; }
-        public decimal USER1 { get; set; }
-        public decimal USER2 { get; set; }
+        public decimal ID { get; set; }
+        public decimal ITEM_ID { get; set; }
+        public decimal PUBLISHER_ID { get; set; }
+        public System.DateTime PUBLISH_DATE { get; set; }
+        public string TYPE { get; set; }
+        public decimal IS_END { get; set; }
+        public Nullable<System.DateTime> END_TIME { get; set; }
     }
 }

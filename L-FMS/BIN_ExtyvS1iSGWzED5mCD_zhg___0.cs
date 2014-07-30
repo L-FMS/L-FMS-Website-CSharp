@@ -12,10 +12,11 @@ namespace L_FMS
     using System;
     using System.Collections.Generic;
     
-    public partial class BIN_lY20SNslRj6z000EApIGVA___0
+    public partial class BIN_ExtyvS1iSGWzED5mCD_zhg___0
     {
-        public decimal DIALOG_ID { get; set; }
-        public decimal USER1 { get; set; }
-        public decimal USER2 { get; set; }
+        public decimal QUESTION_ID { get; set; }
+        public string CONTENT { get; set; }
+        public string QUESTION_FORMAT { get; set; }
+        public string FORMAT_TIP { get; set; }
     }
 }

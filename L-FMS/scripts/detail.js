@@ -5,12 +5,19 @@
  * @version 1.0
  */
 
-$(document).ready(function() {
-  $('.item-comment-box textarea').focus(function(event) {
+$(document).ready(function () {
+  $('.item-comment-box textarea').focus(function (event) {
+    $(this).animate({
+      height: "86px"
+    }, 250);
     $('.item-comment-box .comment-btn').fadeIn(100);
   });
 
-  $('.item-comment-box textarea').blur(function(event) {
+  $('#comment-cancel').click(function (event) {
+    event.preventDefault();
+    $('.item-comment-box textarea').animate({
+      height: "42px"
+    }, 250);
     $('.item-comment-box .comment-btn').fadeOut(100);
   });
 });

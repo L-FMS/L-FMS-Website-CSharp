@@ -11,7 +11,7 @@
             User Table
             <div class='panel-tools'>
               <div class='btn-group'>
-                <a class='btn' data-toggle='toolbar-tooltip' href='#' title='Reload'>
+                <a class='btn' data-toggle='toolbar-tooltip' title='Reload' runat="server" onserverclick="Page_Load" >
                   <i class='icon-refresh'></i>
                 </a>
               </div>
@@ -23,21 +23,18 @@
                 Add your custom filters here...
               </div>
               <div class='col-md-3'>
-                  <form method="post">
+                  <form method="post" runat="server" role="form">
                     <div class='input-group'>
-                        <input class='form-control' placeholder='Quick search...' type='text'>
+                        <input name="keyword" class='form-control' placeholder='Quick search...' type='text'>
                         <span class='input-group-btn'>
-                        <button class='btn' type='button'>
-                            <i class='icon-search'></i>
-                        </button>
+                            <asp:Button runat="server" CssClass="btn" Text="搜索" OnClick="User_Search" />
                         </span>
                     </div>
                   </form>
-                
               </div>
             </div>
           </div>
-          <table class='table'>
+          <table class='table table-hover'>
             <thead>
               <tr>
                 <th>#</th>
@@ -53,7 +50,7 @@
 
             <%foreach (var user in users)
                   { %>
-                <tr class ='success'>
+                <tr <% if (user.VERIFIED == 0){%>class ='warning'<%} else if (user.PRIVILEGE == 0) {%> class="info" <%} %>>
                     <td><%: user.USER_ID %></td>
                     <td><%: user.EMAIL %></td>
                     <td><%: user.PRIVILEGE %></td>

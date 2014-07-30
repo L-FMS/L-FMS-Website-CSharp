@@ -13,8 +13,16 @@ namespace L_FMS.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            users = DBModel.GetInstance().GetAccountWithSearchString("gmail");
+            users = DBModel.GetInstance().GetAccountWithSearchString(null);
             
         }
+
+        protected void User_Search(object sender, EventArgs e)
+        {
+            string keyword = Request.Form["keyword"];
+            users = DBModel.GetInstance().GetAccountWithSearchString(keyword);
+        }
+
+        
     }
 }

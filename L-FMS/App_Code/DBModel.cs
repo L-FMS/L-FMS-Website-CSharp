@@ -339,7 +339,7 @@ namespace L_FMS
                     {
                         // 判定是否包含要求的字段
                         if (i.ITEM.ITEM_NAME.Contains(SearchString)
-                            || i.PUBLISH_DATE.ToString() == (SearchString)
+                            || i.PUBLISH_DATE.ToString().Contains(SearchString)
                             || i.PLACE.Contains(SearchString))
                         {
                             ItemEx itemEx = new ItemEx
@@ -351,6 +351,26 @@ namespace L_FMS
                                 PLACE = i.PLACE
                             };
                             result.Add(itemEx);
+                        }
+                        else
+                        {
+                            //判定tag中是否有相关信息
+                            foreach (var j in i.ITEM.ITEM_TAG)
+                            {
+                                if (j.TAG.TAG_TEXT.Contains(SearchString))
+                                {
+                                    ItemEx itemEx = new ItemEx
+                                    {
+                                        PUBLISHMENT_ID = i.ID,
+                                        ITEM_ID = i.ITEM_ID,
+                                        ITEM_NAME = i.ITEM.ITEM_NAME,
+                                        PUBLISH_DATE = i.PUBLISH_DATE,
+                                        PLACE = i.PLACE
+                                    };
+                                    result.Add(itemEx);
+                                    break;
+                                }
+                            }
                         }
                     }
                     return result.ToArray();

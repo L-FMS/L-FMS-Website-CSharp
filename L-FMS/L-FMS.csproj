@@ -391,10 +391,6 @@
     <Compile Include="SettingInfo.aspx.designer.cs">
       <DependentUpon>SettingInfo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SettingPwd.aspx.cs">
-      <DependentUpon>SettingPwd.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="SettingPwd.aspx.designer.cs">
       <DependentUpon>SettingPwd.aspx</DependentUpon>
     </Compile>

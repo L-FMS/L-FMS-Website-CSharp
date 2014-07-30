@@ -211,5 +211,31 @@ namespace L_FMS
 
             return pwd;
         }
+        // 获取account 
+       public ACCOUNT[] GetAccountWithSearchString(string USER_EMAIL)
+       {
+           ACCOUNT[] result;
+           using (LFMSContext db = new LFMSContext())
+           {
+               try
+               {
+                   if (USER_EMAIL == null)
+                   {
+                       result = db.ACCOUNT.ToArray();
+                   }
+                   else
+                   {
+                       var l = db.ACCOUNT.SqlQuery<string>("select * from ACCOUNT where EMAIL like " + USER_EMAIL ).FirstOrDefault();
+                       result = l.ToArray();
+                   }
+                   return result;
+               }
+               catch (Exception ex)
+               {
+                   System.Diagnostics.Debug.WriteLine(ex.Message) ;
+               }
+           }
+           return null;
+       }
     }
 }

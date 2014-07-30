@@ -26,6 +26,7 @@ namespace L_FMS
             this.lost.DataSource = dt;
             this.lost.DataBind();
 
+
             
         }
     }

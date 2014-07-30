@@ -127,7 +127,6 @@ namespace L_FMS
 
             return userID;
         }
-
         // 获取用户名字
         // 根据User ID获取用户名字
         public string GetUserName(decimal UserId)

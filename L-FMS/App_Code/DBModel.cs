@@ -19,7 +19,7 @@ namespace L_FMS
         public string EMAIL { get; set; }
         public DateTime BIRTH { get; set; }
         public string SEX { get; set; }
-    
+
     }
     public class DBModel
     {
@@ -451,7 +451,7 @@ namespace L_FMS
                         result.Add(i.ITEM.ITEM_NAME);
                     }
                     return result.ToArray();
-                }
+            }
                 catch (Exception ex)
                 {
                     System.Diagnostics.Debug.WriteLine(ex.Message);
@@ -459,8 +459,33 @@ namespace L_FMS
             }
             return null;
         }
-    
+
+        //获取comments
+    public COMMENTS[] GetComments( decimal itemId )
+    {
+        List<COMMENTS> result = new List<COMMENTS>();
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    var a=db.COMMENT_ITEM_USER.Where(p => p.ITEM_ID == itemId);
+                    foreach( var q in a)
+                    {
+                        result.Add(q.COMMENTS);
     }
+                    return result.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message) ;
+                }
+            }
+            return null;
+      }
+    }
+
+    
+
 
 
 
@@ -468,7 +493,7 @@ namespace L_FMS
     {
 
         public PageCuter()
-        {
+        { 
         }
 
         //获取inputset指定页;参数 页码:PageNo ; 每页元素个数:NumPerPage ; 数组:inputSet
@@ -479,7 +504,7 @@ namespace L_FMS
             ArrayType[] result = null;
             int inputCount = inputSet.Count();
             int inputPageNum = inputCount / NumPerPage;
-
+            
             if (PageNo > inputPageNum) return null;
 
             int StartP = (PageNo - 1) * NumPerPage;
@@ -492,7 +517,7 @@ namespace L_FMS
                 //浅拷贝
                 result[j] = inputSet[i];
             }
-            return result;
+                return result;
         }
 
     }

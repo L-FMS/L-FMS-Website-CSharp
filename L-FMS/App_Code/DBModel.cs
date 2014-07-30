@@ -528,16 +528,11 @@ namespace L_FMS
         }
     }
 
-    
-
-
-
-
     public class PageCuter<ArrayType>
     {
-
         public PageCuter()
         { 
+
         }
 
         //获取inputset指定页;参数 页码:PageNo ; 每页元素个数:NumPerPage ; 数组:inputSet
@@ -563,7 +558,5 @@ namespace L_FMS
             }
                 return result;
         }
-
     }
-
 }

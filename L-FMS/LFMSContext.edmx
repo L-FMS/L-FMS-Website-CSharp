@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ACCOUNT">
           <Key>
             <PropertyRef Name="USER_ID" />
@@ -247,6 +247,7 @@
           <Property Name="TYPE" Type="varchar2" MaxLength="10" Nullable="false" />
           <Property Name="IS_END" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="END_TIME" Type="timestamp" Precision="6" />
+          <Property Name="PLACE" Type="varchar2" MaxLength="30" />
         </EntityType>
         <EntityType Name="QUESTION">
           <Key>
@@ -582,8 +583,7 @@
             <End Role="COMMENT_ITEM_USER" EntitySet="COMMENT_ITEM_USER" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -854,6 +854,7 @@
           <Property Name="END_TIME" Type="DateTime" Precision="6" />
           <NavigationProperty Name="ACCOUNT" Relationship="Self.SYS_C006220" FromRole="PUBLISHMENT" ToRole="ACCOUNT" />
           <NavigationProperty Name="ITEM" Relationship="Self.SYS_C006219" FromRole="PUBLISHMENT" ToRole="ITEM" />
+          <Property Name="PLACE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="QUESTION">
           <Key>
@@ -1462,6 +1463,7 @@
           <EntitySetMapping Name="PUBLISHMENT">
             <EntityTypeMapping TypeName="Model.PUBLISHMENT">
               <MappingFragment StoreEntitySet="PUBLISHMENT">
+                <ScalarProperty Name="PLACE" ColumnName="PLACE" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
                 <ScalarProperty Name="PUBLISHER_ID" ColumnName="PUBLISHER_ID" />

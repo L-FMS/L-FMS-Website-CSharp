@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace L_FMS
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Login : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -27,7 +27,7 @@ namespace L_FMS
                 foreach( var p in accounts)
                 {
                     count++;
-                    pass=p.PASSWORD;
+                    pass = MD5.EncryptMD5WithRule(p.PASSWORD);
                 }
             }
             if( count==0)
@@ -37,7 +37,7 @@ namespace L_FMS
             }
             else
             {
-                string pwd_md5 = MD5.Encrypt(pwd);
+                string pwd_md5 = MD5.EncryptMD5WithRule(MD5.Encrypt(pwd));
                 if(pwd_md5==pass)
                 {
                     //login successfully

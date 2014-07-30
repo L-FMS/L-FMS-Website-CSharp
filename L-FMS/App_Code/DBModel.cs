@@ -46,32 +46,6 @@ namespace L_FMS
         }
 
         // 注册新用户
-        public void RegisterNewUser(ACCOUNT account, USERINFO userinfo)
-        {
-            USER_USERINFO user_userinfo = new USER_USERINFO
-            {
-                ID = DBModel.GetInstance().GetSeqNextVal("user_userinfo"),
-                ACCOUNT = account.USER_ID,
-                USERINFO = userinfo.USERINFO_ID
-            };
-
-            using (LFMSContext db = new LFMSContext())
-            {
-                try
-                {
-                    db.ACCOUNT.Add(account);
-                    db.USERINFO.Add(userinfo);
-                    db.USER_USERINFO.Add(user_userinfo);
-                    db.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    System.Diagnostics.Debug.WriteLine("Unique");
-                    System.Diagnostics.Debug.WriteLine(ex.Message);
-                }
-            }
-        }
-
         public void RegisterNewUser(HttpRequest Request)
         {
             string email = Request.Form["email"];

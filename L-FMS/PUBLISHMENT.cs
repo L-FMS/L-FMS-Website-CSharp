@@ -21,6 +21,7 @@ namespace L_FMS
         public string TYPE { get; set; }
         public decimal IS_END { get; set; }
         public Nullable<System.DateTime> END_TIME { get; set; }
+        public string PLACE { get; set; }
     
         public virtual ACCOUNT ACCOUNT { get; set; }
         public virtual ITEM ITEM { get; set; }

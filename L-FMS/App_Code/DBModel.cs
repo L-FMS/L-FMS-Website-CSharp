@@ -245,31 +245,6 @@ namespace L_FMS
             }
             return null;
         }
-        // 获取account 
-        public ACCOUNT[] GetAccountWithSearchString(string USER_EMAIL)
-        {
-            ACCOUNT[] result;
-            using (LFMSContext db = new LFMSContext())
-            {
-                try
-                {
-                    if (USER_EMAIL == null)
-                    {
-                        result = db.ACCOUNT.ToArray();
-                    }
-                    else
-                    {
-                        result = db.Database.SqlQuery<ACCOUNT>("select * from ACCOUNT where EMAIL like \'%" + USER_EMAIL + "%\'").ToArray();
-                    }
-                    return result;
-                }
-                catch (Exception ex)
-                {
-                    System.Diagnostics.Debug.WriteLine(ex.Message) ;
-                }
-            }
-            return null;
-        }
 
         // 获取Item
         // 获取Lost Item
@@ -280,10 +255,10 @@ namespace L_FMS
             {
                 try
                 {
-                    foreach(var i in db.PUBLISHMENT)
+                    foreach (var i in db.PUBLISHMENT)
                     {
                         // 判断是否为丢失物品
-                        if(!i.TYPE.Equals("lost"))
+                        if (!i.TYPE.Equals("lost"))
                         {
                             continue;
                         }
@@ -346,6 +321,31 @@ namespace L_FMS
             return null;
         }
 
+        // 获取account 
+        public ACCOUNT[] GetAccountWithSearchString(string USER_EMAIL)
+        {
+            ACCOUNT[] result;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    if (USER_EMAIL == null)
+                    {
+                        result = db.ACCOUNT.ToArray();
+                    }
+                    else
+                    {
+                        result = db.Database.SqlQuery<ACCOUNT>("select * from ACCOUNT where EMAIL like \'%" + USER_EMAIL + "%\'").ToArray();
+                    }
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message) ;
+                }
+            }
+            return null;
+        }
     }
 
     public class PageCuter <ArrayType>
@@ -378,7 +378,6 @@ namespace L_FMS
             }
                 return result;
         }
-
 
     }
 }

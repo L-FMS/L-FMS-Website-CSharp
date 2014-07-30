@@ -256,13 +256,11 @@
     <Content Include="scripts\respond.min.js" />
     <Content Include="scripts\typeahead.js" />
     <Content Include="Search.aspx" />
-    <Content Include="stylesheets\application-a07755f5.css" />
     <Content Include="stylesheets\demo.css" />
     <Content Include="stylesheets\detail.css" />
     <Content Include="stylesheets\docs.css" />
     <Content Include="stylesheets\example.css" />
     <Content Include="stylesheets\flat-ui.css" />
-    <Content Include="stylesheets\font-awesome.min.css" />
     <Content Include="stylesheets\register.css" />
     <Content Include="stylesheets\login.css" />
     <Content Include="stylesheets\post.css" />

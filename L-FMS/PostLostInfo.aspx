@@ -17,11 +17,11 @@
         <input type="text" class="form-control login-field" placeholder="Name" name="item-name" id="post-name" required autofocus>
         <label for="post-name" class="login-field-icon fui-search"></label>
       </div>
-        <div class="form-group">
-            <label for="post-place" style="color: #bfc9ca;">Place</label>
+      <div class="form-group">
+        <label for="post-place" style="color: #bfc9ca;">Place</label>
             <input type="text" class="form-control login-field" placeholder="Place" name="item-place" id="post-place" required>
-            <label for="post-place" class="login-field-icon fui-location"></label>
-        </div>
+        <label for="post-place" class="login-field-icon fui-location"></label>
+      </div>
       <div class="form-group">
         <label for="post-image" style="color: #bfc9ca;">Image</label>
         <input type="file" class="form-control login-field filestyle" name="item-image" id="post-image" accept="image/*"  required >

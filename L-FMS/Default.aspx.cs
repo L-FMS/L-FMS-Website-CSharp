@@ -4,20 +4,29 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 using System.Data.Entity.Infrastructure;
 
-using L_FMS;
 
-public partial class _Default : System.Web.UI.Page
+namespace L_FMS
 {
-    protected string Test
+    public partial class WebForm1 : System.Web.UI.Page
     {
-        get;
-        private set;
-    }
+        protected DataTable dt = new DataTable();
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            dt.Columns.Add("name");
+            dt.Columns.Add("date");
+            dt.Columns.Add("place");
+            object[] dr = new object[3];
+            dr[0] = "qqq";
+            dr[1] = "111";
+            dr[2] = "333";
+            dt.Rows.Add(dr);
+            this.lost.DataSource = dt;
+            this.lost.DataBind();
 
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        
+            
+        }
     }
 }

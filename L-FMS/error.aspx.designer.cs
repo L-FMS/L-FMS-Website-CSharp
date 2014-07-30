@@ -10,6 +10,6 @@
 namespace L_FMS {
     
     
-    public partial class Login {
+    public partial class error {
     }
 }

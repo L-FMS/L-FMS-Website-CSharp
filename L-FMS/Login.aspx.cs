@@ -23,7 +23,9 @@ namespace L_FMS
             if (pass.Equals(""))
             {
                 //name is invalid
-                this.aaa.Text = "name is invalid";
+                Session["errorMessage"] = "用户名不存在";
+                Session["returnURL"] = "Login.aspx";
+                Response.Redirect("Error.aspx");
             }
             else
             {
@@ -31,7 +33,6 @@ namespace L_FMS
                 if (pwd_md5.Equals(pass))
                 {
                     //login successfully
-                    this.aaa.Text = "login successfuly";
                     Session["userID"] = DBModel.GetInstance().GetUserID(email);
                     Session["isLogin"] = "true";
                     Session["userName"] = DBModel.GetInstance().GetUserName(email);
@@ -40,7 +41,9 @@ namespace L_FMS
                 else
                 {
                     //password is wrong
-                    this.aaa.Text = "password is wrong";
+                    Session["errorMessage"] = "密码错误";
+                    Session["returnURL"] = "Login.aspx";
+                    Response.Redirect("Error.aspx");
                 }
             }
         }

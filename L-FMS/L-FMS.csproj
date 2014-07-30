@@ -86,7 +86,7 @@
     <Content Include="Admin\assets\stylesheets\application-a07755f5.css" />
     <Content Include="Admin\assets\stylesheets\font-awesome.css" />
     <Content Include="Admin\assets\stylesheets\font-awesome.min.css" />
-    <Content Include="Admin\tables.aspx" />
+    <Content Include="Admin\Itemtable.aspx" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Antlr3.Runtime.pdb" />
     <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
@@ -149,8 +149,8 @@
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
-    <Content Include="Default.aspx" />
     <Content Include="Detail.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="fonts\flat-ui-icons-regular.svg" />
     <Content Include="fonts\lato\lato-black.svg" />
     <Content Include="fonts\lato\lato-bold.svg" />
@@ -259,6 +259,7 @@
     <Content Include="stylesheets\demo.css" />
     <Content Include="stylesheets\detail.css" />
     <Content Include="stylesheets\docs.css" />
+    <Content Include="stylesheets\error.css" />
     <Content Include="stylesheets\example.css" />
     <Content Include="stylesheets\flat-ui.css" />
     <Content Include="stylesheets\register.css" />
@@ -267,6 +268,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Default.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ACCOUNT.cs">
@@ -279,12 +281,12 @@
     <Compile Include="Admin\AdminPage.Master.designer.cs">
       <DependentUpon>AdminPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Admin\tables.aspx.cs">
-      <DependentUpon>tables.aspx</DependentUpon>
+    <Compile Include="Admin\Itemtable.aspx.cs">
+      <DependentUpon>Itemtable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\tables.aspx.designer.cs">
-      <DependentUpon>tables.aspx</DependentUpon>
+    <Compile Include="Admin\Itemtable.aspx.designer.cs">
+      <DependentUpon>Itemtable.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\DBModel.cs" />
     <Compile Include="App_Code\MD5.cs" />
@@ -354,6 +356,13 @@
     <Compile Include="DIALOG_MESSAGE.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ITEM.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
@@ -386,11 +395,14 @@
     <Compile Include="USER_USERINFO.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Content Include="App_Code\BundleConfig.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Content Include="App_Code\BundleConfig.cs" />
     <Compile Include="Detail.aspx.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

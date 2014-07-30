@@ -10,3 +10,13 @@
     margin-top: 15px;
     min-height: 512px;
 }
+
+ul[role="menu"] > li[role="menuitem"] > a.selected,
+ul[role="menu"] > li[role="menuitem"] > a:hover.selected,
+ul[role="menu"] > li[role="menuitem"] > a:focus.selected {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}

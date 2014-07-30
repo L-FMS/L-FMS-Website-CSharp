@@ -253,7 +253,9 @@
     <Content Include="scripts\respond.min.js" />
     <Content Include="scripts\typeahead.js" />
     <Content Include="Search.aspx" />
-    <Content Include="Settings.aspx" />
+    <Content Include="SettingInfo.aspx" />
+    <Content Include="SettingPwd.aspx" />
+    <Content Include="SettingQuestions.aspx" />
     <Content Include="stylesheets\demo.css" />
     <Content Include="stylesheets\detail.css" />
     <Content Include="stylesheets\docs.css" />
@@ -382,12 +384,26 @@
     <Compile Include="QUESTION.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Settings.aspx.cs">
-      <DependentUpon>Settings.aspx</DependentUpon>
+    <Compile Include="SettingInfo.aspx.cs">
+      <DependentUpon>SettingInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Settings.aspx.designer.cs">
-      <DependentUpon>Settings.aspx</DependentUpon>
+    <Compile Include="SettingInfo.aspx.designer.cs">
+      <DependentUpon>SettingInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SettingPwd.aspx.cs">
+      <DependentUpon>SettingPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SettingPwd.aspx.designer.cs">
+      <DependentUpon>SettingPwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SettingQuestions.aspx.cs">
+      <DependentUpon>SettingQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SettingQuestions.aspx.designer.cs">
+      <DependentUpon>SettingQuestions.aspx</DependentUpon>
     </Compile>
     <Compile Include="TAG.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>

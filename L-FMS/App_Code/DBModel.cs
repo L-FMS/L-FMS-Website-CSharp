@@ -5,6 +5,15 @@ using System.Web;
 
 namespace L_FMS
 {
+    public class ItemEx
+    {
+        public decimal PUBLISHMENT_ID { get; set; }
+        public decimal ITEM_ID { get; set; }
+        public string ITEM_NAME { get; set; }
+        public DateTime PUBLISH_DATE { get; set; }
+        public string PLACE { get; set; }
+    }
+
     public class DBModel
     {
         // 单例
@@ -237,29 +246,104 @@ namespace L_FMS
             return null;
         }
         // 获取account 
-       public ACCOUNT[] GetAccountWithSearchString(string USER_EMAIL)
-       {
-           ACCOUNT[] result;
-           using (LFMSContext db = new LFMSContext())
-           {
-               try
-               {
-                   if (USER_EMAIL == null)
-                   {
-                       result = db.ACCOUNT.ToArray();
-                   }
-                   else
-                   {
-                       result = db.Database.SqlQuery<ACCOUNT>("select * from ACCOUNT where EMAIL like \'%" + USER_EMAIL + "%\'").ToArray();
+        public ACCOUNT[] GetAccountWithSearchString(string USER_EMAIL)
+        {
+            ACCOUNT[] result;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    if (USER_EMAIL == null)
+                    {
+                        result = db.ACCOUNT.ToArray();
                     }
-                   return result;
-               }
-               catch (Exception ex)
-               {
-                   System.Diagnostics.Debug.WriteLine(ex.Message) ;
-               }
-           }
-           return null;
-       }
+                    else
+                    {
+                        result = db.Database.SqlQuery<ACCOUNT>("select * from ACCOUNT where EMAIL like \'%" + USER_EMAIL + "%\'").ToArray();
+                    }
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message) ;
+                }
+            }
+            return null;
+        }
+
+        // 获取Item
+        // 获取Lost Item
+        public ItemEx[] GetLostItem()
+        {
+            List<ItemEx> result = new List<ItemEx>();
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    foreach(var i in db.PUBLISHMENT)
+                    {
+                        // 判断是否为丢失物品
+                        if(!i.TYPE.Equals("lost"))
+                        {
+                            continue;
+                        }
+
+                        ItemEx itemEx = new ItemEx
+                        {
+                            PUBLISHMENT_ID = i.ID,
+                            ITEM_ID = i.ITEM_ID,
+                            ITEM_NAME = i.ITEM.ITEM_NAME,
+                            PUBLISH_DATE = i.PUBLISH_DATE,
+                            PLACE = i.PLACE
+                        };
+
+                        result.Add(itemEx);
+                    }
+                    return result.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
+        // 获取Found Item
+        public ItemEx[] GetFoundItem()
+        {
+            List<ItemEx> result = new List<ItemEx>();
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    foreach (var i in db.PUBLISHMENT)
+                    {
+                        // 判断是否为丢失物品
+                        if (!i.TYPE.Equals("found"))
+                        {
+                            continue;
+                        }
+
+                        ItemEx itemEx = new ItemEx
+                        {
+                            PUBLISHMENT_ID = i.ID,
+                            ITEM_ID = i.ITEM_ID,
+                            ITEM_NAME = i.ITEM.ITEM_NAME,
+                            PUBLISH_DATE = i.PUBLISH_DATE,
+                            PLACE = i.PLACE
+                        };
+
+                        result.Add(itemEx);
+                    }
+                    return result.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
     }
 }

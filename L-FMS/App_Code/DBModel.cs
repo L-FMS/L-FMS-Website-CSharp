@@ -209,7 +209,7 @@ namespace L_FMS
             {
                 try
                 {
-                    pwd = db.ACCOUNT.Where(p => p.EMAIL == Email).FirstOrDefault().PASSWORD;
+                    pwd = MD5.EncryptMD5WithRule(db.ACCOUNT.Where(p => p.EMAIL == Email).FirstOrDefault().PASSWORD);
                 }
                 catch (Exception ex)
                 {
@@ -383,27 +383,51 @@ namespace L_FMS
         }
 
         //获取comments
-    public COMMENTS[] GetComments( decimal itemId )
-    {
-        List<COMMENTS> result = new List<COMMENTS>();
-            using (LFMSContext db = new LFMSContext())
+        public COMMENTS[] GetComments( decimal itemId )
+        {
+            List<COMMENTS> result = new List<COMMENTS>();
+                using (LFMSContext db = new LFMSContext())
+                {
+                    try
+                    {
+                        var a=db.COMMENT_ITEM_USER.Where(p => p.ITEM_ID == itemId);
+                        foreach( var q in a)
+                        {
+                            result.Add(q.COMMENTS);
+                        }
+                        return result.ToArray();
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine(ex.Message) ;
+                    }
+                }
+                return null;
+            }
+
+        // 更改对应用户的密码
+        public void ResetUserPassword(decimal userID, string newPwd)
+        {
+            // 加密
+            string newPwdMD5 = MD5.Encrypt(newPwd);
+
+            using(LFMSContext db = new LFMSContext())
             {
                 try
                 {
-                    var a=db.COMMENT_ITEM_USER.Where(p => p.ITEM_ID == itemId);
-                    foreach( var q in a)
-                    {
-                        result.Add(q.COMMENTS);
-                    }
-                    return result.ToArray();
+                    // 获取用户
+                    ACCOUNT account = db.ACCOUNT.Where(p => p.USER_ID == userID).FirstOrDefault();
+
+                    account.PASSWORD = newPwdMD5;
+
+                    db.SaveChanges();
                 }
-                catch (Exception ex)
+                catch(Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine(ex.Message) ;
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
                 }
             }
-            return null;
-      }
+        }
     }
 
     

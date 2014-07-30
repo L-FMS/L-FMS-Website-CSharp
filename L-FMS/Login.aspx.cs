@@ -29,7 +29,7 @@ namespace L_FMS
             }
             else
             {
-                string pwd_md5 = MD5.Encrypt(pwd);
+                string pwd_md5 = MD5.EncryptMD5WithRule(MD5.Encrypt(pwd));
                 if (pwd_md5.Equals(pass))
                 {
                     //login successfully

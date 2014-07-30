@@ -15,167 +15,6 @@
           <Property Name="PRIVILEGE" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="VERIFIED" Type="number" Precision="38" Scale="0" Nullable="false" />
         </EntityType>
-        <EntityType Name="BIN$2daG8ahiRE6HI2LwybmsLg==$0">
-          <Key>
-            <PropertyRef Name="TAG_ID" />
-          </Key>
-          <Property Name="TAG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="TAG_TEXT" Type="varchar2" MaxLength="32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BIN$2Ro+f9KsTcSNlrDkLFfPjQ==$0">
-          <Key>
-            <PropertyRef Name="USERINFO_ID" />
-          </Key>
-          <Property Name="USERINFO_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="USER_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
-          <Property Name="PHONE" Type="varchar2" MaxLength="12" />
-          <Property Name="ADDRESS" Type="varchar2" MaxLength="50" />
-          <Property Name="MARJOR" Type="varchar2" MaxLength="30" />
-          <Property Name="SEX" Type="varchar2" MaxLength="10" />
-          <Property Name="BIRTH" Type="date" />
-        </EntityType>
-        <EntityType Name="BIN$8AgYr159QlqN76oDTmW3OQ==$0">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="ACCOUNT" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="USERINFO" Type="number" Precision="38" Scale="0" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BIN$b2EGU4C5S4qi/06aImPydg==$0">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="DIALOG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="MESSAGE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BIN$Bqjr2iM3QJalMkKF58uYFw==$0">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="PUBLISHER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="PUBLISH_DATE" Type="timestamp" Precision="6" Nullable="false" />
-          <Property Name="TYPE" Type="varchar2" MaxLength="10" Nullable="false" />
-          <Property Name="IS_END" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="END_TIME" Type="timestamp" Precision="6" />
-        </EntityType>
-        <EntityType Name="BIN$domyluTDQvyRN/u+cF2FEA==$0">
-          <Key>
-            <PropertyRef Name="USERINFO_ID" />
-          </Key>
-          <Property Name="USERINFO_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="USER_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
-          <Property Name="PHONE" Type="varchar2" MaxLength="12" />
-          <Property Name="ADDRESS" Type="varchar2" MaxLength="50" />
-          <Property Name="MARJOR" Type="varchar2" MaxLength="30" />
-          <Property Name="SEX" Type="varchar2" MaxLength="10" />
-          <Property Name="BIRTH" Type="date" />
-        </EntityType>
-        <EntityType Name="BIN$E96SlRNOSiqLBNydP36rGg==$0">
-          <Key>
-            <PropertyRef Name="MESSAGE_ID" />
-          </Key>
-          <Property Name="MESSAGE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="SENDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="CONTENT" Type="varchar2" MaxLength="423" Nullable="false" />
-          <Property Name="SENDTIME" Type="timestamp" Precision="6" />
-          <Property Name="IS_READ" Type="number" Precision="38" Scale="0" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BIN$eWnk9URbTxuSeRK+M+DUKA==$0">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="QUESTION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BIN$ExtyvS1iSGWzED5mCD/zhg==$0">
-          <Key>
-            <PropertyRef Name="QUESTION_ID" />
-          </Key>
-          <Property Name="QUESTION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="CONTENT" Type="varchar2" MaxLength="100" Nullable="false" />
-          <Property Name="QUESTION_FORMAT" Type="varchar2" MaxLength="30" />
-          <Property Name="FORMAT_TIP" Type="varchar2" MaxLength="100" />
-        </EntityType>
-        <EntityType Name="BIN$GN+R2+KLSWGMscdEQxWWhQ==$0">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="ACCOUNT" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="USERINFO" Type="number" Precision="38" Scale="0" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BIN$H7W2K2W6RbSQNkCXbjFgow==$0">
-          <Key>
-            <PropertyRef Name="COMMENT_ID" />
-          </Key>
-          <Property Name="COMMENT_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="CONTENT" Type="varchar2" MaxLength="423" Nullable="false" />
-          <Property Name="TIME" Type="timestamp" Precision="6" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BIN$iiNOmphlSV+hXzuN2N7Vcw==$0">
-          <Key>
-            <PropertyRef Name="DIALOG_ID" />
-          </Key>
-          <Property Name="DIALOG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="USER1" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="USER2" Type="number" Precision="38" Scale="0" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BIN$J22CgvzRR7WP2YANu/ukyA==$0">
-          <Key>
-            <PropertyRef Name="TAG_ID" />
-          </Key>
-          <Property Name="TAG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="TAG_TEXT" Type="varchar2" MaxLength="32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BIN$k1kv7nP4QnWRPuq4qJTfQw==$0">
-          <Key>
-            <PropertyRef Name="USER_ID" />
-          </Key>
-          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="EMAIL" Type="varchar2" MaxLength="60" Nullable="false" />
-          <Property Name="PASSWORD" Type="char" MaxLength="32" Nullable="false" />
-          <Property Name="PRIVILEGE" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="VERIFIED" Type="number" Precision="38" Scale="0" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BIN$NOgiDmQrTPywFpqbz7t5uw==$0">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="COMMENT_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BIN$pXhHgZgwQ7ayUZt26N1E9A==$0">
-          <Key>
-            <PropertyRef Name="ITEM_ID" />
-          </Key>
-          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="ITEM_NAME" Type="varchar2" MaxLength="32" Nullable="false" />
-          <Property Name="ITEM_DESCRIPTION" Type="varchar2" MaxLength="423" />
-          <Property Name="IMAGE" Type="blob" />
-        </EntityType>
-        <EntityType Name="BIN$qPni/AKBR/6KAsrKNRsyZQ==$0">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="QUESTION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-        </EntityType>
-        <EntityType Name="BIN$wI4+3NVySkSZWCl12mZ7Fg==$0">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="ITEM_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="TAG_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-        </EntityType>
         <EntityType Name="COMMENT_ITEM_USER">
           <Key>
             <PropertyRef Name="ID" />
@@ -272,6 +111,7 @@
           <Property Name="ID" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="QUESTION_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ANSWER" Type="varchar2" MaxLength="50" />
         </EntityType>
         <EntityType Name="USER_USERINFO">
           <Key>
@@ -487,24 +327,6 @@
         </Association>
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$2daG8ahiRE6HI2LwybmsLg==$0" EntityType="Self.BIN$2daG8ahiRE6HI2LwybmsLg==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$2Ro+f9KsTcSNlrDkLFfPjQ==$0" EntityType="Self.BIN$2Ro+f9KsTcSNlrDkLFfPjQ==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$8AgYr159QlqN76oDTmW3OQ==$0" EntityType="Self.BIN$8AgYr159QlqN76oDTmW3OQ==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$b2EGU4C5S4qi/06aImPydg==$0" EntityType="Self.BIN$b2EGU4C5S4qi/06aImPydg==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$Bqjr2iM3QJalMkKF58uYFw==$0" EntityType="Self.BIN$Bqjr2iM3QJalMkKF58uYFw==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$domyluTDQvyRN/u+cF2FEA==$0" EntityType="Self.BIN$domyluTDQvyRN/u+cF2FEA==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$E96SlRNOSiqLBNydP36rGg==$0" EntityType="Self.BIN$E96SlRNOSiqLBNydP36rGg==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$eWnk9URbTxuSeRK+M+DUKA==$0" EntityType="Self.BIN$eWnk9URbTxuSeRK+M+DUKA==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$ExtyvS1iSGWzED5mCD/zhg==$0" EntityType="Self.BIN$ExtyvS1iSGWzED5mCD/zhg==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$GN+R2+KLSWGMscdEQxWWhQ==$0" EntityType="Self.BIN$GN+R2+KLSWGMscdEQxWWhQ==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$H7W2K2W6RbSQNkCXbjFgow==$0" EntityType="Self.BIN$H7W2K2W6RbSQNkCXbjFgow==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$iiNOmphlSV+hXzuN2N7Vcw==$0" EntityType="Self.BIN$iiNOmphlSV+hXzuN2N7Vcw==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$J22CgvzRR7WP2YANu/ukyA==$0" EntityType="Self.BIN$J22CgvzRR7WP2YANu/ukyA==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$k1kv7nP4QnWRPuq4qJTfQw==$0" EntityType="Self.BIN$k1kv7nP4QnWRPuq4qJTfQw==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$NOgiDmQrTPywFpqbz7t5uw==$0" EntityType="Self.BIN$NOgiDmQrTPywFpqbz7t5uw==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$pXhHgZgwQ7ayUZt26N1E9A==$0" EntityType="Self.BIN$pXhHgZgwQ7ayUZt26N1E9A==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$qPni/AKBR/6KAsrKNRsyZQ==$0" EntityType="Self.BIN$qPni/AKBR/6KAsrKNRsyZQ==$0" Schema="H1994ST" store:Type="Tables" />
-          <EntitySet Name="BIN$wI4+3NVySkSZWCl12mZ7Fg==$0" EntityType="Self.BIN$wI4+3NVySkSZWCl12mZ7Fg==$0" Schema="H1994ST" store:Type="Tables" />
           <EntitySet Name="COMMENT_ITEM_USER" EntityType="Self.COMMENT_ITEM_USER" Schema="H1994ST" store:Type="Tables" />
           <EntitySet Name="COMMENTS" EntityType="Self.COMMENTS" Schema="H1994ST" store:Type="Tables" />
           <EntitySet Name="DIALOG" EntityType="Self.DIALOG" Schema="H1994ST" store:Type="Tables" />
@@ -883,6 +705,7 @@
           <Property Name="QUESTION_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <NavigationProperty Name="ACCOUNT" Relationship="Self.SYS_C006186" FromRole="USER_QUESTION" ToRole="ACCOUNT" />
           <NavigationProperty Name="QUESTION" Relationship="Self.SYS_C006187" FromRole="USER_QUESTION" ToRole="QUESTION" />
+          <Property Name="ANSWER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="USER_USERINFO">
           <Key>
@@ -1214,185 +1037,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="BIN_2daG8ahiRE6HI2LwybmsLg___0">
-            <EntityTypeMapping TypeName="Model.BIN_2daG8ahiRE6HI2LwybmsLg___0">
-              <MappingFragment StoreEntitySet="BIN$2daG8ahiRE6HI2LwybmsLg==$0">
-                <ScalarProperty Name="TAG_ID" ColumnName="TAG_ID" />
-                <ScalarProperty Name="TAG_TEXT" ColumnName="TAG_TEXT" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_2Ro_f9KsTcSNlrDkLFfPjQ___0">
-            <EntityTypeMapping TypeName="Model.BIN_2Ro_f9KsTcSNlrDkLFfPjQ___0">
-              <MappingFragment StoreEntitySet="BIN$2Ro+f9KsTcSNlrDkLFfPjQ==$0">
-                <ScalarProperty Name="USERINFO_ID" ColumnName="USERINFO_ID" />
-                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
-                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
-                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
-                <ScalarProperty Name="MARJOR" ColumnName="MARJOR" />
-                <ScalarProperty Name="SEX" ColumnName="SEX" />
-                <ScalarProperty Name="BIRTH" ColumnName="BIRTH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_8AgYr159QlqN76oDTmW3OQ___0">
-            <EntityTypeMapping TypeName="Model.BIN_8AgYr159QlqN76oDTmW3OQ___0">
-              <MappingFragment StoreEntitySet="BIN$8AgYr159QlqN76oDTmW3OQ==$0">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="ACCOUNT" ColumnName="ACCOUNT" />
-                <ScalarProperty Name="USERINFO" ColumnName="USERINFO" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_b2EGU4C5S4qi_06aImPydg___0">
-            <EntityTypeMapping TypeName="Model.BIN_b2EGU4C5S4qi_06aImPydg___0">
-              <MappingFragment StoreEntitySet="BIN$b2EGU4C5S4qi/06aImPydg==$0">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="DIALOG_ID" ColumnName="DIALOG_ID" />
-                <ScalarProperty Name="MESSAGE_ID" ColumnName="MESSAGE_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_Bqjr2iM3QJalMkKF58uYFw___0">
-            <EntityTypeMapping TypeName="Model.BIN_Bqjr2iM3QJalMkKF58uYFw___0">
-              <MappingFragment StoreEntitySet="BIN$Bqjr2iM3QJalMkKF58uYFw==$0">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
-                <ScalarProperty Name="PUBLISHER_ID" ColumnName="PUBLISHER_ID" />
-                <ScalarProperty Name="PUBLISH_DATE" ColumnName="PUBLISH_DATE" />
-                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
-                <ScalarProperty Name="IS_END" ColumnName="IS_END" />
-                <ScalarProperty Name="END_TIME" ColumnName="END_TIME" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_domyluTDQvyRN_u_cF2FEA___0">
-            <EntityTypeMapping TypeName="Model.BIN_domyluTDQvyRN_u_cF2FEA___0">
-              <MappingFragment StoreEntitySet="BIN$domyluTDQvyRN/u+cF2FEA==$0">
-                <ScalarProperty Name="USERINFO_ID" ColumnName="USERINFO_ID" />
-                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
-                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
-                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
-                <ScalarProperty Name="MARJOR" ColumnName="MARJOR" />
-                <ScalarProperty Name="SEX" ColumnName="SEX" />
-                <ScalarProperty Name="BIRTH" ColumnName="BIRTH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_E96SlRNOSiqLBNydP36rGg___0">
-            <EntityTypeMapping TypeName="Model.BIN_E96SlRNOSiqLBNydP36rGg___0">
-              <MappingFragment StoreEntitySet="BIN$E96SlRNOSiqLBNydP36rGg==$0">
-                <ScalarProperty Name="MESSAGE_ID" ColumnName="MESSAGE_ID" />
-                <ScalarProperty Name="SENDER_ID" ColumnName="SENDER_ID" />
-                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
-                <ScalarProperty Name="SENDTIME" ColumnName="SENDTIME" />
-                <ScalarProperty Name="IS_READ" ColumnName="IS_READ" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_eWnk9URbTxuSeRK_M_DUKA___0">
-            <EntityTypeMapping TypeName="Model.BIN_eWnk9URbTxuSeRK_M_DUKA___0">
-              <MappingFragment StoreEntitySet="BIN$eWnk9URbTxuSeRK+M+DUKA==$0">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
-                <ScalarProperty Name="QUESTION_ID" ColumnName="QUESTION_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_ExtyvS1iSGWzED5mCD_zhg___0">
-            <EntityTypeMapping TypeName="Model.BIN_ExtyvS1iSGWzED5mCD_zhg___0">
-              <MappingFragment StoreEntitySet="BIN$ExtyvS1iSGWzED5mCD/zhg==$0">
-                <ScalarProperty Name="QUESTION_ID" ColumnName="QUESTION_ID" />
-                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
-                <ScalarProperty Name="QUESTION_FORMAT" ColumnName="QUESTION_FORMAT" />
-                <ScalarProperty Name="FORMAT_TIP" ColumnName="FORMAT_TIP" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_GN_R2_KLSWGMscdEQxWWhQ___0">
-            <EntityTypeMapping TypeName="Model.BIN_GN_R2_KLSWGMscdEQxWWhQ___0">
-              <MappingFragment StoreEntitySet="BIN$GN+R2+KLSWGMscdEQxWWhQ==$0">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="ACCOUNT" ColumnName="ACCOUNT" />
-                <ScalarProperty Name="USERINFO" ColumnName="USERINFO" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_H7W2K2W6RbSQNkCXbjFgow___0">
-            <EntityTypeMapping TypeName="Model.BIN_H7W2K2W6RbSQNkCXbjFgow___0">
-              <MappingFragment StoreEntitySet="BIN$H7W2K2W6RbSQNkCXbjFgow==$0">
-                <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
-                <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
-                <ScalarProperty Name="TIME" ColumnName="TIME" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_iiNOmphlSV_hXzuN2N7Vcw___0">
-            <EntityTypeMapping TypeName="Model.BIN_iiNOmphlSV_hXzuN2N7Vcw___0">
-              <MappingFragment StoreEntitySet="BIN$iiNOmphlSV+hXzuN2N7Vcw==$0">
-                <ScalarProperty Name="DIALOG_ID" ColumnName="DIALOG_ID" />
-                <ScalarProperty Name="USER1" ColumnName="USER1" />
-                <ScalarProperty Name="USER2" ColumnName="USER2" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_J22CgvzRR7WP2YANu_ukyA___0">
-            <EntityTypeMapping TypeName="Model.BIN_J22CgvzRR7WP2YANu_ukyA___0">
-              <MappingFragment StoreEntitySet="BIN$J22CgvzRR7WP2YANu/ukyA==$0">
-                <ScalarProperty Name="TAG_ID" ColumnName="TAG_ID" />
-                <ScalarProperty Name="TAG_TEXT" ColumnName="TAG_TEXT" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_k1kv7nP4QnWRPuq4qJTfQw___0">
-            <EntityTypeMapping TypeName="Model.BIN_k1kv7nP4QnWRPuq4qJTfQw___0">
-              <MappingFragment StoreEntitySet="BIN$k1kv7nP4QnWRPuq4qJTfQw==$0">
-                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
-                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
-                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
-                <ScalarProperty Name="PRIVILEGE" ColumnName="PRIVILEGE" />
-                <ScalarProperty Name="VERIFIED" ColumnName="VERIFIED" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_NOgiDmQrTPywFpqbz7t5uw___0">
-            <EntityTypeMapping TypeName="Model.BIN_NOgiDmQrTPywFpqbz7t5uw___0">
-              <MappingFragment StoreEntitySet="BIN$NOgiDmQrTPywFpqbz7t5uw==$0">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
-                <ScalarProperty Name="COMMENT_ID" ColumnName="COMMENT_ID" />
-                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_pXhHgZgwQ7ayUZt26N1E9A___0">
-            <EntityTypeMapping TypeName="Model.BIN_pXhHgZgwQ7ayUZt26N1E9A___0">
-              <MappingFragment StoreEntitySet="BIN$pXhHgZgwQ7ayUZt26N1E9A==$0">
-                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
-                <ScalarProperty Name="ITEM_NAME" ColumnName="ITEM_NAME" />
-                <ScalarProperty Name="ITEM_DESCRIPTION" ColumnName="ITEM_DESCRIPTION" />
-                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_qPni_AKBR_6KAsrKNRsyZQ___0">
-            <EntityTypeMapping TypeName="Model.BIN_qPni_AKBR_6KAsrKNRsyZQ___0">
-              <MappingFragment StoreEntitySet="BIN$qPni/AKBR/6KAsrKNRsyZQ==$0">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
-                <ScalarProperty Name="QUESTION_ID" ColumnName="QUESTION_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="BIN_wI4_3NVySkSZWCl12mZ7Fg___0">
-            <EntityTypeMapping TypeName="Model.BIN_wI4_3NVySkSZWCl12mZ7Fg___0">
-              <MappingFragment StoreEntitySet="BIN$wI4+3NVySkSZWCl12mZ7Fg==$0">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
-                <ScalarProperty Name="TAG_ID" ColumnName="TAG_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="COMMENT_ITEM_USER">
             <EntityTypeMapping TypeName="Model.COMMENT_ITEM_USER">
               <MappingFragment StoreEntitySet="COMMENT_ITEM_USER">
@@ -1495,6 +1139,7 @@
           <EntitySetMapping Name="USER_QUESTION">
             <EntityTypeMapping TypeName="Model.USER_QUESTION">
               <MappingFragment StoreEntitySet="USER_QUESTION">
+                <ScalarProperty Name="ANSWER" ColumnName="ANSWER" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
                 <ScalarProperty Name="QUESTION_ID" ColumnName="QUESTION_ID" />

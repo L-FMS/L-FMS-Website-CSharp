@@ -19,7 +19,7 @@
                 <input type="password" class="form-control login-field" name="pwd" placeholder="密码" id="login-pass" required>
                 <label for="login-pass" class="login-field-icon fui-lock"></label>
             </div>
-            <asp:Button CssClass="btn btn-primary btn-lg btn-block" runat="server" OnClick="buttonSubmit"  Text="Log in"  />
+            <asp:Button CssClass="btn btn-primary btn-lg btn-block" runat="server" OnClick="buttonSubmit"  Text="登录"  />
             <a href="#" class="login-link">Lost your password?</a>
         </form>
     </main>

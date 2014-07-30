@@ -87,7 +87,6 @@
     <Content Include="Admin\assets\stylesheets\font-awesome.css" />
     <Content Include="Admin\assets\stylesheets\font-awesome.min.css" />
     <Content Include="Admin\Itemtable.aspx" />
-    <Content Include="Admin\Usertable.aspx" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Antlr3.Runtime.pdb" />
     <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
@@ -288,13 +287,6 @@
     </Compile>
     <Compile Include="Admin\Itemtable.aspx.designer.cs">
       <DependentUpon>Itemtable.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Usertable.aspx.cs">
-      <DependentUpon>Usertable.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Usertable.aspx.designer.cs">
-      <DependentUpon>Usertable.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\DBModel.cs" />
     <Compile Include="App_Code\MD5.cs" />

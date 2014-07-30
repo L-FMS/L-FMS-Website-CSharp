@@ -11,17 +11,21 @@ namespace L_FMS.Admin
     {
         protected ACCOUNT[] users { get; set; }
 
+       
+        protected int test { get; set; }
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             users = DBModel.GetInstance().GetAccountWithSearchString(null);
-            
         }
 
         protected void User_Search(object sender, EventArgs e)
         {
-            string keyword = Request.Form["keyword"];
+            string keyword = Request.Form["userkeyword"];
             users = DBModel.GetInstance().GetAccountWithSearchString(keyword);
         }
+
 
         
     }

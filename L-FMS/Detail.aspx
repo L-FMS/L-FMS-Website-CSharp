@@ -40,13 +40,13 @@
   <div class="row">
     <div class="col-sm-8">
       <div class="item-comment-box">
-        <form action="" method="POST">
+        <form action="" method="POST" runat="server">
           <div class="form-group">
             <label for="comment-content" class="sr-only">Email address</label>
             <textarea name="comment" class="form-control" id="comment-content" placeholder="评论..." maxlength="140" onkeypress="if(event.keyCode==13) return false;"></textarea>
           </div>
           <div class="comment-btn">
-            <button class="btn btn-inverse disabled" type="submit">评论</button>
+            <asp:Button CssClass="btn btn-inverse"  runat="server" OnClick="Comment_Submit" Text="评论" />
             <button class="btn btn-link">取消</button>
           </div>
         </form>

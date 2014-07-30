@@ -9,8 +9,11 @@ namespace L_FMS.Admin
 {
     public partial class forms : System.Web.UI.Page
     {
+        protected ACCOUNT[] users { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            users = DBModel.GetInstance().GetAccountWithSearchString("gmail");
             
         }
     }

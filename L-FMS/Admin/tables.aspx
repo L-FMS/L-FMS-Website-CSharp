@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="CustomStylesheetContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
-
     <div id='content'>
 
         <!-- User Table -->
@@ -24,14 +23,17 @@
                 Add your custom filters here...
               </div>
               <div class='col-md-3'>
-                <div class='input-group'>
-                  <input class='form-control' placeholder='Quick search...' type='text'>
-                  <span class='input-group-btn'>
-                    <button class='btn' type='button'>
-                      <i class='icon-search'></i>
-                    </button>
-                  </span>
-                </div>
+                  <form method="post">
+                    <div class='input-group'>
+                        <input class='form-control' placeholder='Quick search...' type='text'>
+                        <span class='input-group-btn'>
+                        <button class='btn' type='button'>
+                            <i class='icon-search'></i>
+                        </button>
+                        </span>
+                    </div>
+                  </form>
+                
               </div>
             </div>
           </div>
@@ -48,12 +50,15 @@
               </tr>
             </thead>
             <tbody>
-              <tr class='success'>
-                <td>1</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td class='action'>
+
+            <%foreach (var user in users)
+                  { %>
+                <tr class ='success'>
+                    <td><%: user.USER_ID %></td>
+                    <td><%: user.EMAIL %></td>
+                    <td><%: user.PRIVILEGE %></td>
+                    <td><%: user.VERIFIED %></td>
+                    <td class='action'>
                   <a class='btn btn-info' href='#'>
                     <i class='icon-edit'></i>
                   </a>
@@ -61,8 +66,10 @@
                     <i class='icon-trash'></i>
                   </a>
                 </td>
-              </tr>
-              
+                </tr>
+            <% } %>
+
+ 
             </tbody>
           </table>
           <div class='panel-footer'>

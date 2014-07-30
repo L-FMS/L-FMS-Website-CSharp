@@ -225,9 +225,8 @@ namespace L_FMS
                    }
                    else
                    {
-                       var l = db.ACCOUNT.SqlQuery<string>("select * from ACCOUNT where EMAIL like " + USER_EMAIL ).FirstOrDefault();
-                       result = l.ToArray();
-                   }
+                       result = db.Database.SqlQuery<ACCOUNT>("select * from ACCOUNT where EMAIL like \'%" + USER_EMAIL + "%\'").ToArray();
+                    }
                    return result;
                }
                catch (Exception ex)

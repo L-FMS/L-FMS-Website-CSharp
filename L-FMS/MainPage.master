@@ -39,8 +39,23 @@
         </form><!-- /search -->
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a runat="server" href="#" class="navbar-link">Log in</a></li>
-          <li><a runat="server" href="#" class="navbar-link">Sign up</a></li>
+          <%
+            if (Session["isLogin"].Equals("true"))
+            {
+          %>
+          <li><a runat="server" href="#" class="navbar-link"><%= Session["userName"] %></a></li>
+          <li><a runat="server" href="#" class="navbar-link">Sign out</a></li>
+          <%
+            }
+            else
+            {
+          %>
+          <li><a runat="server" href="~/Login.aspx" class="navbar-link">Log in</a></li>
+          <li><a runat="server" href="~/Register.aspx" class="navbar-link">Sign up</a></li>
+          <%
+            }
+              
+          %>
         </ul>
           
       </div><!-- /.navbar-collapse -->

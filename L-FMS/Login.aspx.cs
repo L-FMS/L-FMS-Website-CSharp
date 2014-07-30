@@ -16,44 +16,33 @@ namespace L_FMS
 
         protected void buttonSubmit(object sender, EventArgs e)
         {
-            string name=Request.Form["name"];
+            string email = Request.Form["email"];
             string pwd = Request.Form["pwd"];
-            string pass="";
-            int count = 0;
-            using (LFMSContext db = new LFMSContext())
-            {
-                var accounts= from p in db.ACCOUNT where p.EMAIL==name select p;
-                
-                foreach( var p in accounts)
-                {
-                    count++;
-                    pass = MD5.EncryptMD5WithRule(p.PASSWORD);
-                }
-            }
-            if( count==0)
+            string pass = DBModel.GetInstance().GetUserPassword(email);
+
+            if (pass.Equals(""))
             {
                 //name is invalid
                 this.aaa.Text = "name is invalid";
             }
             else
             {
-                string pwd_md5 = MD5.EncryptMD5WithRule(MD5.Encrypt(pwd));
-                if(pwd_md5==pass)
+                string pwd_md5 = MD5.Encrypt(pwd);
+                if (pwd_md5.Equals(pass))
                 {
                     //login successfully
                     this.aaa.Text = "login successfuly";
-                    Session["name"] = name;
-                    Response.Redirect("Default.aspx");
+                    Session["userID"] = DBModel.GetInstance().GetUserID(email);
+                    Session["isLogin"] = "true";
+                    Session["userName"] = DBModel.GetInstance().GetUserName(email);
+                    Response.Redirect("~/");
                 }
                 else
                 {
                     //password is wrong
                     this.aaa.Text = "password is wrong";
                 }
-
             }
-
-
         }
     }
 }

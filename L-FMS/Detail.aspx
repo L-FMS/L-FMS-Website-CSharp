@@ -47,7 +47,7 @@
           </div>
           <div class="comment-btn">
             <button class="btn btn-inverse disabled" type="submit">评论</button>
-            <button class="btn btn-link">取消</button>
+            <button class="btn btn-link" id="comment-cancel">取消</button>
           </div>
         </form>
       </div><!-- /.item-comment-box -->

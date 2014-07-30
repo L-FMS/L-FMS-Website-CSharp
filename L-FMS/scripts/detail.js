@@ -5,8 +5,8 @@
  * @version 1.0
  */
 
-$(document).ready(function () {
-  $('.item-comment-box textarea').focus(function (event) {
+$(document).ready(function() {
+  $('.item-comment-box textarea').focus(function(event) {
     $(this).animate({
       height: "86px"
     }, 250);
@@ -14,6 +14,7 @@ $(document).ready(function () {
   });
 
   $('#comment-cancel').click(function (event) {
+    debugger;
     event.preventDefault();
     $('.item-comment-box textarea').animate({
       height: "42px"

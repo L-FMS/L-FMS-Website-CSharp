@@ -233,7 +233,6 @@
     <Content Include="PostFoundInfo.aspx" />
     <Content Include="PostLostInfo.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="scripts\application-985b892b.js" />
     <Content Include="scripts\application.js" />
     <Content Include="scripts\bootstrap-filestyle.min.js" />
     <Content Include="scripts\bootstrap-select.js" />
@@ -248,11 +247,9 @@
     <Content Include="scripts\jquery-1.8.3.min.js" />
     <Content Include="scripts\jquery-2.0.3.min.js" />
     <Content Include="scripts\jquery-ui-1.10.3.custom.min.js" />
-    <Content Include="scripts\jquery-ui.min.js" />
     <Content Include="scripts\jquery.placeholder.js" />
     <Content Include="scripts\jquery.tagsinput.js" />
     <Content Include="scripts\jquery.ui.touch-punch.min.js" />
-    <Content Include="scripts\modernizr.min.js" />
     <Content Include="scripts\respond.min.js" />
     <Content Include="scripts\typeahead.js" />
     <Content Include="Search.aspx" />

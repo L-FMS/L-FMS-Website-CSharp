@@ -10,6 +10,6 @@
 namespace L_FMS.Admin {
     
     
-    public partial class forms {
+    public partial class Itemtable1 {
     }
 }

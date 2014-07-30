@@ -86,7 +86,8 @@
     <Content Include="Admin\assets\stylesheets\application-a07755f5.css" />
     <Content Include="Admin\assets\stylesheets\font-awesome.css" />
     <Content Include="Admin\assets\stylesheets\font-awesome.min.css" />
-    <Content Include="Admin\tables.aspx" />
+    <Content Include="Admin\Itemtable.aspx" />
+    <Content Include="Admin\Usertable.aspx" />
     <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Antlr3.Runtime.pdb" />
     <Content Include="bin\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
@@ -281,12 +282,19 @@
     <Compile Include="Admin\AdminPage.Master.designer.cs">
       <DependentUpon>AdminPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Admin\tables.aspx.cs">
-      <DependentUpon>tables.aspx</DependentUpon>
+    <Compile Include="Admin\Itemtable.aspx.cs">
+      <DependentUpon>Itemtable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\tables.aspx.designer.cs">
-      <DependentUpon>tables.aspx</DependentUpon>
+    <Compile Include="Admin\Itemtable.aspx.designer.cs">
+      <DependentUpon>Itemtable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Usertable.aspx.cs">
+      <DependentUpon>Usertable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Usertable.aspx.designer.cs">
+      <DependentUpon>Usertable.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\DBModel.cs" />
     <Compile Include="App_Code\MD5.cs" />

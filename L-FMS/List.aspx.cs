@@ -8,7 +8,7 @@ using System.Data;
 
 namespace L_FMS
 {
-    public partial class List : System.Web.UI.Page
+    public partial class List : System.Web.UI.Page, IPostBackEventHandler
     {
         protected DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
@@ -30,12 +30,35 @@ namespace L_FMS
                 dt.Rows.Add(dr);
 
             }
-            this.searchItem.DataSource = dt;
-            this.searchItem.DataBind();
-            this.searchItem.UseAccessibleHeader = true;
-            this.searchItem.HeaderRow.TableSection = TableRowSection.TableHeader;
+            this.tableList.DataSource = dt;
+            this.tableList.DataBind();
+            this.tableList.UseAccessibleHeader = true;
+            this.tableList.HeaderRow.TableSection = TableRowSection.TableHeader;
 
 
+        }
+
+        void IPostBackEventHandler.RaisePostBackEvent(string eventArgument)
+        {
+            if (eventArgument.StartsWith("tableListClick:"))
+            {
+                string temp = eventArgument.Substring(15);
+                tableList_click(int.Parse(temp));
+            }
+        }
+
+        private void tableList_click(int rowIndex)
+        {
+            string id = DBModel.GetInstance().GetUserOrdered()[rowIndex].publisher_id.ToString();
+            Response.Redirect("PersonalPage.aspx?userID="+id);
+        }
+        protected void tableList_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowIndex < 0)
+            {
+                return;
+            }
+            e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackEventReference(this, "tableListClick:" + e.Row.RowIndex.ToString());
         }
     }
 

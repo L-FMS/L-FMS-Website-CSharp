@@ -7,7 +7,7 @@
       <div class="table-responsive">
 
         <form runat="server">
-            <asp:GridView   ID="searchItem" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false"   BorderWidth="0px" GridLines="None" >
+            <asp:GridView   ID="tableList" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false"   BorderWidth="0px" GridLines="None"   OnRowDataBound="tableList_RowDataBound">
                 <columns>
                     <asp:BoundField DataField="rank" HeaderText="Rank" />
                     <asp:BoundField DataField="name" HeaderText="Name" />

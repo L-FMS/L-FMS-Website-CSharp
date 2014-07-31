@@ -41,6 +41,14 @@ namespace L_FMS
 
         }
 
+        protected Decimal getDialogIDByUser2(Decimal user2)
+        {
+            for (int i = 0; i < origindialogs.Length; ++i)
+                if ((origindialogs[i].USER1 == user2) || (origindialogs[i].USER2 == user2))
+                    return origindialogs[i].DIALOG_ID;
+            return -1;
+        }
+
         protected void SelectDialog(object sender, EventArgs e)
         {
            
@@ -52,16 +60,30 @@ namespace L_FMS
                 if (user2 == -1)
                 {
                     Session["errorMessage"] = "用户不存在";
-                    Session["returnURL"] = "FindPasswordVerified.aspx";
+                    Session["returnURL"] = "~/GetDialogue.aspx";
                     Response.Redirect("Error.aspx");
                 }
-                else
+                else if (user2 == userid)
                 {
-                    dialogid = DBModel.GetInstance().CreateNewDialog(userid, user2);
-                    Session["currentDialog"] = dialogid;
-                    Response.Redirect("Dialog.aspx");
+                    Session["errorMessage"] = "抱歉，您不能和自己通信";
+                    Session["returnURL"] = "~/GetDialogue.aspx";
+                    Response.Redirect("Error.aspx");
                 }
-
+                else{
+                    Decimal id = getDialogIDByUser2(user2);
+                    if ( id != (Decimal)(-1))
+                    {
+                        dialogid = id;
+                        Session["currentDialog"] = dialogid;
+                        Response.Redirect("Dialog.aspx");
+                    }
+                    else
+                    {
+                        dialogid = DBModel.GetInstance().CreateNewDialog(userid, user2);
+                        Session["currentDialog"] = dialogid;
+                        Response.Redirect("Dialog.aspx");
+                    }
+                } 
             }
             else
             {

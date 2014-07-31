@@ -36,12 +36,15 @@ namespace L_FMS
                 dr[1] = i.PUBLISH_DATE.ToString();
                 dr[2] = i.PLACE;
                 dt.Rows.Add(dr);
+            }
+            
+            if (dt.Rows.Count != 0)
+            {
                 this.searchItem.DataSource = dt;
                 this.searchItem.DataBind();
+                this.searchItem.UseAccessibleHeader = true;
+                this.searchItem.HeaderRow.TableSection = TableRowSection.TableHeader;
             }
-            this.searchItem.UseAccessibleHeader = true;
-            this.searchItem.HeaderRow.TableSection = TableRowSection.TableHeader;
-
         }
     }
 }

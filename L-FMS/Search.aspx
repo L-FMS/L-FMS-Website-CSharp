@@ -3,7 +3,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
   <div class="row">
     <div class="col-sm-12">
-      <h3>Search Results <small> for "xxxxx"</small> </h3>
+      <h3>Search Results <small> for "<%: Request.Params["q"] %>"</small> </h3>
       <div class="table-responsive">
 
         <form runat="server">

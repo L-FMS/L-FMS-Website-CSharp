@@ -78,7 +78,7 @@ namespace L_FMS
             LFMSContext db = new LFMSContext();
             string sql = "select * from USER_QUESTION where USER_ID = " + userid;
             var result = db.Database.SqlQuery<USER_QUESTION>(sql).ToArray();
-            if (result == null)
+            if (result.Length == 0)
                 return false;
             return true;
         }

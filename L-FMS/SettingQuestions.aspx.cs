@@ -25,6 +25,7 @@ namespace L_FMS
 
             Decimal userid = (Decimal)Session["userID"];
             alreadyset = DBModel.GetInstance().SecurityQuestion(userid);
+            //alreadyset = false;
             if (!alreadyset)
             {
                 questions = new QUESTION[3];

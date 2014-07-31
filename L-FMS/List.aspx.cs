@@ -26,7 +26,7 @@ namespace L_FMS
                 object[] dr = new object[3];
                 dr[0] = ++count;
                 dr[1] = DBModel.GetInstance().GetUserName(i.publisher_id);
-                dr[2] = i.sum;
+                dr[2] = i.tot;
                 dt.Rows.Add(dr);
 
             }

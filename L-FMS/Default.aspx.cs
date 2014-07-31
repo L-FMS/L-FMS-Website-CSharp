@@ -20,7 +20,7 @@ namespace L_FMS
         protected int found_amount;
         protected void Page_Load(object sender, EventArgs e)
         {
-            info=DBModel.GetInstance().GetLostItem();
+            info = DBModel.GetInstance().GetLostItem();
             dt.Columns.Add("name");
             dt.Columns.Add("date");
             dt.Columns.Add("place");
@@ -34,6 +34,8 @@ namespace L_FMS
             }
             this.lost.DataSource = dt;
             this.lost.DataBind();
+            this.lost.UseAccessibleHeader = true;
+            this.lost.HeaderRow.TableSection = TableRowSection.TableHeader;
             lost_amount = this.lost.PageCount;
 
             info2 = DBModel.GetInstance().GetFoundItem();
@@ -75,9 +77,12 @@ namespace L_FMS
             Session["PublishmentId"] = info[rowIndex].PUBLISHMENT_ID;
             Response.Redirect("Detail.aspx");
         }
-
         protected void lost_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+            if(e.Row.RowIndex < 0)
+            {
+                return;
+            }
             e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackEventReference(this, "lostClick:" + e.Row.RowIndex.ToString());
         }
 
@@ -89,6 +94,10 @@ namespace L_FMS
         }
         protected void found_RowDataBound(object sender, GridViewRowEventArgs e)
         {
+            if (e.Row.RowIndex < 0)
+            {
+                return;
+            }
             e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackEventReference(this, "foundClick:" + e.Row.RowIndex.ToString());
         }
 

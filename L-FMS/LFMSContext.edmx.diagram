@@ -4,39 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4f45bed8d8864b08b125d201332cbb2f" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="Model.ACCOUNT" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_2daG8ahiRE6HI2LwybmsLg___0" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_2Ro_f9KsTcSNlrDkLFfPjQ___0" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_8AgYr159QlqN76oDTmW3OQ___0" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_b2EGU4C5S4qi_06aImPydg___0" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_Bqjr2iM3QJalMkKF58uYFw___0" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_domyluTDQvyRN_u_cF2FEA___0" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_E96SlRNOSiqLBNydP36rGg___0" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_eWnk9URbTxuSeRK_M_DUKA___0" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_ExtyvS1iSGWzED5mCD_zhg___0" Width="1.5" PointX="8.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_GN_R2_KLSWGMscdEQxWWhQ___0" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_H7W2K2W6RbSQNkCXbjFgow___0" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_iiNOmphlSV_hXzuN2N7Vcw___0" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_J22CgvzRR7WP2YANu_ukyA___0" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_k1kv7nP4QnWRPuq4qJTfQw___0" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_NOgiDmQrTPywFpqbz7t5uw___0" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_pXhHgZgwQ7ayUZt26N1E9A___0" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_qPni_AKBR_6KAsrKNRsyZQ___0" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.BIN_wI4_3NVySkSZWCl12mZ7Fg___0" Width="1.5" PointX="8.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.COMMENT_ITEM_USER" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.COMMENTS" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.DIALOG" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.DIALOG_MESSAGE" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ITEM" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ITEM_TAG" Width="1.5" PointX="6" PointY="15.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.MESSAGE" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PUBLISHMENT" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.QUESTION" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.TAG" Width="1.5" PointX="3.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.USER_QUESTION" Width="1.5" PointX="6" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.USER_USERINFO" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.USERINFO" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+      <Diagram DiagramId="5f47e045f4194cf98b22618f699f6040" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.ACCOUNT" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COMMENT_ITEM_USER" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COMMENTS" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DIALOG" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DIALOG_MESSAGE" Width="1.5" PointX="5.25" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ITEM" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ITEM_TAG" Width="1.5" PointX="6" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MESSAGE" Width="1.5" PointX="3" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PUBLISHMENT" Width="1.5" PointX="6" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.QUESTION" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TAG" Width="1.5" PointX="3.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USER_QUESTION" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USER_USERINFO" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USERINFO" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="Model.SYS_C006186" ManuallyRouted="false" />
         <AssociationConnector Association="Model.SYS_C006194" ManuallyRouted="false" />
         <AssociationConnector Association="Model.SYS_C006199" ManuallyRouted="false" />

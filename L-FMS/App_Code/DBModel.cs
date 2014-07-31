@@ -216,7 +216,8 @@ namespace L_FMS
             {
                 try
                 {
-                    pwd = MD5.EncryptMD5WithRule(db.ACCOUNT.Where(p => p.EMAIL == Email).FirstOrDefault().PASSWORD);
+                    pwd = db.ACCOUNT.Where(p => p.EMAIL == Email).FirstOrDefault().PASSWORD;
+                    pwd = MD5.EncryptMD5WithRule(pwd);
                 }
                 catch (Exception ex)
                 {

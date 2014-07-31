@@ -13,15 +13,6 @@ namespace L_FMS {
     public partial class Settings {
         
         /// <summary>
-        /// info_form 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm info_form;
-        
-        /// <summary>
         /// name 控件。
         /// </summary>
         /// <remarks>
@@ -37,7 +28,7 @@ namespace L_FMS {
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText sex;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect sex;
         
         /// <summary>
         /// birth 控件。

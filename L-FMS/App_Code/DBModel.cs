@@ -746,6 +746,31 @@ namespace L_FMS
             return result;
         }
 
+        // 更新用户信息
+        public void UpdateUserInfo(decimal userID, USERINFO userInfo)
+        {
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    USER_USERINFO connection = db.USER_USERINFO.Where(p => p.ACCOUNT == userID).FirstOrDefault();
+                    USERINFO oldUserInfo = connection.USERINFO1;
+                    oldUserInfo.USER_NAME = userInfo.USER_NAME;
+                    oldUserInfo.PHONE = userInfo.PHONE;
+                    oldUserInfo.ADDRESS = userInfo.ADDRESS;
+                    oldUserInfo.MARJOR = userInfo.MARJOR;
+                    oldUserInfo.SEX = userInfo.SEX;
+                    oldUserInfo.BIRTH = userInfo.BIRTH;
+
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+        }
+
     }
 
     public class DataPackeg

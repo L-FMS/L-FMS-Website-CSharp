@@ -25,11 +25,27 @@ namespace L_FMS
 
             // 根据所获得的结果加载页面信息
             this.name.Value = userInfo.USER_NAME;
-            this.sex.Value = userInfo.SEX.Equals("M") ? "男" : "女";
-            //this.birth.Value = userInfo.BIRTH.ToString();
+            this.sex.SelectedIndex = userInfo.SEX.Equals("M") ? 1 : 2;
+            this.birth.Value = String.Format("{0:yyyy-MM-dd}", userInfo.BIRTH);
             this.phone.Value = userInfo.PHONE;
             this.major.Value = userInfo.MARJOR;
             this.address.Value = userInfo.ADDRESS;
+        }
+
+        protected void Update_Info(object sender, EventArgs e)
+        {
+            USERINFO userInfo = new USERINFO
+            {
+                USER_NAME = Request.Form.GetValues(1)[0],
+                PHONE = Request.Form.GetValues(4)[0],
+                ADDRESS = Request.Form.GetValues(6)[0],
+                MARJOR = Request.Form.GetValues(5)[0],
+                SEX = Request.Form.GetValues(2)[0].Equals("0") ? "M" : "F",
+                BIRTH = DateTime.ParseExact(Request.Form.GetValues(3)[0], "yyyy-MM-dd", null)
+            };
+            DBModel.GetInstance().UpdateUserInfo((decimal)Session["userID"], userInfo);
+
+            Response.Redirect("~/");
         }
     }
 }

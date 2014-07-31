@@ -18,7 +18,7 @@
         <label for="dialog_id" class="col-sm-2 control-label">选择对话</label>
         <div class="col-sm-6">
             <select name="dialog" id="dialog_id" class="select-block mbl" required>
-                <option>选择已有的对话</option>
+                <option value ="-1">选择已有的对话</option>
               <% foreach (var dialog in dialogs) { %> 
                 <option value="<%:dialog.DIALOG_ID %>">
                     <%: dialog.CONTACT_NAME %>

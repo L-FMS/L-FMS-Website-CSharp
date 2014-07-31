@@ -7,7 +7,11 @@ using System.Web;
 
 namespace L_FMS
 {
-
+    public class UserOrdered
+    {
+        public decimal publisher_id { get; set; }
+        public int sum { get; set; }
+    }
     public class Dialog_Name
     {
         public decimal DIALOG_ID { get; set; }
@@ -77,7 +81,27 @@ namespace L_FMS
             }
             return result;
         }
-        
+
+        //获得拾金不昧排行榜
+        public UserOrdered[] GetUserOrdered()
+        {
+            UserOrdered[] result;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    string sql = "select publisher_id, tot from (select publisher_id,count(ID) as tot from publishment where type = \'found\' group by publisher_id  ) order by tot  desc";
+                    result = db.Database.SqlQuery<UserOrdered>(sql).ToArray();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
         //判断用户是否设置了密保问题
         public Boolean SecurityQuestion(Decimal userid)
         {
@@ -222,7 +246,7 @@ namespace L_FMS
                 }
             }
             return null;
-        }
+            }
 
         public decimal CreateNewDialog(Decimal user1, Decimal user2)
         {
@@ -245,7 +269,7 @@ namespace L_FMS
                     System.Diagnostics.Debug.WriteLine("Unique");
                     System.Diagnostics.Debug.WriteLine(ex.Message);
                     return -1;
-                }
+        }
             }
         }
 
@@ -1203,6 +1227,23 @@ namespace L_FMS
             }
         }
 
+        // 获取用户权限
+        public decimal GetUserPrivilege(decimal userID)
+        {
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    ACCOUNT account = db.ACCOUNT.Where(p => p.USER_ID == userID).FirstOrDefault();
+                    return account.PRIVILEGE;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return -1;
+        }
     }
 
     public class DataPackeg

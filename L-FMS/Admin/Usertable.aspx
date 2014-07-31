@@ -37,7 +37,7 @@
           <table class='table table-hover'>
             <thead>
               <tr>
-                <th><%: test %>#</th>
+                <th>#</th>
                 <th>Email</th>
                 <th>Privilege</th>
                 <th>Verified</th>
@@ -69,43 +69,6 @@
  
             </tbody>
           </table>
-          <div class='panel-footer'>
-            <ul class='pagination pagination-sm'>
-              <li>
-                <a href='#'>«</a>
-              </li>
-              <li class='active'>
-                <a href='#'>1</a>
-              </li>
-              <li>
-                <a href='#'>2</a>
-              </li>
-              <li>
-                <a href='#'>3</a>
-              </li>
-              <li>
-                <a href='#'>4</a>
-              </li>
-              <li>
-                <a href='#'>5</a>
-              </li>
-              <li>
-                <a href='#'>6</a>
-              </li>
-              <li>
-                <a href='#'>7</a>
-              </li>
-              <li>
-                <a href='#'>8</a>
-              </li>
-              <li>
-                <a href='#'>»</a>
-              </li>
-            </ul>
-            <div class='pull-right'>
-              Showing 1 to 10 of 32 entries
-            </div>
-          </div>
         </div>
 
        

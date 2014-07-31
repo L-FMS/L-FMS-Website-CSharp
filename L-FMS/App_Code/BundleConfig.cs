@@ -16,6 +16,7 @@ namespace DB
                 "~/bootstrap/js/bootstrap.min.js"));
 
             bundles.Add(new ScriptBundle("~/scripts/Admin").Include(
+                "~/scripts/jquery-2.0.3.min.js",
                 "~/Admin/assets//javascripts/jquery-ui.min.js",
                 "~/Admin/assets/javascripts/modernizr.min.js",
                 "~/Admin/assets/javascripts/application-985b892b.js"));

@@ -2,90 +2,83 @@
 
 <!DOCTYPE html>
 
-<html lang ="zh">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>失物招领管理系统</title>
+<html class='no-js' lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <title>管理员登录 | 失物招领管理系统</title>
 
-        <!-- Stylesheet -->
-        <webopt:bundlereference runat="server" path="~/stylesheets/Admin" />
+    <meta content='xxx' name='author'>
+    <meta content='' name='description'>
+    <meta content='' name='keywords'>
 
-        <%-- Custom Stylesheet --%>
-        <asp:ContentPlaceHolder ID="CustomStylesheetContent" runat="server">
-        </asp:ContentPlaceHolder>
-    </head>
-    <body>
-        <!-- Navbar -->
-        <div class='navbar navbar-default' id='navbar'>
-            <a class='navbar-brand' href='#'>
-                <i class='icon-home'></i>
-                Lost&Found Admin
-            </a>
-            <ul class='nav navbar-nav pull-right'>
-            <li class='dropdown user'>
-                <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
-                    <i class='icon-user'></i>
-                    <strong><%= Session["userName"] %></strong>
-                    <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" />
-                    <b class='caret'></b>
-                </a>
-                <ul class='dropdown-menu'>
-                    <li>
-                        <a href='#'>Edit Profile</a>
-                    </li>
-                    <li class='divider'></li>
-                    <li>
-                        <a href="/">Sign out</a>
-                    </li>
-              </ul>
+    <!-- Stylesheet -->
+    <webopt:bundlereference runat="server" path="~/stylesheets/Admin" />
+
+    <%-- Custom Stylesheet --%>
+    <asp:ContentPlaceHolder ID="CustomStylesheetContent" runat="server">
+    </asp:ContentPlaceHolder>
+  </head>
+
+  <body class='main page'>
+    <!-- Navbar -->
+    <div class='navbar navbar-default' id='navbar'>
+      <a class='navbar-brand' href='#'>
+        <i class='icon-home'></i>
+        Lost&Found Admin
+      </a>
+      <ul class='nav navbar-nav pull-right'>
+        <li class='dropdown user'>
+          <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+            <i class='icon-user'></i>
+            <strong><%= Session["userName"] %></strong>
+            <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" />
+            <b class='caret'></b>
+          </a>
+          <ul class='dropdown-menu'>
+            <li>
+              <a href="#">注销</a>
             </li>
           </ul>
-        </div>
+        </li>
+      </ul>
+      </div>
 
-        <div id='wrapper'>
-            <!-- Sidebar -->
-            <section id='sidebar'>
-                <i class='icon-align-justify icon-large' id='toggle'></i>
-                <ul id='dock'>
-                    <li class='launcher'>
-                        <i class='icon-dashboard'></i>
-                        <a href="/dashboard.html">Dashboard</a>
-                    </li>
-                    <li class='launcher active'>
-                        <i class='icon-table'></i>
-                        <a href="/tables.html">Tables</a>
-                    </li>
-                    <li class='launcher'>
-                        <i class='icon-file-text-alt'></i>
-                        <a href="/forms.html">Edit</a>
-                    </li>
-                </ul>
-                <div data-toggle='tooltip' id='beaker' title='Lost&Found Admin System'></div>
-            </section>
+    <div id='wrapper'>
+      <!-- Sidebar -->
+      <section id='sidebar'>
+        <i class='icon-align-justify icon-large' id='toggle'></i>
+        <ul id='dock'>
+          <li class='launcher active'>
+            <i class='icon-dashboard'></i>
+            <a runat="server" href="~/Admin/Dashboard.aspx">主页</a>
+          </li>
+        </ul>
+        <div data-toggle='tooltip' id='beaker' title='Lost&Found Admin System'></div>
+      </section>
 
-            <!-- Tools -->
-            <section id='tools'>
-                <ul class='breadcrumb' id='breadcrumb'>
-                    <li class='title'>Tables</li>
-                </ul>
-            </section>
+      <!-- Tools -->
+      <section id='tools'>
+        <ul class='breadcrumb' id='breadcrumb'>
+          <li class='title'>Tables</li>
+        </ul>
+      </section>
 
-            <!-- Content -->
-            <asp:ContentPlaceHolder ID="BodyContent" runat="server">
-            </asp:ContentPlaceHolder>
-
-        </div>
-        
-        <!-- JavaScript -->
-        <asp:PlaceHolder runat="server">
-          <%: Scripts.Render("~/scripts/Base") %>
-          <%: Scripts.Render("~/scripts/Admin") %>
-        </asp:PlaceHolder>
-
-         <%-- Custom Javascript --%>
-        <asp:ContentPlaceHolder ID="CustomScriptContent" runat="server">
+      <!-- Content -->
+      <div id="content">
+        <asp:ContentPlaceHolder ID="BodyContent" runat="server">
         </asp:ContentPlaceHolder>
-    </body>
+      </div>
+      
+    </div>
+        
+    <!-- JavaScript -->
+    <asp:PlaceHolder runat="server">
+      <%: Scripts.Render("~/scripts/Admin") %>
+    </asp:PlaceHolder>
+
+      <%-- Custom Javascript --%>
+    <asp:ContentPlaceHolder ID="CustomScriptContent" runat="server">
+    </asp:ContentPlaceHolder>
+  </body>
 </html>

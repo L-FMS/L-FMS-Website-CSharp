@@ -61,7 +61,12 @@ namespace L_FMS
                     Session["currentDialog"] = dialogid;
                     Response.Redirect("Dialog.aspx");
                 }
-                    
+
+            }
+            else
+            {
+                Session["currentDialog"] = dialogid;
+                Response.Redirect("Dialog.aspx");
             }
         }
     }

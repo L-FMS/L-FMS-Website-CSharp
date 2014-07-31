@@ -18,9 +18,10 @@ namespace L_FMS
         protected void Page_Load(object sender, EventArgs e)
         {
             dialogid = (Decimal)Session["currentDialog"];
+            //dialogid = 1;
             
             //找到对应messages，函数待添加
-            //messages = DBModel.GetInstance().GetMessages(dialogid);
+            messages = DBModel.GetInstance().GetMessageByDialogId(dialogid);
 
             dt.Columns.Add("id");
             dt.Columns.Add("date");
@@ -31,7 +32,7 @@ namespace L_FMS
                 object[] dr = new object[4];
                 dr[0] = p.MESSAGE_ID;
                 dr[1] = p.SENDTIME.ToString();
-                dr[2] = p.SENDER_ID;
+                dr[2] = DBModel.GetInstance().GetUserName(p.SENDER_ID);
                 dr[3] = p.CONTENT;
                 dt.Rows.Add(dr);
             }
@@ -63,10 +64,11 @@ namespace L_FMS
 
         protected void Comment_Submit(object sender, EventArgs e)
         {
-            string content = Request.Form["commment"];
+            string content = Request.Form["comment"];
             Decimal userid = (Decimal)Session["userID"];
+            //Decimal userid = 43;
             //添加内容，函数待添加
-            //DBModel.GetInstance().CreateNewMessage(dialogid, content, userid);
+            DBModel.GetInstance().createMessage(dialogid, content, userid);
         }
 
     }

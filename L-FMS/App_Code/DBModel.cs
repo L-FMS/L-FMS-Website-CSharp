@@ -199,6 +199,50 @@ namespace L_FMS
 
         }
 
+        public DIALOG[] GetDialogs(Decimal userid)
+        {
+            DIALOG[] result;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    string sql = "select * from DIALOG where USER1 = "+ userid + " or USER2 =  "+ userid ;
+                    result = db.Database.SqlQuery<DIALOG>(sql).ToArray();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
+        public decimal CreateNewDialog(Decimal user1, Decimal user2)
+        {
+            DIALOG dialog = new DIALOG
+            {
+                DIALOG_ID = this.GetSeqNextVal("dialog"),
+                USER1 = user1,
+                USER2 = user2
+            };
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    db.DIALOG.Add(dialog);
+                    db.SaveChanges();
+                    return dialog.DIALOG_ID;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Unique");
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                    return -1;
+                }
+            }
+        }
+
         // 注册新用户
         public void RegisterNewUser(HttpRequest Request)
         {

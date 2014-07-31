@@ -153,6 +153,8 @@
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="Detail.aspx" />
+    <Content Include="Dialog.aspx" />
+    <Content Include="GetDialogue.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="FindPasswordNewPassword.aspx" />
     <Content Include="FindPasswordVerified.aspx" />
@@ -323,8 +325,22 @@
     <Compile Include="COMMENT_ITEM_USER.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dialog.aspx.cs">
+      <DependentUpon>Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog.aspx.designer.cs">
+      <DependentUpon>Dialog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DIALOG.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetDialogue.aspx.cs">
+      <DependentUpon>GetDialogue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetDialogue.aspx.designer.cs">
+      <DependentUpon>GetDialogue.aspx</DependentUpon>
     </Compile>
     <Compile Include="DIALOG_MESSAGE.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>

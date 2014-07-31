@@ -18,5 +18,8 @@ public partial class MainPage : System.Web.UI.MasterPage
         Session["userID"] = "-1";
         Session["isLogin"] = "false";
         Session["userName"] = "null";
+
+        // 重定向至主页
+        Response.Redirect("~/");
     }
 }

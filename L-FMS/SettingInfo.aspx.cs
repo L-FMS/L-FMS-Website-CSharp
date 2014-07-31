@@ -45,12 +45,12 @@ namespace L_FMS
         {
             USERINFO userInfo = new USERINFO
             {
-                USER_NAME = Request.Form.GetValues(1)[0],
-                PHONE = Request.Form.GetValues(4)[0],
-                ADDRESS = Request.Form.GetValues(6)[0],
-                MARJOR = Request.Form.GetValues(5)[0],
-                SEX = Request.Form.GetValues(2)[0].Equals("0") ? "M" : "F",
-                BIRTH = DateTime.ParseExact(Request.Form.GetValues(3)[0], "yyyy-MM-dd", null)
+                USER_NAME = Request.Form.GetValues(3)[0],
+                PHONE = Request.Form.GetValues(6)[0],
+                ADDRESS = Request.Form.GetValues(8)[0],
+                MARJOR = Request.Form.GetValues(7)[0],
+                SEX = Request.Form.GetValues(4)[0].Equals("0") ? "M" : "F",
+                BIRTH = DateTime.ParseExact(Request.Form.GetValues(5)[0], "yyyy-MM-dd", null)
             };
             DBModel.GetInstance().UpdateUserInfo((decimal)Session["userID"], userInfo);
 

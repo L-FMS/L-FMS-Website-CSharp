@@ -15,15 +15,6 @@ namespace L_FMS
         protected ItemEx[] found;
         protected void Page_Load(object sender, EventArgs e)
         {
-            // 判断用户是否登录
-            if (!Utils.checkLogin(Session))
-            {
-                // 用户未登录
-                // 不允许访问该页面
-                // 跳转到登录界面
-                Response.Redirect("~/Login.aspx?redirect=/PersonalPage.aspx");
-            }
-
             decimal User_ID = 0;
             // 如果URL参数中存在userID参数，以此优先
             if (Request.Params["userID"] != null)
@@ -35,6 +26,13 @@ namespace L_FMS
                 // URL中无此参数
                 // 去Session中寻找当前用户的User ID
                 User_ID = Decimal.Parse(Session["userID"].ToString());
+
+                if (User_ID == -1)
+                {
+                    // 用户未登录
+                    // 重定向
+                    Response.Redirect("~/Login.aspx?redirect=/PersonalPage.aspx");
+                }
             }
 
             message = DBModel.GetInstance().GetUserMessage(User_ID);

@@ -63,7 +63,6 @@
         <div class="form-group">
           <label for="register-birth" style="color: #bfc9ca;">生日</label>
           <input type="date" class="form-control login-field" placeholder="请输入您的生日" id="register-birth" name="birth" required>
-          <label for="register-birth" class="login-field-icon fui-lock"></label>
         </div>
 
         <%-- 手机号码 --%>

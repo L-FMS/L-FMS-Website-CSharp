@@ -21,12 +21,12 @@
         <div class="form-group">
           <label for="question1" class="control-label">验证问题1</label>
           <select name="question1" id="question1" class="select-block mbl" required>
-            <option value="0">asdfsd</option>
+            <option value="0"><%: questions[0].CONTENT %></option>
                 
           </select>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control" name="answer1" id="answer1" placeholder="回答">
+          <input type="text" class="form-control" name="answer1" id="answer1" placeholder="回答" pattern="<%:questions[0].QUESTION_FORMAT %>">
         </div>
 
         <div class="form-group">

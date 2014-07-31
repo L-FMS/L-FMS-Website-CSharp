@@ -24,7 +24,12 @@ namespace L_FMS
            // USERINFO userInfo = DBModel.GetInstance().GetUserInfo(userID);
 
             // 根据所获得的结果加载页面信息
-            //this.info_form. = userInfo.USER_NAME;
+            this.name.Value = userInfo.USER_NAME;
+            this.sex.Value = userInfo.SEX.Equals("M") ? "男" : "女";
+            //this.birth.Value = userInfo.BIRTH.ToString();
+            this.phone.Value = userInfo.PHONE;
+            this.major.Value = userInfo.MARJOR;
+            this.address.Value = userInfo.ADDRESS;
         }
     }
 }

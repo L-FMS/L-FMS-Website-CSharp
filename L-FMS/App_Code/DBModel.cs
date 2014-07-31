@@ -291,6 +291,7 @@ namespace L_FMS
 
                         result.Add(itemEx);
                     }
+                    result.Sort(delegate(ItemEx a, ItemEx b) { return b.PUBLISHMENT_ID.CompareTo(a.PUBLISHMENT_ID); });
                     return result.ToArray();
                 }
                 catch (Exception ex)
@@ -328,6 +329,7 @@ namespace L_FMS
 
                         result.Add(itemEx);
                     }
+                    result.Sort(delegate(ItemEx a, ItemEx b) { return b.PUBLISHMENT_ID.CompareTo(a.PUBLISHMENT_ID); });
                     return result.ToArray();
                 }
                 catch (Exception ex)
@@ -570,7 +572,7 @@ namespace L_FMS
                 }
             }
             return null;
-                }
+        }
         //根据物品id获得物品评论信息
         public User_Comment[] GetUserCommentByItemID(decimal itemId)
         {
@@ -582,7 +584,7 @@ namespace L_FMS
                     //sql语句有点长，老师要求放在配置文件中(鲁棒性)  评论按照发布时间排序
                     message = db.Database.SqlQuery<User_Comment>("select user_name,content,time from comments,comment_item_user,userinfo,user_userinfo where item_id=" + itemId + "and user_userinfo.account=user_id and user_userinfo.userinfo=userinfo_id and comments.comment_id=comment_item_user.comment_id order by time").ToArray();
                     return message;
-            }
+                }
                 catch (Exception ex)
                 {
                     System.Diagnostics.Debug.WriteLine(ex.Message);
@@ -612,13 +614,12 @@ namespace L_FMS
                     System.Diagnostics.Debug.WriteLine(ex.Message);
                 }
             }
-    }
+        }
 
         //由密保问题ID获得密保问题
         public QUESTION GetQustion(int question_id)
         {
            
-
             using (LFMSContext db = new LFMSContext())
             {
                 try
@@ -627,16 +628,56 @@ namespace L_FMS
                     return q;
                 }
                 catch (Exception ex)
-    {
+                {
                     System.Diagnostics.Debug.WriteLine(ex.Message);
                 }
             }
             return null;
         
         }
+        
+        //admin.后台管理编辑数据
+        public bool ResetData(DataPackeg data)
+        {
+            bool result = true;
+
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    // 获取项
+                    
+                    /*ACCOUNT account = db.ACCOUNT.Where(p => p.USER_ID == userID).FirstOrDefault();
+
+                    account.PASSWORD = newPwdMD5;
+
+                    db.SaveChanges();*/
+
+                }
+                catch (Exception ex)
+                {
+                    result = false ;
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+            return result;
+        }
 
     }
 
+    public class DataPackeg
+    {
+        public static string selfClass ;
+        public static object data;
+        public DataPackeg(object Obj , string T)
+        {
+            selfClass = T ;
+            data = Obj;
+        }
+
+
+    }
     public class PageCuter<ArrayType>
     {
         public PageCuter()

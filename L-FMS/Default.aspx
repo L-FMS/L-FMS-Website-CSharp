@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page"  Language="C#" MasterPageFile="~/MainPage.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="L_FMS.WebForm1"   %>
+﻿<%@ Page Title="首页 | 失物招领管理系统"  Language="C#" MasterPageFile="~/MainPage.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="L_FMS.WebForm1"   %>
 
 
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">

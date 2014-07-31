@@ -512,6 +512,78 @@ namespace L_FMS
             }
             return null;
         }
+
+        //根据dialogid获得message
+        public MESSAGE[] GetMessageByDialogId(decimal dialogId)
+        {
+            List<MESSAGE> result = new List<MESSAGE>();
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    foreach (var q in db.DIALOG.Where(p => p.DIALOG_ID == dialogId).FirstOrDefault().DIALOG_MESSAGE)
+                    {
+                        MESSAGE message = new MESSAGE
+                        {
+                            MESSAGE_ID = q.MESSAGE_ID,
+                            SENDER_ID = q.MESSAGE.SENDER_ID,
+                            CONTENT = q.MESSAGE.CONTENT,
+                            SENDTIME = q.MESSAGE.SENDTIME,
+                            IS_READ = q.MESSAGE.IS_READ
+                        };
+                        result.Add(message);
+                    }
+                    return result.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
+        //创建message
+        public void createMessage(HttpRequest Request)
+        {
+
+            string content = Request.Form[""];
+            string sender = Request.Form[""];
+            string dialogid = Request.Form[""];
+
+
+            MESSAGE message = new MESSAGE
+            {
+                MESSAGE_ID = this.GetSeqNextVal("message"),
+                SENDER_ID = int.Parse(sender),
+                CONTENT = content,
+                SENDTIME = DateTime.Now,
+                IS_READ = 0
+            };
+
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    MESSAGE tempmessage = db.MESSAGE.Add(message);
+                    DIALOG_MESSAGE dialog = new DIALOG_MESSAGE
+                    {
+                        ID = this.GetSeqNextVal("dialogmessgae"),
+                        DIALOG_ID = int.Parse(dialogid),
+                        MESSAGE_ID = tempmessage.MESSAGE_ID
+                    };
+
+                    db.DIALOG_MESSAGE.Add(dialog);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Unique");
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+        }
+
         //根据获得字符查找物品
         public ItemEx[] GetItemBySearchString(string SearchString)
         {

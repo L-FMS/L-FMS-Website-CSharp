@@ -10,15 +10,15 @@
 namespace L_FMS {
     
     
-    public partial class Search {
+    public partial class Settings {
         
         /// <summary>
-        /// searchItem 控件。
+        /// info_form 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView searchItem;
+        protected global::System.Web.UI.HtmlControls.HtmlForm info_form;
     }
 }

@@ -7,18 +7,18 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace L_FMS {
+namespace L_FMS.Admin {
     
     
-    public partial class Search {
+    public partial class forms {
         
         /// <summary>
-        /// searchItem 控件。
+        /// a 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView searchItem;
+        protected global::System.Web.UI.HtmlControls.HtmlForm a;
     }
 }

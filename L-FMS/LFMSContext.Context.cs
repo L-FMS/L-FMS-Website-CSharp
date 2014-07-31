@@ -26,24 +26,6 @@ namespace L_FMS
         }
     
         public DbSet<ACCOUNT> ACCOUNT { get; set; }
-        public DbSet<BIN_2daG8ahiRE6HI2LwybmsLg___0> BIN_2daG8ahiRE6HI2LwybmsLg___0 { get; set; }
-        public DbSet<BIN_2Ro_f9KsTcSNlrDkLFfPjQ___0> BIN_2Ro_f9KsTcSNlrDkLFfPjQ___0 { get; set; }
-        public DbSet<BIN_8AgYr159QlqN76oDTmW3OQ___0> BIN_8AgYr159QlqN76oDTmW3OQ___0 { get; set; }
-        public DbSet<BIN_b2EGU4C5S4qi_06aImPydg___0> BIN_b2EGU4C5S4qi_06aImPydg___0 { get; set; }
-        public DbSet<BIN_Bqjr2iM3QJalMkKF58uYFw___0> BIN_Bqjr2iM3QJalMkKF58uYFw___0 { get; set; }
-        public DbSet<BIN_domyluTDQvyRN_u_cF2FEA___0> BIN_domyluTDQvyRN_u_cF2FEA___0 { get; set; }
-        public DbSet<BIN_E96SlRNOSiqLBNydP36rGg___0> BIN_E96SlRNOSiqLBNydP36rGg___0 { get; set; }
-        public DbSet<BIN_eWnk9URbTxuSeRK_M_DUKA___0> BIN_eWnk9URbTxuSeRK_M_DUKA___0 { get; set; }
-        public DbSet<BIN_ExtyvS1iSGWzED5mCD_zhg___0> BIN_ExtyvS1iSGWzED5mCD_zhg___0 { get; set; }
-        public DbSet<BIN_GN_R2_KLSWGMscdEQxWWhQ___0> BIN_GN_R2_KLSWGMscdEQxWWhQ___0 { get; set; }
-        public DbSet<BIN_H7W2K2W6RbSQNkCXbjFgow___0> BIN_H7W2K2W6RbSQNkCXbjFgow___0 { get; set; }
-        public DbSet<BIN_iiNOmphlSV_hXzuN2N7Vcw___0> BIN_iiNOmphlSV_hXzuN2N7Vcw___0 { get; set; }
-        public DbSet<BIN_J22CgvzRR7WP2YANu_ukyA___0> BIN_J22CgvzRR7WP2YANu_ukyA___0 { get; set; }
-        public DbSet<BIN_k1kv7nP4QnWRPuq4qJTfQw___0> BIN_k1kv7nP4QnWRPuq4qJTfQw___0 { get; set; }
-        public DbSet<BIN_NOgiDmQrTPywFpqbz7t5uw___0> BIN_NOgiDmQrTPywFpqbz7t5uw___0 { get; set; }
-        public DbSet<BIN_pXhHgZgwQ7ayUZt26N1E9A___0> BIN_pXhHgZgwQ7ayUZt26N1E9A___0 { get; set; }
-        public DbSet<BIN_qPni_AKBR_6KAsrKNRsyZQ___0> BIN_qPni_AKBR_6KAsrKNRsyZQ___0 { get; set; }
-        public DbSet<BIN_wI4_3NVySkSZWCl12mZ7Fg___0> BIN_wI4_3NVySkSZWCl12mZ7Fg___0 { get; set; }
         public DbSet<COMMENT_ITEM_USER> COMMENT_ITEM_USER { get; set; }
         public DbSet<COMMENTS> COMMENTS { get; set; }
         public DbSet<DIALOG> DIALOG { get; set; }

@@ -592,6 +592,28 @@ namespace L_FMS
             }
             return null;
         }
+
+        // 根据User ID获取用户信息
+        public USERINFO GetUserInfo(decimal userID)
+        {
+            USERINFO userInfo = new USERINFO();
+            using(LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    // 在联系集中找User ID对应的项
+                    USER_USERINFO temp = db.USER_USERINFO.Where(p=> p.ACCOUNT == userID).FirstOrDefault();
+                    userInfo = temp.USERINFO1;
+                    return userInfo;
+                }
+                catch(Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
         // 更改对应用户的密码
         public void ResetUserPassword(decimal userID, string newPwd)
         {
@@ -635,7 +657,31 @@ namespace L_FMS
             return null;
         
         }
+        //delete item by id
+        public bool DeleteItemByID(int id)
+        {
+             using (LFMSContext db = new LFMSContext())
+                {
+                try
+                {
+                    db.Database.ExecuteSqlCommand("delete from comments where comments.comment_id in (select comment_item_user.comment_id from comment_item_user where item_id="+ id+ ")");
+                    db.Database.ExecuteSqlCommand("delete from comment_item_user where item_id=" + id + " ");
+                    db.Database.ExecuteSqlCommand("delete from item_tag where item_id=" + id + " ");
+                    db.Database.ExecuteSqlCommand("delete from publishment where item_id=" + id + " ");
+                    db.Database.ExecuteSqlCommand("delete from item where item_id="+id+" ");
+                    db.SaveChanges();
+                     return true;
+                }
+                catch (Exception ex)
+                {
+                     System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return false;
         
+        
+        }
+
         //admin.后台管理编辑数据
         public bool ResetData(DataPackeg data)
         {
@@ -674,7 +720,7 @@ namespace L_FMS
         {
             selfClass = T ;
             data = Obj;
-        }
+    }
 
 
     }

@@ -13,7 +13,17 @@ namespace L_FMS.Admin
         protected PUBLISHMENT[] pubs { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request["delete"] != null)
+            {
+                string a = Request["delete"];
+                DBModel.GetInstance().DeleteItemByID(int.Parse(Request["delete"]));
+            }
+
+
             pubs = DBModel.GetInstance().GetPublishment(null);
+
+
+
         }
 
         protected void Item_Search(object sender, EventArgs e)

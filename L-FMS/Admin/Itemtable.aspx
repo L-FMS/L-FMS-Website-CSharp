@@ -65,7 +65,7 @@
                   <a class='btn btn-info' href='#'>
                     <i class='icon-edit'></i>
                   </a>
-                  <a class='btn btn-danger' href='#'>
+                  <a class='btn btn-danger' href=<% ="Itemtable.aspx?"+ "delete="+item.ITEM_ID%>>
                     <i class='icon-trash'></i>
                   </a>
                 </td>

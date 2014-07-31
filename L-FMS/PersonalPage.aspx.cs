@@ -15,6 +15,15 @@ namespace L_FMS
         protected string[] found;
         protected void Page_Load(object sender, EventArgs e)
         {
+            // 判断用户是否登录
+            if (!Utils.checkLogin(Session))
+            {
+                // 用户未登录
+                // 不允许访问该页面
+                // 跳转到登录界面
+                Response.Redirect("~/Login.aspx");
+            }
+
             int User_ID=0;
             message = DBModel.GetInstance().GetUserMessage(User_ID);
             // id对应的用户不存在

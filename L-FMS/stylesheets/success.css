@@ -18,10 +18,6 @@ main {
   position: relative;
 }
 
-.post-screen {
-  background-color: #e74c3c;
-  padding: 120px 350px 150px;
-}
 .login-icon {
   position: relative;
   left: auto;

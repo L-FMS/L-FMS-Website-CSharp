@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Entity.Infrastructure;
+using System.IO;
 
 namespace L_FMS
 {
@@ -22,6 +23,20 @@ namespace L_FMS
             person_message = DBModel.GetInstance().GetUserMessageByItemID(item_id);
             //获得物品信息
             item_message = DBModel.GetInstance().GetItemByItemID(item_id);
+            //获得物品图片
+            int filelength = item_message.IMAGE.Length;
+            string myUrl = HttpContext.Current.Server.MapPath(this.Request.ApplicationPath) + "TempDownLoad.jpeg";
+            System.IO.FileInfo file = new System.IO.FileInfo(Server.MapPath("TempDownLoad.jpeg"));
+            if (file.Exists)
+            {
+                file.Delete();
+            }
+            FileStream fs = new FileStream(myUrl, FileMode.OpenOrCreate);
+            BinaryWriter w = new BinaryWriter(fs);
+            w.BaseStream.Write(item_message.IMAGE, 0, filelength);
+            w.Flush();
+            w.Close();
+
             //获得物品提交时间信息以及发现（遗失）地点信息
             publishment_message = DBModel.GetInstance().GetPublishmentByItemID(item_id);
             //获得物品评论

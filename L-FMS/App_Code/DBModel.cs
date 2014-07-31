@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -68,6 +70,133 @@ namespace L_FMS
                 }
             }
             return result;
+        }
+        
+        //判断用户是否设置了密保问题
+        public Boolean SecurityQuestion(Decimal userid)
+        {
+            LFMSContext db = new LFMSContext();
+            string sql = "select * from USER_QUESTION where USER_ID = " + userid;
+            var result = db.Database.SqlQuery<USER_QUESTION>(sql).ToArray();
+            if (result.Length == 0)
+                return false;
+            return true;
+        }
+
+        //返回用户设置的密保问题
+        public QUESTION[] GetSecurityQuesion(Decimal userid)
+        {
+            QUESTION[] questions;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    string sql = "select * from QUESTION where QUESTION_ID in (select QUESTION_ID from USER_QUESTION where USER_ID = " + userid +" )";
+                    questions = db.Database.SqlQuery<QUESTION>(sql).ToArray();
+                    return questions;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
+
+        //通过ID获得密保问题
+        public QUESTION GetSecurityQuesionByID(Decimal questionid)
+        {
+            QUESTION question;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    question = db.QUESTION.Where(p => p.QUESTION_ID == questionid).FirstOrDefault();
+                    return question;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
+        //返回用户密保问题关系集
+        public USER_QUESTION[] GetSecurityRelation(Decimal userid)
+        {
+            USER_QUESTION[] result;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    string sql = "select * from USER_QUESTION where USER_ID = " + userid ;
+                    result = db.Database.SqlQuery<USER_QUESTION>(sql).ToArray();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
+        //添加用户保护问题
+        public void CreateSecurityQuestion(Decimal questionid, Decimal userid, String ans)
+        {
+            USER_QUESTION user_question = new USER_QUESTION 
+            {
+                ID = this.GetSeqNextVal("user_question"),
+                USER_ID = userid,
+                QUESTION_ID = questionid,
+                ANSWER = ans
+            };
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    db.USER_QUESTION.Add(user_question);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Unique");
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+        }
+
+        //添加新的密保问题
+        public void CreateNewQuestion(HttpRequest Request)
+        {
+            string content = Request.Form["content"];
+            string format = Request.Form["format"];
+            string tip = Request.Form["tip"];
+
+            QUESTION question = new QUESTION
+            {
+                QUESTION_ID = this.GetSeqNextVal("question"),
+                CONTENT = content,
+                QUESTION_FORMAT = format,
+                FORMAT_TIP = tip
+            };
+
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    db.QUESTION.Add(question);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Unique");
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
         }
 
         // 注册新用户
@@ -593,6 +722,8 @@ namespace L_FMS
             return null;
         }
 
+      
+
         // 根据User ID获取用户信息
         public USERINFO GetUserInfo(decimal userID)
         {
@@ -880,8 +1011,73 @@ namespace L_FMS
         }
 
 
+        //admin.后台管理编辑数据
+        public bool ResetData(DataPackeg data)
+        {
+            bool result = true;
+
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    // 获取项
+                    
+                    /*ACCOUNT account = db.ACCOUNT.Where(p => p.USER_ID == userID).FirstOrDefault();
+
+                    account.PASSWORD = newPwdMD5;
+
+                    db.SaveChanges();*/
+
+                }
+                catch (Exception ex)
+                {
+                    result = false ;
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+            return result;
+        }
+
+        // 更新用户信息
+        public void UpdateUserInfo(decimal userID, USERINFO userInfo)
+        {
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    USER_USERINFO connection = db.USER_USERINFO.Where(p => p.ACCOUNT == userID).FirstOrDefault();
+                    USERINFO oldUserInfo = connection.USERINFO1;
+                    oldUserInfo.USER_NAME = userInfo.USER_NAME;
+                    oldUserInfo.PHONE = userInfo.PHONE;
+                    oldUserInfo.ADDRESS = userInfo.ADDRESS;
+                    oldUserInfo.MARJOR = userInfo.MARJOR;
+                    oldUserInfo.SEX = userInfo.SEX;
+                    oldUserInfo.BIRTH = userInfo.BIRTH;
+
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+        }
+
     }
 
+    public class DataPackeg
+    {
+        public static string selfClass ;
+        public static object data;
+        public DataPackeg(object Obj , string T)
+        {
+            selfClass = T ;
+            data = Obj;
+    }
+
+
+    }
     public class PageCuter<ArrayType>
     {
         public PageCuter()
@@ -913,5 +1109,6 @@ namespace L_FMS
         }
 
 
+   
     }
 }

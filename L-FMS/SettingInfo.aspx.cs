@@ -24,7 +24,7 @@ namespace L_FMS
             USERINFO userInfo = DBModel.GetInstance().GetUserInfo(userID);
 
             // 根据所获得的结果加载页面信息
-            this.info_form. = userInfo.USER_NAME;
+            //this.info_form. = userInfo.USER_NAME;
         }
     }
 }

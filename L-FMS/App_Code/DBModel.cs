@@ -7,6 +7,12 @@ using System.Web;
 
 namespace L_FMS
 {
+
+    public class Dialog_Name
+    {
+        public decimal DIALOG_ID { get; set; }
+        public string CONTACT_NAME { get; set; }
+    }
     public class ItemEx
     {
         public decimal PUBLISHMENT_ID { get; set; }

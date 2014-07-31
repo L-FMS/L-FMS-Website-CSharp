@@ -21,42 +21,42 @@
         <div class="form-group">
           <label for="name" class="col-sm-1 control-label">姓名</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" id="name" placeholder="姓名">
+            <input type="text" class="form-control" id="name" name="name" placeholder="姓名" runat="server">
           </div>
         </div>
         <div class="form-group">
           <label for="sex" class="col-sm-1 control-label">性别</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" id="sex" placeholder="性别">
+            <input type="text" class="form-control" id="sex" name="sex" placeholder="性别" runat="server">
           </div>
         </div>
         <div class="form-group">
           <label for="birth" class="col-sm-1 control-label">生日</label>
           <div class="col-sm-6">
-            <input type="date" class="form-control" id="birth" placeholder="生日">
+            <input type="date" class="form-control" id="birth" name="birth" placeholder="生日" runat="server">
           </div>
         </div>
         <div class="form-group">
           <label for="phone" class="col-sm-1 control-label">手机</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" id="phone" placeholder="手机">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="手机" runat="server">
           </div>
         </div>
         <div class="form-group">
           <label for="major" class="col-sm-1 control-label">专业</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" id="major" placeholder="专业">
+            <input type="text" class="form-control" id="major" name="major" placeholder="专业" runat="server">
           </div>
         </div>
         <div class="form-group">
           <label for="address" class="col-sm-1 control-label">地址</label>
           <div class="col-sm-6">
-            <input type="text" class="form-control" id="address" placeholder="地址">
+            <input type="text" class="form-control" id="address" name="address" placeholder="地址" runat="server">
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-10">
-            <button type="submit" class="btn btn-primary">确认更改</button>
+            <asp:Button CssClass="btn btn-primary" runat="server" Text="确认更改" />
           </div>
         </div>
       </form>

@@ -83,6 +83,66 @@ namespace L_FMS
             return true;
         }
 
+        //返回用户设置的密保问题
+        public QUESTION[] GetSecurityQuesion(Decimal userid)
+        {
+            QUESTION[] questions;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    string sql = "select * from QUESTION where QUESTION_ID in (select QUESTION_ID from USER_QUESTION where USER_ID = " + userid +" )";
+                    questions = db.Database.SqlQuery<QUESTION>(sql).ToArray();
+                    return questions;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
+
+        //通过ID获得密保问题
+        public QUESTION GetSecurityQuesionByID(Decimal questionid)
+        {
+            QUESTION question;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    question = db.QUESTION.Where(p => p.QUESTION_ID == questionid).FirstOrDefault();
+                    return question;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
+        //返回用户密保问题关系集
+        public USER_QUESTION[] GetSecurityRelation(Decimal userid)
+        {
+            USER_QUESTION[] result;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    string sql = "select * from USER_QUESTION where USER_ID = " + userid ;
+                    result = db.Database.SqlQuery<USER_QUESTION>(sql).ToArray();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
         //添加用户保护问题
         public void CreateSecurityQuestion(Decimal questionid, Decimal userid, String ans)
         {

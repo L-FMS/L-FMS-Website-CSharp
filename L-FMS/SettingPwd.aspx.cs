@@ -11,11 +11,19 @@ namespace L_FMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // 判断用户是否登录
+            if (!Utils.checkLogin(Session))
+            {
+                // 用户未登录
+                // 不允许访问该页面
+                // 跳转到登录界面
+                Response.Redirect("~/Login.aspx");
+            }
         }
 
         protected void ResetPwd(object sender, EventArgs e)
         {
+            // 从表单获取数据
             string oldPwdInput = Request.Form["old-pwd"];
             string newPwd = Request.Form["new-pwd"];
             string confirmPwd = Request.Form["confirm-pwd"];

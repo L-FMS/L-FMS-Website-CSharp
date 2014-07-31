@@ -49,7 +49,7 @@ namespace L_FMS
                         ITEM_ID = itemTemp.ITEM_ID,
                         PLACE = place,
                         // PUBLISHER_ID=USER_ID,      这里是预留接口，获得当前操作的用户ID再写入
-                        PUBLISHER_ID=0,
+                        PUBLISHER_ID=int.Parse( Session["userID"].ToString() ),
                         PUBLISH_DATE = DateTime.Now,
                         //下面是固定输入当前操作产生的类型
                         TYPE = "lost",

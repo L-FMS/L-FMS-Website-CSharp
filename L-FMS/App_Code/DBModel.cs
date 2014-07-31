@@ -548,6 +548,27 @@ namespace L_FMS
                 }
             }
         }
+
+        //由密保问题ID获得密保问题
+        public QUESTION GetQustion(int question_id)
+        {
+           
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    QUESTION q = db.QUESTION.Where(p => p.QUESTION_ID == question_id).FirstOrDefault();
+                    return q;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        
+        }
+
     }
 
     public class PageCuter<ArrayType>
@@ -580,5 +601,7 @@ namespace L_FMS
             }
                 return result;
         }
+
+
     }
 }

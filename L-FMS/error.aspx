@@ -13,8 +13,8 @@
 
 
       <form class="login-form" runat="server">
-      <p class="text-center"><%=errorMessage %></p>
-      <asp:Button runat="server" CssClass="btn btn-danger btn-lg btn-block" Text="返回"  OnClick="goBack"/>
+        <p class="text-center"><%=errorMessage %></p>
+        <asp:Button runat="server" CssClass="btn btn-danger btn-lg btn-block" Text="返回" OnClick="goBack" />
       </form>
 
   </main>

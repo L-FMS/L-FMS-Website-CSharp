@@ -19,11 +19,7 @@ namespace L_FMS.Admin
                 DBModel.GetInstance().DeleteItemByID(int.Parse(Request["delete"]));
             }
 
-
             pubs = DBModel.GetInstance().GetPublishment(null);
-
-
-
         }
 
         protected void Item_Search(object sender, EventArgs e)

@@ -10,9 +10,9 @@
       <div class="tile person-tile">
         <img src="images/icons/svg/compas.svg" alt="Avatar" class="tile-image big-illustration">
         <h3 class="tile-title"><%=person_message.USER_NAME %></h3>
-        <p>Phone: <%=person_message.phone %></p>
-        <p>Stu. ID: 1252960</p>
-        <a href="#" class="btn btn-primary btn-large btn-block">Contact with me</a>
+        <p>手机: <%= person_message.phone %></p>
+        <p>地址: <%= person_message.address %></p>
+        <button onclick="alert('请通过以下方式联系我：\n<%= person_message.phone %>')" class="btn btn-primary btn-large btn-block">Contact with me</button>
       </div><!-- /.person-tile -->
     </div>
 
@@ -30,7 +30,6 @@
           <li class="item-description">
             <span class="fui-list"></span> Description:
             <p><%=item_message.ITEM_DESCRIPTION %></p>
-            
           </li>
         </ul>
       </div><!-- /.item-detail-tile -->

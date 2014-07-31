@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="找回密码 | 失物招领管理系统" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="FindPasswordLogIn.aspx.cs" Inherits="L_FMS.FindPassword" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CustomStylesheetContent" runat="server">
-    <webopt:bundlereference runat="server" path="~/stylesheets/Register" />
+    <webopt:bundlereference runat="server" path="~/stylesheets/FindPassword" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
-    <main class="login-screen"  style ="padding-top: 230px; padding-bottom: 230px">
+    <main class="login-screen">
     <div class="login-icon">
       <img src="images/login/icon.png" alt="Welcome th L&FMS">
       <h4>Welcome to <small>L&FMS</small></h4>

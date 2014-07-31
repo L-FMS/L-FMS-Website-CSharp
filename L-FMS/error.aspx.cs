@@ -14,22 +14,19 @@ namespace L_FMS
         protected void Page_Load(object sender, EventArgs e)
         {
             // 判断是否存在errorMessage
-            if (!IsPostBack)
+            try
             {
-                try
-                {
-                    errorMessage = Session["errorMessage"].ToString();
-                    Session.Remove("errorMessage");
-                }
-                catch (NullReferenceException nullEx)
-                {
-                    // 输出错误信息
-                    System.Diagnostics.Debug.WriteLine(nullEx.Message);
+                errorMessage = Session["errorMessage"].ToString();
+                //
+            }
+            catch (NullReferenceException nullEx)
+            {
+                // 输出错误信息
+                System.Diagnostics.Debug.WriteLine(nullEx.Message);
 
-                    // Session中errorMessage为空
-                    // 直接跳转回主页
-                    Response.Redirect("~/");
-                }
+                // Session中errorMessage为空
+                // 直接跳转回主页
+                Response.Redirect("~/");
             }
         }
 
@@ -37,6 +34,7 @@ namespace L_FMS
         {
             string returnURL = Session["returnURL"].ToString();
             Session.Remove("returnURL");
+            Session.Remove("errorMessage");
             Response.Redirect(returnURL);
         }
     }

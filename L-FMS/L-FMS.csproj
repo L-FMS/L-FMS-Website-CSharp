@@ -267,6 +267,7 @@
     <Content Include="stylesheets\demo.css" />
     <Content Include="stylesheets\detail.css" />
     <Content Include="stylesheets\docs.css" />
+    <Content Include="stylesheets\findPassword.css" />
     <Content Include="stylesheets\success.css" />
     <Content Include="stylesheets\error.css" />
     <Content Include="stylesheets\example.css" />
@@ -312,6 +313,10 @@
     </Compile>
     <Compile Include="Admin\Itemtable.aspx.designer.cs">
       <DependentUpon>Itemtable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Usertable.aspx.cs">
+      <DependentUpon>Usertable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Usertable.aspx.designer.cs">
       <DependentUpon>Usertable.aspx</DependentUpon>

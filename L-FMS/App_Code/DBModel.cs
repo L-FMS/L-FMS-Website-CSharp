@@ -348,7 +348,7 @@ namespace L_FMS
                     {
                         // 判定是否包含要求的字段
                         if (i.ITEM.ITEM_NAME.Contains(SearchString)
-                            || i.PUBLISH_DATE.ToString().Contains(SearchString)
+                            || i.PUBLISH_DATE.ToString()==(SearchString)
                             || i.PLACE.Contains(SearchString))
                         {
                             ItemEx itemEx = new ItemEx
@@ -389,7 +389,7 @@ namespace L_FMS
                     System.Diagnostics.Debug.WriteLine(ex.Message);
                 }
             }
-            return null;
+            return result.ToArray();
         }
 
         // 获取account 

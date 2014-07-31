@@ -17,7 +17,7 @@ namespace L_FMS
         protected User_Comment[] UserComment;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int item_id = 24;
+            int item_id = 6;
             //根据item_id 获得人物信息
             person_message = DBModel.GetInstance().GetUserMessageByItemID(item_id);
             //获得物品信息

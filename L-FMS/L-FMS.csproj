@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
     <Content Include="Admin\AddQuestion.aspx" />
     <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\assets\fonts\bootstrap\glyphicons-halflings-regular-3ef91859.svg" />
@@ -238,6 +239,7 @@
     <Content Include="images\video\volume-off-2x.png" />
     <Content Include="images\video\volume-off.png" />
     <Content Include="images\zr.jpg" />
+    <Content Include="List.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="PersonalPage.aspx" />
     <Content Include="PostFoundInfo.aspx" />
@@ -414,6 +416,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LFMSContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
     </Compile>
     <Compile Include="MESSAGE.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>

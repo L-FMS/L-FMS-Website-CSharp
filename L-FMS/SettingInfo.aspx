@@ -17,7 +17,7 @@
   <div class="tab-content">
     <!-- 个人信息 -->
     <div class="tab-pane active fade in" id="info">
-      <form class="form-horizontal" role="form" id="info-form" method="POST" action="">
+      <form class="form-horizontal" role="form" id="info_form" method="POST" runat="server">
         <div class="form-group">
           <label for="name" class="col-sm-1 control-label">姓名</label>
           <div class="col-sm-6">

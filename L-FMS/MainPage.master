@@ -20,12 +20,12 @@
       </div>
       <div class="collapse navbar-collapse" id="navbar-collapse-01">
         <asp:ContentPlaceHolder ID="NavbarContent" runat="server">
-          <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav">           
             <li class=""><a runat="server" href="~/">主页</a></li>
             <li class=""><a runat="server" href="~/GetDialogue.aspx">站内信</a></li>
             <li class=""><a runat="server" href="~/List.aspx">排行榜</a></li>
             <li class=""><a runat="server" href="~/About.aspx">关于我们</a></li>
-          </ul>
+        </ul>
         </asp:ContentPlaceHolder>
         <form class="navbar-form navbar-left" action="/Search.aspx" role="search">
           <div class="form-group">

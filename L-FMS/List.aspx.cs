@@ -14,16 +14,19 @@ namespace L_FMS
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            dt.Columns.Add("rank");
             dt.Columns.Add("name");
             dt.Columns.Add("number");
 
-         
+            UserOrdered[] list = DBModel.GetInstance().GetUserOrdered();
             //  if(itemMessage!=null)
- /*           foreach (var i in itemMessage)
+            int count = 0;
+         foreach (var i in list)
             {
-                object[] dr = new object[2];
-                dr[0] = i.ITEM_NAME;
-                dr[1] = i.PUBLISH_DATE.ToString();
+                object[] dr = new object[3];
+                dr[0] = ++count;
+                dr[1] = DBModel.GetInstance().GetUserName(i.publisher_id);
+                dr[2] = i.sum;
                 dt.Rows.Add(dr);
 
             }
@@ -31,7 +34,7 @@ namespace L_FMS
             this.searchItem.DataBind();
             this.searchItem.UseAccessibleHeader = true;
             this.searchItem.HeaderRow.TableSection = TableRowSection.TableHeader;
-  * */
+
 
         }
     }

@@ -13,7 +13,7 @@ namespace L_FMS
         protected QUESTION[] questions;
         protected void Page_Load(object sender, EventArgs e)
         {
-            questions = DBModel.GetInstance()
+           // questions = DBModel.GetInstance()
         }
     }
 }

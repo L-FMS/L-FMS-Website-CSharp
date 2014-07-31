@@ -633,6 +633,30 @@ namespace L_FMS
             return null;
         
         }
+        //delete item by id
+        public bool DeleteItemByID(int id)
+        {
+             using (LFMSContext db = new LFMSContext())
+                {
+                try
+                {
+                    db.Database.ExecuteSqlCommand("delete from comments where comments.comment_id in (select comment_item_user.comment_id from comment_item_user where item_id="+ id+ ")");
+                    db.Database.ExecuteSqlCommand("delete from comment_item_user where item_id=" + id + " ");
+                    db.Database.ExecuteSqlCommand("delete from item_tag where item_id=" + id + " ");
+                    db.Database.ExecuteSqlCommand("delete from publishment where item_id=" + id + " ");
+                    db.Database.ExecuteSqlCommand("delete from item where item_id="+id+" ");
+                    db.SaveChanges();
+                     return true;
+                }
+                catch (Exception ex)
+                {
+                     System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return false;
+        
+        
+        }
 
     }
 

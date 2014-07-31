@@ -18,10 +18,10 @@ namespace L_FMS
         private void Load_User_Info()
         {
             // 从Session中获取User ID
-            decimal userID = (decimal)Session["userID"];
+        //    decimal userID = (decimal)Session["userID"];
 
             // 根据User ID获取用户信息
-            USERINFO userInfo = DBModel.GetInstance().GetUserInfo(userID);
+           // USERINFO userInfo = DBModel.GetInstance().GetUserInfo(userID);
 
             // 根据所获得的结果加载页面信息
             //this.info_form. = userInfo.USER_NAME;

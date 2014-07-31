@@ -10,7 +10,7 @@
       <div class="tile person-tile">
         <img src="images/icons/svg/compas.svg" alt="Avatar" class="tile-image big-illustration">
         <h3 class="tile-title"><%=person_message.USER_NAME %></h3>
-        <p>Phone: <%=person_message.phone %>></p>
+        <p>Phone: <%=person_message.phone %></p>
         <p>Stu. ID: 1252960</p>
         <a href="#" class="btn btn-primary btn-large btn-block">Contact with me</a>
       </div><!-- /.person-tile -->
@@ -22,10 +22,10 @@
         <h3 class="tile-title">[<%=item_message.ITEM_NAME %>]</h3><!-- /.tile-title -->
         <ul>
           <li>
-            <span class="fui-time"></span> <%=publishment_message.PUBLISH_DATE.ToString() %>>
+            <span class="fui-time"></span> <%=publishment_message.PUBLISH_DATE.ToString() %>
           </li>
           <li>
-            <span class="fui-location"></span> <%=publishment_message.PLACE %>>
+            <span class="fui-location"></span> <%=publishment_message.PLACE %>
           </li>
           <li class="item-description">
             <span class="fui-list"></span> Description:

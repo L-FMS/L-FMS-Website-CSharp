@@ -16,6 +16,8 @@ namespace L_FMS
         protected DataTable dt2 = new DataTable();
         ItemEx[] info;
         ItemEx[] info2;
+        protected int lost_amount;
+        protected int found_amount;
         protected void Page_Load(object sender, EventArgs e)
         {
             info=DBModel.GetInstance().GetLostItem();
@@ -32,6 +34,7 @@ namespace L_FMS
             }
             this.lost.DataSource = dt;
             this.lost.DataBind();
+            lost_amount = this.lost.PageCount;
 
             info2 = DBModel.GetInstance().GetFoundItem();
             dt2.Columns.Add("name");
@@ -47,6 +50,7 @@ namespace L_FMS
             }
             this.found.DataSource = dt2;
             this.found.DataBind();
+            found_amount = this.found.PageCount;
             
         }
 
@@ -89,5 +93,46 @@ namespace L_FMS
         }
 
      
+        //paging
+        protected void found_pre_click(object sender, EventArgs e)
+        {
+            if (this.found.PageIndex > 0)
+            {
+                this.found.PageIndex--;
+             
+            }
+            this.found.DataBind();
+        }
+        protected void found_next_click(object sender, EventArgs e)
+        {
+            if (this.found.PageIndex < this.found.PageCount-1)
+            {
+                this.found.PageIndex++;
+                
+            }
+            this.found.DataBind();
+        }
+
+        protected void lost_pre_click(object sender, EventArgs e)
+        {
+            if (this.lost.PageIndex > 0)
+            {
+                this.lost.PageIndex--;
+                
+            }
+            this.lost.DataBind();
+        }
+        protected void lost_next_click(object sender, EventArgs e)
+        {
+            if (this.lost.PageIndex < this.found.PageCount - 1)
+            {
+                this.lost.PageIndex++;
+
+            }
+            this.lost.DataBind();
+        }
+
     }
+
+
 }

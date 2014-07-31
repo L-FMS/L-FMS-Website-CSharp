@@ -31,7 +31,7 @@
         </table>
 
 
-            <asp:GridView   ID="lost" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false"   BorderWidth="0px" GridLines="None" OnRowDataBound="lost_RowDataBound"  >
+            <asp:GridView   ID="lost" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false"   BorderWidth="0px" GridLines="None" OnRowDataBound="lost_RowDataBound"  AllowPaging="true" PageSize="10 " PagerSettings-Visible="false">
                 <columns>
                     <asp:BoundField DataField="name" HeaderText="Name" />
                     <asp:BoundField DataField="date" HeaderText="Date" />
@@ -41,11 +41,11 @@
 
       </div>
       <div class="clearfix">
-        <ul class="pager" style="float: right;">
-          <li class="previous"><a href="#">&larr; Older</a></li>
-          <li class="next"><a href="#">Newer &rarr;</a></li>
+        <ul class="pager" style="float: right;">      
+          <li class="previous"  ><a href="#"><asp:Button runat="server" OnClick="lost_pre_click"  Text="&larr; Older" BackColor="#34495e" BorderWidth="0px"/></a></li>
+           <li class="next"  ><a href="#" ><asp:Button runat="server" OnClick="lost_next_click"  Text="Newer &rarr;" BackColor="#34495e" BorderWidth="0px"/></a></li>
         </ul>
-        <em class="text-muted" style="float: left;">Page 1 of 32</em>
+        <em class="text-muted" style="float: left;">Page <%=this.lost.PageIndex+1 %> of <%=lost_amount %></em>
       </div>
     </div>
     <div class="col-sm-6">
@@ -67,7 +67,7 @@
                  </tr>
           </tbody>
         </table>
-            <asp:GridView   ID="found" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false"   BorderWidth="0px" GridLines="None"  OnRowDataBound="found_RowDataBound">
+            <asp:GridView   ID="found" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false"   BorderWidth="0px" GridLines="None"  OnRowDataBound="found_RowDataBound" AllowPaging="true" PageSize="10 " PagerSettings-Visible="false">
                 <columns>
                     <asp:BoundField DataField="name" HeaderText="Name" />
                     <asp:BoundField DataField="date" HeaderText="Date" />
@@ -77,10 +77,13 @@
       </div>
       <div class="clearfix">
         <ul class="pager" style="float: right;">
-          <li class="previous"><a href="#">&larr; Older</a></li>
-          <li class="next"><a href="#">Newer &rarr;</a></li>
+                     
+          <li class="previous"  ><a href="#"><asp:Button runat="server" OnClick="found_pre_click"  Text="&larr; Older" BackColor="#34495e" BorderWidth="0px"/></a></li>
+           <li class="next"  ><a href="#" ><asp:Button runat="server" OnClick="found_next_click"  Text="Newer &rarr;" BackColor="#34495e" BorderWidth="0px"/></a></li>
+      <!--    <li class="next"><a href="#">Newer &rarr;</a></li> -->
         </ul>
-        <em class="text-muted" style="float: left;">Page 1 of 32</em>
+          
+        <em class="text-muted" style="float: left;">Page <%=this.found.PageIndex+1 %> of <%=found_amount %></em>
       </div>
     </div>
     </form>

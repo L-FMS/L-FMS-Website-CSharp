@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -629,6 +631,8 @@ namespace L_FMS
             return null;
         }
 
+      
+
         // 根据User ID获取用户信息
         public USERINFO GetUserInfo(decimal userID)
         {
@@ -816,5 +820,6 @@ namespace L_FMS
         }
 
 
+   
     }
 }

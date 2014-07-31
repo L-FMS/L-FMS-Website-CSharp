@@ -14,13 +14,20 @@ namespace L_FMS
         protected DataTable dt = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
+            string query = Request.Params["q"];
+            if (query == null)
+            {
+                // query为空
+                // 直接重定向
+                Response.Redirect("~/");
+            }
+
             dt.Columns.Add("name");
             dt.Columns.Add("date");
             dt.Columns.Add("place");
-            
-            //根据SearchMessage 在publishment表中获取信息
-            String SearchMessage = "人";
-            ItemEx[] itemMessage = DBModel.GetInstance().GetItemBySearchString(SearchMessage);
+
+            //根据query 在publishment表中获取信息
+            ItemEx[] itemMessage = DBModel.GetInstance().GetItemBySearchString(query);
           //  if(itemMessage!=null)
             foreach (var i in itemMessage)
             {
@@ -32,11 +39,6 @@ namespace L_FMS
                 this.searchItem.DataSource = dt;
                 this.searchItem.DataBind();
             }
-
-        }
-        protected void runtoSearch(object sender, EventArgs e)
-        {
-
 
         }
     }

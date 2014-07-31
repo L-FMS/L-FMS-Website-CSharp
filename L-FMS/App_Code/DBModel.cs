@@ -618,6 +618,7 @@ namespace L_FMS
         public QUESTION GetQustion(int question_id)
         {
            
+
             using (LFMSContext db = new LFMSContext())
             {
                 try

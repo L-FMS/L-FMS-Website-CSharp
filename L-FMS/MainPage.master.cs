@@ -18,6 +18,7 @@ public partial class MainPage : System.Web.UI.MasterPage
         Session["userID"] = "-1";
         Session["isLogin"] = "false";
         Session["userName"] = "null";
+        Session["isAdminLogin"] = "false";
 
         // 重定向至主页
         Response.Redirect("~/");

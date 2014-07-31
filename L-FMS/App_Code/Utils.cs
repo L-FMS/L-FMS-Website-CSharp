@@ -18,5 +18,10 @@ namespace L_FMS
             }
             return false;
         }
+
+        public static bool checkAdmin(decimal userID)
+        {
+            return DBModel.GetInstance().GetUserPrivilege(userID) == 0;
+        }
     }
 }

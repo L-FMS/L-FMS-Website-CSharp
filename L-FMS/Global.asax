@@ -26,6 +26,7 @@
         // 在新会话启动时运行的代码
         Session["userID"] = "-1";
         Session["isLogin"] = "false";
+        Session["isAdminLogin"] = "false";
         Session["userName"] = "null";
     }
 

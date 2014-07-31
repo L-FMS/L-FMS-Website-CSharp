@@ -71,6 +71,42 @@ namespace L_FMS
             }
             return result;
         }
+        
+        //判断用户是否设置了密保问题
+        public Boolean SecurityQuestion(Decimal userid)
+        {
+            LFMSContext db = new LFMSContext();
+            string sql = "select * from USER_QUESTION where USER_ID = " + userid;
+            var result = db.Database.SqlQuery<USER_QUESTION>(sql).ToArray();
+            if (result == null)
+                return false;
+            return true;
+        }
+
+        //添加用户保护问题
+        public void CreateSecurityQuestion(Decimal questionid, Decimal userid, String ans)
+        {
+            USER_QUESTION user_question = new USER_QUESTION 
+            {
+                ID = this.GetSeqNextVal("user_question"),
+                USER_ID = userid,
+                QUESTION_ID = questionid,
+                ANSWER = ans
+            };
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    db.USER_QUESTION.Add(user_question);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Unique");
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+        }
 
         // 注册新用户
         public void RegisterNewUser(HttpRequest Request)
@@ -712,6 +748,31 @@ namespace L_FMS
             }
 
             return result;
+        }
+
+        // 更新用户信息
+        public void UpdateUserInfo(decimal userID, USERINFO userInfo)
+        {
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    USER_USERINFO connection = db.USER_USERINFO.Where(p => p.ACCOUNT == userID).FirstOrDefault();
+                    USERINFO oldUserInfo = connection.USERINFO1;
+                    oldUserInfo.USER_NAME = userInfo.USER_NAME;
+                    oldUserInfo.PHONE = userInfo.PHONE;
+                    oldUserInfo.ADDRESS = userInfo.ADDRESS;
+                    oldUserInfo.MARJOR = userInfo.MARJOR;
+                    oldUserInfo.SEX = userInfo.SEX;
+                    oldUserInfo.BIRTH = userInfo.BIRTH;
+
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
         }
 
     }

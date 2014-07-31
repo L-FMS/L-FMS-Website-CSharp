@@ -11,18 +11,29 @@ namespace L_FMS
     {
 
         protected QUESTION[] questions { get; set; }
+        protected Boolean alreadyset { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            questions = new QUESTION[3];
-            for (int i = 0; i < 3; ++i)
-                questions[i] = DBModel.GetInstance().GetQustion(i + 1);
+            Decimal userid = (Decimal)Session["userID"];
+            alreadyset = DBModel.GetInstance().SecurityQuestion(userid);
+            if (!alreadyset)
+            {
+                questions = new QUESTION[3];
+                for (int i = 0; i < 3; ++i)
+                    questions[i] = DBModel.GetInstance().GetQustion(i + 1);
+            }
+            
         }
 
         protected void Create_Question(object sender, EventArgs e)
         {
-            
-
-            Response.Redirect("~/");
+            Decimal userid = (Decimal)Session["userID"];
+            for (int i = 0; i < 3; ++i)
+            {
+                string ans = Request.Form["answer" + (i + 1)];
+                DBModel.GetInstance().CreateSecurityQuestion(questions[i].QUESTION_ID, userid, ans);
+            }      
+                Response.Redirect("~/");
         }
     }
 }

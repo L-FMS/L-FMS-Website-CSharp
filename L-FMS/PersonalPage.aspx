@@ -20,26 +20,63 @@
 
         <div class="panel-body" id="profile-panel-body">
           <ul class="nav nav-tabs nav-justified" role="tablist">
-            <li class="active"><a href="#found" role="tab" data-toggle="tab">Found</a></li>
-            <li><a href="#lost" role="tab" data-toggle="tab">Lost</a></li>
+            <li class="active">
+              <a href="#found" role="tab" data-toggle="tab">
+                <span class="badge pull-right"><%: found.Length != 0 ? found.Length.ToString() : "" %></span> 我找到的物品
+              </a>
+            </li>
+            <li>
+              <a href="#lost" role="tab" data-toggle="tab">
+                <span class="badge pull-right"><%: lost.Length != 0 ? lost.Length.ToString() : "" %></span> 我丢失的物品
+              </a>
+            </li>
           </ul><!-- /.nav-tabs -->
 
-          <div class="tab-content">
+          <div class="tab-content" style="min-height: 250px;">
             <div class="tab-pane active" id="found">
-              <% foreach (var i in found)
-                 {%> 
-                     <% =i %>
-                <br />
-              <% } %>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>物品名</th>
+                      <th>发布时间</th>
+                      <th>地点</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% foreach (var i in found) {%>
+                    <tr>
+                      <td><%: i.ITEM_NAME %></td>
+                      <td><%: i.PUBLISH_DATE.ToString() %></td>
+                      <td><%: i.PLACE %></td>
+                    </tr>
+                    <% } %>
+                  </tbody>
+                </table>
+              </div>
             </div><!-- /.tab-pane#found -->
 
             <div class="tab-pane" id="lost">
-              <% foreach (var i in lost)
-                 {%> 
-                     <% =i %>
-                <br />
-
-              <% } %>
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>物品名</th>
+                      <th>发布时间</th>
+                      <th>地点</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% foreach (var i in lost) {%>
+                    <tr>
+                      <td><%: i.ITEM_NAME %></td>
+                      <td><%: i.PUBLISH_DATE.ToString() %></td>
+                      <td><%: i.PLACE %></td>
+                    </tr>
+                    <% } %>
+                  </tbody>
+                </table>
+              </div>
             </div><!-- /.tab-pane#lost -->
           </div><!-- /.tab-content -->
         </div>

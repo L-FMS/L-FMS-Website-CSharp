@@ -538,9 +538,9 @@ namespace L_FMS
         }
         //根据user_id获得用户遗失物品名称
 
-        public string[] GetLostItemByID(decimal user_id)
+        public ItemEx[] GetLostItemByID(decimal user_id)
         {
-            List<string> result = new List<string>(); 
+            List<ItemEx> result = new List<ItemEx>(); 
             using (LFMSContext db = new LFMSContext())
             {
                 try
@@ -552,7 +552,17 @@ namespace L_FMS
                         {
                             continue;
                         }
-                        result.Add(i.ITEM.ITEM_NAME);
+
+                        ItemEx itexEx = new ItemEx
+                        {
+                            PUBLISHMENT_ID = i.ID,
+                            ITEM_ID = i.ITEM_ID,
+                            ITEM_NAME = i.ITEM.ITEM_NAME,
+                            PUBLISH_DATE = i.PUBLISH_DATE,
+                            PLACE = i.PLACE
+                        };
+
+                        result.Add(itexEx);
                     }
                     return result.ToArray();
                 }
@@ -564,9 +574,9 @@ namespace L_FMS
             return null;
         }
         //根据user_id获得用户的找到的物品
-        public string[] GetFoundItemByID(decimal user_id)
+        public ItemEx[] GetFoundItemByID(decimal user_id)
         {
-            List<string> result = new List<string>(); 
+            List<ItemEx> result = new List<ItemEx>(); 
             using (LFMSContext db = new LFMSContext())
             {
                 try
@@ -578,7 +588,17 @@ namespace L_FMS
                         {
                             continue;
                         }
-                        result.Add(i.ITEM.ITEM_NAME);
+
+                        ItemEx itexEx = new ItemEx
+                        {
+                            PUBLISHMENT_ID = i.ID,
+                            ITEM_ID = i.ITEM_ID,
+                            ITEM_NAME = i.ITEM.ITEM_NAME,
+                            PUBLISH_DATE = i.PUBLISH_DATE,
+                            PLACE = i.PLACE
+                        };
+
+                        result.Add(itexEx);
                     }
                     return result.ToArray();
             }

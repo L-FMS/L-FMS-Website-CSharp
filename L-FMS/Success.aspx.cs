@@ -17,7 +17,6 @@ namespace L_FMS
             try
             {
                 successMessage = Session["successMessage"].ToString();
-                Session.Remove("successMessage");
             }
             catch (NullReferenceException nullEx)
             {
@@ -33,6 +32,7 @@ namespace L_FMS
         {
             string returnURL = Session["returnURL"].ToString();
             Session.Remove("returnURL");
+            Session.Remove("successMessage");
             Response.Redirect(returnURL);
         }
     }

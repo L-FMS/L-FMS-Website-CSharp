@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="找回密码 | 失物招领管理系统" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="FindPasswordVerified.aspx.cs" Inherits="L_FMS.FindPasssordVerified" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CustomStylesheetContent" runat="server">
-    <webopt:bundlereference runat="server" path="~/stylesheets/Register" />
+    <webopt:bundlereference runat="server" path="~/stylesheets/FindPassword" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
 

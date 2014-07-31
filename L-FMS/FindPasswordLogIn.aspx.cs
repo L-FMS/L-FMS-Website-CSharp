@@ -19,9 +19,8 @@ namespace L_FMS
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
         }
-
-       
 
         protected void Submit_Email(object sender, EventArgs e)
         {
@@ -45,7 +44,6 @@ namespace L_FMS
                 } else
                 {
                     Session["findPasswordUserId"] = userid;
-                    //Session["returnURL"] = ;
                     Response.Redirect("FindPasswordVerified.aspx");
                 }
             }

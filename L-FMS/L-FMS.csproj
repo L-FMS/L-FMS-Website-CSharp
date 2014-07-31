@@ -264,6 +264,7 @@
     <Content Include="stylesheets\demo.css" />
     <Content Include="stylesheets\detail.css" />
     <Content Include="stylesheets\docs.css" />
+    <Content Include="stylesheets\findPassword.css" />
     <Content Include="stylesheets\success.css" />
     <Content Include="stylesheets\error.css" />
     <Content Include="stylesheets\example.css" />

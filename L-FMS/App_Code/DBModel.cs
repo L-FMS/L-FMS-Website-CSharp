@@ -657,9 +657,73 @@ namespace L_FMS
             return null;
         
         }
+        //delete item by id
+        public bool DeleteItemByID(int id)
+        {
+             using (LFMSContext db = new LFMSContext())
+                {
+                try
+                {
+                    db.Database.ExecuteSqlCommand("delete from comments where comments.comment_id in (select comment_item_user.comment_id from comment_item_user where item_id="+ id+ ")");
+                    db.Database.ExecuteSqlCommand("delete from comment_item_user where item_id=" + id + " ");
+                    db.Database.ExecuteSqlCommand("delete from item_tag where item_id=" + id + " ");
+                    db.Database.ExecuteSqlCommand("delete from publishment where item_id=" + id + " ");
+                    db.Database.ExecuteSqlCommand("delete from item where item_id="+id+" ");
+                    db.SaveChanges();
+                     return true;
+                }
+                catch (Exception ex)
+                {
+                     System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return false;
+        
+        
+        }
+
+        //admin.后台管理编辑数据
+        public bool ResetData(DataPackeg data)
+        {
+            bool result = true;
+
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    // 获取项
+                    
+                    /*ACCOUNT account = db.ACCOUNT.Where(p => p.USER_ID == userID).FirstOrDefault();
+
+                    account.PASSWORD = newPwdMD5;
+
+                    db.SaveChanges();*/
+
+                }
+                catch (Exception ex)
+                {
+                    result = false ;
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+            return result;
+        }
 
     }
 
+    public class DataPackeg
+    {
+        public static string selfClass ;
+        public static object data;
+        public DataPackeg(object Obj , string T)
+        {
+            selfClass = T ;
+            data = Obj;
+    }
+
+
+    }
     public class PageCuter<ArrayType>
     {
         public PageCuter()

@@ -291,60 +291,6 @@
     </Compile>
     <Compile Include="App_Code\DBModel.cs" />
     <Compile Include="App_Code\MD5.cs" />
-    <Compile Include="BIN_2daG8ahiRE6HI2LwybmsLg___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_2Ro_f9KsTcSNlrDkLFfPjQ___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_8AgYr159QlqN76oDTmW3OQ___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_b2EGU4C5S4qi_06aImPydg___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_Bqjr2iM3QJalMkKF58uYFw___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_domyluTDQvyRN_u_cF2FEA___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_E96SlRNOSiqLBNydP36rGg___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_eWnk9URbTxuSeRK_M_DUKA___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_ExtyvS1iSGWzED5mCD_zhg___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_GN_R2_KLSWGMscdEQxWWhQ___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_H7W2K2W6RbSQNkCXbjFgow___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_iiNOmphlSV_hXzuN2N7Vcw___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_J22CgvzRR7WP2YANu_ukyA___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_k1kv7nP4QnWRPuq4qJTfQw___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_NOgiDmQrTPywFpqbz7t5uw___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_pXhHgZgwQ7ayUZt26N1E9A___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_qPni_AKBR_6KAsrKNRsyZQ___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BIN_wI4_3NVySkSZWCl12mZ7Fg___0.cs">
-      <DependentUpon>LFMSContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="COMMENTS.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
@@ -370,10 +316,20 @@
     <Compile Include="ITEM_TAG.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="LFMSContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LFMSContext.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="LFMSContext.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LFMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LFMSContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LFMSContext.edmx</DependentUpon>
     </Compile>
     <Compile Include="MESSAGE.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
@@ -401,6 +357,13 @@
     <Compile Include="SettingQuestions.aspx.designer.cs">
       <DependentUpon>SettingQuestions.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TAG.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
@@ -413,13 +376,6 @@
     <Compile Include="USER_USERINFO.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Content Include="App_Code\BundleConfig.cs" />
     <Compile Include="Detail.aspx.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
@@ -427,16 +383,6 @@
     </Compile>
     <Compile Include="Detail.aspx.designer.cs">
       <DependentUpon>Detail.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LFMSContext.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LFMSContext.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LFMSContext.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LFMSContext.edmx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -532,6 +478,14 @@
     <Content Include="fonts\lato\lato-regular.ttf" />
     <Content Include="fonts\lato\lato-regular.woff" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="Admin\AdminPage.Master" />
+    <Content Include="Admin\assets\fonts\bootstrap\glyphicons-halflings-regular-22037a34.woff" />
+    <Content Include="Admin\assets\fonts\bootstrap\glyphicons-halflings-regular-aafafdc0.ttf" />
+    <Content Include="Admin\assets\fonts\bootstrap\glyphicons-halflings-regular-f3a9a3b6.eot" />
+    <Content Include="Admin\assets\font\fontawesome-webfont.eot" />
+    <Content Include="Admin\assets\font\fontawesome-webfont.ttf" />
+    <Content Include="Admin\assets\font\fontawesome-webfont.woff" />
+    <Content Include="Admin\assets\font\FontAwesome.otf" />
     <EntityDeploy Include="LFMSContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LFMSContext.Designer.cs</LastGenOutput>
@@ -549,14 +503,6 @@
       <DependentUpon>LFMSContext.edmx</DependentUpon>
       <LastGenOutput>LFMSContext.cs</LastGenOutput>
     </Content>
-    <Content Include="Admin\AdminPage.Master" />
-    <Content Include="Admin\assets\fonts\bootstrap\glyphicons-halflings-regular-22037a34.woff" />
-    <Content Include="Admin\assets\fonts\bootstrap\glyphicons-halflings-regular-aafafdc0.ttf" />
-    <Content Include="Admin\assets\fonts\bootstrap\glyphicons-halflings-regular-f3a9a3b6.eot" />
-    <Content Include="Admin\assets\font\fontawesome-webfont.eot" />
-    <Content Include="Admin\assets\font\fontawesome-webfont.ttf" />
-    <Content Include="Admin\assets\font\fontawesome-webfont.woff" />
-    <Content Include="Admin\assets\font\FontAwesome.otf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -225,7 +225,8 @@ namespace L_FMS
             {
                 try
                 {
-                    pwd = MD5.EncryptMD5WithRule(db.ACCOUNT.Where(p => p.EMAIL == Email).FirstOrDefault().PASSWORD);
+                    pwd = db.ACCOUNT.Where(p => p.EMAIL == Email).FirstOrDefault().PASSWORD;
+                    pwd = MD5.EncryptMD5WithRule(pwd);
                 }
                 catch (Exception ex)
                 {
@@ -368,15 +369,15 @@ namespace L_FMS
                             {
                                 if (j.TAG.TAG_TEXT.Contains(SearchString))
                                 {
-                                    ItemEx itemEx = new ItemEx
-                                    {
-                                        PUBLISHMENT_ID = i.ID,
-                                        ITEM_ID = i.ITEM_ID,
-                                        ITEM_NAME = i.ITEM.ITEM_NAME,
-                                        PUBLISH_DATE = i.PUBLISH_DATE,
-                                        PLACE = i.PLACE
-                                    };
-                                    result.Add(itemEx);
+                            ItemEx itemEx = new ItemEx
+                            {
+                                PUBLISHMENT_ID = i.ID,
+                                ITEM_ID = i.ITEM_ID,
+                                ITEM_NAME = i.ITEM.ITEM_NAME,
+                                PUBLISH_DATE = i.PUBLISH_DATE,
+                                PLACE = i.PLACE
+                            };
+                            result.Add(itemEx);
                                     break;
                                 }
                             }
@@ -491,21 +492,21 @@ namespace L_FMS
 
         //获取comments
         public COMMENTS[] GetComments(decimal itemId)
-    {
-        List<COMMENTS> result = new List<COMMENTS>();
-            using (LFMSContext db = new LFMSContext())
-            {
-                try
+        {
+            List<COMMENTS> result = new List<COMMENTS>();
+                using (LFMSContext db = new LFMSContext())
                 {
+                    try
+                    {
                     var a = db.COMMENT_ITEM_USER.Where(p => p.ITEM_ID == itemId);
                     foreach (var q in a)
+                        {
+                            result.Add(q.COMMENTS);
+                        }
+                        return result.ToArray();
+                    }
+                    catch (Exception ex)
                     {
-                        result.Add(q.COMMENTS);
-    }
-                    return result.ToArray();
-                }
-                catch (Exception ex)
-                {
                     System.Diagnostics.Debug.WriteLine(ex.Message);
                 }
             }
@@ -529,10 +530,10 @@ namespace L_FMS
                 catch (Exception ex)
                 {
                     System.Diagnostics.Debug.WriteLine(ex.Message);
+                    }
                 }
+                return null;
             }
-            return null;
-        }
 
         //通过item_id 获得item信息
         public ITEM GetItemByItemID(decimal itemId)

@@ -352,7 +352,7 @@ namespace L_FMS
     {
 
         public PageCuter()
-        { 
+        {   
         }
 
         //获取inputset指定页;参数 页码:PageNo ; 每页元素个数:NumPerPage ; 数组:inputSet

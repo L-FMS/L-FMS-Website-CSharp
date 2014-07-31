@@ -17,7 +17,7 @@ namespace L_FMS
         protected User_Comment[] UserComment;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int item_id = 6;
+            int item_id = int.Parse(Session["ItemId"].ToString());
             //根据item_id 获得人物信息
             person_message = DBModel.GetInstance().GetUserMessageByItemID(item_id);
             //获得物品信息
@@ -38,7 +38,7 @@ namespace L_FMS
         protected void Comment_Submit(object sender, EventArgs e)
         {
             string comment = Request.Form["comment"];
-            int item_id = 24;
+            int item_id = int.Parse(Session["ItemId"].ToString());
             COMMENTS comments = new COMMENTS
             {
                 COMMENT_ID = DBModel.GetInstance().GetSeqNextVal("comment"),
@@ -54,8 +54,8 @@ namespace L_FMS
                     {
                         ID = DBModel.GetInstance().GetSeqNextVal("com_item_user"),
                         COMMENT_ID = commentTemp.COMMENT_ID,
-                        ITEM_ID = item_id, //这里需要获取物品的ID
-                        USER_ID = 7 //同上
+                        ITEM_ID = int.Parse(Session["ItemId"].ToString()), //这里需要获取物品的ID
+                        USER_ID = Convert.ToDecimal( Session["userID"].ToString()) //同上
                     };
                     db.COMMENT_ITEM_USER.Add(comment_item_user);
                     db.SaveChanges();

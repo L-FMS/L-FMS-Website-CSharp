@@ -291,6 +291,7 @@ namespace L_FMS
 
                         result.Add(itemEx);
                     }
+                    result.Sort(delegate(ItemEx a, ItemEx b) { return b.PUBLISHMENT_ID.CompareTo(a.PUBLISHMENT_ID); });
                     return result.ToArray();
                 }
                 catch (Exception ex)
@@ -328,6 +329,7 @@ namespace L_FMS
 
                         result.Add(itemEx);
                     }
+                    result.Sort(delegate(ItemEx a, ItemEx b) { return b.PUBLISHMENT_ID.CompareTo(a.PUBLISHMENT_ID); });
                     return result.ToArray();
                 }
                 catch (Exception ex)

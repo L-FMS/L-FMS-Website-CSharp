@@ -13,5 +13,26 @@ namespace L_FMS
         {
 
         }
+
+        protected void Change_Password(object sender, EventArgs e)
+        {
+            string pwd = Request.Form["pwd"];
+            string pwd_validate = Request.Form["pwd-validate"];
+            if (! pwd.Equals(pwd_validate))
+            {
+                Session["errorMessage"] = "密码不一致";
+                Session["returnURL"] = "FindPasswordNewPassword.aspx";
+                Response.Redirect("Error.aspx");
+
+            } else
+            {
+                Decimal userid = (Decimal)Session["findPasswordUserId"];
+               // Decimal userid = 7;
+                DBModel.GetInstance().ResetUserPassword(userid, pwd);
+                Session["errorMessage"] = "成功啦！！！";
+                Session["returnURL"] = "FindPasswordNewPassword.aspx";
+                Response.Redirect("Error.aspx");
+            }
+        }
     }
 }

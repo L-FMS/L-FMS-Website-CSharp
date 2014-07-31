@@ -10,7 +10,7 @@ namespace L_FMS
     public class UserOrdered
     {
         public decimal publisher_id { get; set; }
-        public int sum { get; set; }
+        public decimal tot { get; set; }
     }
     public class Dialog_Name
     {

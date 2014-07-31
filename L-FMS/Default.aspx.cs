@@ -52,6 +52,8 @@ namespace L_FMS
             }
             this.found.DataSource = dt2;
             this.found.DataBind();
+            this.found.UseAccessibleHeader = true;
+            this.found.HeaderRow.TableSection = TableRowSection.TableHeader;
             found_amount = this.found.PageCount;
             
         }

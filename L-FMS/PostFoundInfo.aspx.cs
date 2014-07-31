@@ -108,6 +108,7 @@ namespace L_FMS
                 {
                 }
             }
+            Response.Redirect("Default.aspx");
         }
     }
 }

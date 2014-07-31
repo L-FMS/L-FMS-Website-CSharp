@@ -23,6 +23,7 @@
           <li class="active"><a runat="server" href="~/">主页</a></li>
           <li><a runat="server" href="~/GetDialogue.aspx">站内信</a></li>
           <li><a runat="server" href="#fakelink">关于我们</a></li>
+            <li><a runat="server" href="#fakelink">排行榜</a></li>
         </ul>
 
         <form class="navbar-form navbar-left" action="#" role="search">

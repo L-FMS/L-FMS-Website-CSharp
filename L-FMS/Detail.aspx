@@ -18,7 +18,7 @@
 
     <div class="col-sm-offset-1 col-sm-8">
       <div class="tile item-detail-tile">
-        <img src="images/icons/svg/compas.svg" alt="Avatar" class="tile-image big-illustration">
+        <img src="TempDownLoad.jpeg" alt="Avatar" class="tile-image big-illustration" >
         <h3 class="tile-title">[<%=item_message.ITEM_NAME %>]</h3><!-- /.tile-title -->
         <ul>
           <li>

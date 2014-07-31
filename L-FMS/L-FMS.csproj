@@ -264,6 +264,7 @@
     <Content Include="stylesheets\demo.css" />
     <Content Include="stylesheets\detail.css" />
     <Content Include="stylesheets\docs.css" />
+    <Content Include="stylesheets\success.css" />
     <Content Include="stylesheets\error.css" />
     <Content Include="stylesheets\example.css" />
     <Content Include="stylesheets\flat-ui.css" />
@@ -271,6 +272,7 @@
     <Content Include="stylesheets\login.css" />
     <Content Include="stylesheets\post.css" />
     <Content Include="stylesheets\settings.css" />
+    <Content Include="Success.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -306,6 +308,7 @@
     </Compile>
     <Compile Include="App_Code\DBModel.cs" />
     <Compile Include="App_Code\MD5.cs" />
+    <Compile Include="App_Code\Utils.cs" />
     <Compile Include="COMMENTS.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
@@ -383,6 +386,10 @@
     <Compile Include="SettingInfo.aspx.designer.cs">
       <DependentUpon>SettingInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SettingPwd.aspx.cs">
+      <DependentUpon>SettingPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="SettingPwd.aspx.designer.cs">
       <DependentUpon>SettingPwd.aspx</DependentUpon>
     </Compile>
@@ -399,6 +406,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Success.aspx.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Success.aspx.designer.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
     </Compile>
     <Compile Include="TAG.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>

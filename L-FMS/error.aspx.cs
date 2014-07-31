@@ -13,12 +13,28 @@ namespace L_FMS
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            errorMessage = Session["errorMessage"].ToString();
+            // 判断是否存在errorMessage
+            try
+            {
+                errorMessage = Session["errorMessage"].ToString();
+                Session.Remove("errorMessage");
+            }
+            catch (NullReferenceException nullEx)
+            {
+                // 输出错误信息
+                System.Diagnostics.Debug.WriteLine(nullEx.Message);
+
+                // Session中errorMessage为空
+                // 直接跳转回主页
+                Response.Redirect("~/");
+            }
         }
 
         protected void goBack(object sender, EventArgs e)
         {
-            Response.Redirect(Session["returnURL"].ToString());
+            string returnURL = Session["returnURL"].ToString();
+            Session.Remove("returnURL");
+            Response.Redirect(returnURL);
         }
     }
 }

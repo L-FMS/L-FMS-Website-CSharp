@@ -592,6 +592,28 @@ namespace L_FMS
             }
             return null;
         }
+
+        // 根据User ID获取用户信息
+        public USERINFO GetUserInfo(decimal userID)
+        {
+            USERINFO userInfo = new USERINFO();
+            using(LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    // 在联系集中找User ID对应的项
+                    USER_USERINFO temp = db.USER_USERINFO.Where(p=> p.ACCOUNT == userID).FirstOrDefault();
+                    userInfo = temp.USERINFO1;
+                    return userInfo;
+                }
+                catch(Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
         // 更改对应用户的密码
         public void ResetUserPassword(decimal userID, string newPwd)
         {

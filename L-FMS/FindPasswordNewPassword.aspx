@@ -1,12 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="FindPasswordNewPassword.aspx.cs" Inherits="L_FMS.FindPasswordNewPassword" %>
+﻿<%@ Page Title="找回密码 | 失物招领管理系统" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="FindPasswordNewPassword.aspx.cs" Inherits="L_FMS.FindPasswordNewPassword" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CustomStylesheetContent" runat="server">
+    <webopt:bundlereference runat="server" path="~/stylesheets/Register" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
-
-    <main class="login-screen">
+    
+    <main class="login-screen" "padding-top: 200px; padding-bottom: 200px"  >
     <div class="login-icon">
       <img src="images/login/icon.png" alt="Welcome th L&FMS">
-      <h4>Please finish your personal infomation</h4>
+      <h4>Welcome to <small>L&FMS</small></h4>
     </div>
 
     <form class="login-form" name="signupForm"  method="POST" runat="server">
@@ -34,4 +35,8 @@
         </main>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CustomScriptContent" runat="server">
+      <%: Scripts.Render("~/scripts/BootstrapSelect") %>
+  <script type="text/javascript">
+    $("select").selectpicker({ style: 'btn-hg btn-primary', menuStyle: 'dropdown-inverse' });
+  </script>
 </asp:Content>

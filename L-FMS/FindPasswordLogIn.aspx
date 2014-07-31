@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="找回密码 | 失物招领管理系统" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="FindPasswordLogIn.aspx.cs" Inherits="L_FMS.FindPassword" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CustomStylesheetContent" runat="server">
+    <webopt:bundlereference runat="server" path="~/stylesheets/Register" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
-    <main class="login-screen">
+    <main class="login-screen"  style ="padding-top: 230px; padding-bottom: 230px">
     <div class="login-icon">
       <img src="images/login/icon.png" alt="Welcome th L&FMS">
       <h4>Welcome to <small>L&FMS</small></h4>
@@ -24,7 +25,11 @@
       </fieldset>
        
     </form>
-
+        </main>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CustomScriptContent" runat="server">
+     <%: Scripts.Render("~/scripts/BootstrapSelect") %>
+  <script type="text/javascript">
+    $("select").selectpicker({ style: 'btn-hg btn-primary', menuStyle: 'dropdown-inverse' });
+  </script>
 </asp:Content>

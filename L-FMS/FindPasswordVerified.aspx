@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="找回密码 | 失物招领管理系统" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="FindPasswordVerified.aspx.cs" Inherits="L_FMS.FindPasssordVerified" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CustomStylesheetContent" runat="server">
+    <webopt:bundlereference runat="server" path="~/stylesheets/Register" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
 
@@ -29,10 +30,13 @@
         <asp:Button CssClass="btn btn-primary btn-lg btn-block" runat="server" OnClick="Submit_Answer"  Text="提交"  />
        
       </fieldset>
-        
-
      
     </form>
+        </main>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CustomScriptContent" runat="server">
+      <%: Scripts.Render("~/scripts/BootstrapSelect") %>
+  <script type="text/javascript">
+    $("select").selectpicker({ style: 'btn-hg btn-primary', menuStyle: 'dropdown-inverse' });
+  </script>
 </asp:Content>

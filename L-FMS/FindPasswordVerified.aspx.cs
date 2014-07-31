@@ -17,6 +17,7 @@ namespace L_FMS
         protected void Page_Load(object sender, EventArgs e)
         {
             userid = (Decimal)Session["findPasswordUserId"];
+            //userid = 7;
             relations = DBModel.GetInstance().GetSecurityRelation(userid);
             questions = new QUESTION[relations.Length];
             for (int i = 0; i < relations.Length; ++i)

@@ -7,6 +7,12 @@ using System.Web;
 
 namespace L_FMS
 {
+
+    public class Dialog_Name
+    {
+        public decimal DIALOG_ID { get; set; }
+        public string CONTACT_NAME { get; set; }
+    }
     public class ItemEx
     {
         public decimal PUBLISHMENT_ID { get; set; }
@@ -78,9 +84,69 @@ namespace L_FMS
             LFMSContext db = new LFMSContext();
             string sql = "select * from USER_QUESTION where USER_ID = " + userid;
             var result = db.Database.SqlQuery<USER_QUESTION>(sql).ToArray();
-            if (result == null)
+            if (result.Length == 0)
                 return false;
             return true;
+        }
+
+        //返回用户设置的密保问题
+        public QUESTION[] GetSecurityQuesion(Decimal userid)
+        {
+            QUESTION[] questions;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    string sql = "select * from QUESTION where QUESTION_ID in (select QUESTION_ID from USER_QUESTION where USER_ID = " + userid +" )";
+                    questions = db.Database.SqlQuery<QUESTION>(sql).ToArray();
+                    return questions;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
+
+        //通过ID获得密保问题
+        public QUESTION GetSecurityQuesionByID(Decimal questionid)
+        {
+            QUESTION question;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    question = db.QUESTION.Where(p => p.QUESTION_ID == questionid).FirstOrDefault();
+                    return question;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
+        //返回用户密保问题关系集
+        public USER_QUESTION[] GetSecurityRelation(Decimal userid)
+        {
+            USER_QUESTION[] result;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    string sql = "select * from USER_QUESTION where USER_ID = " + userid ;
+                    result = db.Database.SqlQuery<USER_QUESTION>(sql).ToArray();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
         }
 
         //添加用户保护问题
@@ -104,6 +170,81 @@ namespace L_FMS
                 {
                     System.Diagnostics.Debug.WriteLine("Unique");
                     System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+        }
+
+        //添加新的密保问题
+        public void CreateNewQuestion(HttpRequest Request)
+        {
+            string content = Request.Form["content"];
+            string format = Request.Form["format"];
+            string tip = Request.Form["tip"];
+
+            QUESTION question = new QUESTION
+            {
+                QUESTION_ID = this.GetSeqNextVal("question"),
+                CONTENT = content,
+                QUESTION_FORMAT = format,
+                FORMAT_TIP = tip
+            };
+
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    db.QUESTION.Add(question);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Unique");
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+        }
+
+        public DIALOG[] GetDialogs(Decimal userid)
+        {
+            DIALOG[] result;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    string sql = "select * from DIALOG where USER1 = "+ userid + " or USER2 =  "+ userid ;
+                    result = db.Database.SqlQuery<DIALOG>(sql).ToArray();
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
+        public decimal CreateNewDialog(Decimal user1, Decimal user2)
+        {
+            DIALOG dialog = new DIALOG
+            {
+                DIALOG_ID = this.GetSeqNextVal("dialog"),
+                USER1 = user1,
+                USER2 = user2
+            };
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    db.DIALOG.Add(dialog);
+                    db.SaveChanges();
+                    return dialog.DIALOG_ID;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Unique");
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                    return -1;
                 }
             }
         }
@@ -377,6 +518,75 @@ namespace L_FMS
             }
             return null;
         }
+
+        //根据dialogid获得message
+        public MESSAGE[] GetMessageByDialogId(decimal dialogId)
+        {
+            List<MESSAGE> result = new List<MESSAGE>();
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    foreach (var q in db.DIALOG.Where(p => p.DIALOG_ID == dialogId).FirstOrDefault().DIALOG_MESSAGE)
+                    {
+                        MESSAGE message = new MESSAGE
+                        {
+                            MESSAGE_ID = q.MESSAGE_ID,
+                            SENDER_ID = q.MESSAGE.SENDER_ID,
+                            CONTENT = q.MESSAGE.CONTENT,
+                            SENDTIME = q.MESSAGE.SENDTIME,
+                            IS_READ = q.MESSAGE.IS_READ
+                        };
+                        result.Add(message);
+                    }
+                    return result.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+
+        //创建message
+        public void createMessage(Decimal dialogid, String content, Decimal sender)
+        {
+
+           
+
+            MESSAGE message = new MESSAGE
+            {
+                MESSAGE_ID = this.GetSeqNextVal("message"),
+                SENDER_ID = sender,
+                CONTENT = content,
+                SENDTIME = DateTime.Now,
+                IS_READ = 0
+            };
+
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    MESSAGE tempmessage = db.MESSAGE.Add(message);
+                    DIALOG_MESSAGE dialog = new DIALOG_MESSAGE
+                    {
+                        ID = this.GetSeqNextVal("DIALOG_MESSAGE"),
+                        DIALOG_ID = dialogid,
+                        MESSAGE_ID = tempmessage.MESSAGE_ID
+                    };
+
+                    db.DIALOG_MESSAGE.Add(dialog);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Unique");
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+        }
+
         //根据获得字符查找物品
         public ItemEx[] GetItemBySearchString(string SearchString)
         {
@@ -478,9 +688,9 @@ namespace L_FMS
         }
         //根据user_id获得用户遗失物品名称
 
-        public string[] GetLostItemByID(decimal user_id)
+        public ItemEx[] GetLostItemByID(decimal user_id)
         {
-            List<string> result = new List<string>(); 
+            List<ItemEx> result = new List<ItemEx>(); 
             using (LFMSContext db = new LFMSContext())
             {
                 try
@@ -492,7 +702,17 @@ namespace L_FMS
                         {
                             continue;
                         }
-                        result.Add(i.ITEM.ITEM_NAME);
+
+                        ItemEx itexEx = new ItemEx
+                        {
+                            PUBLISHMENT_ID = i.ID,
+                            ITEM_ID = i.ITEM_ID,
+                            ITEM_NAME = i.ITEM.ITEM_NAME,
+                            PUBLISH_DATE = i.PUBLISH_DATE,
+                            PLACE = i.PLACE
+                        };
+
+                        result.Add(itexEx);
                     }
                     return result.ToArray();
                 }
@@ -504,9 +724,9 @@ namespace L_FMS
             return null;
         }
         //根据user_id获得用户的找到的物品
-        public string[] GetFoundItemByID(decimal user_id)
+        public ItemEx[] GetFoundItemByID(decimal user_id)
         {
-            List<string> result = new List<string>(); 
+            List<ItemEx> result = new List<ItemEx>(); 
             using (LFMSContext db = new LFMSContext())
             {
                 try
@@ -518,7 +738,17 @@ namespace L_FMS
                         {
                             continue;
                         }
-                        result.Add(i.ITEM.ITEM_NAME);
+
+                        ItemEx itexEx = new ItemEx
+                        {
+                            PUBLISHMENT_ID = i.ID,
+                            ITEM_ID = i.ITEM_ID,
+                            ITEM_NAME = i.ITEM.ITEM_NAME,
+                            PUBLISH_DATE = i.PUBLISH_DATE,
+                            PLACE = i.PLACE
+                        };
+
+                        result.Add(itexEx);
                     }
                     return result.ToArray();
             }
@@ -583,7 +813,7 @@ namespace L_FMS
             {
                 try
                 {
-                    message = db.Database.SqlQuery<ITEM>("select item_id,item_name,item_description,image from item where item_id=" + itemId + " ").FirstOrDefault();
+                    message = db.ITEM.Where(p => p.ITEM_ID == itemId).SingleOrDefault();
                     return message;
                 }
                 catch (Exception ex)
@@ -601,7 +831,7 @@ namespace L_FMS
             {
                 try
                 {
-                    message = db.Database.SqlQuery<PUBLISHMENT>("select * from publishment where item_id=" + itemId + " ").FirstOrDefault();
+                    message = db.PUBLISHMENT.Where(p=>p.ITEM_ID==itemId).SingleOrDefault();
                     return message;
                 }
                 catch (Exception ex)
@@ -704,11 +934,8 @@ namespace L_FMS
                 {
                 try
                 {
-                    db.Database.ExecuteSqlCommand("delete from comments where comments.comment_id in (select comment_item_user.comment_id from comment_item_user where item_id="+ id+ ")");
-                    db.Database.ExecuteSqlCommand("delete from comment_item_user where item_id=" + id + " ");
-                    db.Database.ExecuteSqlCommand("delete from item_tag where item_id=" + id + " ");
-                    db.Database.ExecuteSqlCommand("delete from publishment where item_id=" + id + " ");
-                    db.Database.ExecuteSqlCommand("delete from item where item_id="+id+" ");
+                    db.PUBLISHMENT.Remove(db.PUBLISHMENT.Where(p => p.ITEM_ID == id).SingleOrDefault());
+                    db.ITEM.Remove(db.ITEM.Where(p => p.ITEM_ID == id).SingleOrDefault());
                     db.SaveChanges();
                      return true;
                 }
@@ -721,6 +948,207 @@ namespace L_FMS
         
         
         }
+        //删除用户
+        //success
+        //删除用户的提问
+        public bool DeleteQuestionByUserID(int id)
+        {
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    USER_QUESTION[] ques= db.USER_QUESTION.Where(p=>p.USER_ID==id).ToArray();
+                    foreach (var i in ques)
+                    {
+                        db.QUESTION.Remove(db.QUESTION.Where(p => p.QUESTION_ID == i.QUESTION_ID).SingleOrDefault());
+                        db.USER_QUESTION.Remove(i);
+                    }
+                    db.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return false;
+        }
+        //删除用户的信息
+        
+        //success
+        public bool DeleteItemByUserID(int id)
+        {
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    PUBLISHMENT[] pub = db.PUBLISHMENT.Where(p => p.PUBLISHER_ID == id).ToArray();
+                    foreach (var i in pub)
+                    {
+                        DeleteItemByID((int)i.ITEM_ID);
+                    }
+                    db.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return false;
+        }
+        //success
+        public bool DeleteDialogByUserID(int id)
+        {
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    DIALOG[] dia = db.DIALOG.Where(p => p.USER1 == id || p.USER2 == id).ToArray();
+                    foreach (var i in dia)
+                    {
+                        DIALOG_MESSAGE[] d_m = db.DIALOG_MESSAGE.Where(p => p.DIALOG_ID == i.DIALOG_ID).ToArray();
+
+                        foreach (var j in d_m)
+                        {
+                            db.MESSAGE.Remove(db.MESSAGE.Where(p => p.MESSAGE_ID == j.MESSAGE_ID).SingleOrDefault());
+                            db.DIALOG_MESSAGE.Remove(j);
+                        }
+                        db.DIALOG.Remove(i);
+                    }
+                    db.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return false;
+        }
+        //根据id删除用户
+        public bool DeleteUserByID(int id)
+        {
+             using (LFMSContext db = new LFMSContext())
+                {
+                try
+                {
+                    DeleteQuestionByUserID(id);
+                    DeleteItemByUserID(id);
+                    DeleteDialogByUserID(id);
+
+                    USER_USERINFO temp = db.USER_USERINFO.Where(p => p.ACCOUNT == id).SingleOrDefault();
+                    db.USERINFO.Remove(db.USERINFO.Where(p => p.USERINFO_ID == temp.USERINFO).SingleOrDefault());
+                    db.USER_USERINFO.Remove(temp);
+                    
+                    db.ACCOUNT.Remove(db.ACCOUNT.Where(p => p.USER_ID == id).SingleOrDefault());
+                    
+                    db.SaveChanges();
+                     return true;
+                }
+                catch (Exception ex)
+                {
+                     System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return false;
+        
+        
+        }
+
+
+        public ACCOUNT GetAccountByUserID(int id)
+        {
+            
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    ACCOUNT account = db.ACCOUNT.Where(p=>p.USER_ID==id).SingleOrDefault();
+                    return account;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        
+        }
+        //更新
+        //根据account的user_id更新account
+        public void UpdateAccount(ACCOUNT nowAccout)
+        {
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    ACCOUNT old= db.ACCOUNT.Where(p => p.USER_ID == nowAccout.USER_ID).SingleOrDefault();
+                    old.PASSWORD = nowAccout.PASSWORD;
+                    old.EMAIL = nowAccout.EMAIL;
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+        }
+        //根据userinfo的userinfo_id更新
+        public void UpdateUserInfo( USERINFO nowinfo)
+        {
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    USERINFO old = db.USERINFO.Where(p => p.USERINFO_ID == nowinfo.USERINFO_ID).SingleOrDefault();
+                    old.PHONE = nowinfo.PHONE;
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+        }
+        //更新item
+        public void UpdateItem(ITEM nowitem)
+        {
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    ITEM old = db.ITEM.Where(p => p.ITEM_ID == nowitem.ITEM_ID).SingleOrDefault();
+                    old.ITEM_NAME = nowitem.ITEM_NAME;
+                    old.IMAGE = nowitem.IMAGE;
+                    old.ITEM_DESCRIPTION = nowitem.ITEM_DESCRIPTION;
+        
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+        }
+        //更新PUBLISHMENT
+        public void UpdatePublish(PUBLISHMENT nowpub)
+        {
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    PUBLISHMENT old = db.PUBLISHMENT.Where(p => p.ITEM_ID == nowpub.ITEM_ID).SingleOrDefault();
+                    old.PLACE = nowpub.PLACE;
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+        }
+
 
         //admin.后台管理编辑数据
         public bool ResetData(DataPackeg data)

@@ -11,6 +11,15 @@ namespace L_FMS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // 判断用户是否登录
+            if (!Utils.checkLogin(Session))
+            {
+                // 用户未登录
+                // 不允许访问该页面
+                // 跳转到登录界面
+                Response.Redirect("~/Login.aspx?redirect=/SettingInfo.aspx");
+            }
+
             // 加载用户信息
             this.Load_User_Info();
         }

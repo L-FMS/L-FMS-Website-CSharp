@@ -62,7 +62,7 @@
                     <td><%: item.IS_END %></td>
                     <td><%: item.END_TIME %></td>
                     <td class='action'>
-                  <a class='btn btn-info' href='#'>
+                  <a class='btn btn-info' href=<% ="Edit.aspx?editItemID="+item.ITEM_ID%>>
                     <i class='icon-edit'></i>
                   </a>
                   <a class='btn btn-danger' href=<% ="Itemtable.aspx?"+ "delete="+item.ITEM_ID%>>

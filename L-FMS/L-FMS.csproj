@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AddQuestion.aspx" />
     <Content Include="Admin\assets\fonts\bootstrap\glyphicons-halflings-regular-3ef91859.svg" />
     <Content Include="Admin\assets\font\fontawesome-webfont.svg" />
     <Content Include="Admin\assets\images\apple-touch-icon-114x114-precomposed-2315f7bd.png" />
@@ -152,7 +153,12 @@
     <Content Include="bootstrap\js\bootstrap.js" />
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="Detail.aspx" />
+    <Content Include="Dialog.aspx" />
+    <Content Include="GetDialogue.aspx" />
     <Content Include="Error.aspx" />
+    <Content Include="FindPasswordNewPassword.aspx" />
+    <Content Include="FindPasswordVerified.aspx" />
+    <Content Include="FindPasswordLogIn.aspx" />
     <Content Include="fonts\flat-ui-icons-regular.svg" />
     <Content Include="fonts\lato\lato-black.svg" />
     <Content Include="fonts\lato\lato-bold.svg" />
@@ -261,6 +267,8 @@
     <Content Include="stylesheets\demo.css" />
     <Content Include="stylesheets\detail.css" />
     <Content Include="stylesheets\docs.css" />
+    <Content Include="stylesheets\findPassword.css" />
+    <Content Include="stylesheets\success.css" />
     <Content Include="stylesheets\error.css" />
     <Content Include="stylesheets\example.css" />
     <Content Include="stylesheets\flat-ui.css" />
@@ -268,6 +276,7 @@
     <Content Include="stylesheets\login.css" />
     <Content Include="stylesheets\post.css" />
     <Content Include="stylesheets\settings.css" />
+    <Content Include="Success.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -276,6 +285,13 @@
   <ItemGroup>
     <Compile Include="ACCOUNT.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddQuestion.aspx.cs">
+      <DependentUpon>AddQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddQuestion.aspx.designer.cs">
+      <DependentUpon>AddQuestion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminPage.Master.cs">
       <DependentUpon>AdminPage.Master</DependentUpon>
@@ -298,19 +314,38 @@
     <Compile Include="Admin\Itemtable.aspx.designer.cs">
       <DependentUpon>Itemtable.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Usertable.aspx.cs">
+      <DependentUpon>Usertable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Admin\Usertable.aspx.designer.cs">
       <DependentUpon>Usertable.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\DBModel.cs" />
     <Compile Include="App_Code\MD5.cs" />
+    <Compile Include="App_Code\Utils.cs" />
     <Compile Include="COMMENTS.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
     <Compile Include="COMMENT_ITEM_USER.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dialog.aspx.cs">
+      <DependentUpon>Dialog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dialog.aspx.designer.cs">
+      <DependentUpon>Dialog.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DIALOG.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetDialogue.aspx.cs">
+      <DependentUpon>GetDialogue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetDialogue.aspx.designer.cs">
+      <DependentUpon>GetDialogue.aspx</DependentUpon>
     </Compile>
     <Compile Include="DIALOG_MESSAGE.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
@@ -321,6 +356,27 @@
     </Compile>
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindPasswordNewPassword.aspx.cs">
+      <DependentUpon>FindPasswordNewPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindPasswordNewPassword.aspx.designer.cs">
+      <DependentUpon>FindPasswordNewPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindPasswordVerified.aspx.cs">
+      <DependentUpon>FindPasswordVerified.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindPasswordVerified.aspx.designer.cs">
+      <DependentUpon>FindPasswordVerified.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindPasswordLogIn.aspx.cs">
+      <DependentUpon>FindPasswordLogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindPasswordLogIn.aspx.designer.cs">
+      <DependentUpon>FindPasswordLogIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="ITEM.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
@@ -359,6 +415,10 @@
     <Compile Include="SettingInfo.aspx.designer.cs">
       <DependentUpon>SettingInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SettingPwd.aspx.cs">
+      <DependentUpon>SettingPwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="SettingPwd.aspx.designer.cs">
       <DependentUpon>SettingPwd.aspx</DependentUpon>
     </Compile>
@@ -375,6 +435,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Success.aspx.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Success.aspx.designer.cs">
+      <DependentUpon>Success.aspx</DependentUpon>
     </Compile>
     <Compile Include="TAG.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>

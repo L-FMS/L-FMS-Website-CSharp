@@ -21,7 +21,7 @@
       <div class="collapse navbar-collapse" id="navbar-collapse-01">
         <ul class="nav navbar-nav">           
           <li class="active"><a runat="server" href="~/">主页</a></li>
-          <li><a runat="server" href="#fakelink">站内信</a></li>
+          <li><a runat="server" href="~/GetDialogue.aspx">站内信</a></li>
           <li><a runat="server" href="#fakelink">关于我们</a></li>
         </ul>
 
@@ -44,13 +44,13 @@
             {
           %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= Session["userName"] %><b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%: Session["userName"] %><b class="caret"></b></a>
             <span class="dropdown-arrow"></span>
             <ul class="dropdown-menu">
-              <li><a runat="server" href="~/PersonalPage.aspx">个人页面</a></li>
+              <li><a href="/PersonalPage.aspx?userid=<%= Session["userID"] %>">个人页面</a></li>
               <li><a runat="server" href="~/SettingInfo.aspx">设置</a></li>
               <li class="divider"></li>
-              <li><a href="#">注销</a></li>
+              <li><a runat="server" onserverclick="Sign_Out">注销</a></li>
             </ul>
           </li>
           <%

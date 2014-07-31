@@ -14,8 +14,18 @@ namespace L_FMS
         protected Boolean alreadyset { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            // 判断用户是否登录
+            if (!Utils.checkLogin(Session))
+            {
+                // 用户未登录
+                // 不允许访问该页面
+                // 跳转到登录界面
+                Response.Redirect("~/Login.aspx?redirect=/SettingQuestions.aspx");
+            }
+
             Decimal userid = (Decimal)Session["userID"];
             alreadyset = DBModel.GetInstance().SecurityQuestion(userid);
+            //alreadyset = false;
             if (!alreadyset)
             {
                 questions = new QUESTION[3];

@@ -11,18 +11,33 @@ namespace L_FMS
     public partial class PersonalPage : System.Web.UI.Page
     {
         protected PersonAllMessage message;
-        protected string[] lost;
-        protected string[] found;
+        protected ItemEx[] lost;
+        protected ItemEx[] found;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int User_ID=0;
-            message = DBModel.GetInstance().GetUserMessage(User_ID);
-            // id对应的用户不存在
-            if (message == null)
+            // 判断用户是否登录
+            if (!Utils.checkLogin(Session))
             {
-                Session["errorMessage"] = "用户不存在";
-                Response.Redirect("Login.aspx");
+                // 用户未登录
+                // 不允许访问该页面
+                // 跳转到登录界面
+                Response.Redirect("~/Login.aspx?redirect=/PersonalPage.aspx");
             }
+
+            decimal User_ID = 0;
+            // 如果URL参数中存在userID参数，以此优先
+            if (Request.Params["userID"] != null)
+            {
+                User_ID = Decimal.Parse(Request.Params["userID"]);
+            }
+            else
+            {
+                // URL中无此参数
+                // 去Session中寻找当前用户的User ID
+                User_ID = Decimal.Parse(Session["userID"].ToString());
+            }
+
+            message = DBModel.GetInstance().GetUserMessage(User_ID);
             if (message.SEX == "M")
             { 
                 message.SEX = "男"; 

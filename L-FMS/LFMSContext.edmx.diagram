@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5f47e045f4194cf98b22618f699f6040" Name="Diagram1" ShowGrid="true">
-        <EntityTypeShape EntityType="Model.ACCOUNT" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.COMMENT_ITEM_USER" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.COMMENTS" Width="1.5" PointX="0.75" PointY="17.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.DIALOG" Width="1.5" PointX="3" PointY="21.375" IsExpanded="true" />
+      <Diagram DiagramId="5f47e045f4194cf98b22618f699f6040" Name="Diagram1" ShowGrid="true" ZoomLevel="74">
+        <EntityTypeShape EntityType="Model.ACCOUNT" Width="1.5" PointX="0.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COMMENT_ITEM_USER" Width="1.5" PointX="6.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.COMMENTS" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DIALOG" Width="1.5" PointX="2.75" PointY="20.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.DIALOG_MESSAGE" Width="1.5" PointX="5.25" PointY="23" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.ITEM" Width="1.5" PointX="3.75" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.ITEM_TAG" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.MESSAGE" Width="1.5" PointX="3" PointY="24.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.PUBLISHMENT" Width="1.5" PointX="6" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PUBLISHMENT" Width="1.5" PointX="8.375" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.QUESTION" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.TAG" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.USER_QUESTION" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.USER_USERINFO" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.USERINFO" Width="1.5" PointX="0.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USER_USERINFO" Width="1.5" PointX="3.125" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.USERINFO" Width="1.5" PointX="0.5" PointY="9.875" IsExpanded="true" />
         <AssociationConnector Association="Model.SYS_C006186" ManuallyRouted="false" />
         <AssociationConnector Association="Model.SYS_C006194" ManuallyRouted="false" />
         <AssociationConnector Association="Model.SYS_C006199" ManuallyRouted="false" />

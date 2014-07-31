@@ -7,34 +7,32 @@ using System.Web.UI.WebControls;
 
 namespace L_FMS
 {
-    public partial class error : System.Web.UI.Page
+    public partial class Success : System.Web.UI.Page
     {
-        protected string errorMessage;
+        protected string successMessage { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // 判断是否存在errorMessage
+            // 判断是否存在successMessage
             try
             {
-                errorMessage = Session["errorMessage"].ToString();
-                //
+                successMessage = Session["successMessage"].ToString();
             }
             catch (NullReferenceException nullEx)
             {
                 // 输出错误信息
                 System.Diagnostics.Debug.WriteLine(nullEx.Message);
 
-                // Session中errorMessage为空
+                // Session中successMessage为空
                 // 直接跳转回主页
                 Response.Redirect("~/");
             }
         }
-
         protected void goBack(object sender, EventArgs e)
         {
             string returnURL = Session["returnURL"].ToString();
             Session.Remove("returnURL");
-            Session.Remove("errorMessage");
+            Session.Remove("successMessage");
             Response.Redirect(returnURL);
         }
     }

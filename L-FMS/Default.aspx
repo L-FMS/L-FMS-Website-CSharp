@@ -1,5 +1,13 @@
 ﻿<%@ Page Title="首页 | 失物招领管理系统"  Language="C#" MasterPageFile="~/MainPage.master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="L_FMS.WebForm1"   %>
 
+<asp:Content ContentPlaceHolderID="NavbarContent" runat="server">
+  <ul class="nav navbar-nav">
+    <li class="active"><a runat="server" href="~/">主页</a></li>
+    <li class=""><a runat="server" href="~/GetDialogue.aspx">站内信</a></li>
+    <li class=""><a runat="server" href="~/List.aspx">排行榜</a></li>
+    <li class=""><a runat="server" href="~/About.aspx">关于我们</a></li>
+  </ul>
+</asp:Content>
 
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
   <div class="jumbotron">

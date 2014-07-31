@@ -9,9 +9,11 @@ namespace L_FMS
 {
     public partial class SettingQuestions : System.Web.UI.Page
     {
+
+        protected QUESTION[] questions;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            questions = DBModel.GetInstance()
         }
     }
 }

@@ -153,6 +153,9 @@
     <Content Include="bootstrap\js\bootstrap.min.js" />
     <Content Include="Detail.aspx" />
     <Content Include="Error.aspx" />
+    <Content Include="FindPasswordNewPassword.aspx" />
+    <Content Include="FindPasswordVerified.aspx" />
+    <Content Include="FindPasswordLogIn.aspx" />
     <Content Include="fonts\flat-ui-icons-regular.svg" />
     <Content Include="fonts\lato\lato-black.svg" />
     <Content Include="fonts\lato\lato-bold.svg" />
@@ -321,6 +324,27 @@
     </Compile>
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindPasswordNewPassword.aspx.cs">
+      <DependentUpon>FindPasswordNewPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindPasswordNewPassword.aspx.designer.cs">
+      <DependentUpon>FindPasswordNewPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindPasswordVerified.aspx.cs">
+      <DependentUpon>FindPasswordVerified.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindPasswordVerified.aspx.designer.cs">
+      <DependentUpon>FindPasswordVerified.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FindPasswordLogIn.aspx.cs">
+      <DependentUpon>FindPasswordLogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FindPasswordLogIn.aspx.designer.cs">
+      <DependentUpon>FindPasswordLogIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="ITEM.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>

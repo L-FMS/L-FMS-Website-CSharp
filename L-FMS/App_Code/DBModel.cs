@@ -168,6 +168,37 @@ namespace L_FMS
             }
         }
 
+        //添加新的密保问题
+        public void CreateNewQuestion(HttpRequest Request)
+        {
+            string content = Request.Form["content"];
+            string format = Request.Form["format"];
+            string tip = Request.Form["tip"];
+
+            QUESTION question = new QUESTION
+            {
+                QUESTION_ID = this.GetSeqNextVal("question"),
+                CONTENT = content,
+                QUESTION_FORMAT = format,
+                FORMAT_TIP = tip
+            };
+
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    db.QUESTION.Add(question);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Unique");
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+
+        }
+
         // 注册新用户
         public void RegisterNewUser(HttpRequest Request)
         {

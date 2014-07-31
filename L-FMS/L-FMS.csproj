@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AddQuestion.aspx" />
     <Content Include="Admin\assets\fonts\bootstrap\glyphicons-halflings-regular-3ef91859.svg" />
     <Content Include="Admin\assets\font\fontawesome-webfont.svg" />
     <Content Include="Admin\assets\images\apple-touch-icon-114x114-precomposed-2315f7bd.png" />
@@ -283,6 +284,13 @@
     <Compile Include="ACCOUNT.cs">
       <DependentUpon>LFMSContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AddQuestion.aspx.cs">
+      <DependentUpon>AddQuestion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddQuestion.aspx.designer.cs">
+      <DependentUpon>AddQuestion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AdminPage.Master.cs">
       <DependentUpon>AdminPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -303,6 +311,10 @@
     </Compile>
     <Compile Include="Admin\Itemtable.aspx.designer.cs">
       <DependentUpon>Itemtable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Usertable.aspx.cs">
+      <DependentUpon>Usertable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Usertable.aspx.designer.cs">
       <DependentUpon>Usertable.aspx</DependentUpon>

@@ -21,7 +21,7 @@
           <label for="register-email" class="login-field-icon fui-user"></label>
         </div>
         <asp:Button CssClass="btn btn-primary btn-lg btn-block" runat="server" OnClick="Submit_Email"  Text="提交"  />
-       
+       <a runat="server" href="~/Login.aspx" class="login-link">记起密码？登录</a>
       </fieldset>
        
     </form>

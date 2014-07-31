@@ -21,6 +21,7 @@
             </div>
             <asp:Button CssClass="btn btn-primary btn-lg btn-block" runat="server" OnClick="buttonSubmit"  Text="登录"  />
             <a runat="server" href="~/FindPasswordLogin.aspx" class="login-link">忘记密码?</a>
+            <a runat="server" href="~/Register.aspx" class="login-link">没有账号？现在注册</a>
         </form>
     </main>
 </asp:Content>

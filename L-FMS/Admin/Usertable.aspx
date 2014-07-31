@@ -56,10 +56,10 @@
                     <td><%: user.PRIVILEGE %></td>
                     <td><%: user.VERIFIED %></td>
                     <td class='action'>
-                  <a class='btn btn-info' href='#'>
+                  <a class='btn btn-info'  href=<%= "Edit.aspx?editUserID="+user.USER_ID+" " %>>
                     <i class='icon-edit'></i>
                   </a>
-                  <a class='btn btn-danger' href='#' runat="server" onserverclick="Unnamed_ServerClick">
+                  <a class='btn btn-danger'  href=<%="Usertable.aspx?delete="+user.USER_ID+" " %>>
                     <i class='icon-trash'></i>
                   </a>
                 </td>

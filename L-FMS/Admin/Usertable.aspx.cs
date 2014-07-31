@@ -17,6 +17,11 @@ namespace L_FMS.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request["delete"] != null)
+            {
+                string a = Request["delete"];
+                DBModel.GetInstance().DeleteUserByID(int.Parse(Request["delete"]));
+            }
             users = DBModel.GetInstance().GetAccountWithSearchString(null);
         }
 

@@ -18,7 +18,10 @@ namespace L_FMS
 
         protected void goBack(object sender, EventArgs e)
         {
-            Response.Redirect(Session["returnURL"].ToString());
+            if (Session["returnURL"].ToString() != null)
+                Response.Redirect(Session["returnURL"].ToString());
+            else
+                Response.Redirect("Default.aspx");
         }
     }
 }

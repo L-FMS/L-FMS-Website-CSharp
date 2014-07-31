@@ -298,6 +298,10 @@
     <Compile Include="Admin\Itemtable.aspx.designer.cs">
       <DependentUpon>Itemtable.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Usertable.aspx.cs">
+      <DependentUpon>Usertable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Admin\Usertable.aspx.designer.cs">
       <DependentUpon>Usertable.aspx</DependentUpon>
     </Compile>

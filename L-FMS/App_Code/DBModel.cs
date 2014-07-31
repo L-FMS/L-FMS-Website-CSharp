@@ -70,6 +70,31 @@ namespace L_FMS
             return result;
         }
 
+        //添加用户保护问题
+        public void CreateSecurityQuestion(Decimal questionid, Decimal userid, String ans)
+        {
+            USER_QUESTION user_question = new USER_QUESTION 
+            {
+                ID = this.GetSeqNextVal("user_question"),
+                USER_ID = userid,
+                QUESTION_ID = questionid,
+                ANSWER = ans
+            };
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    db.USER_QUESTION.Add(user_question);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine("Unique");
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+        }
+
         // 注册新用户
         public void RegisterNewUser(HttpRequest Request)
         {

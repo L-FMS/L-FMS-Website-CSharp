@@ -38,7 +38,7 @@
                 </select>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" name="answer1" id="answer2" placeholder="<%:questions[1].FORMAT_TIP %>" pattern="<%:questions[1].QUESTION_FORMAT %>">
+                <input type="text" class="form-control" name="answer2" id="answer2" placeholder="<%:questions[1].FORMAT_TIP %>" pattern="<%:questions[1].QUESTION_FORMAT %>">
             </div>
           <!--- 密保问题3 -->
           <div class="form-group">
@@ -52,9 +52,7 @@
         </div>
         
           <!--- 提交 -->
-        <div class="form-group">
-          <button onclick="Create_Question" type="submit" class="btn btn-primary">确认提交</button>
-        </div>
+         <asp:Button runat="server" OnClick="Create_Question" Text="确认提交" CssClass="btn btn-primary" />
       </form>
     </div><!-- /#question -->
   </div>

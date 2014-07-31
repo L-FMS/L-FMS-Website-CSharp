@@ -20,9 +20,13 @@ namespace L_FMS
 
         protected void Create_Question(object sender, EventArgs e)
         {
-            
-
-            Response.Redirect("~/");
+            Decimal userid = (Decimal)Session["userID"];
+            for (int i = 0; i < 3; ++i)
+            {
+                string ans = Request.Form["answer" + (i + 1)];
+                DBModel.GetInstance().CreateSecurityQuestion(questions[i].QUESTION_ID, userid, ans);
+            }      
+                Response.Redirect("~/");
         }
     }
 }

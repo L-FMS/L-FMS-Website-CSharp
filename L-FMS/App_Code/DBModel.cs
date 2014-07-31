@@ -69,6 +69,17 @@ namespace L_FMS
             }
             return result;
         }
+        
+        //判断用户是否设置了密保问题
+        public Boolean SecurityQuestion(Decimal userid)
+        {
+            LFMSContext db = new LFMSContext();
+            string sql = "select * from USER_QUESTION where USER_ID = " + userid;
+            var result = db.Database.SqlQuery<USER_QUESTION>(sql).ToArray();
+            if (result == null)
+                return false;
+            return true;
+        }
 
         //添加用户保护问题
         public void CreateSecurityQuestion(Decimal questionid, Decimal userid, String ans)

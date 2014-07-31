@@ -12,7 +12,10 @@
     <li><a runat="server" href="~/SettingPwd.aspx">更改密码</a></li>
     <li class="active"><a runat="server" href="~/SettingQuestions.aspx">密保问题</a></li>
   </ul>
-
+    <%if (alreadyset) { %>
+        <h3> 你已经设置了密保问题</h3>
+    
+    <%} else { %>
   <!-- Tab panes -->
   <div class="tab-content">
     <!-- 密保问题 -->
@@ -56,6 +59,7 @@
       </form>
     </div><!-- /#question -->
   </div>
+    <%} %>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="CustomScriptContent" runat="server">

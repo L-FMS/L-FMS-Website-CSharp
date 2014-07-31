@@ -20,7 +20,7 @@ namespace L_FMS
                 // 用户未登录
                 // 不允许访问该页面
                 // 跳转到登录界面
-                Response.Redirect("~/Login.aspx");
+                Response.Redirect("~/Login.aspx?redirect=/SettingQuestions.aspx");
             }
 
             Decimal userid = (Decimal)Session["userID"];

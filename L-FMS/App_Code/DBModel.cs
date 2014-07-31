@@ -13,13 +13,22 @@ namespace L_FMS
         public DateTime PUBLISH_DATE { get; set; }
         public string PLACE { get; set; }
     }
-    public class PersonMessage
+    public class PersonAllMessage
     {
         public string USER_NAME { get; set; }
         public string EMAIL { get; set; }
         public DateTime BIRTH { get; set; }
         public string SEX { get; set; }
+        public string phone{ get; set;}
+        public string marjor{ get; set;}
+        public string address { get; set; }
 
+    }
+    public class User_Comment
+    {
+        public string user_name { get; set; }
+        public string content { get; set; }
+        public DateTime time { get; set; }
     }
     public class DBModel
     {
@@ -46,7 +55,7 @@ namespace L_FMS
         public decimal GetSeqNextVal(string table)
         {
             decimal result = 0;
-            using(LFMSContext db = new LFMSContext())
+            using (LFMSContext db = new LFMSContext())
             {
                 string seq = table + "_increment_seq.nextval";
 
@@ -241,7 +250,7 @@ namespace L_FMS
                     }
                     else
                     {
-                        string sql = "(select * from PUBLISHMENT where PLACE like \'%"+keyword+"%\') ";
+                        string sql = "(select * from PUBLISHMENT where PLACE like \'%" + keyword + "%\') ";
                         result = db.Database.SqlQuery<PUBLISHMENT>(sql).ToArray();
                     }
                     return result;
@@ -340,7 +349,7 @@ namespace L_FMS
                     {
                         // 判定是否包含要求的字段
                         if (i.ITEM.ITEM_NAME.Contains(SearchString)
-                            || i.PUBLISH_DATE.ToString().Contains(SearchString)
+                            || i.PUBLISH_DATE.ToString()==(SearchString)
                             || i.PLACE.Contains(SearchString))
                         {
                             ItemEx itemEx = new ItemEx
@@ -381,7 +390,7 @@ namespace L_FMS
                     System.Diagnostics.Debug.WriteLine(ex.Message);
                 }
             }
-            return null;
+            return result.ToArray();
         }
 
         // 获取account 
@@ -404,20 +413,20 @@ namespace L_FMS
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Debug.WriteLine(ex.Message) ;
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
                 }
             }
             return null;
         }
         //根据用户id获得用户信息
-        public PersonMessage GetUserMessage(decimal UserId)
+        public PersonAllMessage GetUserMessage(decimal UserId)
         {
-            PersonMessage result;
+            PersonAllMessage result;
             using (LFMSContext db = new LFMSContext())
             {
                 try
                 {
-                    result = db.Database.SqlQuery<PersonMessage>("select user_name,email,birth,sex from account, user_userinfo, userinfo where account.user_id=" + UserId + " and account.user_id=user_userinfo.account and user_userinfo.userinfo=userinfo.userinfo_id").FirstOrDefault();
+                    result = db.Database.SqlQuery<PersonAllMessage>("select user_name,email,birth,sex,phone,marjor,address from account, user_userinfo, userinfo where account.user_id=" + UserId + " and account.user_id=user_userinfo.account and user_userinfo.userinfo=userinfo.userinfo_id").FirstOrDefault();
                     return result;
                 }
                 catch (Exception ex)
@@ -439,7 +448,7 @@ namespace L_FMS
                     foreach (var i in db.PUBLISHMENT)
                     {
                         // 判断是否为丢失物品
-                        if (!i.TYPE.Equals("lost")||!i.PUBLISHER_ID.Equals(user_id))
+                        if (!i.TYPE.Equals("lost") || !i.PUBLISHER_ID.Equals(user_id))
                         {
                             continue;
                         }
@@ -465,7 +474,7 @@ namespace L_FMS
                     foreach (var i in db.PUBLISHMENT)
                     {
                         // 判断是否为丢失物品
-                        if (!i.TYPE.Equals("found")||!i.PUBLISHER_ID.Equals(user_id))
+                        if (!i.TYPE.Equals("found") || !i.PUBLISHER_ID.Equals(user_id))
                         {
                             continue;
                         }
@@ -482,15 +491,15 @@ namespace L_FMS
         }
 
         //获取comments
-        public COMMENTS[] GetComments( decimal itemId )
+        public COMMENTS[] GetComments(decimal itemId)
         {
             List<COMMENTS> result = new List<COMMENTS>();
                 using (LFMSContext db = new LFMSContext())
                 {
                     try
                     {
-                        var a=db.COMMENT_ITEM_USER.Where(p => p.ITEM_ID == itemId);
-                        foreach( var q in a)
+                    var a = db.COMMENT_ITEM_USER.Where(p => p.ITEM_ID == itemId);
+                    foreach (var q in a)
                         {
                             result.Add(q.COMMENTS);
                         }
@@ -498,33 +507,89 @@ namespace L_FMS
                     }
                     catch (Exception ex)
                     {
-                        System.Diagnostics.Debug.WriteLine(ex.Message) ;
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+      }
+        //通过item_id 获得的信息：  用于detail信息界面
+
+        //通过item_id获得发现者(遗失者)的姓名  电话  
+        public PersonAllMessage GetUserMessageByItemID(decimal itemId)
+        {
+            PersonAllMessage message;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    //先获得用户id 然后再获得用户信息
+                    decimal user_id = db.Database.SqlQuery<decimal>("select publisher_id from publishment where item_id=" + itemId +" ").FirstOrDefault();
+                    message = GetUserMessage(user_id);
+                    return message;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
                     }
                 }
                 return null;
             }
 
-        // 根据User ID获取用户信息
-        public USERINFO GetUserInfo(decimal userID)
+        //通过item_id 获得item信息
+        public ITEM GetItemByItemID(decimal itemId)
         {
-            USERINFO userInfo = new USERINFO();
-            using(LFMSContext db = new LFMSContext())
+            ITEM message;
+            using (LFMSContext db = new LFMSContext())
             {
                 try
                 {
-                    // 在联系集中找User ID对应的项
-                    USER_USERINFO temp = db.USER_USERINFO.Where(p=> p.ACCOUNT == userID).FirstOrDefault();
-                    userInfo = temp.USERINFO1;
-                    return userInfo;
+                    message = db.Database.SqlQuery<ITEM>("select item_id,item_name,item_description,image from item where item_id=" + itemId + " ").FirstOrDefault();
+                    return message;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     System.Diagnostics.Debug.WriteLine(ex.Message);
                 }
             }
             return null;
         }
-
+        //通过item_id 获得publishment信息
+        public PUBLISHMENT GetPublishmentByItemID(decimal itemId)
+        {
+            PUBLISHMENT message;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    message = db.Database.SqlQuery<PUBLISHMENT>("select * from publishment where item_id=" + itemId + " ").FirstOrDefault();
+                    return message;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
+        //根据物品id获得物品评论信息
+        public User_Comment[] GetUserCommentByItemID(decimal itemId)
+        {
+            User_Comment[] message;
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    //sql语句有点长，老师要求放在配置文件中(鲁棒性)  评论按照发布时间排序
+                    message = db.Database.SqlQuery<User_Comment>("select user_name,content,time from comments,comment_item_user,userinfo,user_userinfo where item_id=" + itemId + "and user_userinfo.account=user_id and user_userinfo.userinfo=userinfo_id and comments.comment_id=comment_item_user.comment_id order by time").ToArray();
+                    return message;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return null;
+        }
         // 更改对应用户的密码
         public void ResetUserPassword(decimal userID, string newPwd)
         {
@@ -582,7 +647,6 @@ namespace L_FMS
         //获取第PageNo的内容
         public static ArrayType[] getPage(int PageNo, int NumPerPage, ArrayType[] inputSet)
         {
-
             ArrayType[] result = null;
             int inputCount = inputSet.Count();
             int inputPageNum = inputCount / NumPerPage;

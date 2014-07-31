@@ -19,9 +19,10 @@ namespace L_FMS
             dt.Columns.Add("place");
             
             //根据SearchMessage 在publishment表中获取信息
-            String SearchMessage = "热";
+            String SearchMessage = "人";
             ItemEx[] itemMessage = DBModel.GetInstance().GetItemBySearchString(SearchMessage);
-            foreach (ItemEx i in itemMessage)
+          //  if(itemMessage!=null)
+            foreach (var i in itemMessage)
             {
                 object[] dr = new object[3];
                 dr[0] = i.ITEM_NAME;

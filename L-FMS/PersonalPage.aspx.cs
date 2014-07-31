@@ -10,7 +10,7 @@ namespace L_FMS
 
     public partial class PersonalPage : System.Web.UI.Page
     {
-        protected PersonMessage message;
+        protected PersonAllMessage message;
         protected string[] lost;
         protected string[] found;
         protected void Page_Load(object sender, EventArgs e)

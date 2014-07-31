@@ -10,14 +10,35 @@ namespace L_FMS
 {
     public partial class Detail : System.Web.UI.Page
     {
+
+        protected PersonAllMessage person_message;
+        protected ITEM item_message;
+        protected PUBLISHMENT publishment_message;
+        protected User_Comment[] UserComment;
         protected void Page_Load(object sender, EventArgs e)
         {
+            int item_id = 6;
+            //根据item_id 获得人物信息
+            person_message = DBModel.GetInstance().GetUserMessageByItemID(item_id);
+            //获得物品信息
+            item_message = DBModel.GetInstance().GetItemByItemID(item_id);
+            //获得物品提交时间信息以及发现（遗失）地点信息
+            publishment_message = DBModel.GetInstance().GetPublishmentByItemID(item_id);
+            //获得物品评论
+            UserComment = DBModel.GetInstance().GetUserCommentByItemID(item_id);
 
+            if (person_message == null || item_message == null || publishment_message == null)
+            {
+                Session["errorMessage"] = "物品不存在或已删除";
+                Response.Redirect("ErrorPage.aspx");
+            }
+                
         }
 
         protected void Comment_Submit(object sender, EventArgs e)
         {
             string comment = Request.Form["comment"];
+            int item_id = 24;
             COMMENTS comments = new COMMENTS
             {
                 COMMENT_ID = DBModel.GetInstance().GetSeqNextVal("comment"),
@@ -33,8 +54,8 @@ namespace L_FMS
                     {
                         ID = DBModel.GetInstance().GetSeqNextVal("com_item_user"),
                         COMMENT_ID = commentTemp.COMMENT_ID,
-                        ITEM_ID = 0, //这里需要获取物品的ID
-                        USER_ID = 0 //同上
+                        ITEM_ID = item_id, //这里需要获取物品的ID
+                        USER_ID = 7 //同上
                     };
                     db.COMMENT_ITEM_USER.Add(comment_item_user);
                     db.SaveChanges();
@@ -42,7 +63,9 @@ namespace L_FMS
                 catch (DbUpdateException ex)
                 {
                 }
-            }           
+            }
+            //提交评论时 先更新页面 再执行提交 所以需要在重新获取一次
+            UserComment = DBModel.GetInstance().GetUserCommentByItemID(item_id);
         }
     }
 }

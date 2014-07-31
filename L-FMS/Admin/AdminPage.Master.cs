@@ -13,5 +13,14 @@ namespace L_FMS.Admin
         {
 
         }
+
+        protected void Admin_Sign_Out(object sender, EventArgs e)
+        {
+            // 管理员登出
+            Session["isAdminLogin"] = "false";
+
+            // 重定向至主页
+            Response.Redirect("~/");
+        }
     }
 }

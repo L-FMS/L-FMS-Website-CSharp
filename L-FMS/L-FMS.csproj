@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\AddQuestion.aspx" />
+    <Content Include="Admin\Default.aspx" />
     <Content Include="Admin\assets\fonts\bootstrap\glyphicons-halflings-regular-3ef91859.svg" />
     <Content Include="Admin\assets\font\fontawesome-webfont.svg" />
     <Content Include="Admin\assets\images\apple-touch-icon-114x114-precomposed-2315f7bd.png" />
@@ -87,6 +88,7 @@
     <Content Include="Admin\assets\stylesheets\application-a07755f5.css" />
     <Content Include="Admin\assets\stylesheets\font-awesome.css" />
     <Content Include="Admin\assets\stylesheets\font-awesome.min.css" />
+    <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\Edit.aspx" />
     <Content Include="Admin\Itemtable.aspx" />
     <Content Include="Admin\Usertable.aspx" />
@@ -293,12 +295,26 @@
     <Compile Include="Admin\AddQuestion.aspx.designer.cs">
       <DependentUpon>AddQuestion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AdminPage.Master.cs">
       <DependentUpon>AdminPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\AdminPage.Master.designer.cs">
       <DependentUpon>AdminPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Edit.aspx.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
@@ -582,6 +598,7 @@
       <DependentUpon>LFMSContext.edmx</DependentUpon>
       <LastGenOutput>LFMSContext.cs</LastGenOutput>
     </Content>
+    <Content Include="Admin\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

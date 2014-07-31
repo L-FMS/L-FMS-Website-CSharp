@@ -246,7 +246,7 @@ namespace L_FMS
                 }
             }
             return null;
-        }
+            }
 
         public decimal CreateNewDialog(Decimal user1, Decimal user2)
         {
@@ -269,7 +269,7 @@ namespace L_FMS
                     System.Diagnostics.Debug.WriteLine("Unique");
                     System.Diagnostics.Debug.WriteLine(ex.Message);
                     return -1;
-                }
+        }
             }
         }
 
@@ -1227,6 +1227,23 @@ namespace L_FMS
             }
         }
 
+        // 获取用户权限
+        public decimal GetUserPrivilege(decimal userID)
+        {
+            using (LFMSContext db = new LFMSContext())
+            {
+                try
+                {
+                    ACCOUNT account = db.ACCOUNT.Where(p => p.USER_ID == userID).FirstOrDefault();
+                    return account.PRIVILEGE;
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                }
+            }
+            return -1;
+        }
     }
 
     public class DataPackeg

@@ -32,6 +32,8 @@ namespace L_FMS
                 this.searchItem.DataSource = dt;
                 this.searchItem.DataBind();
             }
+            this.searchItem.UseAccessibleHeader = true;
+            this.searchItem.HeaderRow.TableSection = TableRowSection.TableHeader;
 
         }
         protected void runtoSearch(object sender, EventArgs e)

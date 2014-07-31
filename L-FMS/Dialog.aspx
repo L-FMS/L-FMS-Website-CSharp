@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <form  method="POST" runat="server">
-    <asp:GridView   ID="dialog" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false" BorderWidth="0px" GridLines="None"  AllowPaging="true" PageSize="2 " PagerSettings-Visible="false">
+    <asp:GridView   ID="dialog" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false" BorderWidth="0px" GridLines="None"  AllowPaging="true" PageSize="10 " PagerSettings-Visible="false">
           <columns>
             <asp:BoundField DataField="id" HeaderText="信息ID" />
             <asp:BoundField DataField="date" HeaderText="发表时间" />

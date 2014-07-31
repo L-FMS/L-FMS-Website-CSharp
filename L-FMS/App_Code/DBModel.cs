@@ -550,18 +550,15 @@ namespace L_FMS
         }
 
         //创建message
-        public void createMessage(HttpRequest Request)
+        public void createMessage(Decimal dialogid, String content, Decimal sender)
         {
 
-            string content = Request.Form[""];
-            string sender = Request.Form[""];
-            string dialogid = Request.Form[""];
-
+           
 
             MESSAGE message = new MESSAGE
             {
                 MESSAGE_ID = this.GetSeqNextVal("message"),
-                SENDER_ID = int.Parse(sender),
+                SENDER_ID = sender,
                 CONTENT = content,
                 SENDTIME = DateTime.Now,
                 IS_READ = 0
@@ -574,8 +571,8 @@ namespace L_FMS
                     MESSAGE tempmessage = db.MESSAGE.Add(message);
                     DIALOG_MESSAGE dialog = new DIALOG_MESSAGE
                     {
-                        ID = this.GetSeqNextVal("dialogmessgae"),
-                        DIALOG_ID = int.Parse(dialogid),
+                        ID = this.GetSeqNextVal("DIALOG_MESSAGE"),
+                        DIALOG_ID = dialogid,
                         MESSAGE_ID = tempmessage.MESSAGE_ID
                     };
 

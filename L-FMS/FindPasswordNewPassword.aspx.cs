@@ -27,11 +27,11 @@ namespace L_FMS
             } else
             {
                 Decimal userid = (Decimal)Session["findPasswordUserId"];
-               // Decimal userid = 7;
+                //Decimal userid = 7;
                 DBModel.GetInstance().ResetUserPassword(userid, pwd);
-                Session["errorMessage"] = "成功啦！！！";
-                Session["returnURL"] = "FindPasswordNewPassword.aspx";
-                Response.Redirect("Error.aspx");
+                Session["successMessage"] = "成功啦！！！";
+                Session["returnURL"] = "Login.aspx";
+                Response.Redirect("Success.aspx");
             }
         }
     }

@@ -37,7 +37,7 @@ namespace L_FMS
             {
                 relations = DBModel.GetInstance().GetSecurityRelation(userid);
                 //questions = DBModel.GetInstance().GetSecurityQuesion(userid);
-                if (relations == null)
+                if (relations.Length == 0)
                 {
                     Session["errorMessage"] = "该用户未创立密码保护问题";
                     Session["returnURL"] = "FindPasswordLogin.aspx";

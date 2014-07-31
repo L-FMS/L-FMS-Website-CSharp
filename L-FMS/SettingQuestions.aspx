@@ -12,7 +12,7 @@
     <li><a runat="server" href="~/SettingPwd.aspx">更改密码</a></li>
     <li class="active"><a runat="server" href="~/SettingQuestions.aspx">密保问题</a></li>
   </ul>
-    <%if (alreadyset) { %>
+    <%if (alreadyset == true) { %>
         <h3> 你已经设置了密保问题</h3>
     
     <%} else { %>

@@ -21,7 +21,7 @@
       <div class="collapse navbar-collapse" id="navbar-collapse-01">
         <ul class="nav navbar-nav">           
           <li class="active"><a runat="server" href="~/">主页</a></li>
-          <li><a runat="server" href="#fakelink">站内信</a></li>
+          <li><a runat="server" href="~/GetDialogue.aspx">站内信</a></li>
           <li><a runat="server" href="#fakelink">关于我们</a></li>
         </ul>
 

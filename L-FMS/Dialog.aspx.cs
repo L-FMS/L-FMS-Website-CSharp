@@ -69,6 +69,8 @@ namespace L_FMS
             //Decimal userid = 43;
             //添加内容，函数待添加
             DBModel.GetInstance().createMessage(dialogid, content, userid);
+            Session["currentDialog"] = dialogid;
+            Response.Redirect("Dialog.aspx");
         }
 
     }

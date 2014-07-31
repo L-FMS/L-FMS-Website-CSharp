@@ -86,6 +86,7 @@
     <Content Include="Admin\assets\stylesheets\application-a07755f5.css" />
     <Content Include="Admin\assets\stylesheets\font-awesome.css" />
     <Content Include="Admin\assets\stylesheets\font-awesome.min.css" />
+    <Content Include="Admin\Edit.aspx" />
     <Content Include="Admin\Itemtable.aspx" />
     <Content Include="Admin\Usertable.aspx" />
     <Content Include="bin\Antlr3.Runtime.dll" />
@@ -283,16 +284,19 @@
     <Compile Include="Admin\AdminPage.Master.designer.cs">
       <DependentUpon>AdminPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Itemtable.aspx.cs">
       <DependentUpon>Itemtable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Itemtable.aspx.designer.cs">
       <DependentUpon>Itemtable.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Usertable.aspx.cs">
-      <DependentUpon>Usertable.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Usertable.aspx.designer.cs">
       <DependentUpon>Usertable.aspx</DependentUpon>

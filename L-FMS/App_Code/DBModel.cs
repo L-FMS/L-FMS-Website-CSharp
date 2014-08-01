@@ -455,8 +455,7 @@ namespace L_FMS
                     }
                     else
                     {
-                        string sql = "(select * from PUBLISHMENT where PLACE like \'%" + keyword + "%\') ";
-                        result = db.Database.SqlQuery<PUBLISHMENT>(sql).ToArray();
+                        result = db.PUBLISHMENT.Where(p => p.PLACE.Contains(keyword)).ToArray();
                     }
                     return result;
                 }

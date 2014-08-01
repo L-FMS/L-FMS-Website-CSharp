@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="PostLostInfo.aspx.cs" Inherits="L_FMS.PostLostInfo" %>
+﻿<%@ Page Title="发布信息 | 失物招领管理系统" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeBehind="PostLostInfo.aspx.cs" Inherits="L_FMS.PostLostInfo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="CustomStylesheetContent" runat="server">
     <!-- Custom Stylesheets -->
@@ -8,7 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
   <main class="post-screen">
     <div class="login-icon">
-      <a href="/Default.aspx"><img src="images/icons/svg/paper-bag.svg" alt="Welcome th L&FMS"></a>
+      <img src="images/icons/svg/paper-bag.svg" alt="Welcome th L&FMS">
       <h4>Complete the <small>information</small></h4>
     </div>
     <form class="login-form" name="loginForm" action="" method="POST" runat="server" enctype="multipart/form-data">

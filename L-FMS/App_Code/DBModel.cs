@@ -276,7 +276,8 @@ namespace L_FMS
         }
 
         // 注册新用户
-        public void RegisterNewUser(HttpRequest Request)
+        // 返回注册用户
+        public USER_USERINFO RegisterNewUser(HttpRequest Request)
         {
             string email = Request.Form["email"];
             string pwd = Request.Form["pwd"];
@@ -329,6 +330,7 @@ namespace L_FMS
                     db.USERINFO.Add(userinfo);
                     db.USER_USERINFO.Add(user_userinfo);
                     db.SaveChanges();
+                    return user_userinfo;
                 }
                 catch (Exception ex)
                 {
@@ -336,6 +338,7 @@ namespace L_FMS
                     System.Diagnostics.Debug.WriteLine(ex.Message);
                 }
             }
+            return null;
         }
 
         // 根据Email获取用户User ID

@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
     <main class="login-screen">
         <div class="login-icon">
-            <a href="/Default.aspx"><img src="images/icons/svg/mail.svg" alt="Welcome th L&FMS"></a>
+            <img src="images/icons/svg/mail.svg" alt="Welcome th L&FMS">
             <h4>Welcome to <small>L&FMS</small></h4>
         </div>
         <form class="login-form" name="loginForm" action="" method="POST" runat="server">

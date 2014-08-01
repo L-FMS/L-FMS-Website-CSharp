@@ -53,7 +53,12 @@ namespace L_FMS.Admin
         {
             editAccount = DBModel.GetInstance().GetAccountByUserID(int.Parse(Request.Form["user_id"]));
             editUserInfo = DBModel.GetInstance().GetUserInfo(int.Parse(Request.Form["user_id"]));
-            editAccount.PASSWORD = MD5.Encrypt(Request.Form["acc_password"]);
+            // 判断密码是否被修改
+            if (!editAccount.PASSWORD.Equals(Request.Form["acc_password"]))
+            {
+                // 密码被修改
+                editAccount.PASSWORD = MD5.Encrypt(Request.Form["acc_password"]);
+            }
             editAccount.EMAIL = Request.Form["acc_email"];
             editUserInfo.PHONE = Request.Form["user_phone"];
 

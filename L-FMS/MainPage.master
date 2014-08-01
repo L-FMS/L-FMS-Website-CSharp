@@ -72,7 +72,7 @@
   </nav><!-- /navbar -->
 
   <!-- Main -->
-  <main class="container" runat="server">
+  <main class="container" runat="server" style="min-height: 550px;">
     <%-- Main Content --%>
     <asp:ContentPlaceHolder ID="MainContent" runat="server">
     </asp:ContentPlaceHolder>

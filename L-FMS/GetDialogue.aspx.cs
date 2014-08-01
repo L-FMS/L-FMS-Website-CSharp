@@ -30,7 +30,7 @@ namespace L_FMS
 
             // 判断URL中
             string t = Request.Params["user2ID"];
-            if (t != null || !t.Equals(""))
+            if (t != null && !t.Equals(""))
             {
                 // user2ID存在
                 // 跳转

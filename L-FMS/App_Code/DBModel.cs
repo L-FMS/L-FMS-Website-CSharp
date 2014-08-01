@@ -40,6 +40,7 @@ namespace L_FMS
     public class User_Comment
     {
         public string user_name { get; set; }
+        public string SEX { get; set; }
         public string content { get; set; }
         public DateTime time { get; set; }
     }
@@ -875,7 +876,7 @@ namespace L_FMS
                 try
                 {
                     //sql语句有点长，老师要求放在配置文件中(鲁棒性)  评论按照发布时间排序
-                    message = db.Database.SqlQuery<User_Comment>("select user_name,content,time from comments,comment_item_user,userinfo,user_userinfo where item_id=" + itemId + "and user_userinfo.account=user_id and user_userinfo.userinfo=userinfo_id and comments.comment_id=comment_item_user.comment_id order by time").ToArray();
+                    message = db.Database.SqlQuery<User_Comment>("select user_name,sex,content,time from comments,comment_item_user,userinfo,user_userinfo where item_id=" + itemId + "and user_userinfo.account=user_id and user_userinfo.userinfo=userinfo_id and comments.comment_id=comment_item_user.comment_id order by time").ToArray();
                     return message;
                 }
                 catch (Exception ex)

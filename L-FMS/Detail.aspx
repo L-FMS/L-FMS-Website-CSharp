@@ -8,11 +8,11 @@
   <div class="row">
     <div class="col-sm-3">
       <div class="tile person-tile">
-        <img src="images/icons/svg/compas.svg" alt="Avatar" class="tile-image big-illustration">
+        <img src="images/<%= person_message.SEX %>.png" alt="Avatar" class="tile-image big-illustration">
         <h3 class="tile-title"><a href="/PersonalPage.aspx?userid=<%= person_message.USER_ID %>"><%= person_message.USER_NAME %></a></h3>
         <p>手机: <%= person_message.phone %></p>
         <p>地址: <%= person_message.address %></p>
-        <a href="/GetDialogue.aspx?user2ID=<%= person_message.USER_ID %>" class="btn btn-primary btn-large btn-block">Contact with me</a>
+        <a href="/GetDialogue.aspx?user2ID=<%= person_message.USER_ID %>" class="btn btn-primary btn-large btn-block">请联系我</a>
       </div><!-- /.person-tile -->
     </div>
 
@@ -59,7 +59,7 @@
 
         <div class="item-comment clearfix">
           <a target="_balank" href="#" class="avatar">
-            <img src="images/zr.jpg" width="50">
+            <img src="images/<%= i.SEX %>.png" width="50">
           </a><!-- /.avatar -->
           <div class="item-comment-content">
 

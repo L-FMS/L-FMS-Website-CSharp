@@ -40,9 +40,9 @@ namespace L_FMS.Admin
         {
             editItem = DBModel.GetInstance().GetItemByItemID(int.Parse(Request.Form["item_id"]));
             editPublishment = DBModel.GetInstance().GetPublishmentByItemID(int.Parse(Request.Form["item_id"]));
-            editItem.ITEM_ID=int.Parse(Request.Form["item_id"]);
-            editItem.ITEM_NAME=Request.Form["item_name"];
-            editItem.ITEM_DESCRIPTION=Request.Form["item_des"];
+            editItem.ITEM_ID = int.Parse(Request.Form["item_id"]);
+            editItem.ITEM_NAME = Request.Form["item_name"];
+            editItem.ITEM_DESCRIPTION = Request.Form["item_des"];
             editPublishment.ITEM_ID = int.Parse(Request.Form["item_id"]);
             editPublishment.PLACE = Request.Form["item_place"];
             DBModel.GetInstance().UpdateItem(editItem);
@@ -53,9 +53,9 @@ namespace L_FMS.Admin
         {
             editAccount = DBModel.GetInstance().GetAccountByUserID(int.Parse(Request.Form["user_id"]));
             editUserInfo = DBModel.GetInstance().GetUserInfo(int.Parse(Request.Form["user_id"]));
-            editAccount.PASSWORD=Request.Form["acc_password"];
-            editAccount.EMAIL=Request.Form["acc_email"];
-            editUserInfo.PHONE=Request.Form["user_phone"];
+            editAccount.PASSWORD = MD5.Encrypt(Request.Form["acc_password"]);
+            editAccount.EMAIL = Request.Form["acc_email"];
+            editUserInfo.PHONE = Request.Form["user_phone"];
 
             DBModel.GetInstance().UpdateAccount(editAccount);
             DBModel.GetInstance().UpdateUserInfo(editUserInfo);

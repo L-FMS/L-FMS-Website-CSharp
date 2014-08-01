@@ -23,7 +23,7 @@ namespace L_FMS
                 // 用户未登录
                 // 不允许访问该页面
                 // 跳转到登录界面
-                Response.Redirect("~/Login.aspx?redirect=/GetDialogue.aspx");
+                Response.Redirect("~/Login.aspx?redirect=" + Request.RawUrl);
             }
 
             userid = (Decimal)Session["userID"];
@@ -32,6 +32,7 @@ namespace L_FMS
             string t = Request.Params["user2ID"];
             if (t != null || !t.Equals(""))
             {
+                // user2ID存在
                 // 跳转
             }
 

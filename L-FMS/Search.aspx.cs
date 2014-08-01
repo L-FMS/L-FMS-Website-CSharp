@@ -16,11 +16,13 @@ namespace L_FMS
         protected void Page_Load(object sender, EventArgs e)
         {
             string query = Request.Params["q"];
-            if (query == null)
+            if (query == null || query.Equals(""))
             {
                 // query为空
-                // 直接重定向
-                Response.Redirect("~/");
+                // 直接重定向到错误界面
+                Session["errorMessage"] = "您所访问的页面不存在";
+                Session["returnURL"] = "Default.aspx";
+                Response.Redirect("~/Error.aspx");
             }
 
             dt.Columns.Add("name");

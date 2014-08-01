@@ -17,7 +17,7 @@ namespace L_FMS
                 // 用户未登录
                 // 不允许访问该页面
                 // 跳转到登录界面
-                Response.Redirect("~/Login.aspx?redirect=/SettingInfo.aspx");
+                Response.Redirect("~/Login.aspx?redirect=" + Request.RawUrl);
             }
 
             // 加载用户信息

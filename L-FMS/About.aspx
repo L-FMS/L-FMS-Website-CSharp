@@ -12,15 +12,23 @@
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
   <div class="jumbotron">
     <h3>组员合照</h3>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="row">
+          <div class="col-sm-6">陈璐</div>
+          <div class="col-sm-6">高屹</div>
+          <div class="col-sm-6">陈玉婷</div>
+          <div class="col-sm-6">李伟</div>
+          <div class="col-sm-6">杨宇歆</div>
+          <div class="col-sm-6">张睿</div>
+          <div class="col-sm-6">胡永豪</div>
+          <div class="col-sm-6">丁宇笙</div>
+          <div class="col-sm-6">郭静阳</div>
+          <div class="col-sm-6">胡圣托</div>
+        </div>
+      </div>
+    </div>
     <img src="images/group.jpg" style="width: 100%;"><!-- 组员合照 -->
-    <ul>
-      <li>羊羊</li>
-        <!-- 介绍 -->
-      <li>cl</li>
-          <!-- 介绍 -->
-      <li>托</li>
-
-      <li>团长</li>
-    </ul>
+    
   </div>
 </asp:Content>

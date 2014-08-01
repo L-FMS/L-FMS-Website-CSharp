@@ -7,13 +7,13 @@
         <div class="panel-heading" id="profile-panel-heading">
           <div class="media">
             <div class="pull-left">
-              <img class="media-object img-thumbnail" src="images/zr.jpg" alt="Zhangrui" style="width: 200px;">
+              <img class="media-object img-thumbnail" src="images/<%= message.SEX %>.png" alt="Zhangrui" style="width: 200px;">
             </div>
             <div class="media-body">
               <h3 class="media-heading"><%=message.USER_NAME %></h3>
               <p><%=message.EMAIL %></p>
               <p><%=message.BIRTH.ToString("yyyy年MM月dd日") %></p>
-              <p><%=message.SEX %></p>
+              <p><%: message.SEX == "M" ? "男" : "女" %></p>
             </div>
           </div>
         </div>

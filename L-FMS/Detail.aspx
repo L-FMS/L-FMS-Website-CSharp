@@ -9,7 +9,7 @@
     <div class="col-sm-3">
       <div class="tile person-tile">
         <img src="images/icons/svg/compas.svg" alt="Avatar" class="tile-image big-illustration">
-        <h3 class="tile-title"><%=person_message.USER_NAME %></h3>
+        <h3 class="tile-title"><a href="/PersonalPage.aspx?userid=<%= person_message.USER_ID %>"><%= person_message.USER_NAME %></a></h3>
         <p>手机: <%= person_message.phone %></p>
         <p>地址: <%= person_message.address %></p>
         <button onclick="alert('请通过以下方式联系我：\n<%= person_message.phone %>')" class="btn btn-primary btn-large btn-block">Contact with me</button>

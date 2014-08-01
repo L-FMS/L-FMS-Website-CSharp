@@ -7,14 +7,14 @@
       <div class="table-responsive">
 
         <form runat="server">
-            <asp:GridView   ID="searchItem" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false"   BorderWidth="0px" GridLines="None" >
-                <columns>
-                    <asp:BoundField DataField="name" HeaderText="Name" />
-                    <asp:BoundField DataField="date" HeaderText="Date" />
-                    <asp:BoundField DataField="place" HeaderText="Place" />
-                </columns>
-            </asp:GridView>
-          </form>
+          <asp:GridView   ID="searchItem" CssClass="table table-hover"  runat="server" AutoGenerateColumns="false"   BorderWidth="0px" GridLines="None" >
+              <columns>
+                  <asp:BoundField DataField="name" HeaderText="Name" />
+                  <asp:BoundField DataField="date" HeaderText="Date" />
+                  <asp:BoundField DataField="place" HeaderText="Place" />
+              </columns>
+          </asp:GridView>
+        </form>
       </div>
       <div class="pagination col-sm-12 text-center">
         <ul>

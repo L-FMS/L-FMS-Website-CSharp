@@ -27,6 +27,7 @@ namespace L_FMS
     }
     public class PersonAllMessage
     {
+        public decimal USER_ID { get; set; }
         public string USER_NAME { get; set; }
         public string EMAIL { get; set; }
         public DateTime BIRTH { get; set; }
@@ -700,7 +701,7 @@ namespace L_FMS
             {
                 try
                 {
-                    result = db.Database.SqlQuery<PersonAllMessage>("select user_name,email,birth,sex,phone,marjor,address from account, user_userinfo, userinfo where account.user_id=" + UserId + " and account.user_id=user_userinfo.account and user_userinfo.userinfo=userinfo.userinfo_id").FirstOrDefault();
+                    result = db.Database.SqlQuery<PersonAllMessage>("select account.user_id as user_id, user_name,email,birth,sex,phone,marjor,address from account, user_userinfo, userinfo where account.user_id=" + UserId + " and account.user_id=user_userinfo.account and user_userinfo.userinfo=userinfo.userinfo_id").FirstOrDefault();
                     return result;
                 }
                 catch (Exception ex)

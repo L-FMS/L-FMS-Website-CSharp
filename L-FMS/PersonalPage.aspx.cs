@@ -36,14 +36,6 @@ namespace L_FMS
             }
 
             message = DBModel.GetInstance().GetUserMessage(User_ID);
-            if (message.SEX == "M")
-            { 
-                message.SEX = "男"; 
-            }
-            else
-            { 
-                message.SEX = "女"; 
-            }
             lost = DBModel.GetInstance().GetLostItemByID(User_ID);
             found = DBModel.GetInstance().GetFoundItemByID(User_ID);
         }

@@ -12,7 +12,7 @@
         <h3 class="tile-title"><a href="/PersonalPage.aspx?userid=<%= person_message.USER_ID %>"><%= person_message.USER_NAME %></a></h3>
         <p>手机: <%= person_message.phone %></p>
         <p>地址: <%= person_message.address %></p>
-        <button onclick="alert('请通过以下方式联系我：\n<%= person_message.phone %>')" class="btn btn-primary btn-large btn-block">Contact with me</button>
+        <a href="/GetDialogue.aspx?user2ID=<%= person_message.USER_ID %>" class="btn btn-primary btn-large btn-block">Contact with me</a>
       </div><!-- /.person-tile -->
     </div>
 

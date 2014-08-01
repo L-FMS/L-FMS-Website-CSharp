@@ -13,15 +13,16 @@
   <div class="jumbotron">
     <img src="images/about.jpg"><!-- 组员合照 -->
       <div class="col-sm-2">
-      <li>羊羊</li>
+      <ul>
+        <li>羊羊</li>
           <!-- 介绍 -->
-      <li>cl</li>
-          <!-- 介绍 -->
-      <li>托</li>
+        <li>cl</li>
+            <!-- 介绍 -->
+        <li>托</li>
 
-      <li>团长</li>
+        <li>团长</li>
+      </ul>
 
     </div>
   </div>
-    
 </asp:Content>

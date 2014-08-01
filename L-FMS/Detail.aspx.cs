@@ -18,7 +18,21 @@ namespace L_FMS
         protected User_Comment[] UserComment;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int item_id = int.Parse(Session["ItemId"].ToString());
+            decimal item_id = -1;
+            // 判断Session中是否存在item_id
+            try
+            {
+                item_id = Decimal.Parse(Session["ItemId"].ToString());
+            }
+            catch (NullReferenceException nullEx)
+            {
+                // 输出错误信息
+                System.Diagnostics.Debug.WriteLine(nullEx.Message);
+
+                // Session中item_id为空
+                // 直接跳转回主页
+                Response.Redirect("~/");
+            }
             //根据item_id 获得人物信息
             person_message = DBModel.GetInstance().GetUserMessageByItemID(item_id);
             //获得物品信息

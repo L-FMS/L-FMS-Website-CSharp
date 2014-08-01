@@ -27,6 +27,14 @@ namespace L_FMS
             }
 
             userid = (Decimal)Session["userID"];
+
+            // 判断URL中
+            string t = Request.Params["user2ID"];
+            if (t != null || !t.Equals(""))
+            {
+                // 跳转
+            }
+
             origindialogs = DBModel.GetInstance().GetDialogs(userid);
             dialogs = new Dialog_Name[origindialogs.Length];
             for (int i = 0; i < origindialogs.Length; ++i)

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="List" Language="C#" AutoEventWireup="true" CodeBehind="List.aspx.cs" Inherits="L_FMS.List" MasterPageFile="~/MainPage.master" %>
+﻿<%@ Page Title="排行榜 | 失物招领管理系统" Language="C#" AutoEventWireup="true" CodeBehind="List.aspx.cs" Inherits="L_FMS.List" MasterPageFile="~/MainPage.master" %>
 
 <asp:Content ContentPlaceHolderID="NavbarContent" runat="server">
   <ul class="nav navbar-nav">

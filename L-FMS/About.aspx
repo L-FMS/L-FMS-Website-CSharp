@@ -11,18 +11,16 @@
 
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
   <div class="jumbotron">
-    <img src="images/about.jpg"><!-- 组员合照 -->
-      <div class="col-sm-2">
-      <ul>
-        <li>羊羊</li>
+    <h3>组员合照</h3>
+    <img src="images/group.jpg" style="width: 100%;"><!-- 组员合照 -->
+    <ul>
+      <li>羊羊</li>
+        <!-- 介绍 -->
+      <li>cl</li>
           <!-- 介绍 -->
-        <li>cl</li>
-            <!-- 介绍 -->
-        <li>托</li>
+      <li>托</li>
 
-        <li>团长</li>
-      </ul>
-
-    </div>
+      <li>团长</li>
+    </ul>
   </div>
 </asp:Content>

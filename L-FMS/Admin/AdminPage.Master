@@ -37,7 +37,7 @@
           </a>
           <ul class='dropdown-menu'>
             <li>
-              <a href="#">注销</a>
+              <a runat="server" href="~/Default.aspx">注销</a>
             </li>
           </ul>
         </li>

@@ -13,26 +13,26 @@
     </div>
     <form class="login-form" name="loginForm" action="" method="POST" runat="server" enctype="multipart/form-data">
       <div class="form-group">
-        <label for="post-name" style="color: #bfc9ca;">Name</label>
-        <input type="text" class="form-control login-field" placeholder="Name" id="post-name" name="item-name" required autofocus>
+        <label for="post-name" style="color: #bfc9ca;">物品名</label>
+        <input type="text" class="form-control login-field" placeholder="物品名" id="post-name" name="item-name" required autofocus>
         <label for="post-name" class="login-field-icon fui-search"></label>
       </div>
       <div class="form-group">
-        <label for="post-place" style="color: #bfc9ca;">Place</label>
-            <input type="text" class="form-control login-field" placeholder="Place" name="item-place" id="post-place" required>
+        <label for="post-place" style="color: #bfc9ca;">地点</label>
+            <input type="text" class="form-control login-field" placeholder="地点" name="item-place" id="post-place" required>
         <label for="post-place" class="login-field-icon fui-location"></label>
       </div>
       <div class="form-group">
-        <label for="post-image" style="color: #bfc9ca;">Image</label>
+        <label for="post-image" style="color: #bfc9ca;">图片</label>
         <input type="file" class="form-control login-field filestyle" id="post-image" name="item-image" accept="image/*" required>
       </div>
       <div class="form-group">
-        <label for="post-tags" style="color: #bfc9ca;">Tag</label>
-        <input class="form-control login-field tagsinput" placeholder="Tag" name="item-tags" id="post-tags" required>
+        <label for="post-tags" style="color: #bfc9ca;">标签</label>
+        <input class="form-control login-field tagsinput" placeholder="标签" name="item-tags" id="post-tags" required>
       </div>
       <div class="form-group">
-        <label for="post-description" style="color: #bfc9ca;">Description</label>
-        <textarea class="form-control login-field" name="item-description" id="post-description" cols="30" rows="5" placeholder="Description"></textarea>
+        <label for="post-description" style="color: #bfc9ca;">物品描述</label>
+        <textarea class="form-control login-field" name="item-description" id="post-description" cols="30" rows="5" placeholder="物品描述"></textarea>
       </div>
       <asp:Button  CssClass="btn btn-primary btn-lg btn-block" runat="server" OnClick="postButton" Text="提交"/>
     </form>

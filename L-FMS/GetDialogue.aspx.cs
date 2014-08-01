@@ -14,6 +14,39 @@ namespace L_FMS
         protected Dialog_Name[] dialogs { get; set; }
 
         protected Decimal userid { get; set; }
+
+        private void OpenDialog(Decimal user2)
+        {
+            if (user2 == -1)
+            {
+                Session["errorMessage"] = "用户不存在";
+                Session["returnURL"] = "~/GetDialogue.aspx";
+                Response.Redirect("Error.aspx");
+            }
+            else if (user2 == userid)
+            {
+                Session["errorMessage"] = "抱歉，您不能和自己通信";
+                Session["returnURL"] = "~/GetDialogue.aspx";
+                Response.Redirect("Error.aspx");
+            }
+            else
+            {
+                Decimal id = getDialogIDByUser2(user2);
+                if (id != (Decimal)(-1))
+                {
+                    //dialogid = id;
+                    Session["currentDialog"] = id;
+                    Response.Redirect("Dialog.aspx");
+                }
+                else
+                {
+                    id = DBModel.GetInstance().CreateNewDialog(userid, user2);
+                    Session["currentDialog"] = id;
+                    Response.Redirect("Dialog.aspx");
+                }
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -28,13 +61,8 @@ namespace L_FMS
 
             userid = (Decimal)Session["userID"];
 
-            // 判断URL中
+           
             string t = Request.Params["user2ID"];
-            if (t != null && !t.Equals(""))
-            {
-                // user2ID存在
-                // 跳转
-            }
 
             origindialogs = DBModel.GetInstance().GetDialogs(userid);
             dialogs = new Dialog_Name[origindialogs.Length];
@@ -46,6 +74,22 @@ namespace L_FMS
                     dialogs[i].CONTACT_NAME = DBModel.GetInstance().GetUserName(origindialogs[i].USER2);
                 else
                     dialogs[i].CONTACT_NAME = DBModel.GetInstance().GetUserName(origindialogs[i].USER1);
+            }
+
+            // 判断URL中
+            if (t != null && !t.Equals(""))
+            {
+                Decimal user2 = Decimal.Parse(t);
+                if (DBModel.GetInstance().GetUserPassword(user2).Equals(""))
+                {
+                    Session["errorMessage"] = "用户不存在";
+                    Session["returnURL"] = "~/GetDialogue.aspx";
+                    Response.Redirect("Error.aspx");
+        }
+                else
+                {
+                    OpenDialog(user2);
+                }
             }
 
         }
@@ -66,33 +110,7 @@ namespace L_FMS
             {
                 string email = Request.Form["newdialog"];
                 Decimal user2 = DBModel.GetInstance().GetUserID(email);
-                if (user2 == -1)
-                {
-                    Session["errorMessage"] = "用户不存在";
-                    Session["returnURL"] = "~/GetDialogue.aspx";
-                    Response.Redirect("Error.aspx");
-                }
-                else if (user2 == userid)
-                {
-                    Session["errorMessage"] = "抱歉，您不能和自己通信";
-                    Session["returnURL"] = "~/GetDialogue.aspx";
-                    Response.Redirect("Error.aspx");
-                }
-                else{
-                    Decimal id = getDialogIDByUser2(user2);
-                    if ( id != (Decimal)(-1))
-                    {
-                        dialogid = id;
-                        Session["currentDialog"] = dialogid;
-                        Response.Redirect("Dialog.aspx");
-                    }
-                    else
-                    {
-                        dialogid = DBModel.GetInstance().CreateNewDialog(userid, user2);
-                        Session["currentDialog"] = dialogid;
-                        Response.Redirect("Dialog.aspx");
-                    }
-                } 
+                OpenDialog(user2);
             }
             else
             {

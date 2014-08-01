@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContent" runat="server">
   <main class="login-screen">
     <div class="login-icon">
-      <img src="images/login/icon.png" alt="Welcome th L&FMS">
+      <a href="/Default.aspx"><img src="images/login/icon.png" alt="Welcome th L&FMS"></a>
       <h4>Please finish your personal infomation</h4>
     </div>
 
